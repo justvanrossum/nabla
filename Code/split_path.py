@@ -40,6 +40,35 @@ class Contour:
     def reversed(self):
         return [seg.reversed() for seg in reversed(self.segments)]
 
+    def splitAtAngle(self, angle):
+        sides = [[[]], [[]]]
+        angleX, angleY = cos(angle), sin(angle)
+        previousSide = None
+        for segment in self.segments:
+            dx1 = segment.points[1][0] - segment.points[0][0]
+            dy1 = segment.points[1][1] - segment.points[0][1]
+            side1 = whichSide((angleX, angleY), (dx1, dy1)) >= 0
+            if len(segment.points) == 4:
+                dx2 = segment.points[3][0] - segment.points[2][0]
+                dy2 = segment.points[3][1] - segment.points[2][1]
+                side2 = whichSide((angleX, angleY), (dx2, dy2)) >= 0
+                if side1 == side2:
+                    XXX
+                else:
+                    YYY
+                previousSide = side2
+            else:
+                if previousSide != side1:
+                    sides[side1].append([])
+                sides[side1][-1].append(segment)
+                previousSide = side1
+        leftSides, rightSides = sides
+        for sides in [leftSides, rightSides]:
+            if len(sides) > 1:
+                sides[0] = sides[-1] + sides[0]
+                del sides[-1]
+        return Path(map(Contour, leftSides)), Path(map(Contour, rightSides))
+
 
 @dataclass
 class Path:
@@ -52,6 +81,9 @@ class Path:
     def append(self, contour):
         self.contours.append(contour)
 
+    def appendPath(self, path):
+        self.contours.extend(path.contours)
+
     def appendSegment(self, segment):
         self.contours[-1].append(segment)
 
@@ -61,6 +93,15 @@ class Path:
         if firstPoint != lastPoint:
             self.appendSegment(Segment([lastPoint, firstPoint]))
         self.contours[-1].closed = True
+
+    def splitAtAngle(self, angle):
+        leftPath = Path()
+        rightPath = Path()
+        for contour in self.contours:
+            left, right = contour.splitAtAngle(angle)
+            leftPath.appendPath(left)
+            rightPath.appendPath(right)
+        return leftPath, rightPath
 
 
 class PathBuilder(BasePen):
@@ -129,7 +170,7 @@ if __name__ == "__main__":
     fill(None)
     drawCurve(*curve)
 
-    angle = radians(10)
+    angle = radians(42)
 
     dx = 300 * cos(angle)
     dy = 300 * sin(angle)
@@ -149,12 +190,24 @@ if __name__ == "__main__":
 
     print(whichSide((0, -100), (-1, -100)))
     bez = BezierPath()
-    bez.text("B", font="Helvetica", fontSize=800, offset=(100, 100))
+    bez.text("F", font="Helvetica", fontSize=800, offset=(100, 100))
     pen = PathBuilder(None)
     bez.drawToPen(pen)
-    drawPath(bez)
-    print(pen.path)
+    # drawPath(bez)
+    path = pen.path
     bez = BezierPath()
-    pen.path.draw(bez)
+    path.draw(bez)
     translate(30, 30)
+    # drawPath(bez)
+
+    strokeWidth(3)
+    left, right = path.splitAtAngle(angle)
+    translate(30, 30)
+    bez = BezierPath()
+    left.draw(bez)
+    lineDash(5)
+    drawPath(bez)
+    bez = BezierPath()
+    right.draw(bez)
+    lineDash(None)
     drawPath(bez)
