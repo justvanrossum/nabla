@@ -30,6 +30,12 @@ def splitCurveAtAngle(curve, angle, bothDirections=False):
         assert False, "curve too complex"  # a.k.a. I'm too lazy to implement
 
 
+def whichSide(v1, v2):
+    x1, y1 = v1
+    x2, y2 = v2
+    return x1 * y2 - y1 * x2
+
+
 if __name__ == "__main__":
     # DrawBot test
     def drawCurve(pt1, pt2, pt3, pt4):
@@ -61,3 +67,5 @@ if __name__ == "__main__":
         p2x = p1x + dx
         p2y = p1y + dy
         line((p1x, p1y), (p2x, p2y))
+
+    print(whichSide((0, -100), (-1, -100)))
