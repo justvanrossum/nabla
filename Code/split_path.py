@@ -232,7 +232,7 @@ if __name__ == "__main__":
         drawPath(bez)
 
     offset = 156
-    angle = radians(-212)
+    angle = radians(225)
 
     lineJoin("round")
     lineCap("round")
