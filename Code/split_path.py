@@ -1,9 +1,88 @@
+from dataclasses import dataclass, field
+from typing import List, Tuple, Union
 from fontTools.misc.transform import Transform
 from fontTools.misc.bezierTools import (
     calcCubicParameters,
     solveQuadratic,
     splitCubicAtT,
 )
+from fontTools.pens.basePen import BasePen
+
+
+@dataclass
+class Segment:
+    points: List[Tuple[float, float]]
+
+    def reversed(self):
+        return Segment(list(reversed(self.points)))
+
+
+@dataclass
+class Contour:
+    segments: List[Segment] = field(default_factory=list)
+    closed: bool = False
+
+    def draw(self, pen):
+        pen.moveTo(self.segments[0].points[0])
+        for segment in self.segments:
+            points = segment.points[1:]
+            if len(points) == 1:
+                pen.lineTo(points[0])
+            else:
+                assert len(points) == 3
+                pen.curveTo(*points)
+        if self.closed:
+            pen.closePath()
+
+    def append(self, segment):
+        self.segments.append(segment)
+
+    def reversed(self):
+        return [seg.reversed() for seg in reversed(self.segments)]
+
+
+@dataclass
+class Path:
+    contours: List[Contour] = field(default_factory=list)
+
+    def draw(self, pen):
+        for contour in self.contours:
+            contour.draw(pen)
+
+    def append(self, contour):
+        self.contours.append(contour)
+
+    def appendSegment(self, segment):
+        self.contours[-1].append(segment)
+
+    def closePath(self):
+        firstPoint = self.contours[-1].segments[0].points[0]
+        lastPoint = self.contours[-1].segments[-1].points[-1]
+        if firstPoint != lastPoint:
+            self.appendSegment(Segment([lastPoint, firstPoint]))
+        self.contours[-1].closed = True
+
+
+class PathBuilder(BasePen):
+    def __init__(self, glyphSet):
+        super().__init__(glyphSet)
+        self.path = Path()
+        self.currentPoint = None
+
+    def _moveTo(self, pt):
+        self.currentPoint = pt
+        self.path.append(Contour())
+
+    def _lineTo(self, pt):
+        self.path.appendSegment(Segment([self.currentPoint, pt]))
+        self.currentPoint = pt
+
+    def _curveToOne(self, pt2, pt3, pt4):
+        self.path.appendSegment(Segment([self.currentPoint, pt2, pt3, pt4]))
+        self.currentPoint = pt4
+
+    def _closePath(self):
+        self.path.closePath()
 
 
 def splitCurveAtAngle(curve, angle, bothDirections=False):
@@ -69,3 +148,13 @@ if __name__ == "__main__":
         line((p1x, p1y), (p2x, p2y))
 
     print(whichSide((0, -100), (-1, -100)))
+    bez = BezierPath()
+    bez.text("B", font="Helvetica", fontSize=800, offset=(100, 100))
+    pen = PathBuilder(None)
+    bez.drawToPen(pen)
+    drawPath(bez)
+    print(pen.path)
+    bez = BezierPath()
+    pen.path.draw(bez)
+    translate(30, 30)
+    drawPath(bez)
