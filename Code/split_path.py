@@ -133,28 +133,6 @@ class Path:
         return leftPath, rightPath
 
 
-class PathBuilder(BasePen):
-    def __init__(self, glyphSet):
-        super().__init__(glyphSet)
-        self.path = Path()
-        self.currentPoint = None
-
-    def _moveTo(self, pt):
-        self.currentPoint = pt
-        self.path.append(Contour())
-
-    def _lineTo(self, pt):
-        self.path.appendSegment(Segment([self.currentPoint, pt]))
-        self.currentPoint = pt
-
-    def _curveToOne(self, pt2, pt3, pt4):
-        self.path.appendSegment(Segment([self.currentPoint, pt2, pt3, pt4]))
-        self.currentPoint = pt4
-
-    def _closePath(self):
-        self.path.closePath()
-
-
 def splitCurveAtAngle(curve, angle, bothDirections=False):
     t = Transform().rotate(-angle)
     pt1, pt2, pt3, pt4 = t.transformPoints(curve)
@@ -183,6 +161,28 @@ def whichSide(v1, v2):
     x1, y1 = v1
     x2, y2 = v2
     return x1 * y2 - y1 * x2
+
+
+class PathBuilder(BasePen):
+    def __init__(self, glyphSet):
+        super().__init__(glyphSet)
+        self.path = Path()
+        self.currentPoint = None
+
+    def _moveTo(self, pt):
+        self.currentPoint = pt
+        self.path.append(Contour())
+
+    def _lineTo(self, pt):
+        self.path.appendSegment(Segment([self.currentPoint, pt]))
+        self.currentPoint = pt
+
+    def _curveToOne(self, pt2, pt3, pt4):
+        self.path.appendSegment(Segment([self.currentPoint, pt2, pt3, pt4]))
+        self.currentPoint = pt4
+
+    def _closePath(self):
+        self.path.closePath()
 
 
 if __name__ == "__main__":
