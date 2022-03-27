@@ -16,6 +16,9 @@ class Segment:
     def reversed(self):
         return Segment(list(reversed(self.points)))
 
+    def translated(self, dx, dy):
+        return Segment([(x + dx, y + dy) for x, y in self.points])
+
 
 @dataclass
 class Contour:
@@ -37,12 +40,17 @@ class Contour:
     def append(self, segment):
         self.segments.append(segment)
 
+    def translated(self, dx, dy):
+        return Contour([segment.translated(dx, dy) for segment in self.segments])
+
     def reversed(self):
-        return [seg.reversed() for seg in reversed(self.segments)]
+        return Contour([seg.reversed() for seg in reversed(self.segments)])
 
     def splitAtAngle(self, angle):
-        sides = [[[]], [[]]]
+        assert self.closed
+        assert self.segments[0].points[0] == self.segments[-1].points[-1]
         angleX, angleY = cos(angle), sin(angle)
+        sides = [[], []]
         previousSide = None
         for segment in self.segments:
             dx1 = segment.points[1][0] - segment.points[0][0]
@@ -74,10 +82,18 @@ class Contour:
                 previousSide = side1
         leftSides, rightSides = sides
         for sides in [leftSides, rightSides]:
-            if len(sides) > 1:
+            if len(sides) > 1 and _pointsEqual(
+                sides[-1][-1].points[-1], sides[0][0].points[0]
+            ):
                 sides[0] = sides[-1] + sides[0]
                 del sides[-1]
         return Path(map(Contour, leftSides)), Path(map(Contour, rightSides))
+
+
+def _pointsEqual(pt1, pt2):
+    x1, y1 = pt1
+    x2, y2 = pt2
+    return isclose(x1, x2, abs_tol=0.00001) and isclose(y1, y2, abs_tol=0.00001)
 
 
 @dataclass
@@ -103,6 +119,9 @@ class Path:
         if firstPoint != lastPoint:
             self.appendSegment(Segment([lastPoint, firstPoint]))
         self.contours[-1].closed = True
+
+    def translated(self, dx, dy):
+        return Path([contour.translated(dx, dy) for contour in self.contours])
 
     def splitAtAngle(self, angle):
         leftPath = Path()
@@ -174,51 +193,65 @@ if __name__ == "__main__":
         bez.curveTo(pt2, pt3, pt4)
         drawPath(bez)
 
-    curve = (100, 100), (160, 300), (300, 300), (400, 100)
+    offset = 130
+    angle = radians(514)
 
+    lineJoin("round")
+    lineCap("round")
     stroke(0)
     fill(None)
-    drawCurve(*curve)
 
-    angle = radians(149)
+    if False:
+        curve = (100, 100), (160, 300), (300, 300), (400, 100)
+        drawCurve(*curve)
+        dx = 300 * cos(angle)
+        dy = 300 * sin(angle)
+        c1, c2 = splitCurveAtAngle(curve, angle, True)
 
-    dx = 300 * cos(angle)
-    dy = 300 * sin(angle)
-    c1, c2 = splitCurveAtAngle(curve, angle, True)
-    print(c1)
-    print(c2)
+        if c2 is not None:
+            strokeWidth(6)
+            drawCurve(*c1)
+            lineDash(5)
+            strokeWidth(2)
+            p1x, p1y = c1[-1]
+            p2x = p1x + dx
+            p2y = p1y + dy
+            line((p1x, p1y), (p2x, p2y))
 
-    if c2 is not None:
-        strokeWidth(6)
-        drawCurve(*c1)
-        lineDash(5)
-        strokeWidth(2)
-        p1x, p1y = c1[-1]
-        p2x = p1x + dx
-        p2y = p1y + dy
-        line((p1x, p1y), (p2x, p2y))
-
-    print(whichSide((0, -100), (-1, -100)))
-    bez = BezierPath()
-    bez.text("P", font="Helvetica", fontSize=800, offset=(100, 100))
+    letterBez = BezierPath()
+    letterBez.text("P", font="Helvetica", fontSize=800, offset=(190, 210))
     pen = PathBuilder(None)
-    bez.drawToPen(pen)
+    letterBez.drawToPen(pen)
     # drawPath(bez)
     path = pen.path
+    with savedState():
+        strokeWidth(2)
+        left, right = path.splitAtAngle(angle)
+        dx = offset * cos(angle)
+        dy = offset * sin(angle)
+        bez = BezierPath()
+        left.draw(bez)
+        lineDash(5)
+        drawPath(bez)
+        bez = BezierPath()
+        rightOffset = right.translated(-dx, -dy)
+        combined = Path()
+        for cont1, cont2 in zip(right.contours, rightOffset.contours):
+            segments1 = cont1.segments
+            segments2 = cont2.reversed().segments
+            seg12 = Segment([segments1[-1].points[-1], segments2[0].points[0]])
+            seg21 = Segment([segments2[-1].points[-1], segments1[0].points[0]])
+            contour = Contour(segments1 + [seg12] + segments2 + [seg21], True)
+            combined.append(contour)
+        # right =
+        combined.draw(bez)
+        strokeWidth(6)
+        lineDash(None)
+        fill(0.5)
+        drawPath(bez)
+
+    fill(1, 0.7, 0.4, 0.8)
+    stroke(None)
     bez = BezierPath()
     path.draw(bez)
-    translate(30, 30)
-    # drawPath(bez)
-
-    strokeWidth(2)
-    left, right = path.splitAtAngle(angle)
-    translate(30, 30)
-    bez = BezierPath()
-    left.draw(bez)
-    lineDash(5)
-    drawPath(bez)
-    bez = BezierPath()
-    right.draw(bez)
-    strokeWidth(6)
-    lineDash(None)
     drawPath(bez)
