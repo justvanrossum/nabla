@@ -53,9 +53,19 @@ class Contour:
                 dy2 = segment.points[3][1] - segment.points[2][1]
                 side2 = whichSide((angleX, angleY), (dx2, dy2)) >= 0
                 if side1 == side2:
-                    XXX
+                    if previousSide != side1:
+                        sides[side1].append([])
+                    sides[side1][-1].append(segment)
                 else:
-                    YYY
+                    curve1, curve2 = splitCurveAtAngle(segment.points, angle, True)
+                    if previousSide != side1:
+                        sides[side1].append([])
+                    sides[side1][-1].append(Segment(curve1))
+                    if curve2 is not None:
+                        sides[side2].append([])
+                        sides[side2][-1].append(Segment(curve2))
+                    else:
+                        side2 = side1  # why
                 previousSide = side2
             else:
                 if previousSide != side1:
@@ -170,7 +180,7 @@ if __name__ == "__main__":
     fill(None)
     drawCurve(*curve)
 
-    angle = radians(42)
+    angle = radians(149)
 
     dx = 300 * cos(angle)
     dy = 300 * sin(angle)
@@ -190,7 +200,7 @@ if __name__ == "__main__":
 
     print(whichSide((0, -100), (-1, -100)))
     bez = BezierPath()
-    bez.text("F", font="Helvetica", fontSize=800, offset=(100, 100))
+    bez.text("P", font="Helvetica", fontSize=800, offset=(100, 100))
     pen = PathBuilder(None)
     bez.drawToPen(pen)
     # drawPath(bez)
@@ -200,7 +210,7 @@ if __name__ == "__main__":
     translate(30, 30)
     # drawPath(bez)
 
-    strokeWidth(3)
+    strokeWidth(2)
     left, right = path.splitAtAngle(angle)
     translate(30, 30)
     bez = BezierPath()
@@ -209,5 +219,6 @@ if __name__ == "__main__":
     drawPath(bez)
     bez = BezierPath()
     right.draw(bez)
+    strokeWidth(6)
     lineDash(None)
     drawPath(bez)
