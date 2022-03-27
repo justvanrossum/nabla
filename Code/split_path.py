@@ -89,6 +89,30 @@ class Contour:
                 del sides[-1]
         return Path(map(Contour, leftSides)), Path(map(Contour, rightSides))
 
+    def splitAtSharpCorners(self):
+        assert not self.closed
+        lastDelta = None
+        contours = [[]]
+        for segment in self.segments:
+            d = (
+                segment.points[1][0] - segment.points[0][0],
+                segment.points[1][1] - segment.points[0][1],
+            )
+            if (
+                lastDelta is not None
+                and abs(whichSide(normalize(*lastDelta), normalize(*d))) > 0.1
+            ):
+                contours.append([])
+            contours[-1].append(segment)
+            if len(segment.points) == 4:
+                d = (
+                    segment.points[3][0] - segment.points[2][0],
+                    segment.points[3][1] - segment.points[2][1],
+                )
+            lastDelta = d
+
+        return Path([Contour(segments) for segments in contours])
+
 
 def _pointsEqual(pt1, pt2):
     x1, y1 = pt1
@@ -132,6 +156,12 @@ class Path:
             rightPath.appendPath(right)
         return leftPath, rightPath
 
+    def splitAtSharpCorners(self):
+        path = Path()
+        for contour in self.contours:
+            path.appendPath(contour.splitAtSharpCorners())
+        return path
+
 
 def splitCurveAtAngle(curve, angle, bothDirections=False):
     t = Transform().rotate(-angle)
@@ -161,6 +191,14 @@ def whichSide(v1, v2):
     x1, y1 = v1
     x2, y2 = v2
     return x1 * y2 - y1 * x2
+
+
+def normalize(x, y):
+    d = hypot(x, y)
+    if abs(d) > 0.00000000001:
+        return x / d, y / d
+    else:
+        return 0, 0
 
 
 class PathBuilder(BasePen):
@@ -193,8 +231,8 @@ if __name__ == "__main__":
         bez.curveTo(pt2, pt3, pt4)
         drawPath(bez)
 
-    offset = 130
-    angle = radians(514)
+    offset = 156
+    angle = radians(-212)
 
     lineJoin("round")
     lineCap("round")
@@ -219,7 +257,7 @@ if __name__ == "__main__":
             line((p1x, p1y), (p2x, p2y))
 
     letterBez = BezierPath()
-    letterBez.text("P", font="Helvetica", fontSize=800, offset=(190, 210))
+    letterBez.text("d", font="Helvetica", fontSize=800, offset=(190, 210))
     pen = PathBuilder(None)
     letterBez.drawToPen(pen)
     # drawPath(bez)
@@ -227,6 +265,7 @@ if __name__ == "__main__":
     with savedState():
         strokeWidth(2)
         left, right = path.splitAtAngle(angle)
+        right = right.splitAtSharpCorners()
         dx = offset * cos(angle)
         dy = offset * sin(angle)
         bez = BezierPath()
