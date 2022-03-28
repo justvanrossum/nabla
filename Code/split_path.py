@@ -232,7 +232,7 @@ if __name__ == "__main__":
         drawPath(bez)
 
     offset = 156
-    angle = radians(225)
+    angle = radians(195)
 
     lineJoin("round")
     lineCap("round")
@@ -257,7 +257,7 @@ if __name__ == "__main__":
             line((p1x, p1y), (p2x, p2y))
 
     letterBez = BezierPath()
-    letterBez.text("d", font="Helvetica", fontSize=800, offset=(190, 210))
+    letterBez.text("S", font="Helvetica", fontSize=800, offset=(190, 210))
     pen = PathBuilder(None)
     letterBez.drawToPen(pen)
     # drawPath(bez)
