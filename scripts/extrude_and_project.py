@@ -83,8 +83,12 @@ def extrudeAndProject(path):
         t = t.translate(pivotX, 0)
         t = t.scale(math.cos(shearAngle), 1)
         t = t.skew(0, shearAngle)
-        t = t.translate(-pivotX / 2, 0)
+        t = t.translate(-pivotX, 0)
         transformGlyph(glyph, t)
+        lsb, _ = t.transformPoint((0, 0))
+        rsb, _ = t.transformPoint((glyph.width, 0))
+        glyph.move((-lsb, 0))
+        glyph.width = rsb - lsb
 
     doc = DesignSpaceDocument()
     doc.addAxisDescriptor(name="Depth", tag="DPTH", minimum=0, default=100, maximum=200)
@@ -104,11 +108,6 @@ def extrudeAndProject(path):
             glyph.move((half_dx, half_dy))
             sideGlyph = extrudedFont.newGlyph(sideLayerGlyphName)
             extrudeGlyph(glyph, extrudeAngle, -depth, sideGlyph)
-            lsb, _ = t.transformPoint((0, 0))
-            rsb, _ = t.transformPoint((glyph.width, 0))
-            for g in [glyph, sideGlyph]:
-                g.move((-lsb, 0))
-                g.width = rsb - lsb
             extrudedFont[frontLayerGlyphName] = glyph.copy()
             glyph.clear()
             pen = glyph.getPen()
