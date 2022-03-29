@@ -77,7 +77,7 @@ def buildFeatures(glyphNames, featureSpec):
     return "\n".join(features)
 
 
-def decomponeAndRemoveOverlaps(font):
+def decomposeAndRemoveOverlaps(font):
     for glyph in font:
         decomposeComponents(glyph, font)
         removeOverlaps(glyph)
@@ -136,7 +136,7 @@ def extrudeAndProject(path):
     extrudeAngle = math.radians(-30)
 
     font = ufoLib2.Font.open(path)
-    decomponeAndRemoveOverlaps(font)
+    decomposeAndRemoveOverlaps(font)
 
     glyphNames = [glyphName for glyphName in font.keys() if glyphName[0] not in "._"]
     glyphNames.sort()
