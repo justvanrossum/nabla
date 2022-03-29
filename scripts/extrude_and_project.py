@@ -78,11 +78,12 @@ def extrudeAndProject(path):
     glyphNames = [glyphName for glyphName in font.keys() if glyphName[0] not in "._"]
     for glyphName in glyphNames:
         glyph = font[glyphName]
+        pivotX = glyph.width / 2
         t = Transform()
-        t = t.translate(glyph.width / 2, 0)
+        t = t.translate(pivotX, 0)
         t = t.scale(math.cos(shearAngle), 1)
         t = t.skew(0, shearAngle)
-        t = t.translate(-glyph.width / 2, 0)
+        t = t.translate(-pivotX / 2, 0)
         transformGlyph(glyph, t)
 
     doc = DesignSpaceDocument()
