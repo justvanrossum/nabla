@@ -147,6 +147,24 @@ class Path:
     def translated(self, dx, dy):
         return Path([contour.translated(dx, dy) for contour in self.contours])
 
+    def extrude(self, angle, depth):
+        left, _ = self.splitAtAngle(angle)
+
+        left = left.splitAtSharpCorners()
+        dx = offset * cos(angle)
+        dy = offset * sin(angle)
+
+        leftOffset = left.translated(dx, dy)
+        extruded = Path()
+        for cont1, cont2 in zip(left.contours, leftOffset.contours):
+            segments1 = cont1.segments
+            segments2 = cont2.reversed().segments
+            seg12 = Segment([segments1[-1].points[-1], segments2[0].points[0]])
+            seg21 = Segment([segments2[-1].points[-1], segments1[0].points[0]])
+            contour = Contour(segments1 + [seg12] + segments2 + [seg21], True)
+            extruded.append(contour)
+        return extruded
+
     def splitAtAngle(self, angle):
         leftPath = Path()
         rightPath = Path()
@@ -231,8 +249,8 @@ if __name__ == "__main__":
         bez.curveTo(pt2, pt3, pt4)
         drawPath(bez)
 
-    offset = 156
-    angle = radians(195)
+    offset = 100
+    angle = radians(150)
 
     lineJoin("round")
     lineCap("round")
@@ -264,26 +282,11 @@ if __name__ == "__main__":
     path = pen.path
     with savedState():
         strokeWidth(2)
-        left, right = path.splitAtAngle(angle)
-        right = right.splitAtSharpCorners()
-        dx = offset * cos(angle)
-        dy = offset * sin(angle)
+
+        extruded = path.extrude(angle, offset)
+
         bez = BezierPath()
-        left.draw(bez)
-        lineDash(5)
-        drawPath(bez)
-        bez = BezierPath()
-        rightOffset = right.translated(-dx, -dy)
-        combined = Path()
-        for cont1, cont2 in zip(right.contours, rightOffset.contours):
-            segments1 = cont1.segments
-            segments2 = cont2.reversed().segments
-            seg12 = Segment([segments1[-1].points[-1], segments2[0].points[0]])
-            seg21 = Segment([segments2[-1].points[-1], segments1[0].points[0]])
-            contour = Contour(segments1 + [seg12] + segments2 + [seg21], True)
-            combined.append(contour)
-        # right =
-        combined.draw(bez)
+        extruded.draw(bez)
         strokeWidth(6)
         lineDash(None)
         fill(0.5)
