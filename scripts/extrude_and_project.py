@@ -78,7 +78,7 @@ def extrudeAndProject(path):
     glyphNames = [glyphName for glyphName in font.keys() if glyphName[0] not in "._"]
     for glyphName in glyphNames:
         glyph = font[glyphName]
-        pivotX = glyph.width / 2
+        pivotX = 100  # glyph.width / 2
         t = Transform()
         t = t.translate(pivotX, 0)
         t = t.scale(math.cos(shearAngle), 1)
