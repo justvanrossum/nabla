@@ -65,6 +65,10 @@ def extrudeAndProject(path):
         t = t.translate(-glyph.width / 2, 0)
         transformGlyph(glyph, t)
         extrudeGlyph(glyph, extrudeAngle, extrudeOffset)
+        lsb, _ = t.transformPoint((0, 0))
+        rsb, _ = t.transformPoint((glyph.width, 0))
+        glyph.move((-lsb, 0))
+        glyph.width = rsb - lsb
 
     font.save(path.parent / (path.stem + "-Shallow" + path.suffix), overwrite=True)
 
