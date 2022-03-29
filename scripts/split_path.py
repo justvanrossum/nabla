@@ -13,10 +13,10 @@ from fontTools.pens.basePen import BasePen
 class Segment:
     points: List[Tuple[float, float]]
 
-    def reversed(self):
+    def reverse(self):
         return Segment(list(reversed(self.points)))
 
-    def translated(self, dx, dy):
+    def translate(self, dx, dy):
         return Segment([(x + dx, y + dy) for x, y in self.points])
 
 
@@ -40,11 +40,11 @@ class Contour:
     def append(self, segment):
         self.segments.append(segment)
 
-    def translated(self, dx, dy):
-        return Contour([segment.translated(dx, dy) for segment in self.segments])
+    def translate(self, dx, dy):
+        return Contour([segment.translate(dx, dy) for segment in self.segments])
 
-    def reversed(self):
-        return Contour([seg.reversed() for seg in reversed(self.segments)])
+    def reverse(self):
+        return Contour([seg.reverse() for seg in reversed(self.segments)])
 
     def splitAtAngle(self, angle):
         assert self.closed
@@ -144,8 +144,8 @@ class Path:
             self.appendSegment(Segment([lastPoint, firstPoint]))
         self.contours[-1].closed = True
 
-    def translated(self, dx, dy):
-        return Path([contour.translated(dx, dy) for contour in self.contours])
+    def translate(self, dx, dy):
+        return Path([contour.translate(dx, dy) for contour in self.contours])
 
     def extrude(self, angle, depth):
         left, _ = self.splitAtAngle(angle)
@@ -154,11 +154,11 @@ class Path:
         dx = offset * cos(angle)
         dy = offset * sin(angle)
 
-        leftOffset = left.translated(dx, dy)
+        leftOffset = left.translate(dx, dy)
         extruded = Path()
         for cont1, cont2 in zip(left.contours, leftOffset.contours):
             segments1 = cont1.segments
-            segments2 = cont2.reversed().segments
+            segments2 = cont2.reverse().segments
             seg12 = Segment([segments1[-1].points[-1], segments2[0].points[0]])
             seg21 = Segment([segments2[-1].points[-1], segments1[0].points[0]])
             contour = Contour(segments1 + [seg12] + segments2 + [seg21], True)
