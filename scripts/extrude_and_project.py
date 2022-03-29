@@ -65,7 +65,7 @@ def extrudeAndProject(path):
 
     palettes = [[frontColor, sideColor]]
 
-    angle = math.radians(30)
+    shearAngle = math.radians(30)
     extrudeAngle = math.radians(-30)
 
     font = ufoLib2.Font.open(path)
@@ -80,8 +80,8 @@ def extrudeAndProject(path):
         glyph = font[glyphName]
         t = Transform()
         t = t.translate(glyph.width / 2, 0)
-        t = t.scale(math.cos(angle), 1)
-        t = t.skew(0, angle)
+        t = t.scale(math.cos(shearAngle), 1)
+        t = t.skew(0, shearAngle)
         t = t.translate(-glyph.width / 2, 0)
         transformGlyph(glyph, t)
 
