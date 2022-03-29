@@ -83,6 +83,22 @@ def decomponeAndRemoveOverlaps(font):
         removeOverlaps(glyph)
 
 
+def shear(font, glyphNames, shearAngle):
+    for glyphName in glyphNames:
+        glyph = font[glyphName]
+        pivotX = 100  # glyph.width / 2
+        t = Transform()
+        t = t.translate(pivotX, 0)
+        t = t.scale(math.cos(shearAngle), 1)
+        t = t.skew(0, shearAngle)
+        t = t.translate(-pivotX, 0)
+        transformGlyph(glyph, t)
+        lsb, _ = t.transformPoint((0, 0))
+        rsb, _ = t.transformPoint((glyph.width, 0))
+        glyph.move((-lsb, 0))
+        glyph.width = rsb - lsb
+
+
 def extrudeAndProject(path):
     frontColor = colorFromHex("FADF61")
     sideColor = colorFromHex("F08C3F")
@@ -97,19 +113,7 @@ def extrudeAndProject(path):
 
     glyphNames = [glyphName for glyphName in font.keys() if glyphName[0] not in "._"]
     glyphNames.sort()
-    for glyphName in glyphNames:
-        glyph = font[glyphName]
-        pivotX = 100  # glyph.width / 2
-        t = Transform()
-        t = t.translate(pivotX, 0)
-        t = t.scale(math.cos(shearAngle), 1)
-        t = t.skew(0, shearAngle)
-        t = t.translate(-pivotX, 0)
-        transformGlyph(glyph, t)
-        lsb, _ = t.transformPoint((0, 0))
-        rsb, _ = t.transformPoint((glyph.width, 0))
-        glyph.move((-lsb, 0))
-        glyph.width = rsb - lsb
+    shear(font, glyphNames, shearAngle)
 
     doc = DesignSpaceDocument()
     doc.addAxisDescriptor(name="Depth", tag="DPTH", minimum=0, default=100, maximum=200)
