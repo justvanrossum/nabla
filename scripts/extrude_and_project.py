@@ -92,11 +92,15 @@ def extrudeAndProject(path):
         colorGlyphs = {}
         extrudedFont = deepcopy(font)
 
+        half_dx = depth * math.cos(extrudeAngle) / 2
+        half_dy = depth * math.sin(extrudeAngle) / 2
+
         for glyphName in glyphNames:
             frontLayerGlyphName = glyphName + ".front"
             sideLayerGlyphName = glyphName + ".side"
             colorGlyphs[glyphName] = [(sideLayerGlyphName, 1), (frontLayerGlyphName, 0)]
             glyph = extrudedFont[glyphName]
+            glyph.move((half_dx, half_dy))
             sideGlyph = extrudedFont.newGlyph(sideLayerGlyphName)
             extrudeGlyph(glyph, extrudeAngle, -depth, sideGlyph)
             lsb, _ = t.transformPoint((0, 0))
