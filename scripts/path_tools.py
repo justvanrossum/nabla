@@ -118,7 +118,9 @@ class Contour:
 def _pointsEqual(pt1, pt2):
     x1, y1 = pt1
     x2, y2 = pt2
-    return math.isclose(x1, x2, abs_tol=0.00001) and math.isclose(y1, y2, abs_tol=0.00001)
+    return math.isclose(x1, x2, abs_tol=0.00001) and math.isclose(
+        y1, y2, abs_tol=0.00001
+    )
 
 
 @dataclass
@@ -202,7 +204,7 @@ def splitCurveAtAngle(curve, angle, bothDirections=False):
         return curve, None
     elif len(yRoots) == 1:
         t = yRoots[0]
-        if bothDirections or (ax3 * t ** 2 + bx2 * t + cx) > 0:
+        if bothDirections or (ax3 * t**2 + bx2 * t + cx) > 0:
             return splitCubicAtT(*curve, t)
         else:
             return curve, None
