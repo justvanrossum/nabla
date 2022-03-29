@@ -97,6 +97,35 @@ def shearGlyph(glyph, shearAngle):
     glyph.width = rsb - lsb
 
 
+frontSuffix = ".front"
+sideSuffix = ".side"
+
+
+def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
+    colorGlyphs = {}
+    half_dx = depth * math.cos(extrudeAngle) / 2
+    half_dy = depth * math.sin(extrudeAngle) / 2
+
+    for glyphName in glyphNames:
+        frontLayerGlyphName = glyphName + frontSuffix
+        sideLayerGlyphName = glyphName + sideSuffix
+        colorGlyphs[glyphName] = [(sideLayerGlyphName, 1), (frontLayerGlyphName, 0)]
+        colorGlyphs[sideLayerGlyphName] = [(sideLayerGlyphName, 1)]
+        colorGlyphs[frontLayerGlyphName] = [(frontLayerGlyphName, 0)]
+        glyph = font[glyphName]
+        glyph.move((half_dx, half_dy))
+        sideGlyph = font.newGlyph(sideLayerGlyphName)
+        sideGlyph.width = glyph.width
+        extrudeGlyph(glyph, extrudeAngle, -depth, sideGlyph)
+        font[frontLayerGlyphName] = glyph.copy()
+        glyph.clear()
+        pen = glyph.getPen()
+        pen.addComponent(frontLayerGlyphName, (1, 0, 0, 1, 0, 0))
+        pen.addComponent(sideLayerGlyphName, (1, 0, 0, 1, 0, 0))
+
+    return colorGlyphs
+
+
 def extrudeAndProject(path):
     frontColor = colorFromHex("FADF61")
     sideColor = colorFromHex("F08C3F")
@@ -117,31 +146,9 @@ def extrudeAndProject(path):
     doc = DesignSpaceDocument()
     doc.addAxisDescriptor(name="Depth", tag="DPTH", minimum=0, default=100, maximum=200)
 
-    frontSuffix = ".front"
-    sideSuffix = ".side"
     for depth, depthName in [(100, "Normal"), (200, "Deep"), (0, "Shallow")]:
-        colorGlyphs = {}
         extrudedFont = deepcopy(font)
-
-        half_dx = depth * math.cos(extrudeAngle) / 2
-        half_dy = depth * math.sin(extrudeAngle) / 2
-
-        for glyphName in glyphNames:
-            frontLayerGlyphName = glyphName + frontSuffix
-            sideLayerGlyphName = glyphName + sideSuffix
-            colorGlyphs[glyphName] = [(sideLayerGlyphName, 1), (frontLayerGlyphName, 0)]
-            colorGlyphs[sideLayerGlyphName] = [(sideLayerGlyphName, 1)]
-            colorGlyphs[frontLayerGlyphName] = [(frontLayerGlyphName, 0)]
-            glyph = extrudedFont[glyphName]
-            glyph.move((half_dx, half_dy))
-            sideGlyph = extrudedFont.newGlyph(sideLayerGlyphName)
-            sideGlyph.width = glyph.width
-            extrudeGlyph(glyph, extrudeAngle, -depth, sideGlyph)
-            extrudedFont[frontLayerGlyphName] = glyph.copy()
-            glyph.clear()
-            pen = glyph.getPen()
-            pen.addComponent(frontLayerGlyphName, (1, 0, 0, 1, 0, 0))
-            pen.addComponent(sideLayerGlyphName, (1, 0, 0, 1, 0, 0))
+        colorGlyphs = extrudeGlyphs(extrudedFont, glyphNames, extrudeAngle, depth)
 
         if depthName == "Normal":
             extrudedFont.lib[COLOR_PALETTES_KEY] = palettes
