@@ -59,6 +59,24 @@ def extrudeGlyph(glyph, angle, offset, destGlyph=None):
     extruded.draw(destGlyph.getPen())
 
 
+def buildFeatures(glyphNames, featureSpec):
+    features = []
+    fea = features.append
+    fea("")
+    fea(f"@glyphs_plain = [{' '.join(glyphNames)}];")
+    for featureTag, glyphSuffix in featureSpec:
+        fea(
+            f"@glyphs_{featureTag} = [{' '.join(gn + glyphSuffix for gn in glyphNames)}];"
+        )
+    fea("")
+    for featureTag, glyphSuffix in featureSpec:
+        fea(f"feature {featureTag} {{")
+        fea(f"  sub @glyphs_plain by @glyphs_{featureTag};")
+        fea(f"}} {featureTag};")
+    fea("")
+    return "\n".join(features)
+
+
 def extrudeAndProject(path):
     frontColor = colorFromHex("FADF61")
     sideColor = colorFromHex("F08C3F")
@@ -75,7 +93,9 @@ def extrudeAndProject(path):
         decomposeComponents(glyph, font)
         removeOverlaps(glyph)
 
-    glyphNames = [glyphName for glyphName in font.keys() if glyphName[0] not in "._"]
+    glyphNames = sorted(
+        [glyphName for glyphName in font.keys() if glyphName[0] not in "._"]
+    )
     for glyphName in glyphNames:
         glyph = font[glyphName]
         pivotX = 100  # glyph.width / 2
@@ -93,6 +113,8 @@ def extrudeAndProject(path):
     doc = DesignSpaceDocument()
     doc.addAxisDescriptor(name="Depth", tag="DPTH", minimum=0, default=100, maximum=200)
 
+    frontSuffix = ".front"
+    sideSuffix = ".side"
     for depth, depthName in [(100, "Normal"), (200, "Deep"), (0, "Shallow")]:
         colorGlyphs = {}
         extrudedFont = deepcopy(font)
@@ -101,8 +123,8 @@ def extrudeAndProject(path):
         half_dy = depth * math.sin(extrudeAngle) / 2
 
         for glyphName in glyphNames:
-            frontLayerGlyphName = glyphName + ".front"
-            sideLayerGlyphName = glyphName + ".side"
+            frontLayerGlyphName = glyphName + frontSuffix
+            sideLayerGlyphName = glyphName + sideSuffix
             colorGlyphs[glyphName] = [(sideLayerGlyphName, 1), (frontLayerGlyphName, 0)]
             glyph = extrudedFont[glyphName]
             glyph.move((half_dx, half_dy))
@@ -117,6 +139,9 @@ def extrudeAndProject(path):
         if depthName == "Normal":
             extrudedFont.lib[COLOR_PALETTES_KEY] = palettes
             extrudedFont.lib[COLOR_LAYERS_KEY] = colorGlyphs
+            extrudedFont.features.text += buildFeatures(
+                glyphNames, [("ss01", frontSuffix), ("ss02", sideSuffix)]
+            )
 
         extrudedPath = path.parent / (path.stem + "-" + depthName + path.suffix)
         extrudedFont.save(extrudedPath, overwrite=True)
