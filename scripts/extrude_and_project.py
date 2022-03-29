@@ -129,6 +129,7 @@ def extrudeAndProject(path):
             glyph = extrudedFont[glyphName]
             glyph.move((half_dx, half_dy))
             sideGlyph = extrudedFont.newGlyph(sideLayerGlyphName)
+            sideGlyph.width = glyph.width
             extrudeGlyph(glyph, extrudeAngle, -depth, sideGlyph)
             extrudedFont[frontLayerGlyphName] = glyph.copy()
             glyph.clear()
