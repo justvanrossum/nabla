@@ -3,8 +3,7 @@
 .formatVersion = 3;
 DisplayStrings = (
 "In digital imaging, a pixel, pel,[1] or picture element[2] is the smallest addressable element in a raster image, or the smallest addressable element in an all points addressable display device; so it is the smallest controllable element of a picture represented on the screen.
-IN DIGITAL IMAGING, A PIXEL, PEL,[1] OR PICTURE ELEMENT{2} IS THE SMALLEST ADDRESSABLE ELEMENT IN A RASTER IMAGE, OR THE SMALLEST ADDRESSABLE ELEMENT IN AN ALL POINTS ADDRESSABLE DISPLAY DEVICE; SO IT IS THE SMALLEST CONTROLLABLE ELEMENT OF A PICTURE REPRESENTED ON THE SCREEN.",
-"₪2"
+IN DIGITAL IMAGING, A PIXEL, PEL,[1] OR PICTURE ELEMENT{2} IS THE SMALLEST ADDRESSABLE ELEMENT IN A RASTER IMAGE, OR THE SMALLEST ADDRESSABLE ELEMENT IN AN ALL POINTS ADDRESSABLE DISPLAY DEVICE; SO IT IS THE SMALLEST CONTROLLABLE ELEMENT OF A PICTURE REPRESENTED ON THE SCREEN."
 );
 date = "2022-01-25 13:01:20 +0000";
 familyName = Colrv1Test;
@@ -5265,7 +5264,7 @@ unicode = 113;
 },
 {
 glyphname = r;
-lastChange = "2022-03-01 19:29:28 +0000";
+lastChange = "2022-03-29 15:54:45 +0000";
 layers = (
 {
 layerId = m01;
@@ -5287,7 +5286,7 @@ pos = (50,400);
 ref = _part.square;
 },
 {
-pos = (350,400);
+pos = (250,400);
 ref = _part.corner;
 scale = (-1,1);
 },
@@ -5296,17 +5295,12 @@ pos = (50,0);
 ref = _part.square;
 },
 {
-pos = (150,300);
-ref = _part.square;
-},
-{
 pos = (350,400);
 ref = _part.square;
 },
 {
 pos = (250,400);
-ref = _part.corner;
-scale = (1,-1);
+ref = _part.square;
 }
 );
 width = 500;
