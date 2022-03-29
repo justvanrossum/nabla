@@ -41,6 +41,13 @@ class Contour:
     def append(self, segment):
         self.segments.append(segment)
 
+    def closePath(self):
+        firstPoint = self.segments[0].points[0]
+        lastPoint = self.segments[-1].points[-1]
+        if firstPoint != lastPoint:
+            self.append(Segment([lastPoint, firstPoint]))
+        self.closed = True
+
     def translate(self, dx, dy):
         return Contour([segment.translate(dx, dy) for segment in self.segments])
 
@@ -141,11 +148,7 @@ class Path:
         self.contours[-1].append(segment)
 
     def closePath(self):
-        firstPoint = self.contours[-1].segments[0].points[0]
-        lastPoint = self.contours[-1].segments[-1].points[-1]
-        if firstPoint != lastPoint:
-            self.appendSegment(Segment([lastPoint, firstPoint]))
-        self.contours[-1].closed = True
+        self.contours[-1].closePath()
 
     def translate(self, dx, dy):
         return Path([contour.translate(dx, dy) for contour in self.contours])
