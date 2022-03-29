@@ -4,7 +4,7 @@ set -e  # make sure to abort on error
 set -x  # echo commands
 
 
-python -m glyphsLib glyphs2ufo --output-dir build sources/ColrV1_source.glyphs --designspace-path /dev/null
+python -m glyphsLib glyphs2ufo --output-dir build --designspace-path /dev/null sources/ColrV1_source.glyphs
 
 python scripts/shear_and_extrude.py build/Colrv1Test-Regular.ufo
 
