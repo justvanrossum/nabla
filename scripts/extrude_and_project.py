@@ -95,9 +95,8 @@ def extrudeAndProject(path):
     font = ufoLib2.Font.open(path)
     decomponeAndRemoveOverlaps(font)
 
-    glyphNames = sorted(
-        [glyphName for glyphName in font.keys() if glyphName[0] not in "._"]
-    )
+    glyphNames = [glyphName for glyphName in font.keys() if glyphName[0] not in "._"]
+    glyphNames.sort()
     for glyphName in glyphNames:
         glyph = font[glyphName]
         pivotX = 100  # glyph.width / 2
