@@ -1,6 +1,6 @@
 from dataclasses import dataclass, field
 import math
-from typing import List, Tuple, Union
+from typing import List, Tuple
 from fontTools.misc.transform import Transform
 from fontTools.misc.bezierTools import (
     calcCubicParameters,
