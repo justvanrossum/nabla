@@ -9,5 +9,3 @@ python -m glyphsLib glyphs2ufo --output-dir build sources/ColrV1_source.glyphs -
 python scripts/extrude_and_project.py build/Colrv1Test-Regular.ufo
 
 fontmake -m build/Colrv1Test-Regular.designspace -o variable --output-dir fonts
-
-# python scripts/add_colrv1.py build/Colrv1Test-Regular-VF.ttf
