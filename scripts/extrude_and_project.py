@@ -1,7 +1,9 @@
 from copy import deepcopy
 import math
+import os
 import pathlib
 import sys
+from fontTools.designspaceLib import DesignSpaceDocument
 from fontTools.misc.transform import Transform
 from fontTools.pens.basePen import DecomposingPen
 from fontTools.pens.recordingPen import RecordingPen
@@ -65,20 +67,26 @@ def extrudeAndProject(path):
         t = t.translate(-glyph.width / 2, 0)
         transformGlyph(glyph, t)
 
-    for extrudeOffset, depthName in [(-100, "Normal"), (-200, "Deep"), (0, "Shallow")]:
+    doc = DesignSpaceDocument()
+    doc.addAxisDescriptor(name="Depth", tag="DPTH", minimum=0, default=100, maximum=200)
+
+    for depth, depthName in [(100, "Normal"), (200, "Deep"), (0, "Shallow")]:
         extrudedFont = deepcopy(font)
 
         for glyphName in glyphNames:
             glyph = extrudedFont[glyphName]
-            extrudeGlyph(glyph, extrudeAngle, extrudeOffset)
+            extrudeGlyph(glyph, extrudeAngle, -depth)
             lsb, _ = t.transformPoint((0, 0))
             rsb, _ = t.transformPoint((glyph.width, 0))
             glyph.move((-lsb, 0))
             glyph.width = rsb - lsb
 
-        extrudedFont.save(
-            path.parent / (path.stem + "-" + depthName + path.suffix), overwrite=True
-        )
+        extrudedPath = path.parent / (path.stem + "-" + depthName + path.suffix)
+        extrudedFont.save(extrudedPath, overwrite=True)
+        doc.addSourceDescriptor(path=os.fspath(extrudedPath), location={"Depth": depth})
+
+    dsPath = path.parent / (path.stem + ".designspace")
+    doc.write(dsPath)
 
 
 if __name__ == "__main__":
