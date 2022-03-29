@@ -1,9 +1,15 @@
 {
 .appVersion = "3120";
 .formatVersion = 3;
-DisplayStrings = (
-"In digital imaging, a pixel, pel,[1] or picture element[2] is the smallest addressable element in a raster image, or the smallest addressable element in an all points addressable display device; so it is the smallest controllable element of a picture represented on the screen.
-IN DIGITAL IMAGING, A PIXEL, PEL,[1] OR PICTURE ELEMENT{2} IS THE SMALLEST ADDRESSABLE ELEMENT IN A RASTER IMAGE, OR THE SMALLEST ADDRESSABLE ELEMENT IN AN ALL POINTS ADDRESSABLE DISPLAY DEVICE; SO IT IS THE SMALLEST CONTROLLABLE ELEMENT OF A PICTURE REPRESENTED ON THE SCREEN."
+customParameters = (
+{
+name = "Disable Last Change";
+value = 1;
+},
+{
+name = "Write DisplayStrings";
+value = 0;
+}
 );
 date = "2022-01-25 13:01:20 +0000";
 familyName = Colrv1Test;
