@@ -126,7 +126,7 @@ def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
     return colorGlyphs
 
 
-def extrudeAndProject(path):
+def shearAndExtrude(path):
     frontColor = colorFromHex("FADF61")
     sideColor = colorFromHex("F08C3F")
 
@@ -166,4 +166,4 @@ def extrudeAndProject(path):
 
 
 if __name__ == "__main__":
-    extrudeAndProject(pathlib.Path(sys.argv[1]).resolve())
+    shearAndExtrude(pathlib.Path(sys.argv[1]).resolve())
