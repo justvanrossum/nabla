@@ -87,8 +87,8 @@ def shearGlyph(glyph, shearAngle):
     pivotX = 100  # glyph.width / 2
     t = Transform()
     t = t.translate(pivotX, 0)
-    t = t.scale(math.cos(shearAngle), 1)
     t = t.skew(0, shearAngle)
+    t = t.scale(math.cos(shearAngle), 1)
     t = t.translate(-pivotX, 0)
     transformGlyph(glyph, t)
     lsb, _ = t.transformPoint((0, 0))
