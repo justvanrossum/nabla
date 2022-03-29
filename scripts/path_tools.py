@@ -45,7 +45,7 @@ class Contour:
         return Contour([segment.translate(dx, dy) for segment in self.segments])
 
     def reverse(self):
-        return Contour([seg.reverse() for seg in reversed(self.segments)])
+        return Contour([seg.reverse() for seg in reversed(self.segments)], self.closed)
 
     def splitAtAngle(self, angle):
         assert self.closed
@@ -152,24 +152,20 @@ class Path:
 
     def extrude(self, angle, depth, reverse=False):
         left, _ = self.splitAtAngle(angle)
-
         left = left.splitAtSharpCorners()
+
         dx = depth * math.cos(angle)
         dy = depth * math.sin(angle)
 
         leftOffset = left.translate(dx, dy)
         extruded = Path()
         for cont1, cont2 in zip(left.contours, leftOffset.contours):
-            if reverse:
-                segments1 = cont1.reverse().segments
-                segments2 = cont2.segments
-            else:
-                segments1 = cont1.segments
-                segments2 = cont2.reverse().segments
+            segments1 = cont1.segments
+            segments2 = cont2.reverse().segments
             seg12 = Segment([segments1[-1].points[-1], segments2[0].points[0]])
             seg21 = Segment([segments2[-1].points[-1], segments1[0].points[0]])
             contour = Contour(segments1 + [seg12] + segments2 + [seg21], True)
-            extruded.append(contour)
+            extruded.append(contour.reverse() if reverse else contour)
         return extruded
 
     def splitAtAngle(self, angle):
