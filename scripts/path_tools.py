@@ -1,4 +1,5 @@
 from dataclasses import dataclass, field
+import math
 from typing import List, Tuple, Union
 from fontTools.misc.transform import Transform
 from fontTools.misc.bezierTools import (
@@ -49,7 +50,7 @@ class Contour:
     def splitAtAngle(self, angle):
         assert self.closed
         assert self.segments[0].points[0] == self.segments[-1].points[-1]
-        angleX, angleY = cos(angle), sin(angle)
+        angleX, angleY = math.cos(angle), math.sin(angle)
         sides = [[], []]
         previousSide = None
         for segment in self.segments:
@@ -117,7 +118,7 @@ class Contour:
 def _pointsEqual(pt1, pt2):
     x1, y1 = pt1
     x2, y2 = pt2
-    return isclose(x1, x2, abs_tol=0.00001) and isclose(y1, y2, abs_tol=0.00001)
+    return math.isclose(x1, x2, abs_tol=0.00001) and math.isclose(y1, y2, abs_tol=0.00001)
 
 
 @dataclass
@@ -147,18 +148,22 @@ class Path:
     def translate(self, dx, dy):
         return Path([contour.translate(dx, dy) for contour in self.contours])
 
-    def extrude(self, angle, depth):
+    def extrude(self, angle, depth, reverse=False):
         left, _ = self.splitAtAngle(angle)
 
         left = left.splitAtSharpCorners()
-        dx = offset * cos(angle)
-        dy = offset * sin(angle)
+        dx = depth * math.cos(angle)
+        dy = depth * math.sin(angle)
 
         leftOffset = left.translate(dx, dy)
         extruded = Path()
         for cont1, cont2 in zip(left.contours, leftOffset.contours):
-            segments1 = cont1.segments
-            segments2 = cont2.reverse().segments
+            if reverse:
+                segments1 = cont1.reverse().segments
+                segments2 = cont2.segments
+            else:
+                segments1 = cont1.segments
+                segments2 = cont2.reverse().segments
             seg12 = Segment([segments1[-1].points[-1], segments2[0].points[0]])
             seg21 = Segment([segments2[-1].points[-1], segments1[0].points[0]])
             contour = Contour(segments1 + [seg12] + segments2 + [seg21], True)
@@ -212,14 +217,14 @@ def whichSide(v1, v2):
 
 
 def normalize(x, y):
-    d = hypot(x, y)
+    d = math.hypot(x, y)
     if abs(d) > 0.00000000001:
         return x / d, y / d
     else:
         return 0, 0
 
 
-class PathBuilder(BasePen):
+class PathBuilderPen(BasePen):
     def __init__(self, glyphSet):
         super().__init__(glyphSet)
         self.path = Path()
@@ -260,8 +265,8 @@ if __name__ == "__main__":
     if False:
         curve = (100, 100), (160, 300), (300, 300), (400, 100)
         drawCurve(*curve)
-        dx = 300 * cos(angle)
-        dy = 300 * sin(angle)
+        dx = 300 * math.cos(angle)
+        dy = 300 * math.sin(angle)
         c1, c2 = splitCurveAtAngle(curve, angle, True)
 
         if c2 is not None:
@@ -276,7 +281,7 @@ if __name__ == "__main__":
 
     letterBez = BezierPath()
     letterBez.text("S", font="Helvetica", fontSize=800, offset=(190, 210))
-    pen = PathBuilder(None)
+    pen = PathBuilderPen(None)
     letterBez.drawToPen(pen)
     # drawPath(bez)
     path = pen.path
