@@ -1,3 +1,4 @@
+from copy import deepcopy
 import math
 import pathlib
 import sys
@@ -46,7 +47,6 @@ def extrudeGlyph(glyph, angle, offset):
 def extrudeAndProject(path):
     angle = math.radians(30)
     extrudeAngle = math.radians(-30)
-    extrudeOffset = -100
 
     font = ufoLib2.Font.open(path)
 
@@ -64,13 +64,21 @@ def extrudeAndProject(path):
         t = t.skew(0, angle)
         t = t.translate(-glyph.width / 2, 0)
         transformGlyph(glyph, t)
-        extrudeGlyph(glyph, extrudeAngle, extrudeOffset)
-        lsb, _ = t.transformPoint((0, 0))
-        rsb, _ = t.transformPoint((glyph.width, 0))
-        glyph.move((-lsb, 0))
-        glyph.width = rsb - lsb
 
-    font.save(path.parent / (path.stem + "-Shallow" + path.suffix), overwrite=True)
+    for extrudeOffset, depthName in [(-100, "Normal"), (-200, "Deep"), (0, "Shallow")]:
+        extrudedFont = deepcopy(font)
+
+        for glyphName in glyphNames:
+            glyph = extrudedFont[glyphName]
+            extrudeGlyph(glyph, extrudeAngle, extrudeOffset)
+            lsb, _ = t.transformPoint((0, 0))
+            rsb, _ = t.transformPoint((glyph.width, 0))
+            glyph.move((-lsb, 0))
+            glyph.width = rsb - lsb
+
+        extrudedFont.save(
+            path.parent / (path.stem + "-" + depthName + path.suffix), overwrite=True
+        )
 
 
 if __name__ == "__main__":
