@@ -126,6 +126,8 @@ def extrudeAndProject(path):
             frontLayerGlyphName = glyphName + frontSuffix
             sideLayerGlyphName = glyphName + sideSuffix
             colorGlyphs[glyphName] = [(sideLayerGlyphName, 1), (frontLayerGlyphName, 0)]
+            colorGlyphs[sideLayerGlyphName] = [(sideLayerGlyphName, 1)]
+            colorGlyphs[frontLayerGlyphName] = [(frontLayerGlyphName, 0)]
             glyph = extrudedFont[glyphName]
             glyph.move((half_dx, half_dy))
             sideGlyph = extrudedFont.newGlyph(sideLayerGlyphName)
