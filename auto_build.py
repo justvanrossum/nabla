@@ -17,7 +17,7 @@ from watchfiles import watch
 
 
 print("Listening to changes in the 'sources' folder. Type command-period or control-C to stop.")
-for changes in watch("Sources"):
+for changes in watch("sources"):
     print("Rebuilding font...")
     result = subprocess.run(
         ["./build.sh"],
