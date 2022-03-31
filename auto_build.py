@@ -16,6 +16,7 @@ import subprocess
 from watchfiles import watch
 
 
+print("Listening to changes in the 'sources' folder. Type command-period or control-C to stop.")
 for changes in watch("Sources"):
     print("Rebuilding font...")
     result = subprocess.run(
