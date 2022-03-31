@@ -6,6 +6,10 @@
 # Keep the compiled font from the "fonts" folder open in
 # FontGoggles, and watch the saved changes from Glyphs.app
 # take effect.
+#
+# You will need the "watchfiles" package from PyPI:
+#
+# $ pip install watchfiles
 # 
 
 import subprocess
