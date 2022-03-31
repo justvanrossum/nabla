@@ -10,13 +10,17 @@
 # You will need the "watchfiles" package from PyPI:
 #
 # $ pip install watchfiles
-# 
+#
 
 import subprocess
 from watchfiles import watch
 
 
-print("Listening to changes in the 'sources' folder. Type command-period or control-C to stop.")
+print(
+    "Listening to changes in the 'sources' folder. "
+    "Type command-period or control-C to stop."
+)
+
 for changes in watch("sources"):
     print("Rebuilding font...")
     result = subprocess.run(
