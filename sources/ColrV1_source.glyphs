@@ -4029,14 +4029,14 @@ unicode = 102;
 },
 {
 glyphname = g;
-lastChange = "2022-04-06 10:32:01 +0000";
+lastChange = "2022-04-06 10:45:27 +0000";
 layers = (
 {
 layerId = m01;
 shapes = (
 {
 angle = 180;
-pos = (200,300);
+pos = (200,270);
 ref = _part.corner;
 },
 {
@@ -4049,7 +4049,7 @@ pos = (200,400);
 ref = _part.square;
 },
 {
-pos = (300,300);
+pos = (300,270);
 ref = _part.square;
 scale = (1,-1);
 },
@@ -4062,7 +4062,7 @@ pos = (300,400);
 ref = _part.corner;
 },
 {
-pos = (200,200);
+pos = (200,170);
 ref = _part.square;
 },
 {
@@ -4097,6 +4097,10 @@ ref = _part.square;
 {
 angle = 180;
 pos = (200,100);
+ref = _part.square;
+},
+{
+pos = (100,270);
 ref = _part.square;
 }
 );
