@@ -3578,7 +3578,7 @@ unicode = 230;
 },
 {
 glyphname = b;
-lastChange = "2022-04-06 10:19:00 +0000";
+lastChange = "2022-04-06 10:28:38 +0000";
 layers = (
 {
 layerId = m01;
@@ -3970,7 +3970,7 @@ unicode = 101;
 },
 {
 glyphname = f;
-lastChange = "2022-04-06 10:21:43 +0000";
+lastChange = "2022-04-06 10:28:44 +0000";
 layers = (
 {
 layerId = m01;
@@ -4026,7 +4026,7 @@ pos = (100,400);
 ref = _part.square;
 }
 );
-width = 550;
+width = 500;
 }
 );
 metricLeft = H;
@@ -4034,19 +4034,15 @@ unicode = 102;
 },
 {
 glyphname = g;
-lastChange = "2022-04-06 10:21:13 +0000";
+lastChange = "2022-04-06 10:32:01 +0000";
 layers = (
 {
 layerId = m01;
 shapes = (
 {
 angle = 180;
-pos = (200,100);
+pos = (200,300);
 ref = _part.corner;
-},
-{
-pos = (100,100);
-ref = _part.square;
 },
 {
 pos = (200,400);
@@ -4058,8 +4054,8 @@ pos = (200,400);
 ref = _part.square;
 },
 {
-pos = (300,100);
-ref = _part.corner;
+pos = (300,300);
+ref = _part.square;
 scale = (1,-1);
 },
 {
@@ -4071,11 +4067,7 @@ pos = (300,400);
 ref = _part.corner;
 },
 {
-pos = (200,0);
-ref = _part.square;
-},
-{
-pos = (100,200);
+pos = (200,200);
 ref = _part.square;
 },
 {
@@ -4083,7 +4075,20 @@ pos = (100,300);
 ref = _part.square;
 },
 {
+pos = (400,400);
+ref = _part.square;
+},
+{
 pos = (400,100);
+ref = _part.corner;
+scale = (1,-1);
+},
+{
+pos = (200,0);
+ref = _part.square;
+},
+{
+pos = (300,0);
 ref = _part.square;
 },
 {
@@ -4091,33 +4096,12 @@ pos = (400,200);
 ref = _part.square;
 },
 {
-pos = (400,400);
-ref = _part.square;
-},
-{
-pos = (400,-100);
-ref = _part.corner;
-scale = (1,-1);
-},
-{
-pos = (200,-200);
-ref = _part.square;
-},
-{
-pos = (300,-200);
-ref = _part.square;
-},
-{
-pos = (400,0);
-ref = _part.square;
-},
-{
-pos = (400,-100);
+pos = (400,100);
 ref = _part.square;
 },
 {
 angle = 180;
-pos = (200,-100);
+pos = (200,100);
 ref = _part.square;
 }
 );
@@ -4353,19 +4337,11 @@ unicode = 307;
 },
 {
 glyphname = j;
-lastChange = "2022-04-06 10:19:35 +0000";
+lastChange = "2022-04-06 10:27:50 +0000";
 layers = (
 {
 layerId = m01;
 shapes = (
-{
-pos = (200,100);
-ref = _part.square;
-},
-{
-pos = (200,200);
-ref = _part.square;
-},
 {
 pos = (200,300);
 ref = _part.square;
@@ -4375,7 +4351,7 @@ pos = (200,400);
 ref = _part.square;
 },
 {
-pos = (200,0);
+pos = (200,200);
 ref = _part.square;
 },
 {
@@ -4383,16 +4359,16 @@ pos = (200,500);
 ref = _part.circle;
 },
 {
-pos = (200,-100);
+pos = (200,100);
 ref = _part.corner;
 scale = (1,-1);
 },
 {
-pos = (200,-100);
+pos = (200,100);
 ref = _part.square;
 },
 {
-pos = (100,-200);
+pos = (100,0);
 ref = _part.square;
 },
 {
@@ -5512,7 +5488,7 @@ unicode = 223;
 },
 {
 glyphname = t;
-lastChange = "2022-04-06 10:23:12 +0000";
+lastChange = "2022-04-06 10:29:52 +0000";
 layers = (
 {
 layerId = m01;
@@ -5869,26 +5845,22 @@ unicode = 120;
 },
 {
 glyphname = y;
-lastChange = "2022-04-06 10:21:20 +0000";
+lastChange = "2022-04-06 10:27:03 +0000";
 layers = (
 {
 layerId = m01;
 shapes = (
 {
 angle = 180;
-pos = (200,100);
+pos = (200,300);
 ref = _part.corner;
-},
-{
-pos = (100,100);
-ref = _part.square;
 },
 {
 pos = (100,400);
 ref = _part.square;
 },
 {
-pos = (300,100);
+pos = (300,300);
 ref = _part.corner;
 scale = (1,-1);
 },
@@ -5901,11 +5873,7 @@ pos = (400,400);
 ref = _part.square;
 },
 {
-pos = (200,0);
-ref = _part.square;
-},
-{
-pos = (100,200);
+pos = (200,200);
 ref = _part.square;
 },
 {
@@ -5914,6 +5882,15 @@ ref = _part.square;
 },
 {
 pos = (400,100);
+ref = _part.corner;
+scale = (1,-1);
+},
+{
+pos = (200,0);
+ref = _part.square;
+},
+{
+pos = (300,0);
 ref = _part.square;
 },
 {
@@ -5921,29 +5898,12 @@ pos = (400,200);
 ref = _part.square;
 },
 {
-pos = (400,-100);
-ref = _part.corner;
-scale = (1,-1);
-},
-{
-pos = (200,-200);
-ref = _part.square;
-},
-{
-pos = (300,-200);
-ref = _part.square;
-},
-{
-pos = (400,0);
-ref = _part.square;
-},
-{
-pos = (400,-100);
+pos = (400,100);
 ref = _part.square;
 },
 {
 angle = 180;
-pos = (200,-100);
+pos = (200,100);
 ref = _part.square;
 }
 );
@@ -10198,6 +10158,13 @@ width = 200;
 );
 }
 );
+kerningLTR = {
+m01 = {
+r = {
+t = 50;
+};
+};
+};
 metrics = (
 {
 type = ascender;
