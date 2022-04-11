@@ -55,11 +55,11 @@ frontGradient = {
         "Extend": "pad",  # pad, repeat, reflect
     },
     "x0": 0,
-    "y0": 0,
+    "y0": -100,
     "x1": 0,
-    "y1": 700,
+    "y1": 500,
     "x2": 87,
-    "y2": 50,
+    "y2": -50,
 }
 
 
