@@ -34,7 +34,6 @@ mainColors = [
     colorFromHex("ff8723"),  # shadowColor
     colorFromHex("ffd214"),  # frontBottomColor
     colorFromHex("ffeb6e"),  # frontTopColor
-    colorFromHex("ffeb6e"),  # frontHighlightColor
     colorFromHex("ffed9f"),  # topColor
     colorFromHex("ffffff"),  # highlightColor
 ]
@@ -44,7 +43,6 @@ mainColors = [
     shadowColorIndex,
     frontBottomColorIndex,
     frontTopColorIndex,
-    frontHighlightColorIndex,
     topColorIndex,
     highlightColorIndex,
 ) = range(len(mainColors))
