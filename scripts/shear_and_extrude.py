@@ -25,6 +25,65 @@ def colorFromHex(hexString):
     return channels
 
 
+frontSuffix = ".front"
+sideSuffix = ".side"
+
+
+mainColors = [
+    colorFromHex("f5462d"),  # shadowBottomColor
+    colorFromHex("ff8723"),  # shadowColor
+    colorFromHex("ffd214"),  # frontBottomColor
+    colorFromHex("ffeb6e"),  # frontTopColor
+    colorFromHex("ffeb6e"),  # frontHighlightColor
+    colorFromHex("ffed9f"),  # topColor
+    colorFromHex("ffffff"),  # highlightColor
+]
+
+(
+    shadowBottomColorIndex,
+    shadowColorIndex,
+    frontBottomColorIndex,
+    frontTopColorIndex,
+    frontHighlightColorIndex,
+    topColorIndex,
+    highlightColorIndex,
+) = range(len(mainColors))
+
+
+frontGradient = {
+    "Format": ot.PaintFormat.PaintLinearGradient,
+    "ColorLine": {
+        "ColorStop": [(0.0, frontBottomColorIndex), (1.0, frontTopColorIndex)],
+        "Extend": "pad",  # pad, repeat, reflect
+    },
+    "x0": 0,
+    "y0": 0,
+    "x1": 0,
+    "y1": 700,
+    "x2": 87,
+    "y2": 50,
+}
+
+
+sideGradient = {
+    "Format": ot.PaintFormat.PaintLinearGradient,
+    "ColorLine": {
+        "ColorStop": [
+            (0.0, shadowBottomColorIndex),
+            (0.65, shadowColorIndex),
+            (1.0, topColorIndex),
+        ],
+        "Extend": "pad",  # pad, repeat, reflect
+    },
+    "x0": 0,
+    "y0": 0,
+    "x1": 0,
+    "y1": 700,
+    "x2": -87,
+    "y2": 50,
+}
+
+
 class DecomposingRecordingPen(DecomposingPen, RecordingPen):
     pass
 
@@ -98,10 +157,6 @@ def shearGlyph(glyph, shearAngle):
     glyph.width = rsb - lsb
 
 
-frontSuffix = ".front"
-sideSuffix = ".side"
-
-
 def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
     colorGlyphs = {}
     half_dx = depth * math.cos(extrudeAngle) / 2
@@ -131,61 +186,6 @@ def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
         pen.addComponent(sideLayerGlyphName, (1, 0, 0, 1, 0, 0))
 
     return colorGlyphs
-
-
-mainColors = [
-    colorFromHex("f5462d"),  # shadowBottomColor
-    colorFromHex("ff8723"),  # shadowColor
-    colorFromHex("ffd214"),  # frontBottomColor
-    colorFromHex("ffeb6e"),  # frontTopColor
-    colorFromHex("ffeb6e"),  # frontHighlightColor
-    colorFromHex("ffed9f"),  # topColor
-    colorFromHex("ffffff"),  # highlightColor
-]
-
-(
-    shadowBottomColorIndex,
-    shadowColorIndex,
-    frontBottomColorIndex,
-    frontTopColorIndex,
-    frontHighlightColorIndex,
-    topColorIndex,
-    highlightColorIndex,
-) = range(len(mainColors))
-
-
-frontGradient = {
-    "Format": ot.PaintFormat.PaintLinearGradient,
-    "ColorLine": {
-        "ColorStop": [(0.0, frontBottomColorIndex), (1.0, frontTopColorIndex)],
-        "Extend": "pad",  # pad, repeat, reflect
-    },
-    "x0": 0,
-    "y0": 0,
-    "x1": 0,
-    "y1": 700,
-    "x2": 87,
-    "y2": 50,
-}
-
-
-sideGradient = {
-    "Format": ot.PaintFormat.PaintLinearGradient,
-    "ColorLine": {
-        "ColorStop": [
-            (0.0, shadowBottomColorIndex),
-            (0.65, shadowColorIndex),
-            (1.0, topColorIndex),
-        ],
-        "Extend": "pad",  # pad, repeat, reflect
-    },
-    "x0": 0,
-    "y0": 0,
-    "x1": 0,
-    "y1": 700,
-    "x2": -87,
-    "y2": 50,
-}
 
 
 def buildGradientGlyph(sourceGlyphName, gradient):
