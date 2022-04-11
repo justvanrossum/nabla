@@ -15,6 +15,7 @@ html, body {
   height: 100%;
   padding: 0;
   margin:  0;
+  /*background-color: #3A50EF;*/
 }
 
 .page {
@@ -38,6 +39,8 @@ html, body {
 .page-header>label {
   margin-top: 1em;
   margin-bottom: 0.25em;
+  color: #ff8723;
+  font-weight: bold;
 }
 
 .color-text {
@@ -48,7 +51,22 @@ html, body {
 }
 
 .slider {
-  width: 40%;
+  -webkit-appearance: none; 
+  appearance: none;
+  width: 50%;
+  height: 3px;
+  background: #ff8723;
+  outline: none;
+  margin-top: 10px;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #ff8723;
 }
 
   </style>
@@ -98,39 +116,31 @@ function fontSizeHandler(value) {
   <div class="color-text">
     ISOMETRIC
     <br>
-    ABCDEFG
+    CHROMATIC
     <br>
-    HIJKLMN
+    "colourful!"
     <br>
-    OPQRSTU
+    perspective
     <br>
-    VWXYZ
+    -
     <br>
-    abcdefg
+    ABCDEFGHI
     <br>
-    hijklmn
+    JKLMNOPQR
     <br>
-    opqrstu
+    STUVWXYZ&amp;
     <br>
-    vwxyz
+    aæbcçdefgh
     <br>
-    0123456789
+    ijklmnoøpþq
     <br>
-    !"#$&',-.:;?@
+    rsßtţuvwxyz
     <br>
-    ()[]{}
+    (0123456789)
     <br>
-    |¦¡¢£¤¥§
+    [!¡#¦¶§|@$¿?]
     <br>
-    ©«®°¶·¸»¿
-    <br>
-    ÆÇÐØÞß
-    <br>
-    æçøþĲ
-    <br>
-    ĳŊŋŒœŞşŢţ̧ẞ
-    <br>
-    ‘’‚“”„•…‹›₪€₴₹₽™
+    {«¢£°™€₹¥»}
   </div>
   
 </div>
