@@ -130,7 +130,25 @@ def shearAndExtrude(path):
     frontColor = colorFromHex("FADF61")
     sideColor = colorFromHex("F08C3F")
 
-    palettes = [[frontColor, sideColor]]
+    mainColors = [
+        colorFromHex("f5462d"),
+        colorFromHex("ff8723"),
+        colorFromHex("ffd214"),
+        colorFromHex("ffeb6e"),
+        colorFromHex("ffed9f"),
+        colorFromHex("ffffff"),
+    ]
+
+    (
+        shadowBottomColor,
+        shadowColor,
+        frontColor,
+        frontHighlightColor,
+        topColor,
+        highlightColor,
+    ) = range(len(mainColors))
+
+    palettes = [mainColors]
 
     shearAngle = math.radians(30)
     extrudeAngle = math.radians(-30)
