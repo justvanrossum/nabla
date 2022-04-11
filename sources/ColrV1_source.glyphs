@@ -2797,7 +2797,7 @@ unicode = 7838;
 glyphname = T;
 kernLeft = T;
 kernRight = T;
-lastChange = "2022-04-11 08:29:56 +0000";
+lastChange = "2022-04-11 08:35:52 +0000";
 layers = (
 {
 layerId = m01;
@@ -4644,7 +4644,7 @@ unicode = 109;
 glyphname = n;
 kernLeft = n;
 kernRight = n;
-lastChange = "2022-04-11 08:29:32 +0000";
+lastChange = "2022-04-11 08:35:29 +0000";
 layers = (
 {
 layerId = m01;
@@ -4788,7 +4788,7 @@ color = 6;
 glyphname = o;
 kernLeft = o;
 kernRight = o;
-lastChange = "2022-04-11 08:29:44 +0000";
+lastChange = "2022-04-11 08:35:49 +0000";
 layers = (
 {
 layerId = m01;
@@ -10274,14 +10274,14 @@ width = 200;
 kerningLTR = {
 m01 = {
 "@MMK_L_T" = {
-"@MMK_R_n" = -100;
-"@MMK_R_o" = -100;
+"@MMK_R_n" = -150;
+"@MMK_R_o" = -150;
 };
 "@MMK_L_n" = {
-"@MMK_R_T" = -100;
+"@MMK_R_T" = -150;
 };
 "@MMK_L_o" = {
-"@MMK_R_T" = -100;
+"@MMK_R_T" = -150;
 };
 };
 };
