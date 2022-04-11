@@ -8,6 +8,7 @@ from fontTools.misc.transform import Transform
 from fontTools.pens.basePen import DecomposingPen
 from fontTools.pens.recordingPen import RecordingPen
 from fontTools.pens.transformPen import TransformPen
+from fontTools.ttLib.tables import otTables as ot
 from pathops.operations import union
 from ufo2ft.constants import COLOR_LAYERS_KEY, COLOR_PALETTES_KEY
 import ufoLib2
@@ -109,12 +110,15 @@ def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
     for glyphName in glyphNames:
         frontLayerGlyphName = glyphName + frontSuffix
         sideLayerGlyphName = glyphName + sideSuffix
-        colorGlyphs[glyphName] = [
-            (sideLayerGlyphName, shadowColorIndex),
-            (frontLayerGlyphName, frontColorIndex),
-        ]
-        colorGlyphs[sideLayerGlyphName] = [(sideLayerGlyphName, shadowColorIndex)]
-        colorGlyphs[frontLayerGlyphName] = [(frontLayerGlyphName, frontColorIndex)]
+        colorGlyphs[sideLayerGlyphName] = buildGradientGlyph(
+            sideLayerGlyphName, sideGradient
+        )
+        colorGlyphs[frontLayerGlyphName] = buildGradientGlyph(
+            frontLayerGlyphName, frontGradient
+        )
+        colorGlyphs[glyphName] = buildCompositeGlyph(
+            sideLayerGlyphName, frontLayerGlyphName
+        )
         glyph = font[glyphName]
         glyph.move((half_dx, half_dy))
         sideGlyph = font.newGlyph(sideLayerGlyphName)
@@ -132,7 +136,8 @@ def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
 mainColors = [
     colorFromHex("f5462d"),  # shadowBottomColor
     colorFromHex("ff8723"),  # shadowColor
-    colorFromHex("ffd214"),  # frontColor
+    colorFromHex("ffd214"),  # frontBottomColor
+    colorFromHex("ffeb6e"),  # frontTopColor
     colorFromHex("ffeb6e"),  # frontHighlightColor
     colorFromHex("ffed9f"),  # topColor
     colorFromHex("ffffff"),  # highlightColor
@@ -141,11 +146,66 @@ mainColors = [
 (
     shadowBottomColorIndex,
     shadowColorIndex,
-    frontColorIndex,
+    frontBottomColorIndex,
+    frontTopColorIndex,
     frontHighlightColorIndex,
     topColorIndex,
     highlightColorIndex,
 ) = range(len(mainColors))
+
+
+frontGradient = {
+    "Format": ot.PaintFormat.PaintLinearGradient,
+    "ColorLine": {
+        "ColorStop": [(0.0, frontBottomColorIndex), (1.0, frontTopColorIndex)],
+        "Extend": "pad",  # pad, repeat, reflect
+    },
+    "x0": 0,
+    "y0": 0,
+    "x1": 0,
+    "y1": 700,
+    "x2": 87,
+    "y2": 50,
+}
+
+
+sideGradient = {
+    "Format": ot.PaintFormat.PaintLinearGradient,
+    "ColorLine": {
+        "ColorStop": [
+            (0.0, shadowBottomColorIndex),
+            (0.65, shadowColorIndex),
+            (1.0, topColorIndex),
+        ],
+        "Extend": "pad",  # pad, repeat, reflect
+    },
+    "x0": 0,
+    "y0": 0,
+    "x1": 0,
+    "y1": 700,
+    "x2": -87,
+    "y2": 50,
+}
+
+
+def buildGradientGlyph(sourceGlyphName, gradient):
+    colorGlyph = {
+        "Format": ot.PaintFormat.PaintGlyph,
+        "Paint": gradient,
+        "Glyph": sourceGlyphName,
+    }
+    return colorGlyph
+
+
+def buildCompositeGlyph(*sourceGlyphNames):
+    layers = [
+        {
+            "Format": ot.PaintFormat.PaintColrGlyph,
+            "Glyph": sourceGlyphName,
+        }
+        for sourceGlyphName in sourceGlyphNames
+    ]
+    return (ot.PaintFormat.PaintColrLayers, layers)
 
 
 def shearAndExtrude(path):
