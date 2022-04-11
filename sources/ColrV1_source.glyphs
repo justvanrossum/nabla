@@ -3,8 +3,8 @@
 .formatVersion = 3;
 customParameters = (
 {
-name = "Disable Last Change";
-value = 1;
+name = "Write lastChange";
+value = 0;
 },
 {
 name = "Write DisplayStrings";
@@ -5811,14 +5811,14 @@ unicode = 117;
 glyphname = v;
 kernLeft = n;
 kernRight = n;
-lastChange = "2022-04-11 08:32:45 +0000";
+lastChange = "2022-04-11 09:38:44 +0000";
 layers = (
 {
 layerId = m01;
 shapes = (
 {
 angle = 180;
-pos = (300,30);
+pos = (300,10);
 ref = _part.corner;
 },
 {
@@ -5830,7 +5830,7 @@ pos = (400,400);
 ref = _part.square;
 },
 {
-pos = (300,30);
+pos = (300,10);
 ref = _part.corner;
 scale = (1,-1);
 },
@@ -5851,21 +5851,21 @@ pos = (400,200);
 ref = _part.square;
 },
 {
-pos = (400,130);
+pos = (400,110);
 ref = _part.corner;
 scale = (1,-1);
 },
 {
 angle = 180;
-pos = (200,130);
+pos = (200,110);
 ref = _part.corner;
 },
 {
-pos = (100,130);
+pos = (100,110);
 ref = _part.square;
 },
 {
-pos = (400,130);
+pos = (400,110);
 ref = _part.square;
 }
 );
@@ -5880,7 +5880,7 @@ unicode = 118;
 glyphname = w;
 kernLeft = n;
 kernRight = n;
-lastChange = "2022-04-11 08:32:47 +0000";
+lastChange = "2022-04-11 09:39:01 +0000";
 layers = (
 {
 layerId = m01;
@@ -5923,44 +5923,44 @@ ref = _part.square;
 },
 {
 angle = 180;
-pos = (300,30);
+pos = (300,10);
 ref = _part.corner;
 },
 {
-pos = (400,30);
+pos = (400,10);
 ref = _part.corner;
 scale = (1,-1);
 },
 {
-pos = (300,130);
+pos = (300,110);
 ref = _part.square;
 scale = (1,-1);
 },
 {
 angle = 180;
-pos = (200,130);
+pos = (200,110);
 ref = _part.corner;
 },
 {
-pos = (300,30);
+pos = (300,10);
 ref = _part.square;
 scale = (1,-1);
 },
 {
-pos = (500,130);
+pos = (500,110);
 ref = _part.corner;
 scale = (1,-1);
 },
 {
-pos = (100,130);
+pos = (100,110);
 ref = _part.square;
 },
 {
-pos = (300,130);
+pos = (300,110);
 ref = _part.square;
 },
 {
-pos = (500,130);
+pos = (500,110);
 ref = _part.square;
 }
 );
