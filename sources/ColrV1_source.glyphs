@@ -1,5 +1,5 @@
 {
-.appVersion = "3120";
+.appVersion = "3122";
 .formatVersion = 3;
 customParameters = (
 {
@@ -2859,7 +2859,7 @@ unicode = 84;
 },
 {
 glyphname = Tcedilla;
-lastChange = "2022-04-09 10:44:07 +0000";
+lastChange = "2022-04-11 07:46:48 +0000";
 layers = (
 {
 layerId = m01;
@@ -2881,7 +2881,7 @@ unicode = 354;
 },
 {
 glyphname = U;
-lastChange = "2022-04-06 10:14:56 +0000";
+lastChange = "2022-04-11 07:46:58 +0000";
 layers = (
 {
 layerId = m01;
@@ -2928,24 +2928,24 @@ ref = _part.square;
 },
 {
 angle = 180;
-pos = (200,100);
+pos = (200,60);
 ref = _part.corner;
 },
 {
-pos = (500,100);
+pos = (500,60);
 ref = _part.corner;
 scale = (1,-1);
 },
 {
-pos = (400,0);
+pos = (400,-40);
 ref = _part.square;
 },
 {
-pos = (300,0);
+pos = (300,-40);
 ref = _part.square;
 },
 {
-pos = (200,0);
+pos = (200,-40);
 ref = _part.square;
 },
 {
@@ -2954,6 +2954,14 @@ ref = _part.square;
 },
 {
 pos = (500,600);
+ref = _part.square;
+},
+{
+pos = (100,60);
+ref = _part.square;
+},
+{
+pos = (500,60);
 ref = _part.square;
 }
 );
