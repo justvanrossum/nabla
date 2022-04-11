@@ -110,11 +110,11 @@ def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
         frontLayerGlyphName = glyphName + frontSuffix
         sideLayerGlyphName = glyphName + sideSuffix
         colorGlyphs[glyphName] = [
-            (sideLayerGlyphName, shadowColor),
-            (frontLayerGlyphName, frontColor),
+            (sideLayerGlyphName, shadowColorIndex),
+            (frontLayerGlyphName, frontColorIndex),
         ]
-        colorGlyphs[sideLayerGlyphName] = [(sideLayerGlyphName, shadowColor)]
-        colorGlyphs[frontLayerGlyphName] = [(frontLayerGlyphName, frontColor)]
+        colorGlyphs[sideLayerGlyphName] = [(sideLayerGlyphName, shadowColorIndex)]
+        colorGlyphs[frontLayerGlyphName] = [(frontLayerGlyphName, frontColorIndex)]
         glyph = font[glyphName]
         glyph.move((half_dx, half_dy))
         sideGlyph = font.newGlyph(sideLayerGlyphName)
@@ -139,19 +139,16 @@ mainColors = [
 ]
 
 (
-    shadowBottomColor,
-    shadowColor,
-    frontColor,
-    frontHighlightColor,
-    topColor,
-    highlightColor,
+    shadowBottomColorIndex,
+    shadowColorIndex,
+    frontColorIndex,
+    frontHighlightColorIndex,
+    topColorIndex,
+    highlightColorIndex,
 ) = range(len(mainColors))
 
 
 def shearAndExtrude(path):
-    frontColor = colorFromHex("FADF61")
-    sideColor = colorFromHex("F08C3F")
-
     palettes = [mainColors]
 
     shearAngle = math.radians(30)
