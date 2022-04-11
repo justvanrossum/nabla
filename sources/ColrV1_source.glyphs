@@ -41,6 +41,12 @@ pos = -40;
 },
 {
 pos = -80;
+},
+{
+pos = 740;
+},
+{
+pos = 540;
 }
 );
 name = Regular;
@@ -49,7 +55,6 @@ name = Regular;
 glyphs = (
 {
 glyphname = A;
-lastChange = "2022-04-08 09:32:42 +0000";
 layers = (
 {
 layerId = m01;
@@ -75,7 +80,7 @@ pos = (100,500);
 ref = _part.square;
 },
 {
-pos = (200,600);
+pos = (200,640);
 ref = _part.corner;
 scale = (-1,1);
 },
@@ -85,7 +90,7 @@ ref = _part.square;
 scale = (-1,1);
 },
 {
-pos = (200,600);
+pos = (200,640);
 ref = _part.square;
 },
 {
@@ -93,7 +98,7 @@ pos = (300,200);
 ref = _part.square;
 },
 {
-pos = (300,600);
+pos = (300,640);
 ref = _part.square;
 },
 {
@@ -101,7 +106,7 @@ pos = (400,200);
 ref = _part.square;
 },
 {
-pos = (400,600);
+pos = (400,640);
 ref = _part.square;
 },
 {
@@ -125,7 +130,7 @@ pos = (500,500);
 ref = _part.square;
 },
 {
-pos = (500,600);
+pos = (500,640);
 ref = _part.corner;
 },
 {
@@ -134,6 +139,14 @@ ref = _part.square;
 },
 {
 pos = (500,200);
+ref = _part.square;
+},
+{
+pos = (100,540);
+ref = _part.square;
+},
+{
+pos = (500,540);
 ref = _part.square;
 }
 );
@@ -146,7 +159,6 @@ unicode = 65;
 },
 {
 glyphname = AE;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -172,7 +184,7 @@ pos = (100,500);
 ref = _part.square;
 },
 {
-pos = (200,600);
+pos = (200,640);
 ref = _part.corner;
 scale = (-1,1);
 },
@@ -182,7 +194,7 @@ ref = _part.square;
 scale = (-1,1);
 },
 {
-pos = (200,600);
+pos = (200,640);
 ref = _part.square;
 },
 {
@@ -207,7 +219,7 @@ pos = (400,500);
 ref = _part.square;
 },
 {
-pos = (400,600);
+pos = (400,640);
 ref = _part.square;
 },
 {
@@ -216,7 +228,7 @@ pos = (600,100);
 ref = _part.square;
 },
 {
-pos = (600,600);
+pos = (600,640);
 ref = _part.square;
 scale = (-1,1);
 },
@@ -225,7 +237,7 @@ pos = (600,300);
 ref = _part.square;
 },
 {
-pos = (600,600);
+pos = (600,640);
 ref = _part.square;
 },
 {
@@ -243,7 +255,7 @@ ref = _part.square;
 scale = (-1,1);
 },
 {
-pos = (300,600);
+pos = (300,640);
 ref = _part.square;
 },
 {
@@ -252,6 +264,14 @@ ref = _part.square;
 },
 {
 pos = (400,300);
+ref = _part.square;
+},
+{
+pos = (100,540);
+ref = _part.square;
+},
+{
+pos = (400,540);
 ref = _part.square;
 }
 );
@@ -264,13 +284,12 @@ unicode = 198;
 },
 {
 glyphname = B;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
 shapes = (
 {
-pos = (200,600);
+pos = (200,640);
 ref = _part.square;
 scale = (-1,1);
 },
@@ -291,7 +310,7 @@ pos = (100,500);
 ref = _part.square;
 },
 {
-pos = (500,600);
+pos = (500,640);
 ref = _part.corner;
 },
 {
@@ -326,15 +345,15 @@ pos = (300,0);
 ref = _part.square;
 },
 {
-pos = (400,600);
+pos = (400,640);
 ref = _part.square;
 },
 {
-pos = (300,600);
+pos = (300,640);
 ref = _part.square;
 },
 {
-pos = (200,600);
+pos = (200,640);
 ref = _part.square;
 },
 {
@@ -366,6 +385,14 @@ ref = _part.square;
 {
 pos = (500,200);
 ref = _part.square;
+},
+{
+pos = (100,540);
+ref = _part.square;
+},
+{
+pos = (500,540);
+ref = _part.square;
 }
 );
 width = 700;
@@ -377,7 +404,6 @@ unicode = 66;
 },
 {
 glyphname = C;
-lastChange = "2022-04-11 09:10:53 +0000";
 layers = (
 {
 layerId = m01;
@@ -392,20 +418,20 @@ pos = (100,60);
 ref = _part.square;
 },
 {
-pos = (200,600);
+pos = (200,640);
 ref = _part.corner;
 scale = (-1,1);
 },
 {
-pos = (200,600);
+pos = (200,640);
 ref = _part.square;
 },
 {
-pos = (300,600);
+pos = (300,640);
 ref = _part.square;
 },
 {
-pos = (500,500);
+pos = (500,540);
 ref = _part.square;
 },
 {
@@ -438,15 +464,15 @@ pos = (400,-40);
 ref = _part.square;
 },
 {
-pos = (100,500);
+pos = (100,540);
 ref = _part.square;
 },
 {
-pos = (400,600);
+pos = (400,640);
 ref = _part.square;
 },
 {
-pos = (500,600);
+pos = (500,640);
 ref = _part.corner;
 },
 {
@@ -455,6 +481,10 @@ ref = _part.square;
 },
 {
 pos = (100,100);
+ref = _part.square;
+},
+{
+pos = (100,500);
 ref = _part.square;
 }
 );
@@ -467,89 +497,16 @@ unicode = 67;
 },
 {
 glyphname = Ccedilla;
-lastChange = "2022-04-11 09:32:05 +0000";
 layers = (
 {
 layerId = m01;
 shapes = (
 {
-angle = 180;
-pos = (200,60);
-ref = _part.corner;
-},
-{
-pos = (100,60);
-ref = _part.square;
-},
-{
-pos = (200,600);
-ref = _part.corner;
-scale = (-1,1);
-},
-{
-pos = (200,600);
-ref = _part.square;
-},
-{
-pos = (300,600);
-ref = _part.square;
-},
-{
-pos = (500,500);
-ref = _part.square;
-},
-{
-pos = (200,-40);
-ref = _part.square;
-},
-{
-pos = (300,-40);
-ref = _part.square;
-},
-{
-pos = (500,60);
-ref = _part.square;
-},
-{
-pos = (100,200);
-ref = _part.square;
-},
-{
-pos = (100,300);
-ref = _part.square;
-},
-{
-pos = (500,60);
-ref = _part.corner;
-scale = (1,-1);
-},
-{
-pos = (400,-40);
-ref = _part.square;
-},
-{
-pos = (100,500);
-ref = _part.square;
-},
-{
-pos = (400,600);
-ref = _part.square;
-},
-{
-pos = (500,600);
-ref = _part.corner;
-},
-{
-pos = (100,400);
-ref = _part.square;
-},
-{
 pos = (250,-40);
 ref = cedillacomb;
 },
 {
-pos = (100,100);
-ref = _part.square;
+ref = C;
 }
 );
 width = 700;
@@ -561,13 +518,12 @@ unicode = 199;
 },
 {
 glyphname = D;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
 shapes = (
 {
-pos = (200,600);
+pos = (200,640);
 ref = _part.square;
 scale = (-1,1);
 },
@@ -588,7 +544,7 @@ pos = (100,400);
 ref = _part.square;
 },
 {
-pos = (500,600);
+pos = (500,640);
 ref = _part.corner;
 },
 {
@@ -631,15 +587,15 @@ pos = (300,100);
 ref = _part.corner;
 },
 {
-pos = (400,600);
+pos = (400,640);
 ref = _part.square;
 },
 {
-pos = (300,600);
+pos = (300,640);
 ref = _part.square;
 },
 {
-pos = (200,600);
+pos = (200,640);
 ref = _part.square;
 },
 {
@@ -648,6 +604,14 @@ ref = _part.square;
 },
 {
 pos = (500,500);
+ref = _part.square;
+},
+{
+pos = (100,540);
+ref = _part.square;
+},
+{
+pos = (500,540);
 ref = _part.square;
 }
 );
@@ -660,13 +624,12 @@ unicode = 68;
 },
 {
 glyphname = Eth;
-lastChange = "2022-04-06 10:20:09 +0000";
 layers = (
 {
 layerId = m01;
 shapes = (
 {
-pos = (200,600);
+pos = (200,640);
 ref = _part.square;
 scale = (-1,1);
 },
@@ -687,7 +650,7 @@ pos = (100,500);
 ref = _part.square;
 },
 {
-pos = (500,600);
+pos = (500,640);
 ref = _part.corner;
 },
 {
@@ -730,15 +693,15 @@ pos = (300,100);
 ref = _part.corner;
 },
 {
-pos = (400,600);
+pos = (400,640);
 ref = _part.square;
 },
 {
-pos = (300,600);
+pos = (300,640);
 ref = _part.square;
 },
 {
-pos = (200,600);
+pos = (200,640);
 ref = _part.square;
 },
 {
@@ -756,6 +719,14 @@ ref = _part.square;
 {
 pos = (500,200);
 ref = _part.square;
+},
+{
+pos = (100,540);
+ref = _part.square;
+},
+{
+pos = (500,540);
+ref = _part.square;
 }
 );
 width = 700;
@@ -766,7 +737,6 @@ unicode = 208;
 },
 {
 glyphname = E;
-lastChange = "2022-04-08 09:23:04 +0000";
 layers = (
 {
 layerId = m01;
@@ -864,7 +834,6 @@ unicode = 69;
 },
 {
 glyphname = F;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -937,7 +906,6 @@ unicode = 70;
 },
 {
 glyphname = G;
-lastChange = "2022-04-11 09:32:17 +0000";
 layers = (
 {
 layerId = m01;
@@ -956,16 +924,16 @@ pos = (100,500);
 ref = _part.square;
 },
 {
-pos = (200,600);
+pos = (200,640);
 ref = _part.corner;
 scale = (-1,1);
 },
 {
-pos = (200,600);
+pos = (200,640);
 ref = _part.square;
 },
 {
-pos = (300,600);
+pos = (300,640);
 ref = _part.square;
 },
 {
@@ -973,7 +941,7 @@ pos = (500,300);
 ref = _part.square;
 },
 {
-pos = (500,600);
+pos = (500,640);
 ref = _part.corner;
 },
 {
@@ -1002,11 +970,11 @@ pos = (100,400);
 ref = _part.square;
 },
 {
-pos = (500,500);
+pos = (500,540);
 ref = _part.square;
 },
 {
-pos = (400,600);
+pos = (400,640);
 ref = _part.square;
 },
 {
@@ -1036,6 +1004,10 @@ ref = _part.square;
 {
 pos = (500,100);
 ref = _part.square;
+},
+{
+pos = (100,540);
+ref = _part.square;
 }
 );
 width = 700;
@@ -1047,7 +1019,6 @@ unicode = 71;
 },
 {
 glyphname = H;
-lastChange = "2022-04-06 10:14:41 +0000";
 layers = (
 {
 layerId = m01;
@@ -1130,7 +1101,6 @@ unicode = 72;
 },
 {
 glyphname = I;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -1205,7 +1175,6 @@ unicode = 73;
 },
 {
 glyphname = IJ;
-lastChange = "2022-04-11 09:32:29 +0000";
 layers = (
 {
 layerId = m01;
@@ -1303,7 +1272,6 @@ unicode = 306;
 },
 {
 glyphname = J;
-lastChange = "2022-04-11 09:32:37 +0000";
 layers = (
 {
 layerId = m01;
@@ -1393,7 +1361,6 @@ unicode = 74;
 },
 {
 glyphname = K;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -1479,7 +1446,6 @@ unicode = 75;
 },
 {
 glyphname = L;
-lastChange = "2022-04-11 09:32:45 +0000";
 layers = (
 {
 layerId = m01;
@@ -1538,7 +1504,6 @@ unicode = 76;
 },
 {
 glyphname = M;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -1560,7 +1525,7 @@ pos = (300,400);
 ref = _part.square;
 },
 {
-pos = (200,600);
+pos = (200,640);
 ref = _part.square;
 },
 {
@@ -1588,7 +1553,7 @@ pos = (300,200);
 ref = _part.square;
 },
 {
-pos = (200,600);
+pos = (200,640);
 ref = _part.corner;
 scale = (-1,1);
 },
@@ -1601,7 +1566,7 @@ pos = (500,400);
 ref = _part.square;
 },
 {
-pos = (500,600);
+pos = (500,640);
 ref = _part.corner;
 },
 {
@@ -1617,12 +1582,12 @@ pos = (500,200);
 ref = _part.square;
 },
 {
-pos = (400,600);
+pos = (400,640);
 ref = _part.square;
 scale = (-1,1);
 },
 {
-pos = (500,600);
+pos = (500,640);
 ref = _part.square;
 scale = (-1,1);
 },
@@ -1637,6 +1602,18 @@ ref = _part.square;
 {
 pos = (500,500);
 ref = _part.square;
+},
+{
+pos = (100,540);
+ref = _part.square;
+},
+{
+pos = (300,540);
+ref = _part.square;
+},
+{
+pos = (500,540);
+ref = _part.square;
 }
 );
 width = 700;
@@ -1648,7 +1625,6 @@ unicode = 77;
 },
 {
 glyphname = N;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -1758,7 +1734,6 @@ unicode = 78;
 },
 {
 glyphname = Eng;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -1881,13 +1856,12 @@ unicode = 330;
 },
 {
 glyphname = O;
-lastChange = "2022-04-11 09:31:37 +0000";
 layers = (
 {
 layerId = m01;
 shapes = (
 {
-pos = (200,600);
+pos = (200,640);
 ref = _part.corner;
 scale = (-1,1);
 },
@@ -1908,7 +1882,7 @@ pos = (100,400);
 ref = _part.square;
 },
 {
-pos = (500,600);
+pos = (500,640);
 ref = _part.corner;
 },
 {
@@ -1950,15 +1924,15 @@ pos = (200,-40);
 ref = _part.square;
 },
 {
-pos = (400,600);
+pos = (400,640);
 ref = _part.square;
 },
 {
-pos = (300,600);
+pos = (300,640);
 ref = _part.square;
 },
 {
-pos = (200,600);
+pos = (200,640);
 ref = _part.square;
 },
 {
@@ -1976,6 +1950,14 @@ ref = _part.square;
 {
 pos = (500,100);
 ref = _part.square;
+},
+{
+pos = (100,540);
+ref = _part.square;
+},
+{
+pos = (500,540);
+ref = _part.square;
 }
 );
 width = 700;
@@ -1988,7 +1970,6 @@ unicode = 79;
 {
 color = 9;
 glyphname = Oslash;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -2091,7 +2072,6 @@ unicode = 216;
 },
 {
 glyphname = OE;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -2210,7 +2190,6 @@ unicode = 338;
 },
 {
 glyphname = P;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -2232,7 +2211,7 @@ pos = (100,400);
 ref = _part.square;
 },
 {
-pos = (200,600);
+pos = (200,640);
 ref = _part.square;
 scale = (-1,1);
 },
@@ -2242,7 +2221,7 @@ pos = (300,300);
 ref = _part.corner;
 },
 {
-pos = (200,600);
+pos = (200,640);
 ref = _part.square;
 },
 {
@@ -2250,7 +2229,7 @@ pos = (300,200);
 ref = _part.square;
 },
 {
-pos = (300,600);
+pos = (300,640);
 ref = _part.square;
 },
 {
@@ -2258,7 +2237,7 @@ pos = (400,200);
 ref = _part.square;
 },
 {
-pos = (400,600);
+pos = (400,640);
 ref = _part.square;
 },
 {
@@ -2271,7 +2250,7 @@ pos = (500,400);
 ref = _part.square;
 },
 {
-pos = (500,600);
+pos = (500,640);
 ref = _part.corner;
 },
 {
@@ -2289,6 +2268,14 @@ ref = _part.square;
 {
 pos = (500,300);
 ref = _part.square;
+},
+{
+pos = (100,540);
+ref = _part.square;
+},
+{
+pos = (500,540);
+ref = _part.square;
 }
 );
 width = 700;
@@ -2300,7 +2287,6 @@ unicode = 80;
 },
 {
 glyphname = Thorn;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -2391,13 +2377,12 @@ unicode = 222;
 },
 {
 glyphname = Q;
-lastChange = "2022-04-11 09:33:00 +0000";
 layers = (
 {
 layerId = m01;
 shapes = (
 {
-pos = (200,600);
+pos = (200,640);
 ref = _part.corner;
 scale = (-1,1);
 },
@@ -2418,7 +2403,7 @@ pos = (100,400);
 ref = _part.square;
 },
 {
-pos = (500,600);
+pos = (500,640);
 ref = _part.corner;
 },
 {
@@ -2460,15 +2445,15 @@ pos = (200,-40);
 ref = _part.square;
 },
 {
-pos = (400,600);
+pos = (400,640);
 ref = _part.square;
 },
 {
-pos = (300,600);
+pos = (300,640);
 ref = _part.square;
 },
 {
-pos = (200,600);
+pos = (200,640);
 ref = _part.square;
 },
 {
@@ -2486,6 +2471,14 @@ ref = _part.square;
 {
 pos = (500,160);
 ref = _part.square;
+},
+{
+pos = (100,540);
+ref = _part.square;
+},
+{
+pos = (500,540);
+ref = _part.square;
 }
 );
 width = 700;
@@ -2497,7 +2490,6 @@ unicode = 81;
 },
 {
 glyphname = R;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -2523,12 +2515,12 @@ pos = (100,500);
 ref = _part.square;
 },
 {
-pos = (200,600);
+pos = (200,640);
 ref = _part.square;
 scale = (-1,1);
 },
 {
-pos = (200,600);
+pos = (200,640);
 ref = _part.square;
 },
 {
@@ -2536,7 +2528,7 @@ pos = (300,200);
 ref = _part.square;
 },
 {
-pos = (300,600);
+pos = (300,640);
 ref = _part.square;
 },
 {
@@ -2544,7 +2536,7 @@ pos = (400,200);
 ref = _part.square;
 },
 {
-pos = (400,600);
+pos = (400,640);
 ref = _part.square;
 },
 {
@@ -2569,7 +2561,7 @@ pos = (500,500);
 ref = _part.square;
 },
 {
-pos = (500,600);
+pos = (500,640);
 ref = _part.corner;
 },
 {
@@ -2584,6 +2576,14 @@ ref = _part.square;
 {
 pos = (500,400);
 ref = _part.square;
+},
+{
+pos = (100,540);
+ref = _part.square;
+},
+{
+pos = (500,540);
+ref = _part.square;
 }
 );
 width = 700;
@@ -2595,7 +2595,6 @@ unicode = 82;
 },
 {
 glyphname = S;
-lastChange = "2022-04-11 09:31:30 +0000";
 layers = (
 {
 anchors = (
@@ -2620,7 +2619,7 @@ pos = (500,60);
 ref = _part.square;
 },
 {
-pos = (200,600);
+pos = (200,640);
 ref = _part.corner;
 scale = (-1,1);
 },
@@ -2629,7 +2628,7 @@ pos = (200,300);
 ref = _part.square;
 },
 {
-pos = (200,600);
+pos = (200,640);
 ref = _part.square;
 },
 {
@@ -2637,7 +2636,7 @@ pos = (300,300);
 ref = _part.square;
 },
 {
-pos = (300,600);
+pos = (300,640);
 ref = _part.square;
 },
 {
@@ -2674,7 +2673,7 @@ pos = (400,300);
 ref = _part.square;
 },
 {
-pos = (400,600);
+pos = (400,640);
 ref = _part.square;
 },
 {
@@ -2695,11 +2694,19 @@ pos = (200,60);
 ref = _part.corner;
 },
 {
-pos = (500,600);
+pos = (500,640);
 ref = _part.corner;
 },
 {
 pos = (500,100);
+ref = _part.square;
+},
+{
+pos = (100,540);
+ref = _part.square;
+},
+{
+pos = (500,540);
 ref = _part.square;
 }
 );
@@ -2712,7 +2719,6 @@ unicode = 83;
 },
 {
 glyphname = Scedilla;
-lastChange = "2022-04-11 09:33:05 +0000";
 layers = (
 {
 layerId = m01;
@@ -2732,7 +2738,6 @@ unicode = 350;
 },
 {
 glyphname = Germandbls;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -2768,7 +2773,7 @@ pos = (400,300);
 ref = _part.corner;
 },
 {
-pos = (200,600);
+pos = (200,640);
 ref = _part.corner;
 scale = (-1,1);
 },
@@ -2791,16 +2796,16 @@ ref = _part.square;
 scale = (1,-1);
 },
 {
-pos = (500,600);
+pos = (500,640);
 ref = _part.corner;
 },
 {
-pos = (300,600);
+pos = (300,640);
 ref = _part.square;
 scale = (-1,1);
 },
 {
-pos = (400,600);
+pos = (400,640);
 ref = _part.square;
 },
 {
@@ -2814,7 +2819,7 @@ ref = _part.square;
 scale = (1,-1);
 },
 {
-pos = (300,600);
+pos = (300,640);
 ref = _part.square;
 },
 {
@@ -2840,6 +2845,15 @@ scale = (1,-1);
 pos = (300,400);
 ref = _part.square;
 scale = (1,-1);
+},
+{
+pos = (100,540);
+ref = _part.square;
+},
+{
+pos = (500,640);
+ref = _part.square;
+scale = (1,-1);
 }
 );
 width = 700;
@@ -2853,7 +2867,6 @@ unicode = 7838;
 glyphname = T;
 kernLeft = T;
 kernRight = T;
-lastChange = "2022-04-11 08:40:46 +0000";
 layers = (
 {
 layerId = m01;
@@ -2919,7 +2932,6 @@ unicode = 84;
 glyphname = Tcedilla;
 kernLeft = T;
 kernRight = T;
-lastChange = "2022-04-11 08:29:10 +0000";
 layers = (
 {
 layerId = m01;
@@ -2941,7 +2953,6 @@ unicode = 354;
 },
 {
 glyphname = U;
-lastChange = "2022-04-11 07:46:58 +0000";
 layers = (
 {
 layerId = m01;
@@ -3034,7 +3045,6 @@ unicode = 85;
 },
 {
 glyphname = V;
-lastChange = "2022-04-11 09:33:17 +0000";
 layers = (
 {
 layerId = m01;
@@ -3121,7 +3131,6 @@ unicode = 86;
 },
 {
 glyphname = W;
-lastChange = "2022-04-11 09:33:24 +0000";
 layers = (
 {
 layerId = m01;
@@ -3238,7 +3247,6 @@ unicode = 87;
 },
 {
 glyphname = X;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -3324,7 +3332,6 @@ unicode = 88;
 },
 {
 glyphname = Y;
-lastChange = "2022-04-08 09:21:46 +0000";
 layers = (
 {
 layerId = m01;
@@ -3405,7 +3412,6 @@ unicode = 89;
 },
 {
 glyphname = Z;
-lastChange = "2022-04-08 09:23:43 +0000";
 layers = (
 {
 layerId = m01;
@@ -3503,7 +3509,6 @@ color = 6;
 glyphname = a;
 kernLeft = o;
 kernRight = n;
-lastChange = "2022-04-11 08:30:38 +0000";
 layers = (
 {
 layerId = m01;
@@ -3514,15 +3519,15 @@ pos = (200,60);
 ref = _part.corner;
 },
 {
-pos = (100,400);
+pos = (100,440);
 ref = _part.square;
 },
 {
-pos = (200,180);
+pos = (200,200);
 ref = _part.square;
 },
 {
-pos = (300,180);
+pos = (300,200);
 ref = _part.square;
 },
 {
@@ -3535,11 +3540,11 @@ pos = (400,180);
 ref = _part.square;
 },
 {
-pos = (400,300);
+pos = (400,340);
 ref = _part.square;
 },
 {
-pos = (200,180);
+pos = (200,200);
 ref = _part.corner;
 scale = (-1,1);
 },
@@ -3552,15 +3557,15 @@ pos = (300,-40);
 ref = _part.square;
 },
 {
-pos = (300,400);
+pos = (300,440);
 ref = _part.square;
 },
 {
-pos = (400,400);
+pos = (400,440);
 ref = _part.corner;
 },
 {
-pos = (200,400);
+pos = (200,440);
 ref = _part.square;
 },
 {
@@ -3576,7 +3581,7 @@ pos = (400,280);
 ref = _part.square;
 },
 {
-pos = (100,80);
+pos = (100,100);
 ref = _part.square;
 },
 {
@@ -3596,7 +3601,6 @@ color = 6;
 glyphname = ae;
 kernLeft = o;
 kernRight = n;
-lastChange = "2022-04-11 08:30:46 +0000";
 layers = (
 {
 layerId = m01;
@@ -3607,35 +3611,31 @@ pos = (200,60);
 ref = _part.corner;
 },
 {
-pos = (100,100);
+pos = (100,90);
 ref = _part.square;
 },
 {
-pos = (100,400);
+pos = (100,420);
 ref = _part.square;
 },
 {
-pos = (200,200);
+pos = (200,190);
 ref = _part.square;
 },
 {
-pos = (300,200);
+pos = (300,190);
 ref = _part.square;
 },
 {
-pos = (400,100);
+pos = (400,90);
 ref = _part.square;
 },
 {
-pos = (400,200);
+pos = (400,190);
 ref = _part.square;
 },
 {
-pos = (300,300);
-ref = _part.square;
-},
-{
-pos = (200,200);
+pos = (200,190);
 ref = _part.corner;
 scale = (-1,1);
 },
@@ -3649,37 +3649,33 @@ ref = _part.corner;
 scale = (1,-1);
 },
 {
-pos = (300,400);
+pos = (300,420);
 ref = _part.corner;
 },
 {
-pos = (200,400);
+pos = (200,420);
 ref = _part.square;
 },
 {
-pos = (500,400);
+pos = (500,420);
 ref = _part.corner;
 scale = (-1,1);
 },
 {
-pos = (500,200);
+pos = (500,190);
 ref = _part.square;
 },
 {
-pos = (500,400);
+pos = (500,420);
 ref = _part.square;
 },
 {
-pos = (600,300);
+pos = (600,290);
 ref = _part.corner;
 scale = (1,-1);
 },
 {
-pos = (600,300);
-ref = _part.square;
-},
-{
-pos = (600,400);
+pos = (600,420);
 ref = _part.corner;
 },
 {
@@ -3702,6 +3698,22 @@ ref = _part.square;
 {
 pos = (400,60);
 ref = _part.square;
+},
+{
+pos = (300,320);
+ref = _part.square;
+},
+{
+pos = (600,320);
+ref = _part.square;
+},
+{
+pos = (300,290);
+ref = _part.square;
+},
+{
+pos = (600,290);
+ref = _part.square;
 }
 );
 width = 800;
@@ -3715,7 +3727,6 @@ unicode = 230;
 glyphname = b;
 kernLeft = H;
 kernRight = o;
-lastChange = "2022-04-11 08:30:54 +0000";
 layers = (
 {
 layerId = m01;
@@ -3747,12 +3758,12 @@ pos = (300,0);
 ref = _part.square;
 },
 {
-pos = (300,400);
+pos = (300,440);
 ref = _part.corner;
 scale = (-1,1);
 },
 {
-pos = (300,400);
+pos = (300,440);
 ref = _part.square;
 },
 {
@@ -3785,8 +3796,12 @@ pos = (400,300);
 ref = _part.square;
 },
 {
-pos = (400,400);
+pos = (400,440);
 ref = _part.corner;
+},
+{
+pos = (400,340);
+ref = _part.square;
 }
 );
 width = 600;
@@ -3801,7 +3816,6 @@ color = 6;
 glyphname = c;
 kernLeft = o;
 kernRight = o;
-lastChange = "2022-04-11 08:30:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -3820,24 +3834,24 @@ pos = (100,300);
 ref = _part.square;
 },
 {
-pos = (200,400);
+pos = (200,440);
 ref = _part.corner;
 scale = (-1,1);
 },
 {
-pos = (200,400);
+pos = (200,440);
 ref = _part.square;
 },
 {
-pos = (300,400);
+pos = (300,440);
 ref = _part.square;
 },
 {
-pos = (400,300);
+pos = (400,340);
 ref = _part.square;
 },
 {
-pos = (400,400);
+pos = (400,440);
 ref = _part.corner;
 },
 {
@@ -3864,6 +3878,10 @@ scale = (1,-1);
 {
 pos = (100,100);
 ref = _part.square;
+},
+{
+pos = (100,340);
+ref = _part.square;
 }
 );
 width = 600;
@@ -3878,7 +3896,6 @@ color = 6;
 glyphname = ccedilla;
 kernLeft = o;
 kernRight = o;
-lastChange = "2022-04-11 08:30:59 +0000";
 layers = (
 {
 layerId = m01;
@@ -3903,7 +3920,6 @@ color = 6;
 glyphname = d;
 kernLeft = o;
 kernRight = H;
-lastChange = "2022-04-11 08:31:03 +0000";
 layers = (
 {
 layerId = m01;
@@ -3997,7 +4013,6 @@ color = 6;
 glyphname = e;
 kernLeft = o;
 kernRight = n;
-lastChange = "2022-04-11 08:31:14 +0000";
 layers = (
 {
 layerId = m01;
@@ -4012,38 +4027,38 @@ pos = (100,100);
 ref = _part.square;
 },
 {
-pos = (200,400);
+pos = (200,440);
 ref = _part.corner;
 scale = (-1,1);
 },
 {
 angle = 180;
-pos = (300,270);
+pos = (300,290);
 ref = _part.corner;
 },
 {
-pos = (200,400);
+pos = (200,440);
 ref = _part.square;
 },
 {
-pos = (300,170);
+pos = (300,190);
 ref = _part.square;
 },
 {
-pos = (300,400);
+pos = (300,440);
 ref = _part.square;
 },
 {
-pos = (400,270);
+pos = (400,290);
 ref = _part.corner;
 scale = (1,-1);
 },
 {
-pos = (400,300);
+pos = (400,340);
 ref = _part.square;
 },
 {
-pos = (400,400);
+pos = (400,440);
 ref = _part.corner;
 },
 {
@@ -4071,7 +4086,11 @@ pos = (100,60);
 ref = _part.square;
 },
 {
-pos = (400,270);
+pos = (400,290);
+ref = _part.square;
+},
+{
+pos = (100,340);
 ref = _part.square;
 }
 );
@@ -4086,7 +4105,6 @@ unicode = 101;
 glyphname = f;
 kernLeft = f;
 kernRight = f;
-lastChange = "2022-04-11 08:45:11 +0000";
 layers = (
 {
 layerId = m01;
@@ -4152,7 +4170,6 @@ unicode = 102;
 glyphname = g;
 kernLeft = n;
 kernRight = n;
-lastChange = "2022-04-11 08:31:21 +0000";
 layers = (
 {
 layerId = m01;
@@ -4238,7 +4255,6 @@ unicode = 103;
 glyphname = h;
 kernLeft = H;
 kernRight = n;
-lastChange = "2022-04-11 08:31:25 +0000";
 layers = (
 {
 layerId = m01;
@@ -4252,7 +4268,7 @@ pos = (100,400);
 ref = _part.square;
 },
 {
-pos = (300,400);
+pos = (300,440);
 ref = _part.square;
 },
 {
@@ -4260,7 +4276,7 @@ pos = (400,300);
 ref = _part.square;
 },
 {
-pos = (400,400);
+pos = (400,440);
 ref = _part.corner;
 },
 {
@@ -4288,7 +4304,7 @@ pos = (400,200);
 ref = _part.square;
 },
 {
-pos = (300,400);
+pos = (300,440);
 ref = _part.corner;
 scale = (-1,1);
 },
@@ -4298,6 +4314,10 @@ ref = _part.square;
 },
 {
 pos = (100,600);
+ref = _part.square;
+},
+{
+pos = (400,340);
 ref = _part.square;
 }
 );
@@ -4312,7 +4332,6 @@ unicode = 104;
 glyphname = i;
 kernLeft = n;
 kernRight = n;
-lastChange = "2022-04-11 08:31:30 +0000";
 layers = (
 {
 layerId = m01;
@@ -4374,7 +4393,6 @@ unicode = 105;
 glyphname = ij;
 kernLeft = n;
 kernRight = n;
-lastChange = "2022-04-11 08:31:33 +0000";
 layers = (
 {
 layerId = m01;
@@ -4448,7 +4466,6 @@ unicode = 307;
 glyphname = j;
 kernLeft = n;
 kernRight = n;
-lastChange = "2022-04-11 08:31:35 +0000";
 layers = (
 {
 layerId = m01;
@@ -4506,7 +4523,6 @@ unicode = 106;
 glyphname = k;
 kernLeft = H;
 kernRight = n;
-lastChange = "2022-04-11 08:31:38 +0000";
 layers = (
 {
 layerId = m01;
@@ -4582,8 +4598,7 @@ unicode = 107;
 color = 6;
 glyphname = l;
 kernLeft = H;
-kernRight = H;
-lastChange = "2022-04-11 08:31:42 +0000";
+kernRight = l;
 layers = (
 {
 layerId = m01;
@@ -4631,13 +4646,13 @@ width = 400;
 }
 );
 metricLeft = H;
+metricRight = l;
 unicode = 108;
 },
 {
 glyphname = m;
 kernLeft = n;
 kernRight = n;
-lastChange = "2022-04-11 08:31:46 +0000";
 layers = (
 {
 layerId = m01;
@@ -4647,7 +4662,7 @@ pos = (100,100);
 ref = _part.square;
 },
 {
-pos = (100,400);
+pos = (100,440);
 ref = _part.square;
 },
 {
@@ -4655,7 +4670,7 @@ pos = (300,300);
 ref = _part.square;
 },
 {
-pos = (300,400);
+pos = (300,440);
 ref = _part.corner;
 },
 {
@@ -4683,7 +4698,7 @@ pos = (300,200);
 ref = _part.square;
 },
 {
-pos = (300,400);
+pos = (300,440);
 ref = _part.corner;
 scale = (-1,1);
 },
@@ -4692,7 +4707,7 @@ pos = (500,300);
 ref = _part.square;
 },
 {
-pos = (500,400);
+pos = (500,440);
 ref = _part.corner;
 },
 {
@@ -4708,9 +4723,21 @@ pos = (500,200);
 ref = _part.square;
 },
 {
-pos = (500,400);
+pos = (500,440);
 ref = _part.corner;
 scale = (-1,1);
+},
+{
+pos = (300,340);
+ref = _part.square;
+},
+{
+pos = (100,340);
+ref = _part.square;
+},
+{
+pos = (500,340);
+ref = _part.square;
 }
 );
 width = 700;
@@ -4724,7 +4751,6 @@ unicode = 109;
 glyphname = n;
 kernLeft = n;
 kernRight = n;
-lastChange = "2022-04-11 08:35:29 +0000";
 layers = (
 {
 layerId = m01;
@@ -4734,11 +4760,11 @@ pos = (100,100);
 ref = _part.square;
 },
 {
-pos = (100,400);
+pos = (100,440);
 ref = _part.square;
 },
 {
-pos = (300,400);
+pos = (300,440);
 ref = _part.square;
 },
 {
@@ -4746,7 +4772,7 @@ pos = (400,300);
 ref = _part.square;
 },
 {
-pos = (400,400);
+pos = (400,440);
 ref = _part.corner;
 },
 {
@@ -4774,9 +4800,17 @@ pos = (400,200);
 ref = _part.square;
 },
 {
-pos = (300,400);
+pos = (300,440);
 ref = _part.corner;
 scale = (-1,1);
+},
+{
+pos = (400,340);
+ref = _part.square;
+},
+{
+pos = (100,340);
+ref = _part.square;
 }
 );
 width = 600;
@@ -4788,60 +4822,10 @@ unicode = 110;
 glyphname = eng;
 kernLeft = n;
 kernRight = n;
-lastChange = "2022-04-11 08:31:50 +0000";
 layers = (
 {
 layerId = m01;
 shapes = (
-{
-pos = (100,100);
-ref = _part.square;
-},
-{
-pos = (100,400);
-ref = _part.square;
-},
-{
-pos = (300,400);
-ref = _part.square;
-},
-{
-pos = (400,300);
-ref = _part.square;
-},
-{
-pos = (400,400);
-ref = _part.corner;
-},
-{
-pos = (100,0);
-ref = _part.square;
-},
-{
-pos = (400,0);
-ref = _part.square;
-},
-{
-pos = (100,200);
-ref = _part.square;
-},
-{
-pos = (100,300);
-ref = _part.square;
-},
-{
-pos = (400,100);
-ref = _part.square;
-},
-{
-pos = (400,200);
-ref = _part.square;
-},
-{
-pos = (300,400);
-ref = _part.corner;
-scale = (-1,1);
-},
 {
 pos = (400,-100);
 ref = _part.square;
@@ -4854,6 +4838,9 @@ ref = _part.square;
 pos = (400,-100);
 ref = _part.corner;
 scale = (1,-1);
+},
+{
+ref = n;
 }
 );
 width = 600;
@@ -4868,7 +4855,6 @@ color = 6;
 glyphname = o;
 kernLeft = o;
 kernRight = o;
-lastChange = "2022-04-11 09:12:28 +0000";
 layers = (
 {
 layerId = m01;
@@ -4883,16 +4869,16 @@ pos = (100,100);
 ref = _part.square;
 },
 {
-pos = (200,400);
+pos = (200,440);
 ref = _part.corner;
 scale = (-1,1);
 },
 {
-pos = (200,400);
+pos = (200,440);
 ref = _part.square;
 },
 {
-pos = (300,400);
+pos = (300,440);
 ref = _part.square;
 },
 {
@@ -4905,7 +4891,7 @@ pos = (400,300);
 ref = _part.square;
 },
 {
-pos = (400,400);
+pos = (400,440);
 ref = _part.corner;
 },
 {
@@ -4939,6 +4925,14 @@ ref = _part.square;
 {
 pos = (400,60);
 ref = _part.square;
+},
+{
+pos = (400,340);
+ref = _part.square;
+},
+{
+pos = (100,340);
+ref = _part.square;
 }
 );
 width = 600;
@@ -4950,7 +4944,6 @@ unicode = 111;
 glyphname = oslash;
 kernLeft = o;
 kernRight = o;
-lastChange = "2022-04-11 08:31:53 +0000";
 layers = (
 {
 layerId = m01;
@@ -5032,7 +5025,6 @@ color = 6;
 glyphname = oe;
 kernLeft = o;
 kernRight = n;
-lastChange = "2022-04-11 08:31:57 +0000";
 layers = (
 {
 layerId = m01;
@@ -5086,7 +5078,7 @@ ref = _part.square;
 },
 {
 angle = 180;
-pos = (500,300);
+pos = (500,280);
 ref = _part.square;
 },
 {
@@ -5095,7 +5087,7 @@ ref = _part.corner;
 scale = (-1,1);
 },
 {
-pos = (500,200);
+pos = (500,180);
 ref = _part.square;
 },
 {
@@ -5103,12 +5095,12 @@ pos = (500,400);
 ref = _part.square;
 },
 {
-pos = (600,300);
+pos = (600,280);
 ref = _part.corner;
 scale = (1,-1);
 },
 {
-pos = (600,300);
+pos = (600,280);
 ref = _part.square;
 },
 {
@@ -5139,6 +5131,10 @@ ref = _part.square;
 {
 pos = (300,60);
 ref = _part.square;
+},
+{
+pos = (600,300);
+ref = _part.square;
 }
 );
 width = 800;
@@ -5152,7 +5148,6 @@ unicode = 339;
 glyphname = p;
 kernLeft = n;
 kernRight = o;
-lastChange = "2022-04-11 08:32:00 +0000";
 layers = (
 {
 layerId = m01;
@@ -5179,12 +5174,12 @@ pos = (300,100);
 ref = _part.square;
 },
 {
-pos = (300,400);
+pos = (300,440);
 ref = _part.corner;
 scale = (-1,1);
 },
 {
-pos = (300,400);
+pos = (300,440);
 ref = _part.square;
 },
 {
@@ -5192,7 +5187,7 @@ pos = (100,300);
 ref = _part.square;
 },
 {
-pos = (100,400);
+pos = (100,440);
 ref = _part.square;
 },
 {
@@ -5205,11 +5200,19 @@ pos = (400,200);
 ref = _part.square;
 },
 {
-pos = (400,400);
+pos = (400,440);
 ref = _part.corner;
 },
 {
 pos = (400,300);
+ref = _part.square;
+},
+{
+pos = (100,340);
+ref = _part.square;
+},
+{
+pos = (400,340);
 ref = _part.square;
 }
 );
@@ -5224,7 +5227,6 @@ unicode = 112;
 glyphname = thorn;
 kernLeft = H;
 kernRight = o;
-lastChange = "2022-04-11 08:32:04 +0000";
 layers = (
 {
 layerId = m01;
@@ -5251,12 +5253,12 @@ pos = (300,100);
 ref = _part.square;
 },
 {
-pos = (300,400);
+pos = (300,440);
 ref = _part.corner;
 scale = (-1,1);
 },
 {
-pos = (300,400);
+pos = (300,440);
 ref = _part.square;
 },
 {
@@ -5281,7 +5283,7 @@ pos = (400,300);
 ref = _part.square;
 },
 {
-pos = (400,400);
+pos = (400,440);
 ref = _part.corner;
 },
 {
@@ -5290,6 +5292,10 @@ ref = _part.square;
 },
 {
 pos = (100,600);
+ref = _part.square;
+},
+{
+pos = (400,340);
 ref = _part.square;
 }
 );
@@ -5304,7 +5310,6 @@ unicode = 254;
 glyphname = q;
 kernLeft = o;
 kernRight = n;
-lastChange = "2022-04-11 08:48:27 +0000";
 layers = (
 {
 layerId = m01;
@@ -5386,7 +5391,6 @@ unicode = 113;
 glyphname = r;
 kernLeft = n;
 kernRight = r;
-lastChange = "2022-04-11 08:49:54 +0000";
 layers = (
 {
 layerId = m01;
@@ -5440,7 +5444,6 @@ unicode = 114;
 glyphname = s;
 kernLeft = n;
 kernRight = n;
-lastChange = "2022-04-11 09:12:22 +0000";
 layers = (
 {
 layerId = m01;
@@ -5516,7 +5519,6 @@ unicode = 115;
 glyphname = scedilla;
 kernLeft = n;
 kernRight = n;
-lastChange = "2022-04-11 08:32:29 +0000";
 layers = (
 {
 layerId = m01;
@@ -5540,7 +5542,6 @@ unicode = 351;
 glyphname = germandbls;
 kernLeft = H;
 kernRight = H;
-lastChange = "2022-04-11 08:32:31 +0000";
 layers = (
 {
 layerId = m01;
@@ -5576,7 +5577,7 @@ pos = (400,300);
 ref = _part.corner;
 },
 {
-pos = (200,600);
+pos = (200,640);
 ref = _part.corner;
 scale = (-1,1);
 },
@@ -5594,16 +5595,16 @@ pos = (400,200);
 ref = _part.corner;
 },
 {
-pos = (400,600);
+pos = (400,640);
 ref = _part.corner;
 },
 {
-pos = (300,600);
+pos = (300,640);
 ref = _part.square;
 scale = (-1,1);
 },
 {
-pos = (300,600);
+pos = (300,640);
 ref = _part.square;
 },
 {
@@ -5629,6 +5630,15 @@ scale = (1,-1);
 angle = 180;
 pos = (400,400);
 ref = _part.square;
+},
+{
+pos = (100,540);
+ref = _part.square;
+},
+{
+pos = (400,640);
+ref = _part.square;
+scale = (1,-1);
 }
 );
 width = 600;
@@ -5643,7 +5653,6 @@ color = 6;
 glyphname = t;
 kernLeft = t;
 kernRight = t;
-lastChange = "2022-04-11 08:44:28 +0000";
 layers = (
 {
 layerId = m01;
@@ -5710,7 +5719,6 @@ color = 6;
 glyphname = tcedilla;
 kernLeft = t;
 kernRight = t;
-lastChange = "2022-04-11 08:51:12 +0000";
 layers = (
 {
 layerId = m01;
@@ -5735,7 +5743,6 @@ color = 6;
 glyphname = u;
 kernLeft = n;
 kernRight = n;
-lastChange = "2022-04-11 08:32:42 +0000";
 layers = (
 {
 layerId = m01;
@@ -5749,7 +5756,7 @@ pos = (100,400);
 ref = _part.square;
 },
 {
-pos = (300,50);
+pos = (300,60);
 ref = _part.corner;
 scale = (1,-1);
 },
@@ -5763,11 +5770,11 @@ ref = _part.square;
 },
 {
 angle = 180;
-pos = (200,50);
+pos = (200,60);
 ref = _part.corner;
 },
 {
-pos = (400,-50);
+pos = (400,-40);
 ref = _part.square;
 },
 {
@@ -5787,16 +5794,16 @@ pos = (400,200);
 ref = _part.square;
 },
 {
-pos = (300,-50);
+pos = (300,-40);
 ref = _part.square;
 scale = (-1,1);
 },
 {
-pos = (100,50);
+pos = (100,60);
 ref = _part.square;
 },
 {
-pos = (400,50);
+pos = (400,60);
 ref = _part.square;
 }
 );
@@ -5811,7 +5818,6 @@ unicode = 117;
 glyphname = v;
 kernLeft = n;
 kernRight = n;
-lastChange = "2022-04-11 09:38:44 +0000";
 layers = (
 {
 layerId = m01;
@@ -5880,7 +5886,6 @@ unicode = 118;
 glyphname = w;
 kernLeft = n;
 kernRight = n;
-lastChange = "2022-04-11 09:39:01 +0000";
 layers = (
 {
 layerId = m01;
@@ -5975,7 +5980,6 @@ unicode = 119;
 glyphname = x;
 kernLeft = n;
 kernRight = n;
-lastChange = "2022-04-11 08:32:51 +0000";
 layers = (
 {
 layerId = m01;
@@ -6046,7 +6050,6 @@ unicode = 120;
 glyphname = y;
 kernLeft = n;
 kernRight = n;
-lastChange = "2022-04-11 08:32:51 +0000";
 layers = (
 {
 layerId = m01;
@@ -6119,7 +6122,6 @@ unicode = 121;
 glyphname = z;
 kernLeft = n;
 kernRight = n;
-lastChange = "2022-04-11 08:32:51 +0000";
 layers = (
 {
 layerId = m01;
@@ -6194,7 +6196,6 @@ unicode = 122;
 },
 {
 glyphname = zero;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -6276,7 +6277,6 @@ unicode = 48;
 },
 {
 glyphname = one;
-lastChange = "2022-04-06 10:18:24 +0000";
 layers = (
 {
 layerId = m01;
@@ -6327,7 +6327,6 @@ unicode = 49;
 },
 {
 glyphname = two;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -6419,7 +6418,6 @@ unicode = 50;
 },
 {
 glyphname = three;
-lastChange = "2022-04-06 10:18:29 +0000";
 layers = (
 {
 layerId = m01;
@@ -6498,7 +6496,6 @@ unicode = 51;
 },
 {
 glyphname = four;
-lastChange = "2022-04-06 10:18:29 +0000";
 layers = (
 {
 layerId = m01;
@@ -6564,7 +6561,6 @@ unicode = 52;
 },
 {
 glyphname = five;
-lastChange = "2022-04-06 10:18:29 +0000";
 layers = (
 {
 layerId = m01;
@@ -6645,7 +6641,6 @@ unicode = 53;
 },
 {
 glyphname = six;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -6735,7 +6730,6 @@ unicode = 54;
 },
 {
 glyphname = seven;
-lastChange = "2022-04-06 10:18:32 +0000";
 layers = (
 {
 layerId = m01;
@@ -6801,7 +6795,6 @@ unicode = 55;
 },
 {
 glyphname = eight;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -6894,7 +6887,6 @@ unicode = 56;
 },
 {
 glyphname = nine;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -6995,7 +6987,6 @@ unicode = 32;
 },
 {
 glyphname = period;
-lastChange = "2022-04-06 10:16:47 +0000";
 layers = (
 {
 layerId = m01;
@@ -7012,7 +7003,6 @@ unicode = 46;
 },
 {
 glyphname = comma;
-lastChange = "2022-04-06 10:17:14 +0000";
 layers = (
 {
 layerId = m01;
@@ -7046,7 +7036,6 @@ unicode = 44;
 },
 {
 glyphname = colon;
-lastChange = "2022-04-06 10:17:04 +0000";
 layers = (
 {
 layerId = m01;
@@ -7068,7 +7057,6 @@ unicode = 58;
 },
 {
 glyphname = semicolon;
-lastChange = "2022-04-06 11:02:17 +0000";
 layers = (
 {
 layerId = m01;
@@ -7090,7 +7078,6 @@ unicode = 59;
 },
 {
 glyphname = ellipsis;
-lastChange = "2022-04-06 10:16:54 +0000";
 layers = (
 {
 layerId = m01;
@@ -7116,7 +7103,6 @@ unicode = 8230;
 },
 {
 glyphname = exclam;
-lastChange = "2022-04-11 09:08:13 +0000";
 layers = (
 {
 layerId = m01;
@@ -7164,7 +7150,6 @@ unicode = 33;
 },
 {
 glyphname = exclamdown;
-lastChange = "2022-04-06 11:02:05 +0000";
 layers = (
 {
 layerId = m01;
@@ -7209,7 +7194,6 @@ unicode = 161;
 },
 {
 glyphname = question;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -7285,7 +7269,6 @@ unicode = 63;
 },
 {
 glyphname = questiondown;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -7364,7 +7347,6 @@ unicode = 191;
 },
 {
 glyphname = periodcentered;
-lastChange = "2022-04-06 10:18:10 +0000";
 layers = (
 {
 layerId = m01;
@@ -7383,7 +7365,6 @@ unicode = 183;
 },
 {
 glyphname = bullet;
-lastChange = "2022-04-06 10:18:10 +0000";
 layers = (
 {
 layerId = m01;
@@ -7417,7 +7398,6 @@ unicode = 8226;
 },
 {
 glyphname = numbersign;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -7500,7 +7480,6 @@ unicode = 35;
 },
 {
 glyphname = hyphen;
-lastChange = "2022-04-06 10:18:00 +0000";
 layers = (
 {
 layerId = m01;
@@ -7528,7 +7507,6 @@ unicode = 45;
 },
 {
 glyphname = parenleft;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -7586,7 +7564,6 @@ unicode = 40;
 },
 {
 glyphname = parenright;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -7648,7 +7625,6 @@ unicode = 41;
 },
 {
 glyphname = braceleft;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -7707,7 +7683,6 @@ unicode = 123;
 },
 {
 glyphname = braceright;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -7768,7 +7743,6 @@ unicode = 125;
 },
 {
 glyphname = bracketleft;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -7844,7 +7818,6 @@ unicode = 91;
 },
 {
 glyphname = bracketright;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -7923,7 +7896,6 @@ unicode = 93;
 },
 {
 glyphname = quotesinglbase;
-lastChange = "2022-04-06 11:02:35 +0000";
 layers = (
 {
 layerId = m01;
@@ -7941,7 +7913,6 @@ unicode = 8218;
 },
 {
 glyphname = quotedblbase;
-lastChange = "2022-04-06 11:02:35 +0000";
 layers = (
 {
 layerId = m01;
@@ -7963,7 +7934,6 @@ unicode = 8222;
 },
 {
 glyphname = quotedblleft;
-lastChange = "2022-04-06 11:02:55 +0000";
 layers = (
 {
 layerId = m01;
@@ -7988,7 +7958,6 @@ unicode = 8220;
 },
 {
 glyphname = quotedblright;
-lastChange = "2022-04-06 11:02:35 +0000";
 layers = (
 {
 layerId = m01;
@@ -8010,7 +7979,6 @@ unicode = 8221;
 },
 {
 glyphname = quoteleft;
-lastChange = "2022-04-06 11:02:55 +0000";
 layers = (
 {
 layerId = m01;
@@ -8030,7 +7998,6 @@ unicode = 8216;
 },
 {
 glyphname = quoteright;
-lastChange = "2022-04-06 11:02:55 +0000";
 layers = (
 {
 layerId = m01;
@@ -8049,7 +8016,6 @@ unicode = 8217;
 },
 {
 glyphname = guillemetleft;
-lastChange = "2022-04-06 10:18:17 +0000";
 layers = (
 {
 layerId = m01;
@@ -8112,7 +8078,6 @@ unicode = 171;
 },
 {
 glyphname = guillemetright;
-lastChange = "2022-04-06 10:18:17 +0000";
 layers = (
 {
 layerId = m01;
@@ -8173,7 +8138,6 @@ unicode = 187;
 },
 {
 glyphname = guilsinglleft;
-lastChange = "2022-04-06 10:18:17 +0000";
 layers = (
 {
 layerId = m01;
@@ -8212,7 +8176,6 @@ unicode = 8249;
 },
 {
 glyphname = guilsinglright;
-lastChange = "2022-04-06 10:18:17 +0000";
 layers = (
 {
 layerId = m01;
@@ -8250,7 +8213,6 @@ unicode = 8250;
 },
 {
 glyphname = quotedbl;
-lastChange = "2022-04-06 11:02:55 +0000";
 layers = (
 {
 layerId = m01;
@@ -8275,7 +8237,6 @@ unicode = 34;
 },
 {
 glyphname = quotesingle;
-lastChange = "2022-04-06 11:02:50 +0000";
 layers = (
 {
 layerId = m01;
@@ -8292,7 +8253,6 @@ unicode = 39;
 },
 {
 glyphname = baht;
-lastChange = "2022-04-06 11:06:54 +0000";
 layers = (
 {
 layerId = m01;
@@ -8418,7 +8378,6 @@ unicode = 3647;
 },
 {
 glyphname = at;
-lastChange = "2022-04-06 11:07:04 +0000";
 layers = (
 {
 layerId = m01;
@@ -8541,7 +8500,6 @@ unicode = 64;
 },
 {
 glyphname = ampersand;
-lastChange = "2022-04-06 10:15:50 +0000";
 layers = (
 {
 layerId = m01;
@@ -8641,7 +8599,6 @@ unicode = 38;
 },
 {
 glyphname = paragraph;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -8775,7 +8732,6 @@ unicode = 182;
 },
 {
 glyphname = section;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -8876,7 +8832,6 @@ unicode = 167;
 },
 {
 glyphname = copyright;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -8969,7 +8924,6 @@ unicode = 169;
 },
 {
 glyphname = registered;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -9062,7 +9016,6 @@ unicode = 174;
 },
 {
 glyphname = trademark;
-lastChange = "2022-04-06 11:02:55 +0000";
 layers = (
 {
 layerId = m01;
@@ -9122,7 +9075,6 @@ unicode = 8482;
 },
 {
 glyphname = degree;
-lastChange = "2022-04-06 11:02:55 +0000";
 layers = (
 {
 layerId = m01;
@@ -9172,7 +9124,6 @@ unicode = 176;
 },
 {
 glyphname = bar;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -9225,7 +9176,6 @@ unicode = 124;
 },
 {
 glyphname = brokenbar;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -9274,7 +9224,6 @@ unicode = 166;
 },
 {
 glyphname = cent;
-lastChange = "2022-04-06 10:16:21 +0000";
 layers = (
 {
 layerId = m01;
@@ -9380,7 +9329,6 @@ unicode = 162;
 },
 {
 glyphname = currency;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -9473,7 +9421,6 @@ unicode = 164;
 },
 {
 glyphname = dollar;
-lastChange = "2022-04-06 10:16:25 +0000";
 layers = (
 {
 layerId = m01;
@@ -9583,7 +9530,6 @@ unicode = 36;
 },
 {
 glyphname = euro;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -9660,7 +9606,6 @@ unicode = 8364;
 },
 {
 glyphname = hryvnia;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -9773,7 +9718,6 @@ unicode = 8372;
 },
 {
 glyphname = ruble;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -9859,7 +9803,6 @@ unicode = 8381;
 },
 {
 glyphname = rupeeIndian;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -9945,7 +9888,6 @@ unicode = 8377;
 },
 {
 glyphname = sheqel;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -10044,7 +9986,6 @@ unicode = 8362;
 },
 {
 glyphname = sterling;
-lastChange = "2022-04-06 10:16:30 +0000";
 layers = (
 {
 layerId = m01;
@@ -10127,7 +10068,6 @@ unicode = 163;
 },
 {
 glyphname = yen;
-lastChange = "2022-04-06 10:14:56 +0000";
 layers = (
 {
 layerId = m01;
@@ -10209,7 +10149,6 @@ unicode = 165;
 },
 {
 glyphname = cedillacomb;
-lastChange = "2022-04-11 08:51:40 +0000";
 layers = (
 {
 layerId = m01;
@@ -10236,7 +10175,6 @@ unicode = 807;
 },
 {
 glyphname = cedilla;
-lastChange = "2022-04-06 11:11:43 +0000";
 layers = (
 {
 layerId = m01;
@@ -10264,7 +10202,6 @@ unicode = 184;
 {
 export = 0;
 glyphname = _part.circle;
-lastChange = "2022-01-25 14:37:22 +0000";
 layers = (
 {
 layerId = m01;
@@ -10294,7 +10231,6 @@ width = 100;
 {
 export = 0;
 glyphname = _part.corner;
-lastChange = "2022-01-25 14:37:54 +0000";
 layers = (
 {
 layerId = m01;
@@ -10317,7 +10253,6 @@ width = 100;
 {
 export = 0;
 glyphname = _part.square;
-lastChange = "2022-01-25 13:06:54 +0000";
 layers = (
 {
 layerId = m01;
@@ -10339,7 +10274,6 @@ width = 100;
 {
 export = 0;
 glyphname = _part.corner.wide;
-lastChange = "2022-02-26 17:08:51 +0000";
 layers = (
 {
 layerId = m01;
@@ -10369,6 +10303,9 @@ m01 = {
 "@MMK_R_n" = -150;
 "@MMK_R_o" = -150;
 };
+"@MMK_L_l" = {
+"@MMK_R_T" = -150;
+};
 "@MMK_L_n" = {
 "@MMK_R_T" = -150;
 };
@@ -10376,6 +10313,7 @@ m01 = {
 "@MMK_R_T" = -150;
 };
 "@MMK_L_r" = {
+"@MMK_R_T" = -100;
 "@MMK_R_n" = -50;
 "@MMK_R_o" = -50;
 };
@@ -10402,6 +10340,12 @@ name = "round baseline";
 },
 {
 name = "t baseline";
+},
+{
+name = "Round ascender";
+},
+{
+name = "Round x-Height";
 }
 );
 settings = {
