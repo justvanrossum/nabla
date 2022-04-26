@@ -113,7 +113,7 @@ def extrudeGlyph(glyph, angle, offset, destGlyph=None):
         destGlyph = glyph
     pen = PathBuilderPen(None)
     glyph.draw(pen)
-    extruded = pen.path.extrude(angle, offset, reverse=True)
+    extruded = pen.path.extrude(angle, offset, reverse=True, splitAtSharpCorners=False)
     extruded.draw(destGlyph.getPen())
 
 

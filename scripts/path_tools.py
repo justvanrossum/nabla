@@ -153,9 +153,10 @@ class Path:
     def translate(self, dx, dy):
         return Path([contour.translate(dx, dy) for contour in self.contours])
 
-    def extrude(self, angle, depth, reverse=False):
+    def extrude(self, angle, depth, reverse=False, splitAtSharpCorners=False):
         left, _ = self.splitAtAngle(angle)
-        left = left.splitAtSharpCorners()
+        if splitAtSharpCorners:
+            left = left.splitAtSharpCorners()
 
         dx = depth * math.cos(angle)
         dy = depth * math.sin(angle)
