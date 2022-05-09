@@ -1724,24 +1724,24 @@ pos = (100,400);
 ref = _part.square;
 },
 {
-pos = (320,300);
+pos = (350,300);
 ref = _part.square;
 },
 {
-pos = (320,400);
+pos = (350,400);
 ref = _part.square;
 },
 {
 pos = (200,640);
 ref = _part.square;
-scale = (1.2,1);
+scale = (1.5,1);
 },
 {
 pos = (100,0);
 ref = _part.square;
 },
 {
-pos = (320,0);
+pos = (350,0);
 ref = _part.square;
 },
 {
@@ -1753,11 +1753,11 @@ pos = (100,300);
 ref = _part.square;
 },
 {
-pos = (320,100);
+pos = (350,100);
 ref = _part.square;
 },
 {
-pos = (320,200);
+pos = (350,200);
 ref = _part.square;
 },
 {
@@ -1766,49 +1766,49 @@ ref = _part.corner;
 scale = (-1,1);
 },
 {
-pos = (540,300);
+pos = (600,300);
 ref = _part.square;
 },
 {
-pos = (540,400);
+pos = (600,400);
 ref = _part.square;
 },
 {
-pos = (540,640);
+pos = (600,640);
 ref = _part.corner;
 },
 {
-pos = (540,0);
+pos = (600,0);
 ref = _part.square;
 },
 {
-pos = (540,100);
+pos = (600,100);
 ref = _part.square;
 },
 {
-pos = (540,200);
+pos = (600,200);
 ref = _part.square;
 },
 {
-pos = (420,640);
+pos = (450,640);
 ref = _part.square;
 scale = (-1,1);
 },
 {
-pos = (540,640);
+pos = (600,640);
 ref = _part.square;
-scale = (-1.2,1);
+scale = (-1.5,1);
 },
 {
 pos = (100,500);
 ref = _part.square;
 },
 {
-pos = (320,500);
+pos = (350,500);
 ref = _part.square;
 },
 {
-pos = (540,500);
+pos = (600,500);
 ref = _part.square;
 },
 {
@@ -1816,15 +1816,15 @@ pos = (100,540);
 ref = _part.square;
 },
 {
-pos = (320,540);
+pos = (350,540);
 ref = _part.square;
 },
 {
-pos = (540,540);
+pos = (600,540);
 ref = _part.square;
 }
 );
-width = 740;
+width = 800;
 }
 );
 metricLeft = H;
@@ -1846,7 +1846,7 @@ pos = (100,400);
 ref = _part.square;
 },
 {
-pos = (320,600);
+pos = (350,600);
 ref = _part.corner;
 },
 {
@@ -1867,24 +1867,24 @@ ref = _part.square;
 scale = (-1,1);
 },
 {
-pos = (540,100);
+pos = (600,100);
 ref = _part.square;
 scale = (1,-1);
 },
 {
-pos = (540,300);
+pos = (600,300);
 ref = _part.square;
 },
 {
-pos = (540,400);
+pos = (600,400);
 ref = _part.square;
 },
 {
-pos = (540,100);
+pos = (600,100);
 ref = _part.square;
 },
 {
-pos = (540,200);
+pos = (600,200);
 ref = _part.square;
 },
 {
@@ -1892,50 +1892,50 @@ pos = (100,500);
 ref = _part.square;
 },
 {
-pos = (540,500);
+pos = (600,500);
 ref = _part.square;
 },
 {
 angle = 180;
-pos = (420,100);
+pos = (450,100);
 ref = _part.corner;
 },
 {
-pos = (320,300);
+pos = (350,300);
 ref = _part.square;
 },
 {
-pos = (320,400);
+pos = (350,400);
 ref = _part.square;
 },
 {
-pos = (320,100);
+pos = (350,100);
 ref = _part.square;
 },
 {
-pos = (320,200);
+pos = (350,200);
 ref = _part.square;
 },
 {
-pos = (320,500);
+pos = (350,500);
 ref = _part.square;
 },
 {
-pos = (420,0);
+pos = (450,0);
 ref = _part.square;
-scale = (1.2,1);
+scale = (1.5,1);
 },
 {
-pos = (540,600);
+pos = (600,600);
 ref = _part.square;
 },
 {
 pos = (200,600);
 ref = _part.square;
-scale = (1.2,1);
+scale = (1.5,1);
 }
 );
-width = 740;
+width = 800;
 }
 );
 metricLeft = H;
@@ -1949,15 +1949,15 @@ layers = (
 layerId = m01;
 shapes = (
 {
-pos = (540,-100);
+pos = (600,-100);
 ref = _part.square;
 },
 {
-pos = (440,-200);
+pos = (500,-200);
 ref = _part.square;
 },
 {
-pos = (540,-100);
+pos = (600,-100);
 ref = _part.corner;
 scale = (1,-1);
 },
@@ -1965,7 +1965,7 @@ scale = (1,-1);
 ref = N;
 }
 );
-width = 740;
+width = 800;
 }
 );
 metricLeft = H;
@@ -4821,11 +4821,11 @@ pos = (100,60);
 ref = _part.square;
 },
 {
-pos = (300,-40);
+pos = (250,-40);
 ref = _part.square;
 }
 );
-width = 500;
+width = 450;
 }
 );
 metricLeft = H;
@@ -10225,7 +10225,7 @@ ref = _part.square;
 scale = (0.8,1);
 }
 );
-width = 770;
+width = 780;
 }
 );
 metricLeft = H;
