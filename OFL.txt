@@ -1,4 +1,4 @@
-Copyright 2022 The __PROJECT_NAME__ Project Authors (https://github.com/justvanrossum/__project_name__)
+Copyright 2022 The Nabla Project Authors (https://github.com/justvanrossum/nabla)
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
 This license is copied below, and is also available with a FAQ at:
