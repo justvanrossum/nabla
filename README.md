@@ -1,3 +1,3 @@
 # Nabla
 
-Arthur's Isometric COLRv1 Typeface
+Typearture's Nabla: an Isometric COLRv1 font
