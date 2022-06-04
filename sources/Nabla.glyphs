@@ -1,5 +1,5 @@
 {
-.appVersion = "3125";
+.appVersion = "3129";
 .formatVersion = 3;
 customParameters = (
 {
@@ -7811,39 +7811,16 @@ layers = (
 layerId = m01;
 shapes = (
 {
-pos = (100,-40);
-ref = _part.square;
-},
-{
-pos = (100,60);
-ref = _part.square;
-},
-{
-pos = (200,160);
-ref = _part.square;
-},
-{
-pos = (200,260);
-ref = _part.square;
-},
-{
-pos = (300,360);
-ref = _part.square;
-},
-{
-pos = (300,460);
-ref = _part.square;
-},
-{
-pos = (400,560);
-ref = _part.square;
-},
-{
-pos = (400,660);
-ref = _part.square;
+closed = 1;
+nodes = (
+(130,-90,l),
+(500,740,l),
+(410,790,l),
+(40,-40,l)
+);
 }
 );
-width = 600;
+width = 570;
 }
 );
 unicode = 47;
@@ -7855,47 +7832,16 @@ layers = (
 layerId = m01;
 shapes = (
 {
-pos = (500,-40);
-ref = _part.square;
-scale = (-1,1);
-},
-{
-pos = (500,60);
-ref = _part.square;
-scale = (-1,1);
-},
-{
-pos = (400,160);
-ref = _part.square;
-scale = (-1,1);
-},
-{
-pos = (400,260);
-ref = _part.square;
-scale = (-1,1);
-},
-{
-pos = (300,360);
-ref = _part.square;
-scale = (-1,1);
-},
-{
-pos = (300,460);
-ref = _part.square;
-scale = (-1,1);
-},
-{
-pos = (200,560);
-ref = _part.square;
-scale = (-1,1);
-},
-{
-pos = (200,660);
-ref = _part.square;
-scale = (-1,1);
+closed = 1;
+nodes = (
+(160,790,l),
+(70,740,l),
+(440,-90,l),
+(530,-40,l)
+);
 }
 );
-width = 600;
+width = 570;
 }
 );
 unicode = 92;
