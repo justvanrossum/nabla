@@ -1,5 +1,5 @@
 {
-.appVersion = "3124";
+.appVersion = "3125";
 .formatVersion = 3;
 customParameters = (
 {
@@ -927,6 +927,30 @@ width = 660;
 );
 metricRight = H;
 unicode = 208;
+},
+{
+glyphname = Dcroat;
+layers = (
+{
+layerId = m01;
+shapes = (
+{
+ref = D;
+},
+{
+pos = (200,300);
+ref = _part.square;
+},
+{
+pos = (0,300);
+ref = _part.square;
+}
+);
+width = 660;
+}
+);
+metricRight = H;
+unicode = 272;
 },
 {
 glyphname = E;
@@ -7662,6 +7686,40 @@ metricRight = hyphen;
 unicode = 8226;
 },
 {
+glyphname = asterisk;
+layers = (
+{
+layerId = m01;
+shapes = (
+{
+angle = 90;
+pos = (200,700);
+ref = _part.corner;
+scale = (-1,1);
+},
+{
+pos = (200,500);
+ref = _part.corner;
+},
+{
+pos = (300,600);
+ref = _part.corner;
+scale = (-1,1);
+},
+{
+pos = (100,600);
+ref = _part.corner;
+scale = (1,-1);
+}
+);
+width = 400;
+}
+);
+metricLeft = quotesingle;
+metricRight = quotesingle;
+unicode = 42;
+},
+{
 glyphname = numbersign;
 layers = (
 {
@@ -7745,6 +7803,102 @@ width = 780;
 metricLeft = H;
 metricRight = H;
 unicode = 35;
+},
+{
+glyphname = slash;
+layers = (
+{
+layerId = m01;
+shapes = (
+{
+pos = (100,-40);
+ref = _part.square;
+},
+{
+pos = (100,60);
+ref = _part.square;
+},
+{
+pos = (200,160);
+ref = _part.square;
+},
+{
+pos = (200,260);
+ref = _part.square;
+},
+{
+pos = (300,360);
+ref = _part.square;
+},
+{
+pos = (300,460);
+ref = _part.square;
+},
+{
+pos = (400,560);
+ref = _part.square;
+},
+{
+pos = (400,660);
+ref = _part.square;
+}
+);
+width = 600;
+}
+);
+unicode = 47;
+},
+{
+glyphname = backslash;
+layers = (
+{
+layerId = m01;
+shapes = (
+{
+pos = (500,-40);
+ref = _part.square;
+scale = (-1,1);
+},
+{
+pos = (500,60);
+ref = _part.square;
+scale = (-1,1);
+},
+{
+pos = (400,160);
+ref = _part.square;
+scale = (-1,1);
+},
+{
+pos = (400,260);
+ref = _part.square;
+scale = (-1,1);
+},
+{
+pos = (300,360);
+ref = _part.square;
+scale = (-1,1);
+},
+{
+pos = (300,460);
+ref = _part.square;
+scale = (-1,1);
+},
+{
+pos = (200,560);
+ref = _part.square;
+scale = (-1,1);
+},
+{
+pos = (200,660);
+ref = _part.square;
+scale = (-1,1);
+}
+);
+width = 600;
+}
+);
+unicode = 92;
 },
 {
 glyphname = hyphen;
@@ -9517,6 +9671,114 @@ metricRight = H;
 unicode = 166;
 },
 {
+glyphname = dagger;
+layers = (
+{
+layerId = m01;
+shapes = (
+{
+pos = (200,400);
+ref = _part.square;
+},
+{
+pos = (300,600);
+ref = _part.square;
+scale = (-1,1);
+},
+{
+pos = (200,500);
+ref = _part.square;
+},
+{
+pos = (300,700);
+ref = _part.square;
+scale = (-1,1);
+},
+{
+pos = (200,600);
+ref = _part.square;
+scale = (-1,1);
+},
+{
+pos = (400,600);
+ref = _part.square;
+scale = (-1,1);
+},
+{
+pos = (200,300);
+ref = _part.square;
+},
+{
+pos = (200,200);
+ref = _part.square;
+}
+);
+width = 500;
+}
+);
+metricLeft = H;
+metricRight = H;
+unicode = 8224;
+},
+{
+glyphname = daggerdbl;
+layers = (
+{
+layerId = m01;
+shapes = (
+{
+pos = (200,400);
+ref = _part.square;
+},
+{
+pos = (300,600);
+ref = _part.square;
+scale = (-1,1);
+},
+{
+pos = (200,500);
+ref = _part.square;
+},
+{
+pos = (300,700);
+ref = _part.square;
+scale = (-1,1);
+},
+{
+pos = (200,600);
+ref = _part.square;
+scale = (-1,1);
+},
+{
+pos = (400,600);
+ref = _part.square;
+scale = (-1,1);
+},
+{
+pos = (200,300);
+ref = _part.square;
+},
+{
+pos = (200,200);
+ref = _part.square;
+},
+{
+pos = (300,400);
+ref = _part.square;
+},
+{
+pos = (100,400);
+ref = _part.square;
+}
+);
+width = 500;
+}
+);
+metricLeft = H;
+metricRight = H;
+unicode = 8225;
+},
+{
 glyphname = cent;
 layers = (
 {
@@ -10512,6 +10774,334 @@ width = 760;
 metricLeft = H;
 metricRight = H;
 unicode = 165;
+},
+{
+glyphname = plus;
+layers = (
+{
+layerId = m01;
+shapes = (
+{
+pos = (100,200);
+ref = _part.square;
+},
+{
+pos = (200,200);
+ref = _part.square;
+},
+{
+pos = (300,200);
+ref = _part.square;
+},
+{
+pos = (400,200);
+ref = _part.square;
+},
+{
+pos = (250,100);
+ref = _part.square;
+},
+{
+pos = (250,50);
+ref = _part.square;
+},
+{
+pos = (250,350);
+ref = _part.square;
+},
+{
+pos = (250,300);
+ref = _part.square;
+}
+);
+width = 600;
+}
+);
+metricLeft = H;
+metricRight = H;
+unicode = 43;
+},
+{
+glyphname = minus;
+layers = (
+{
+layerId = m01;
+shapes = (
+{
+pos = (100,200);
+ref = _part.square;
+},
+{
+pos = (200,200);
+ref = _part.square;
+},
+{
+pos = (300,200);
+ref = _part.square;
+},
+{
+pos = (400,200);
+ref = _part.square;
+}
+);
+width = 600;
+}
+);
+metricLeft = hyphen;
+metricRight = hyphen;
+unicode = 8722;
+},
+{
+glyphname = multiply;
+layers = (
+{
+layerId = m01;
+shapes = (
+{
+pos = (180,120);
+ref = _part.square;
+},
+{
+pos = (100,50);
+ref = _part.square;
+},
+{
+pos = (400,350);
+ref = _part.square;
+},
+{
+pos = (250,200);
+ref = _part.square;
+},
+{
+pos = (330,270);
+ref = _part.square;
+},
+{
+pos = (420,120);
+ref = _part.square;
+scale = (-1,1);
+},
+{
+pos = (500,50);
+ref = _part.square;
+scale = (-1,1);
+},
+{
+pos = (200,350);
+ref = _part.square;
+scale = (-1,1);
+},
+{
+pos = (270,270);
+ref = _part.square;
+scale = (-1,1);
+}
+);
+width = 600;
+}
+);
+unicode = 215;
+},
+{
+glyphname = divide;
+layers = (
+{
+layerId = m01;
+shapes = (
+{
+pos = (100,200);
+ref = _part.square;
+},
+{
+pos = (200,200);
+ref = _part.square;
+},
+{
+pos = (300,200);
+ref = _part.square;
+},
+{
+pos = (400,200);
+ref = _part.square;
+},
+{
+pos = (250,50);
+ref = _part.square;
+},
+{
+pos = (250,350);
+ref = _part.square;
+}
+);
+width = 600;
+}
+);
+metricLeft = hyphen;
+metricRight = hyphen;
+unicode = 247;
+},
+{
+glyphname = equal;
+layers = (
+{
+layerId = m01;
+shapes = (
+{
+pos = (100,100);
+ref = _part.square;
+},
+{
+pos = (200,100);
+ref = _part.square;
+},
+{
+pos = (300,100);
+ref = _part.square;
+},
+{
+pos = (400,100);
+ref = _part.square;
+},
+{
+pos = (100,300);
+ref = _part.square;
+},
+{
+pos = (200,300);
+ref = _part.square;
+},
+{
+pos = (300,300);
+ref = _part.square;
+},
+{
+pos = (400,300);
+ref = _part.square;
+}
+);
+width = 600;
+}
+);
+metricLeft = H;
+metricRight = H;
+unicode = 61;
+},
+{
+glyphname = notequal;
+layers = (
+{
+layerId = m01;
+shapes = (
+{
+pos = (100,100);
+ref = _part.square;
+},
+{
+pos = (200,100);
+ref = _part.square;
+},
+{
+pos = (300,100);
+ref = _part.square;
+},
+{
+pos = (400,100);
+ref = _part.square;
+},
+{
+pos = (100,300);
+ref = _part.square;
+},
+{
+pos = (200,300);
+ref = _part.square;
+},
+{
+pos = (300,300);
+ref = _part.square;
+},
+{
+pos = (400,300);
+ref = _part.square;
+},
+{
+pos = (170,0);
+ref = _part.square;
+},
+{
+pos = (250,200);
+ref = _part.square;
+},
+{
+pos = (340,400);
+ref = _part.square;
+}
+);
+width = 600;
+}
+);
+unicode = 8800;
+},
+{
+glyphname = plusminus;
+layers = (
+{
+layerId = m01;
+shapes = (
+{
+pos = (100,300);
+ref = _part.square;
+},
+{
+pos = (200,300);
+ref = _part.square;
+},
+{
+pos = (300,300);
+ref = _part.square;
+},
+{
+pos = (400,300);
+ref = _part.square;
+},
+{
+pos = (250,200);
+ref = _part.square;
+},
+{
+pos = (250,150);
+ref = _part.square;
+},
+{
+pos = (250,450);
+ref = _part.square;
+},
+{
+pos = (250,400);
+ref = _part.square;
+},
+{
+pos = (100,0);
+ref = _part.square;
+},
+{
+pos = (200,0);
+ref = _part.square;
+},
+{
+pos = (300,0);
+ref = _part.square;
+},
+{
+pos = (400,0);
+ref = _part.square;
+}
+);
+width = 600;
+}
+);
+unicode = 177;
 },
 {
 glyphname = cedillacomb;
