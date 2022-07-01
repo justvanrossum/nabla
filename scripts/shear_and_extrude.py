@@ -275,11 +275,16 @@ def shearAndExtrude(path):
     doc.addAxisDescriptor(
         name="Weight", tag="wght", minimum=100, default=400, maximum=700
     )
+    doc.addAxisDescriptor(
+        name="Highlight", tag="HLGT", minimum=0, default=5, maximum=10
+    )
 
     depthAxisFields = [(100, 400, "Normal"), (200, 700, "Deep"), (0, 100, "Shallow")]
+    highlightAxisFields = [(0, 0, "NoHighlight"), (10, 10, "MaxHighlight")]
 
     for depth, axisValue, depthName in depthAxisFields:
         extrudedFont = deepcopy(font)
+        extrudedFont.info.styleName = depthName
         colorGlyphs = extrudeGlyphs(extrudedFont, glyphNames, extrudeAngle, depth)
         colorGlyphs.update(
             makeHighlightGlyphs(extrudedFont, glyphNames, extrudeAngle, 6)
@@ -296,6 +301,22 @@ def shearAndExtrude(path):
         extrudedFont.save(extrudedPath, overwrite=True)
         doc.addSourceDescriptor(
             path=os.fspath(extrudedPath), location={"Weight": axisValue}
+        )
+
+    for highlightWidth, axisValue, highlightName in highlightAxisFields:
+        highlightFont = deepcopy(font)
+        highlightFont.info.styleName = highlightName
+        makeHighlightGlyphs(highlightFont, glyphNames, extrudeAngle, highlightWidth)
+        for glyphName in list(highlightFont.keys()):
+            if not glyphName.endswith(highlightSuffix):
+                for layer in highlightFont.layers:
+                    if glyphName in layer:
+                        del layer[glyphName]
+
+        highlightPath = path.parent / (path.stem + "-" + highlightName + path.suffix)
+        highlightFont.save(highlightPath, overwrite=True)
+        doc.addSourceDescriptor(
+            path=os.fspath(highlightPath), location={"Highlight": axisValue}
         )
 
     dsPath = path.parent / (path.stem + ".designspace")
