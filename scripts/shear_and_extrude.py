@@ -30,29 +30,28 @@ sideSuffix = ".side"
 highlightSuffix = ".highlight"
 
 
-mainColors = [
-    colorFromHex("f5462d"),  # shadowBottomColor
-    colorFromHex("ff8723"),  # shadowColor
-    colorFromHex("ffd214"),  # frontBottomColor
-    colorFromHex("ffeb6e"),  # frontTopColor
-    colorFromHex("ffed9f"),  # topColor
-    colorFromHex("ffffff"),  # highlightColor
-]
+mainColors = {
+    "shadowBottom": colorFromHex("f5462d"),
+    "shadow": colorFromHex("ff8723"),
+    "frontBottom": colorFromHex("ffd214"),
+    "frontTop": colorFromHex("ffeb6e"),
+    "top": colorFromHex("ffed9f"),
+    "highlight": colorFromHex("ffffff"),
+}
 
-(
-    shadowBottomColorIndex,
-    shadowColorIndex,
-    frontBottomColorIndex,
-    frontTopColorIndex,
-    topColorIndex,
-    highlightColorIndex,
-) = range(len(mainColors))
+
+colorIndices = {
+    colorName: colorIndex for colorIndex, colorName in enumerate(mainColors)
+}
 
 
 frontGradient = {
     "Format": ot.PaintFormat.PaintLinearGradient,
     "ColorLine": {
-        "ColorStop": [(0.0, frontBottomColorIndex), (1.0, frontTopColorIndex)],
+        "ColorStop": [
+            (0.0, colorIndices["frontBottom"]),
+            (1.0, colorIndices["frontTop"]),
+        ],
         "Extend": "pad",  # pad, repeat, reflect
     },
     "x0": 0,
@@ -68,9 +67,9 @@ sideGradient = {
     "Format": ot.PaintFormat.PaintLinearGradient,
     "ColorLine": {
         "ColorStop": [
-            (0.0, shadowBottomColorIndex),
-            (0.65, shadowColorIndex),
-            (1.0, topColorIndex),
+            (0.0, colorIndices["shadowBottom"]),
+            (0.65, colorIndices["shadow"]),
+            (1.0, colorIndices["top"]),
         ],
         "Extend": "pad",  # pad, repeat, reflect
     },
@@ -229,7 +228,7 @@ def makeHighlightGlyphs(font, glyphNames, extrudeAngle, highlightWidth):
             highlightPath.draw(highlightGlyphPen)
 
         colorGlyphs[highlightLayerGlyphName] = buildSolidGlyph(
-            highlightLayerGlyphName, highlightColorIndex
+            highlightLayerGlyphName, colorIndices["highlight"]
         )
 
     return colorGlyphs
@@ -266,7 +265,7 @@ def buildPaintLayers(layers):
 
 
 def shearAndExtrude(path):
-    palettes = [mainColors]
+    palettes = [list(mainColors.values())]
 
     shearAngle = math.radians(30)
     extrudeAngle = math.radians(-30)
