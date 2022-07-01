@@ -294,11 +294,11 @@ def shearAndExtrude(path):
         extrudedFont = deepcopy(font)
         extrudedFont.info.styleName = depthName
         colorGlyphs = extrudeGlyphs(extrudedFont, glyphNames, extrudeAngle, depth)
-        colorGlyphs.update(
-            makeHighlightGlyphs(extrudedFont, glyphNames, extrudeAngle, 6)
-        )
 
         if depthName == "Normal":
+            colorGlyphs.update(
+                makeHighlightGlyphs(extrudedFont, glyphNames, extrudeAngle, 6)
+            )
             extrudedFont.lib[COLOR_PALETTES_KEY] = palettes
             extrudedFont.lib[COLOR_LAYERS_KEY] = colorGlyphs
             extrudedFont.features.text += buildFeatures(
