@@ -74,7 +74,7 @@ html, body {
 
 function depthAxisHandler(value) {
   const element = document.querySelector(".color-text");
-  element.style.fontVariationSettings = `'DPTH' ${value}`;
+  element.style.fontVariationSettings = `'wght' ${value}`;
 }
 
 function fontSizeHandler(value) {
@@ -94,9 +94,9 @@ function fontSizeHandler(value) {
       class="slider"
       type="range"
       name="depth-slider"
-      min="0"
-      max="200"
-      value="100"
+      min="100"
+      max="700"
+      value="400"
       step="any"
       oninput="depthAxisHandler(value);"
     >

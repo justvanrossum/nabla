@@ -215,7 +215,9 @@ def makeHighlightGlyphs(font, glyphNames, extrudeAngle, highlightWidth):
             highlightPath = Contour(leftSegments + rightSegments, closed=True)
             highlightPath.draw(highlightGlyph.getPen())
 
-        colorGlyphs[highlightLayerGlyphName] = buildSolidGlyph(highlightLayerGlyphName, highlightColorIndex)
+        colorGlyphs[highlightLayerGlyphName] = buildSolidGlyph(
+            highlightLayerGlyphName, highlightColorIndex
+        )
 
     return colorGlyphs
 
@@ -270,12 +272,18 @@ def shearAndExtrude(path):
                 shearGlyph(layer[glyphName], shearAngle)
 
     doc = DesignSpaceDocument()
-    doc.addAxisDescriptor(name="Depth", tag="DPTH", minimum=0, default=100, maximum=200)
+    doc.addAxisDescriptor(
+        name="Weight", tag="wght", minimum=100, default=400, maximum=700
+    )
 
-    for depth, depthName in [(100, "Normal"), (200, "Deep"), (0, "Shallow")]:
+    depthAxisFields = [(100, 400, "Normal"), (200, 700, "Deep"), (0, 100, "Shallow")]
+
+    for depth, axisValue, depthName in depthAxisFields:
         extrudedFont = deepcopy(font)
         colorGlyphs = extrudeGlyphs(extrudedFont, glyphNames, extrudeAngle, depth)
-        colorGlyphs.update(makeHighlightGlyphs(extrudedFont, glyphNames, extrudeAngle, 6))
+        colorGlyphs.update(
+            makeHighlightGlyphs(extrudedFont, glyphNames, extrudeAngle, 6)
+        )
 
         if depthName == "Normal":
             extrudedFont.lib[COLOR_PALETTES_KEY] = palettes
@@ -286,7 +294,9 @@ def shearAndExtrude(path):
 
         extrudedPath = path.parent / (path.stem + "-" + depthName + path.suffix)
         extrudedFont.save(extrudedPath, overwrite=True)
-        doc.addSourceDescriptor(path=os.fspath(extrudedPath), location={"Depth": depth})
+        doc.addSourceDescriptor(
+            path=os.fspath(extrudedPath), location={"Weight": axisValue}
+        )
 
     dsPath = path.parent / (path.stem + ".designspace")
     doc.write(dsPath)
