@@ -163,7 +163,7 @@ def shearGlyph(glyph, shearAngle):
 
 
 def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
-    highlightColorLayer = font.layers["highlightColor"]
+    highlightLayer = font.layers["highlightColor"]
     colorGlyphs = {}
 
     for glyphName in glyphNames:
@@ -177,7 +177,7 @@ def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
             frontLayerGlyphName, frontGradient
         )
         layerGlyphNames = [sideLayerGlyphName, frontLayerGlyphName]
-        if glyphName in highlightColorLayer:
+        if glyphName in highlightLayer:
             layerGlyphNames.append(highlightLayerGlyphName)
         colorGlyphs[glyphName] = buildCompositeGlyph(*layerGlyphNames)
         glyph = font[glyphName]
@@ -196,17 +196,17 @@ def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
 def makeHighlightGlyphs(font, glyphNames, extrudeAngle, highlightWidth):
     dx = highlightWidth * math.cos(extrudeAngle)
     dy = highlightWidth * math.sin(extrudeAngle)
-    highlightColorLayer = font.layers["highlightColor"]
+    highlightLayer = font.layers["highlightColor"]
     colorGlyphs = {}
     for glyphName in glyphNames:
-        if glyphName not in highlightColorLayer:
+        if glyphName not in highlightLayer:
             continue
         highlightLayerGlyphName = glyphName + highlightSuffix
         highlightGlyph = font.newGlyph(highlightLayerGlyphName)
         highlightGlyph.width = font[glyphName].width
         highlightGlyphPen = highlightGlyph.getPen()
-        sourceGlyph = highlightColorLayer[glyphName]
-        pbp = PathBuilderPen(highlightColorLayer)
+        sourceGlyph = highlightLayer[glyphName]
+        pbp = PathBuilderPen(highlightLayer)
         sourceGlyph.draw(pbp)
         highlightPath = pbp.path
         for contourIndex, contour in enumerate(highlightPath.contours):
