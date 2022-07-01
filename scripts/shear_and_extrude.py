@@ -168,10 +168,10 @@ def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
         frontLayerGlyphName = glyphName + frontSuffix
         sideLayerGlyphName = glyphName + sideSuffix
         highlightLayerGlyphName = glyphName + highlightSuffix
-        colorGlyphs[sideLayerGlyphName] = buildGradientGlyph(
+        colorGlyphs[sideLayerGlyphName] = buildPaintGlyph(
             sideLayerGlyphName, sideGradient
         )
-        colorGlyphs[frontLayerGlyphName] = buildGradientGlyph(
+        colorGlyphs[frontLayerGlyphName] = buildPaintGlyph(
             frontLayerGlyphName, frontGradient
         )
         layerGlyphNames = [sideLayerGlyphName, frontLayerGlyphName]
@@ -230,26 +230,22 @@ def makeHighlightGlyphs(font, glyphNames, extrudeAngle, highlightWidth):
     return colorGlyphs
 
 
-def buildGradientGlyph(sourceGlyphName, gradient):
+def buildPaintGlyph(sourceGlyphName, paint):
     colorGlyph = {
         "Format": ot.PaintFormat.PaintGlyph,
-        "Paint": gradient,
+        "Paint": paint,
         "Glyph": sourceGlyphName,
     }
     return colorGlyph
 
 
 def buildSolidGlyph(sourceGlyphName, colorIndex):
-    colorGlyph = {
-        "Format": ot.PaintFormat.PaintGlyph,
-        "Paint": {
-            "Format": ot.PaintFormat.PaintSolid,
-            "PaletteIndex": colorIndex,
-            "Alpha": 1.0,
-        },
-        "Glyph": sourceGlyphName,
+    paint = {
+        "Format": ot.PaintFormat.PaintSolid,
+        "PaletteIndex": colorIndex,
+        "Alpha": 1.0,
     }
-    return colorGlyph
+    return buildPaintGlyph(sourceGlyphName, paint)
 
 
 def buildCompositeGlyph(*sourceGlyphNames):
