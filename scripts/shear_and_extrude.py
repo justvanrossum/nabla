@@ -235,12 +235,18 @@ def makeHighlightGlyphs(font, glyphNames, extrudeAngle, highlightWidth):
 
 
 def buildPaintGlyph(sourceGlyphName, paint):
-    colorGlyph = {
+    return {
         "Format": ot.PaintFormat.PaintGlyph,
         "Paint": paint,
         "Glyph": sourceGlyphName,
     }
-    return colorGlyph
+
+
+def buildPaintColrGlyph(sourceGlyphName):
+    return {
+        "Format": ot.PaintFormat.PaintColrGlyph,
+        "Glyph": sourceGlyphName,
+    }
 
 
 def buildSolidGlyph(sourceGlyphName, colorIndex):
@@ -254,11 +260,7 @@ def buildSolidGlyph(sourceGlyphName, colorIndex):
 
 def buildCompositeGlyph(*sourceGlyphNames):
     layers = [
-        {
-            "Format": ot.PaintFormat.PaintColrGlyph,
-            "Glyph": sourceGlyphName,
-        }
-        for sourceGlyphName in sourceGlyphNames
+        buildPaintColrGlyph(sourceGlyphName) for sourceGlyphName in sourceGlyphNames
     ]
     return (ot.PaintFormat.PaintColrLayers, layers)
 
