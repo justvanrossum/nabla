@@ -27,6 +27,7 @@ def colorFromHex(hexString):
 
 frontSuffix = ".front"
 sideSuffix = ".side"
+highlightSuffix = ".highlight"
 
 
 mainColors = [
@@ -156,6 +157,7 @@ def shearGlyph(glyph, shearAngle):
 
 
 def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
+    highlightColorLayer = font.layers["highlightColor"]
     colorGlyphs = {}
     half_dx = depth * math.cos(extrudeAngle) / 2
     half_dy = depth * math.sin(extrudeAngle) / 2
@@ -163,15 +165,17 @@ def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
     for glyphName in glyphNames:
         frontLayerGlyphName = glyphName + frontSuffix
         sideLayerGlyphName = glyphName + sideSuffix
+        highlightLayerGlyphName = glyphName + highlightSuffix
         colorGlyphs[sideLayerGlyphName] = buildGradientGlyph(
             sideLayerGlyphName, sideGradient
         )
         colorGlyphs[frontLayerGlyphName] = buildGradientGlyph(
             frontLayerGlyphName, frontGradient
         )
-        colorGlyphs[glyphName] = buildCompositeGlyph(
-            sideLayerGlyphName, frontLayerGlyphName
-        )
+        layerGlyphNames = [sideLayerGlyphName, frontLayerGlyphName]
+        # if glyphName in highlightColorLayer:
+        #     layerGlyphNames.append(highlightLayerGlyphName)
+        colorGlyphs[glyphName] = buildCompositeGlyph(*layerGlyphNames)
         glyph = font[glyphName]
         glyph.move((half_dx, half_dy))
         sideGlyph = font.newGlyph(sideLayerGlyphName)
