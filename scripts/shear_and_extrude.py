@@ -206,8 +206,10 @@ def makeHighlightGlyphs(font, glyphNames, extrudeAngle, highlightWidth):
         pbp = PathBuilderPen(highlightColorLayer)
         sourceGlyph.draw(pbp)
         highlightPath = pbp.path
-        for contour in highlightPath.contours:
-            assert len(contour.segments) > 1
+        for contourIndex, contour in enumerate(highlightPath.contours):
+            if len(contour.segments) < 2:
+                print(f"Skipping highlightColor contour {contourIndex} of {glyphName}: it only has a single segment")
+                continue
             numSegments = len(contour.segments)
             firstPoint = contour.segments[0].points[0]
             lastPoint = contour.segments[-1].points[-1]
