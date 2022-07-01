@@ -122,15 +122,18 @@ def buildFeatures(glyphNames, featureSpec):
     features = []
     fea = features.append
     fea("")
-    for featureTag, glyphSuffix in featureSpec:
+    for featureTag, glyphSuffix, featureDesc in featureSpec:
         plainGlyphs = [gn[:-len(glyphSuffix)] for gn in glyphNames if gn.endswith(glyphSuffix)]
         fea(f"@glyphs_{featureTag}_plain = [{' '.join(plainGlyphs)}];")
         fea(
             f"@glyphs_{featureTag} = [{' '.join(gn + glyphSuffix for gn in plainGlyphs)}];"
         )
     fea("")
-    for featureTag, glyphSuffix in featureSpec:
+    for featureTag, glyphSuffix, featureDesc in featureSpec:
         fea(f"feature {featureTag} {{")
+        fea("    featureNames {")
+        fea(f"      name \"{featureDesc}\";")
+        fea("    };")
         fea(f"  sub @glyphs_{featureTag}_plain by @glyphs_{featureTag};")
         fea(f"}} {featureTag};")
     fea("")
@@ -298,9 +301,9 @@ def shearAndExtrude(path):
             extrudedFont.features.text += buildFeatures(
                 sorted(extrudedFont.keys()),
                 [
-                    ("ss01", frontSuffix),
-                    ("ss02", sideSuffix),
-                    ("ss03", highlightSuffix),
+                    ("ss01", frontSuffix, "Front"),
+                    ("ss02", sideSuffix, "Side"),
+                    ("ss03", highlightSuffix, "Highlight"),
                 ],
             )
 
