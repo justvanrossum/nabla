@@ -1,5 +1,5 @@
 {
-.appVersion = "3129";
+.appVersion = "3133";
 .formatVersion = 3;
 customParameters = (
 {
@@ -396,6 +396,73 @@ ref = _part.square;
 }
 );
 width = 730;
+},
+{
+associatedMasterId = m01;
+layerId = "9879E0E0-DBA3-4536-A73A-7866A49999A9";
+name = highlightColor;
+shapes = (
+{
+closed = 0;
+nodes = (
+(630,700,l,{
+name = highlightColor;
+}),
+(200,700,ls,{
+name = highlightColor;
+}),
+(147,700,o,{
+name = highlightColor;
+}),
+(100,653,o,{
+name = highlightColor;
+}),
+(100,600,cs,{
+name = highlightColor;
+}),
+(100,200,l,{
+name = highlightColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(350,600,l,{
+name = highlightColor;
+}),
+(350,300,l,{
+name = highlightColor;
+}),
+(200,300,l,{
+name = highlightColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(630,400,l,{
+name = highlightColor;
+}),
+(450,400,l,{
+name = highlightColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(630,100,l,{
+name = highlightColor;
+}),
+(450,100,l,{
+name = highlightColor;
+})
+);
+}
+);
+width = 730;
 }
 );
 metricLeft = H;
@@ -769,6 +836,51 @@ ref = _part.square;
 }
 );
 width = 650;
+},
+{
+associatedMasterId = m01;
+layerId = "2DB8FC30-554A-4B5D-8FB6-E3D691B010F2";
+name = highlightColor;
+shapes = (
+{
+closed = 0;
+nodes = (
+(450,740,l,{
+name = highlightColor;
+}),
+(200,740,ls,{
+name = highlightColor;
+}),
+(147,740,o,{
+name = highlightColor;
+}),
+(100,693,o,{
+name = highlightColor;
+}),
+(100,640,cs,{
+name = highlightColor;
+}),
+(100,190,ls,{
+name = highlightColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(450,160,l,{
+name = highlightColor;
+}),
+(450,60,l,{
+name = highlightColor;
+}),
+(200,60,l,{
+name = highlightColor;
+})
+);
+}
+);
+width = 650;
 }
 );
 metricLeft = H;
@@ -787,6 +899,68 @@ ref = cedillacomb;
 },
 {
 ref = C;
+}
+);
+width = 650;
+},
+{
+associatedMasterId = m01;
+layerId = "D84BAF56-D704-405D-9E49-4448816870CA";
+name = highlightColor;
+shapes = (
+{
+closed = 0;
+nodes = (
+(450,740,l,{
+name = highlightColor;
+}),
+(200,740,ls,{
+name = highlightColor;
+}),
+(147,740,o,{
+name = highlightColor;
+}),
+(100,693,o,{
+name = highlightColor;
+}),
+(100,640,cs,{
+name = highlightColor;
+}),
+(100,220,l,{
+name = highlightColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(330,-40,l,{
+name = highlightColor;
+}),
+(330,-140,l,{
+name = highlightColor;
+}),
+(230,-140,l,{
+name = highlightColor;
+}),
+(230,-240,l,{
+name = highlightColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(450,160,l,{
+name = highlightColor;
+}),
+(450,60,l,{
+name = highlightColor;
+}),
+(200,60,l,{
+name = highlightColor;
+})
+);
 }
 );
 width = 650;
@@ -9439,6 +9613,23 @@ pos = (450,500);
 ref = _part.square;
 },
 {
+pos = (650,400);
+ref = _part.square;
+},
+{
+pos = (650,500);
+ref = _part.square;
+},
+{
+pos = (450,600);
+ref = _part.square;
+},
+{
+pos = (750,600);
+ref = _part.corner;
+scale = (-1,1);
+},
+{
 pos = (550,400);
 ref = _part.square;
 },
@@ -9447,16 +9638,12 @@ pos = (550,500);
 ref = _part.square;
 },
 {
-pos = (450,600);
-ref = _part.corner;
-},
-{
 pos = (650,600);
 ref = _part.corner;
 scale = (-1,1);
 }
 );
-width = 750;
+width = 850;
 }
 );
 metricLeft = quotesingle;
