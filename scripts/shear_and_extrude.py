@@ -179,7 +179,9 @@ def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
         layerGlyphNames = [sideLayerGlyphName, frontLayerGlyphName]
         if glyphName in highlightLayer:
             layerGlyphNames.append(highlightLayerGlyphName)
-        colorGlyphs[glyphName] = buildCompositeGlyph(*layerGlyphNames)
+        colorGlyphs[glyphName] = buildPaintLayers(
+            [buildPaintColrGlyph(gn) for gn in layerGlyphNames]
+        )
         glyph = font[glyphName]
         sideGlyph = font.newGlyph(sideLayerGlyphName)
         sideGlyph.width = glyph.width
@@ -258,10 +260,9 @@ def buildSolidGlyph(sourceGlyphName, colorIndex):
     return buildPaintGlyph(sourceGlyphName, paint)
 
 
-def buildCompositeGlyph(*sourceGlyphNames):
-    layers = [
-        buildPaintColrGlyph(sourceGlyphName) for sourceGlyphName in sourceGlyphNames
-    ]
+def buildPaintLayers(layers):
+    if len(layers) == 1:
+        return layers[0]
     return (ot.PaintFormat.PaintColrLayers, layers)
 
 
