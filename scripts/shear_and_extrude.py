@@ -122,15 +122,16 @@ def buildFeatures(glyphNames, featureSpec):
     features = []
     fea = features.append
     fea("")
-    fea(f"@glyphs_plain = [{' '.join(glyphNames)}];")
     for featureTag, glyphSuffix in featureSpec:
+        plainGlyphs = [gn[:-len(glyphSuffix)] for gn in glyphNames if gn.endswith(glyphSuffix)]
+        fea(f"@glyphs_{featureTag}_plain = [{' '.join(plainGlyphs)}];")
         fea(
-            f"@glyphs_{featureTag} = [{' '.join(gn + glyphSuffix for gn in glyphNames)}];"
+            f"@glyphs_{featureTag} = [{' '.join(gn + glyphSuffix for gn in plainGlyphs)}];"
         )
     fea("")
     for featureTag, glyphSuffix in featureSpec:
         fea(f"feature {featureTag} {{")
-        fea(f"  sub @glyphs_plain by @glyphs_{featureTag};")
+        fea(f"  sub @glyphs_{featureTag}_plain by @glyphs_{featureTag};")
         fea(f"}} {featureTag};")
     fea("")
     return "\n".join(features)
@@ -197,6 +198,7 @@ def makeHighlightGlyphs(font, glyphNames, extrudeAngle, highlightWidth):
             continue
         highlightLayerGlyphName = glyphName + highlightSuffix
         highlightGlyph = font.newGlyph(highlightLayerGlyphName)
+        highlightGlyph.width = font[glyphName].width
         sourceGlyph = highlightColorLayer[glyphName]
         pbp = PathBuilderPen(highlightColorLayer)
         sourceGlyph.draw(pbp)
@@ -294,7 +296,12 @@ def shearAndExtrude(path):
             extrudedFont.lib[COLOR_PALETTES_KEY] = palettes
             extrudedFont.lib[COLOR_LAYERS_KEY] = colorGlyphs
             extrudedFont.features.text += buildFeatures(
-                glyphNames, [("ss01", frontSuffix), ("ss02", sideSuffix)]
+                sorted(extrudedFont.keys()),
+                [
+                    ("ss01", frontSuffix),
+                    ("ss02", sideSuffix),
+                    ("ss03", highlightSuffix),
+                ],
             )
 
         extrudedPath = path.parent / (path.stem + "-" + depthName + path.suffix)
