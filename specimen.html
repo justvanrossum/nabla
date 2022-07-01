@@ -72,19 +72,30 @@ html, body {
   </style>
   <script type="text/javascript">
 
+
+const fontVariationSettings = {
+  /* slider handlers store their axis values here */
+}
+
 function depthAxisHandler(value) {
-  const element = document.querySelector(".color-text");
-  element.style.fontVariationSettings = `'wght' ${value}`;
+  fontVariationSettings["wght"] = value;
+  updateFontVariationSettings();
 }
 
 function highlightAxisHandler(value) {
-  const element = document.querySelector(".color-text");
-  element.style.fontVariationSettings = `'HLGT' ${value}`;
+  fontVariationSettings["HLGT"] = value;
+  updateFontVariationSettings();
 }
 
 function fontSizeHandler(value) {
   const element = document.querySelector(".color-text");
   element.style.fontSize = `${value}px`;
+}
+
+function updateFontVariationSettings() {
+  const element = document.querySelector(".color-text");
+  const settings = Object.entries(fontVariationSettings).map(item => `'${item[0]}' ${item[1]}`)
+  element.style.fontVariationSettings = settings.join(", ");
 }
 
   </script>
