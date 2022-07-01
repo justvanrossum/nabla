@@ -202,6 +202,7 @@ def makeHighlightGlyphs(font, glyphNames, extrudeAngle, highlightWidth):
         highlightLayerGlyphName = glyphName + highlightSuffix
         highlightGlyph = font.newGlyph(highlightLayerGlyphName)
         highlightGlyph.width = font[glyphName].width
+        highlightGlyphPen = highlightGlyph.getPen()
         sourceGlyph = highlightColorLayer[glyphName]
         pbp = PathBuilderPen(highlightColorLayer)
         sourceGlyph.draw(pbp)
@@ -220,7 +221,7 @@ def makeHighlightGlyphs(font, glyphNames, extrudeAngle, highlightWidth):
             rightSegments[0].points[0] = lastPoint
             rightSegments[-1].points[-1] = firstPoint
             highlightPath = Contour(leftSegments + rightSegments, closed=True)
-            highlightPath.draw(highlightGlyph.getPen())
+            highlightPath.draw(highlightGlyphPen)
 
         colorGlyphs[highlightLayerGlyphName] = buildSolidGlyph(
             highlightLayerGlyphName, highlightColorIndex
