@@ -77,6 +77,11 @@ function depthAxisHandler(value) {
   element.style.fontVariationSettings = `'wght' ${value}`;
 }
 
+function highlightAxisHandler(value) {
+  const element = document.querySelector(".color-text");
+  element.style.fontVariationSettings = `'HLGT' ${value}`;
+}
+
 function fontSizeHandler(value) {
   const element = document.querySelector(".color-text");
   element.style.fontSize = `${value}px`;
@@ -100,6 +105,17 @@ function fontSizeHandler(value) {
       step="any"
       oninput="depthAxisHandler(value);"
     >
+    <label for="depth-slider">Highlight Axis</label>
+    <input
+      class="slider"
+      type="range"
+      name="highlight-axis"
+      min="0"
+      max="10"
+      value="5"
+      step="any"
+      oninput="highlightAxisHandler(value);"
+    >
     <label for="size-slider">Size</label>
     <input
       class="slider"
@@ -113,7 +129,7 @@ function fontSizeHandler(value) {
     >
   </div>
 
-  <div class="color-text">
+  <div class="color-text" contenteditable>
     ISOMETRIC
     <br>
     CHROMATIC
