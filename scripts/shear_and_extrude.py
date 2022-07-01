@@ -12,7 +12,7 @@ from fontTools.ttLib.tables import otTables as ot
 from pathops.operations import union
 from ufo2ft.constants import COLOR_LAYERS_KEY, COLOR_PALETTES_KEY
 import ufoLib2
-from path_tools import PathBuilderPen
+from path_tools import PathBuilderPen, Contour
 
 
 def colorFromHex(hexString):
@@ -159,8 +159,6 @@ def shearGlyph(glyph, shearAngle):
 def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
     highlightColorLayer = font.layers["highlightColor"]
     colorGlyphs = {}
-    half_dx = depth * math.cos(extrudeAngle) / 2
-    half_dy = depth * math.sin(extrudeAngle) / 2
 
     for glyphName in glyphNames:
         frontLayerGlyphName = glyphName + frontSuffix
@@ -173,11 +171,10 @@ def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
             frontLayerGlyphName, frontGradient
         )
         layerGlyphNames = [sideLayerGlyphName, frontLayerGlyphName]
-        # if glyphName in highlightColorLayer:
-        #     layerGlyphNames.append(highlightLayerGlyphName)
+        if glyphName in highlightColorLayer:
+            layerGlyphNames.append(highlightLayerGlyphName)
         colorGlyphs[glyphName] = buildCompositeGlyph(*layerGlyphNames)
         glyph = font[glyphName]
-        glyph.move((half_dx, half_dy))
         sideGlyph = font.newGlyph(sideLayerGlyphName)
         sideGlyph.width = glyph.width
         extrudeGlyph(glyph, extrudeAngle, -depth, sideGlyph)
@@ -190,10 +187,56 @@ def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
     return colorGlyphs
 
 
+def makeHighlightGlyphs(font, glyphNames, extrudeAngle, highlightWidth):
+    dx = highlightWidth * math.cos(extrudeAngle)
+    dy = highlightWidth * math.sin(extrudeAngle)
+    highlightColorLayer = font.layers["highlightColor"]
+    colorGlyphs = {}
+    for glyphName in glyphNames:
+        if glyphName not in highlightColorLayer:
+            continue
+        highlightLayerGlyphName = glyphName + highlightSuffix
+        highlightGlyph = font.newGlyph(highlightLayerGlyphName)
+        sourceGlyph = highlightColorLayer[glyphName]
+        pbp = PathBuilderPen(highlightColorLayer)
+        sourceGlyph.draw(pbp)
+        highlightPath = pbp.path
+        for contour in highlightPath.contours:
+            assert len(contour.segments) > 1
+            numSegments = len(contour.segments)
+            firstPoint = contour.segments[0].points[0]
+            lastPoint = contour.segments[-1].points[-1]
+            leftSegments = contour.translate(dx, dy).segments
+            leftSegments[0].points[0] = firstPoint
+            leftSegments[-1].points[-1] = lastPoint
+            rightSegments = contour.translate(-dx, -dy).reverse().segments
+            rightSegments[0].points[0] = lastPoint
+            rightSegments[-1].points[-1] = firstPoint
+            highlightPath = Contour(leftSegments + rightSegments, closed=True)
+            highlightPath.draw(highlightGlyph.getPen())
+
+        colorGlyphs[highlightLayerGlyphName] = buildSolidGlyph(highlightLayerGlyphName, highlightColorIndex)
+
+    return colorGlyphs
+
+
 def buildGradientGlyph(sourceGlyphName, gradient):
     colorGlyph = {
         "Format": ot.PaintFormat.PaintGlyph,
         "Paint": gradient,
+        "Glyph": sourceGlyphName,
+    }
+    return colorGlyph
+
+
+def buildSolidGlyph(sourceGlyphName, colorIndex):
+    colorGlyph = {
+        "Format": ot.PaintFormat.PaintGlyph,
+        "Paint": {
+            "Format": ot.PaintFormat.PaintSolid,
+            "PaletteIndex": colorIndex,
+            "Alpha": 1.0,
+        },
         "Glyph": sourceGlyphName,
     }
     return colorGlyph
@@ -221,8 +264,10 @@ def shearAndExtrude(path):
 
     glyphNames = [glyphName for glyphName in font.keys() if glyphName[0] not in "._"]
     glyphNames.sort()
-    for glyphName in glyphNames:
-        shearGlyph(font[glyphName], shearAngle)
+    for layer in font.layers:
+        for glyphName in glyphNames:
+            if glyphName in layer:
+                shearGlyph(layer[glyphName], shearAngle)
 
     doc = DesignSpaceDocument()
     doc.addAxisDescriptor(name="Depth", tag="DPTH", minimum=0, default=100, maximum=200)
@@ -230,6 +275,7 @@ def shearAndExtrude(path):
     for depth, depthName in [(100, "Normal"), (200, "Deep"), (0, "Shallow")]:
         extrudedFont = deepcopy(font)
         colorGlyphs = extrudeGlyphs(extrudedFont, glyphNames, extrudeAngle, depth)
+        colorGlyphs.update(makeHighlightGlyphs(extrudedFont, glyphNames, extrudeAngle, 6))
 
         if depthName == "Normal":
             extrudedFont.lib[COLOR_PALETTES_KEY] = palettes
