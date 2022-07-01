@@ -123,7 +123,9 @@ def buildFeatures(glyphNames, featureSpec):
     fea = features.append
     fea("")
     for featureTag, glyphSuffix, featureDesc in featureSpec:
-        plainGlyphs = [gn[:-len(glyphSuffix)] for gn in glyphNames if gn.endswith(glyphSuffix)]
+        plainGlyphs = [
+            gn[: -len(glyphSuffix)] for gn in glyphNames if gn.endswith(glyphSuffix)
+        ]
         fea(f"@glyphs_{featureTag}_plain = [{' '.join(plainGlyphs)}];")
         fea(
             f"@glyphs_{featureTag} = [{' '.join(gn + glyphSuffix for gn in plainGlyphs)}];"
@@ -132,7 +134,7 @@ def buildFeatures(glyphNames, featureSpec):
     for featureTag, glyphSuffix, featureDesc in featureSpec:
         fea(f"feature {featureTag} {{")
         fea("    featureNames {")
-        fea(f"      name \"{featureDesc}\";")
+        fea(f'      name "{featureDesc}";')
         fea("    };")
         fea(f"  sub @glyphs_{featureTag}_plain by @glyphs_{featureTag};")
         fea(f"}} {featureTag};")
@@ -209,7 +211,9 @@ def makeHighlightGlyphs(font, glyphNames, extrudeAngle, highlightWidth):
         highlightPath = pbp.path
         for contourIndex, contour in enumerate(highlightPath.contours):
             if len(contour.segments) < 2:
-                print(f"Skipping highlightColor contour {contourIndex} of {glyphName}: it only has a single segment")
+                print(
+                    f"Skipping highlightColor contour {contourIndex} of {glyphName}: it only has a single segment"
+                )
                 continue
             numSegments = len(contour.segments)
             firstPoint = contour.segments[0].points[0]
