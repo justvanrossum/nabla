@@ -1,6 +1,7 @@
 from dataclasses import dataclass, field
 import math
 from typing import List, Tuple
+from fontTools.misc.arrayTools import calcBounds
 from fontTools.misc.transform import Transform
 from fontTools.misc.bezierTools import (
     calcCubicParameters,
@@ -121,6 +122,12 @@ class Contour:
 
         return Path([Contour(segments) for segments in contours])
 
+    def computeControlBounds(self):
+        points = list(pt for seg in self.segments for pt in seg.points)
+        if points:
+            return calcBounds(points)
+        return None  # empty path
+
 
 def _pointsEqual(pt1, pt2):
     x1, y1 = pt1
@@ -186,6 +193,14 @@ class Path:
         for contour in self.contours:
             path.appendPath(contour.splitAtSharpCorners())
         return path
+
+    def computeControlBounds(self):
+        points = list(
+            pt for cont in self.contours for seg in cont.segments for pt in seg.points
+        )
+        if points:
+            return calcBounds(points)
+        return None  # empty path
 
 
 def splitCurveAtAngle(curve, angle, bothDirections=False):
