@@ -31,6 +31,7 @@ highlightSuffix = ".highlight"
 
 
 mainColors = {
+    "primer": colorFromHex("ffd214"),
     "shadowBottom": colorFromHex("f5462d"),
     "shadowMiddle": colorFromHex("fd943b"),
     "shadow": colorFromHex("ff8723"),
@@ -176,9 +177,11 @@ def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
         layerGlyphNames = [sideLayerGlyphName, frontLayerGlyphName]
         if glyphName in highlightLayer:
             layerGlyphNames.append(highlightLayerGlyphName)
-        colorGlyphs[glyphName] = buildPaintLayers(
-            [buildPaintColrGlyph(gn) for gn in layerGlyphNames]
-        )
+        layers = [
+            buildSolidGlyph(glyphName, colorIndices["primer"]),
+            *(buildPaintColrGlyph(gn) for gn in layerGlyphNames)
+        ]
+        colorGlyphs[glyphName] = buildPaintLayers(layers)
         glyph = font[glyphName]
         sideGlyph = font.newGlyph(sideLayerGlyphName)
         sideGlyph.width = glyph.width
