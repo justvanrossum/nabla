@@ -1,4 +1,5 @@
 from dataclasses import dataclass, field
+from functools import cached_property
 import math
 from typing import List, Tuple
 from fontTools.misc.arrayTools import calcBounds
@@ -23,6 +24,10 @@ class Segment:
 
     def transform(self, t):
         return Segment(t.transformPoints(self.points))
+
+    @cached_property
+    def controlBounds(self):
+        return calcBounds(self.points)
 
 
 @dataclass
@@ -130,7 +135,8 @@ class Contour:
 
         return Path([Contour(segments) for segments in contours])
 
-    def computeControlBounds(self):
+    @cached_property
+    def controlBounds(self):
         points = list(pt for seg in self.segments for pt in seg.points)
         if points:
             return calcBounds(points)
@@ -205,7 +211,8 @@ class Path:
             path.appendPath(contour.splitAtSharpCorners())
         return path
 
-    def computeControlBounds(self):
+    @cached_property
+    def controlBounds(self):
         points = list(
             pt for cont in self.contours for seg in cont.segments for pt in seg.points
         )

@@ -186,7 +186,7 @@ def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
 
         def contourSortFunc(contourIndex):
             contour = extrudedPath.contours[contourIndex]
-            return -contour.transform(rotateT).computeControlBounds()[0]
+            return -contour.transform(rotateT).controlBounds[0]
 
         sideIndices = sorted(range(len(sideLayers)), key=contourSortFunc)
         sideLayers = [sideLayers[i] for i in sideIndices]
