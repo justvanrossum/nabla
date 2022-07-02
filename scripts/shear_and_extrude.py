@@ -201,7 +201,7 @@ def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
             layerGlyphNames.append(highlightLayerGlyphName)
         layers = [
             buildSolidGlyph(glyphName, colorIndices["primer"]),
-            *(buildPaintColrGlyph(gn) for gn in layerGlyphNames)
+            *(buildPaintColrGlyph(gn) for gn in layerGlyphNames),
         ]
         colorGlyphs[glyphName] = buildPaintLayers(layers)
 
