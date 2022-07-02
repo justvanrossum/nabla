@@ -168,20 +168,7 @@ def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
         frontLayerGlyphName = glyphName + frontSuffix
         sideLayerGlyphName = glyphName + sideSuffix
         highlightLayerGlyphName = glyphName + highlightSuffix
-        colorGlyphs[sideLayerGlyphName] = buildPaintGlyph(
-            sideLayerGlyphName, sideGradient
-        )
-        colorGlyphs[frontLayerGlyphName] = buildPaintGlyph(
-            frontLayerGlyphName, frontGradient
-        )
-        layerGlyphNames = [sideLayerGlyphName, frontLayerGlyphName]
-        if glyphName in highlightLayer:
-            layerGlyphNames.append(highlightLayerGlyphName)
-        layers = [
-            buildSolidGlyph(glyphName, colorIndices["primer"]),
-            *(buildPaintColrGlyph(gn) for gn in layerGlyphNames)
-        ]
-        colorGlyphs[glyphName] = buildPaintLayers(layers)
+
         glyph = font[glyphName]
         sideGlyph = font.newGlyph(sideLayerGlyphName)
         sideGlyph.width = glyph.width
@@ -193,6 +180,23 @@ def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
             sidePartGlyph = font.newGlyph(sidePartGlyphName)
             sidePartGlyph.width = glyph.width
             contour.draw(sidePartGlyph.getPen())
+
+        colorGlyphs[sideLayerGlyphName] = buildPaintGlyph(
+            sideLayerGlyphName, sideGradient
+        )
+
+        colorGlyphs[frontLayerGlyphName] = buildPaintGlyph(
+            frontLayerGlyphName, frontGradient
+        )
+
+        layerGlyphNames = [sideLayerGlyphName, frontLayerGlyphName]
+        if glyphName in highlightLayer:
+            layerGlyphNames.append(highlightLayerGlyphName)
+        layers = [
+            buildSolidGlyph(glyphName, colorIndices["primer"]),
+            *(buildPaintColrGlyph(gn) for gn in layerGlyphNames)
+        ]
+        colorGlyphs[glyphName] = buildPaintLayers(layers)
 
         font[frontLayerGlyphName] = glyph.copy()
         font[frontLayerGlyphName].unicode = None
