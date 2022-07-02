@@ -41,6 +41,8 @@ class Contour:
                 pen.curveTo(*points)
         if self.closed:
             pen.closePath()
+        else:
+            pen.endPath()
 
     def append(self, segment):
         self.segments.append(segment)
