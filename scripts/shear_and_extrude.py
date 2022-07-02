@@ -161,6 +161,7 @@ def shearGlyph(glyph, shearAngle):
 
 
 def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
+    rotateT = Transform().rotate(-extrudeAngle)
     highlightLayer = font.layers["highlightColor"]
     colorGlyphs = {}
 
@@ -183,6 +184,12 @@ def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
             contour.draw(sidePartGlyph.getPen())
             sideLayers.append(buildPaintGlyph(sidePartGlyphName, sideGradient))
 
+        def contourSortFunc(contourIndex):
+            contour = extrudedPath.contours[contourIndex]
+            return -contour.transform(rotateT).computeControlBounds()[0]
+
+        sideIndices = sorted(range(len(sideLayers)), key=contourSortFunc)
+        sideLayers = [sideLayers[i] for i in sideIndices]
         colorGlyphs[sideLayerGlyphName] = buildPaintLayers(sideLayers)
 
         colorGlyphs[frontLayerGlyphName] = buildPaintGlyph(
