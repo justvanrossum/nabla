@@ -32,6 +32,7 @@ highlightSuffix = ".highlight"
 
 mainColors = {
     "shadowBottom": colorFromHex("f5462d"),
+    "shadowMiddle": colorFromHex("fd943b"),
     "shadow": colorFromHex("ff8723"),
     "frontBottom": colorFromHex("ffd214"),
     "frontTop": colorFromHex("ffeb6e"),
