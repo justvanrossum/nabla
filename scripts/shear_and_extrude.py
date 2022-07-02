@@ -192,6 +192,7 @@ def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
             contour.draw(sidePartGlyph.getPen())
 
         font[frontLayerGlyphName] = glyph.copy()
+        font[frontLayerGlyphName].unicode = None
         glyph.clear()
         pen = glyph.getPen()
         pen.addComponent(frontLayerGlyphName, (1, 0, 0, 1, 0, 0))
