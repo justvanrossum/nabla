@@ -182,8 +182,14 @@ def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
         glyph = font[glyphName]
         sideGlyph = font.newGlyph(sideLayerGlyphName)
         sideGlyph.width = glyph.width
+        sideGlyphPen = sideGlyph.getPen()
         extrudedPath = extrudeGlyph(glyph, extrudeAngle, -depth)
-        extrudedPath.draw(sideGlyph.getPen())
+        for contourIndex, contour in enumerate(extrudedPath.contours):
+            sidePartGlyphName = sideLayerGlyphName + f".{contourIndex}"
+            sideGlyphPen.addComponent(sidePartGlyphName, (1, 0, 0, 1, 0, 0))
+            sidePartGlyph = font.newGlyph(sidePartGlyphName)
+            sidePartGlyph.width = glyph.width
+            contour.draw(sidePartGlyph.getPen())
 
         font[frontLayerGlyphName] = glyph.copy()
         glyph.clear()
