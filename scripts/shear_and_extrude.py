@@ -112,7 +112,7 @@ def transformGlyph(glyph, transformation):
 def extrudeGlyph(glyph, angle, offset):
     pen = PathBuilderPen(None)
     glyph.draw(pen)
-    return pen.path.extrude(angle, offset, reverse=True, splitAtSharpCorners=False)
+    return pen.path.extrude(angle, offset, reverse=True, splitAtSharpCorners=True)
 
 
 def buildFeatures(glyphNames, featureSpec):
