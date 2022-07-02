@@ -21,6 +21,9 @@ class Segment:
     def translate(self, dx, dy):
         return Segment([(x + dx, y + dy) for x, y in self.points])
 
+    def transform(self, t):
+        return Segment(t.transformPoints(self.points))
+
 
 @dataclass
 class Contour:
@@ -50,7 +53,10 @@ class Contour:
         self.closed = True
 
     def translate(self, dx, dy):
-        return Contour([segment.translate(dx, dy) for segment in self.segments])
+        return Contour([segment.translate(dx, dy) for segment in self.segments], self.closed)
+
+    def transform(self, t):
+        return Contour([segment.transform(t) for segment in self.segments], self.closed)
 
     def reverse(self):
         return Contour([seg.reverse() for seg in reversed(self.segments)], self.closed)
@@ -159,6 +165,9 @@ class Path:
 
     def translate(self, dx, dy):
         return Path([contour.translate(dx, dy) for contour in self.contours])
+
+    def transform(self, t):
+        return Path([contour.transform(t) for contour in self.contours])
 
     def extrude(self, angle, depth, reverse=False, splitAtSharpCorners=False):
         left, _ = self.splitAtAngle(angle)
