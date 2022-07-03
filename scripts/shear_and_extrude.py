@@ -6,8 +6,8 @@ import sys
 from fontTools.designspaceLib import DesignSpaceDocument
 from fontTools.misc.transform import Transform
 from fontTools.pens.basePen import DecomposingPen
-from fontTools.pens.recordingPen import RecordingPen
-from fontTools.pens.transformPen import TransformPen
+from fontTools.pens.recordingPen import RecordingPen, RecordingPointPen
+from fontTools.pens.transformPen import TransformPointPen
 from fontTools.ttLib.tables import otTables as ot
 from pathops.operations import union
 from ufo2ft.constants import COLOR_LAYERS_KEY, COLOR_PALETTES_KEY
@@ -65,7 +65,7 @@ frontGradient = {
 }
 
 
-sideGradient = {
+sideGradientFallback = {
     "Format": ot.PaintFormat.PaintLinearGradient,
     "ColorLine": {
         "ColorStop": [
@@ -84,15 +84,23 @@ sideGradient = {
 }
 
 
-class DecomposingRecordingPen(DecomposingPen, RecordingPen):
-    pass
+class DecomposingRecordingPointPen(RecordingPointPen):
+
+    def __init__(self, glyphSet):
+        super(DecomposingRecordingPointPen, self).__init__()
+        self.glyphSet = glyphSet
+
+    def addComponent(self, glyphName, transformation):
+        glyph = self.glyphSet[glyphName]
+        tPen = TransformPointPen(self, transformation)
+        glyph.drawPoints(tPen)
 
 
 def decomposeComponents(glyph, font):
-    recPen = DecomposingRecordingPen(font)
-    glyph.draw(recPen)
+    recPen = DecomposingRecordingPointPen(font)
+    glyph.drawPoints(recPen)
     glyph.clear()
-    recPen.replay(glyph.getPen())
+    recPen.replay(glyph.getPointPen())
 
 
 def removeOverlaps(glyph):
@@ -103,11 +111,11 @@ def removeOverlaps(glyph):
 
 
 def transformGlyph(glyph, transformation):
-    recPen = RecordingPen()
-    tPen = TransformPen(recPen, transformation)
-    glyph.draw(tPen)
+    recPen = RecordingPointPen()
+    tPen = TransformPointPen(recPen, transformation)
+    glyph.drawPoints(tPen)
     glyph.clear()
-    recPen.replay(glyph.getPen())
+    recPen.replay(glyph.getPointPen())
 
 
 def splitGlyphAtAngle(glyph, angle):
@@ -165,6 +173,7 @@ def shearGlyph(glyph, shearAngle):
 def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
     rotateT = Transform().rotate(-extrudeAngle)
     highlightLayer = font.layers["highlightColor"]
+    gradientLayers = [font.layers["top"], font.layers["side"]]
     colorGlyphs = {}
 
     for glyphName in glyphNames:
@@ -183,10 +192,10 @@ def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
             return ContourSortHelper(contour.transform(rotateT))
 
         splitPath.contours.sort(key=contourSortFunc, reverse=True)
-
+        sideGradients = makeSideGradients(splitPath, gradientLayers, glyphName)
         extrudedPath = extrudePath(splitPath, extrudeAngle, -depth, reverse=True)
 
-        for contourIndex, contour in enumerate(extrudedPath.contours):
+        for contourIndex, (contour, sideGradient) in enumerate(zip(extrudedPath.contours, sideGradients)):
             sidePartGlyphName = sideLayerGlyphName + f".{contourIndex}"
             sideGlyphPen.addComponent(sidePartGlyphName, (1, 0, 0, 1, 0, 0))
             sidePartGlyph = font.newGlyph(sidePartGlyphName)
@@ -217,6 +226,16 @@ def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
         pen.addComponent(sideLayerGlyphName, (1, 0, 0, 1, 0, 0))
 
     return colorGlyphs
+
+
+def makeSideGradients(splitPath, gradientLayers, glyphName):
+    gradientGlyphs = [gl[glyphName] for gl in gradientLayers if glyphName in gl]
+    gradientContours = [cont for g in gradientGlyphs for cont in g.contours]
+    gradientBounds = [cont.getControlBounds() for cont in gradientContours]
+    # if gradientContours:
+    #     print(glyphName, gradientContours)
+    #     print(gradientBounds)
+    return [sideGradientFallback] * len(splitPath.contours)
 
 
 class ContourSortHelper:
