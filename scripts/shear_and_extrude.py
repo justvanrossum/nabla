@@ -26,6 +26,52 @@ def colorFromHex(hexString):
     return channels
 
 
+def buildPaintGlyph(sourceGlyphName, paint):
+    return {
+        "Format": ot.PaintFormat.PaintGlyph,
+        "Paint": paint,
+        "Glyph": sourceGlyphName,
+    }
+
+
+def buildPaintColrGlyph(sourceGlyphName):
+    return {
+        "Format": ot.PaintFormat.PaintColrGlyph,
+        "Glyph": sourceGlyphName,
+    }
+
+
+def buildSolidGlyph(sourceGlyphName, colorIndex):
+    paint = {
+        "Format": ot.PaintFormat.PaintSolid,
+        "PaletteIndex": colorIndex,
+        "Alpha": 1.0,
+    }
+    return buildPaintGlyph(sourceGlyphName, paint)
+
+
+def buildPaintLayers(layers):
+    if len(layers) == 1:
+        return layers[0]
+    return (ot.PaintFormat.PaintColrLayers, layers)
+
+
+def buildLinearGradient(pt0, pt1, pt2, colorLine, extend="pad"):
+    return {
+        "Format": ot.PaintFormat.PaintLinearGradient,
+        "ColorLine": {
+            "ColorStop": colorLine,
+            "Extend": extend,  # pad, repeat, reflect
+        },
+        "x0": pt0[0],
+        "y0": pt0[1],
+        "x1": pt1[0],
+        "y1": pt1[1],
+        "x2": pt2[0],
+        "y2": pt2[1],
+    }
+
+
 frontSuffix = ".front"
 sideSuffix = ".side"
 highlightSuffix = ".highlight"
@@ -48,41 +94,24 @@ colorIndices = {
 }
 
 
-frontGradient = {
-    "Format": ot.PaintFormat.PaintLinearGradient,
-    "ColorLine": {
-        "ColorStop": [
-            (0.0, colorIndices["frontBottom"]),
-            (1.0, colorIndices["frontTop"]),
-        ],
-        "Extend": "pad",  # pad, repeat, reflect
-    },
-    "x0": 0,
-    "y0": -100,
-    "x1": 0,
-    "y1": 500,
-    "x2": 87,
-    "y2": -50,
-}
+frontGradient = buildLinearGradient(
+    (0, -100),
+    (0, 500),
+    (87, -50),
+    [(0.0, colorIndices["frontBottom"]), (1.0, colorIndices["frontTop"])],
+)
 
 
-sideGradientFallback = {
-    "Format": ot.PaintFormat.PaintLinearGradient,
-    "ColorLine": {
-        "ColorStop": [
-            (0.0, colorIndices["shadowBottom"]),
-            (0.65, colorIndices["shadow"]),
-            (1.0, colorIndices["top"]),
-        ],
-        "Extend": "pad",  # pad, repeat, reflect
-    },
-    "x0": 0,
-    "y0": 0,
-    "x1": 0,
-    "y1": 700,
-    "x2": -87,
-    "y2": 50,
-}
+sideGradientFallback = buildLinearGradient(
+    (0, 0),
+    (0, 700),
+    (87, -50),
+    [
+        (0.0, colorIndices["shadowBottom"]),
+        (0.65, colorIndices["shadow"]),
+        (1.0, colorIndices["top"]),
+    ],
+)
 
 
 class DecomposingRecordingPointPen(RecordingPointPen):
@@ -279,23 +308,10 @@ def makeSideGradient(gradientContour, extrudeSlope):
     extent = y1 - y0
     if not extent:
         extent = 1
-    colorStop = [
+    colorLine = [
         ((y - y0) / extent, colorIndices[colorName]) for y, colorName in colorPoints
     ]
-
-    return {
-        "Format": ot.PaintFormat.PaintLinearGradient,
-        "ColorLine": {
-            "ColorStop": colorStop,
-            "Extend": "pad",  # pad, repeat, reflect
-        },
-        "x0": 0,
-        "y0": y0,
-        "x1": 0,
-        "y1": y1,
-        "x2": x2,
-        "y2": y2,
-    }
+    return buildLinearGradient((0, y0), (0, y1), (x2, y2), colorLine)
 
 
 class ContourSortHelper:
@@ -345,36 +361,6 @@ def makeHighlightGlyphs(font, glyphNames, extrudeAngle, highlightWidth):
         )
 
     return colorGlyphs
-
-
-def buildPaintGlyph(sourceGlyphName, paint):
-    return {
-        "Format": ot.PaintFormat.PaintGlyph,
-        "Paint": paint,
-        "Glyph": sourceGlyphName,
-    }
-
-
-def buildPaintColrGlyph(sourceGlyphName):
-    return {
-        "Format": ot.PaintFormat.PaintColrGlyph,
-        "Glyph": sourceGlyphName,
-    }
-
-
-def buildSolidGlyph(sourceGlyphName, colorIndex):
-    paint = {
-        "Format": ot.PaintFormat.PaintSolid,
-        "PaletteIndex": colorIndex,
-        "Alpha": 1.0,
-    }
-    return buildPaintGlyph(sourceGlyphName, paint)
-
-
-def buildPaintLayers(layers):
-    if len(layers) == 1:
-        return layers[0]
-    return (ot.PaintFormat.PaintColrLayers, layers)
 
 
 def shearAndExtrude(path):
