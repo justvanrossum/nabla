@@ -1,7 +1,7 @@
 from dataclasses import dataclass, field
 from functools import cached_property
 import math
-from typing import List, Tuple
+from typing import List, Tuple, NamedTuple
 from fontTools.misc.arrayTools import calcBounds
 from fontTools.misc.transform import Transform
 from fontTools.misc.bezierTools import (
@@ -10,6 +10,15 @@ from fontTools.misc.bezierTools import (
     splitCubicAtT,
 )
 from fontTools.pens.basePen import BasePen
+
+
+class BoundingBox(NamedTuple):
+    """Represents a bounding box as a tuple of (xMin, yMin, xMax, yMax)."""
+
+    xMin: float
+    yMin: float
+    xMax: float
+    yMax: float
 
 
 @dataclass
@@ -27,7 +36,7 @@ class Segment:
 
     @cached_property
     def controlBounds(self):
-        return calcBounds(self.points)
+        return BoundingBox(*calcBounds(self.points))
 
 
 @dataclass
@@ -141,7 +150,7 @@ class Contour:
     def controlBounds(self):
         points = list(pt for seg in self.segments for pt in seg.points)
         if points:
-            return calcBounds(points)
+            return BoundingBox(*calcBounds(points))
         return None  # empty path
 
 
@@ -200,7 +209,7 @@ class Path:
             pt for cont in self.contours for seg in cont.segments for pt in seg.points
         )
         if points:
-            return calcBounds(points)
+            return BoundingBox(*calcBounds(points))
         return None  # empty path
 
 
