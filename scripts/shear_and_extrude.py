@@ -18,6 +18,7 @@ from path_tools import PathBuilderPen, Contour, extrudePath
 
 
 RANDOM_FALLBACK_GRADIENTS = False
+NO_FRONT = False
 
 
 def colorFromHex(hexString):
@@ -173,7 +174,8 @@ def transformGlyph(glyph, transformation):
 def splitGlyphAtAngle(glyph, angle):
     pen = PathBuilderPen(None)
     glyph.draw(pen)
-    left, _ = pen.path.splitAtAngle(angle)
+    left, right = pen.path.splitAtAngle(angle)
+    left.appendPath(right)
     left = left.splitAtSharpCorners()
     return left
 
@@ -266,7 +268,9 @@ def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
             frontLayerGlyphName, frontGradient
         )
 
-        layerGlyphNames = [sideLayerGlyphName, frontLayerGlyphName]
+        layerGlyphNames = [sideLayerGlyphName]
+        if not NO_FRONT:
+            layerGlyphNames.append(frontLayerGlyphName)
         if glyphName in highlightLayer:
             layerGlyphNames.append(highlightLayerGlyphName)
         layers = [
@@ -474,6 +478,10 @@ if __name__ == "__main__":
     parser.add_argument(
         "--random-fallback-gradients", action="store_true", default=False
     )
+    parser.add_argument(
+        "--no-front", action="store_true", default=False
+    )
     args = parser.parse_args()
     RANDOM_FALLBACK_GRADIENTS = args.random_fallback_gradients
+    NO_FRONT = args.no_front
     shearAndExtrude(pathlib.Path(args.source_ufo).resolve())
