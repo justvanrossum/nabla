@@ -277,6 +277,8 @@ def makeSideGradient(gradientContour, extrudeSlope):
     x2 = 100
     y2 = y0 + x2 * extrudeSlope
     extent = y1 - y0
+    if not extent:
+        extent = 1
     colorStop = [
         ((y - y0) / extent, colorIndices[colorName]) for y, colorName in colorPoints
     ]
