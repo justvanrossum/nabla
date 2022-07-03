@@ -60,7 +60,9 @@ class Contour:
         self.closed = True
 
     def translate(self, dx, dy):
-        return Contour([segment.translate(dx, dy) for segment in self.segments], self.closed)
+        return Contour(
+            [segment.translate(dx, dy) for segment in self.segments], self.closed
+        )
 
     def transform(self, t):
         return Contour([segment.transform(t) for segment in self.segments], self.closed)
@@ -177,25 +179,6 @@ class Path:
     def transform(self, t):
         return Path([contour.transform(t) for contour in self.contours])
 
-    def extrude(self, angle, depth, reverse=False, splitAtSharpCorners=False):
-        left, _ = self.splitAtAngle(angle)
-        if splitAtSharpCorners:
-            left = left.splitAtSharpCorners()
-
-        dx = depth * math.cos(angle)
-        dy = depth * math.sin(angle)
-
-        leftOffset = left.translate(dx, dy)
-        extruded = Path()
-        for cont1, cont2 in zip(left.contours, leftOffset.contours):
-            segments1 = cont1.segments
-            segments2 = cont2.reverse().segments
-            seg12 = Segment([segments1[-1].points[-1], segments2[0].points[0]])
-            seg21 = Segment([segments2[-1].points[-1], segments1[0].points[0]])
-            contour = Contour(segments1 + [seg12] + segments2 + [seg21], True)
-            extruded.append(contour.reverse() if reverse else contour)
-        return extruded
-
     def splitAtAngle(self, angle):
         leftPath = Path()
         rightPath = Path()
@@ -219,6 +202,22 @@ class Path:
         if points:
             return calcBounds(points)
         return None  # empty path
+
+
+def extrudePath(path, angle, depth, reverse=False):
+    dx = depth * math.cos(angle)
+    dy = depth * math.sin(angle)
+
+    pathOffset = path.translate(dx, dy)
+    extruded = Path()
+    for cont1, cont2 in zip(path.contours, pathOffset.contours):
+        segments1 = cont1.segments
+        segments2 = cont2.reverse().segments
+        seg12 = Segment([segments1[-1].points[-1], segments2[0].points[0]])
+        seg21 = Segment([segments2[-1].points[-1], segments1[0].points[0]])
+        contour = Contour(segments1 + [seg12] + segments2 + [seg21], True)
+        extruded.append(contour.reverse() if reverse else contour)
+    return extruded
 
 
 def splitCurveAtAngle(curve, angle, bothDirections=False):

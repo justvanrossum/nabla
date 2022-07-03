@@ -12,7 +12,7 @@ from fontTools.ttLib.tables import otTables as ot
 from pathops.operations import union
 from ufo2ft.constants import COLOR_LAYERS_KEY, COLOR_PALETTES_KEY
 import ufoLib2
-from path_tools import PathBuilderPen, Contour
+from path_tools import PathBuilderPen, Contour, extrudePath
 
 
 def colorFromHex(hexString):
@@ -113,7 +113,9 @@ def transformGlyph(glyph, transformation):
 def extrudeGlyph(glyph, angle, offset):
     pen = PathBuilderPen(None)
     glyph.draw(pen)
-    return pen.path.extrude(angle, offset, reverse=True, splitAtSharpCorners=True)
+    left, _ = pen.path.splitAtAngle(angle)
+    left = left.splitAtSharpCorners()
+    return extrudePath(left, angle, offset, reverse=True)
 
 
 def buildFeatures(glyphNames, featureSpec):
