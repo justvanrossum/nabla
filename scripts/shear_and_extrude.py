@@ -119,9 +119,10 @@ sideGradientFallback = buildLinearGradient(
 
 
 def buildRandomSideGradientFallback():
-    from random import choice
+    from random import shuffle
 
     colorNames = ["shadowBottom", "shadowMiddle", "shadow", "top"]
+    shuffle(colorNames)
 
     colorChoices = list(colorIndices.values())
     return buildLinearGradient(
@@ -129,9 +130,9 @@ def buildRandomSideGradientFallback():
         (0, 700),
         (87, -50),
         [
-            (0.0, colorIndices[choice(colorNames)]),
-            (0.65, colorIndices[choice(colorNames)]),
-            (1.0, colorIndices[choice(colorNames)]),
+            (0.0, colorIndices[colorNames[0]]),
+            (0.65, colorIndices[colorNames[1]]),
+            (1.0, colorIndices[colorNames[2]]),
         ],
     )
 
