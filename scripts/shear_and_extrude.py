@@ -119,7 +119,7 @@ class DecomposingRecordingPointPen(RecordingPointPen):
         super(DecomposingRecordingPointPen, self).__init__()
         self.glyphSet = glyphSet
 
-    def addComponent(self, glyphName, transformation):
+    def addComponent(self, glyphName, transformation, identifier=None, **kwargs):
         glyph = self.glyphSet[glyphName]
         tPen = TransformPointPen(self, transformation)
         glyph.drawPoints(tPen)
