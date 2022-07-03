@@ -4,6 +4,7 @@ import os
 import pathlib
 import sys
 from fontTools.designspaceLib import DesignSpaceDocument
+from fontTools.misc.arrayTools import rectArea, sectRect
 from fontTools.misc.transform import Transform
 from fontTools.pens.basePen import DecomposingPen
 from fontTools.pens.recordingPen import RecordingPen, RecordingPointPen
@@ -85,7 +86,6 @@ sideGradientFallback = {
 
 
 class DecomposingRecordingPointPen(RecordingPointPen):
-
     def __init__(self, glyphSet):
         super(DecomposingRecordingPointPen, self).__init__()
         self.glyphSet = glyphSet
@@ -172,6 +172,7 @@ def shearGlyph(glyph, shearAngle):
 
 def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
     rotateT = Transform().rotate(-extrudeAngle)
+    extrudeSlope = math.tan(extrudeAngle)
     highlightLayer = font.layers["highlightColor"]
     gradientLayers = [font.layers["top"], font.layers["side"]]
     colorGlyphs = {}
@@ -192,10 +193,14 @@ def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
             return ContourSortHelper(contour.transform(rotateT))
 
         splitPath.contours.sort(key=contourSortFunc, reverse=True)
-        sideGradients = makeSideGradients(splitPath, gradientLayers, glyphName)
+        sideGradients = makeSideGradients(
+            splitPath, gradientLayers, glyphName, extrudeSlope
+        )
         extrudedPath = extrudePath(splitPath, extrudeAngle, -depth, reverse=True)
 
-        for contourIndex, (contour, sideGradient) in enumerate(zip(extrudedPath.contours, sideGradients)):
+        for contourIndex, (contour, sideGradient) in enumerate(
+            zip(extrudedPath.contours, sideGradients)
+        ):
             sidePartGlyphName = sideLayerGlyphName + f".{contourIndex}"
             sideGlyphPen.addComponent(sidePartGlyphName, (1, 0, 0, 1, 0, 0))
             sidePartGlyph = font.newGlyph(sidePartGlyphName)
@@ -228,14 +233,67 @@ def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
     return colorGlyphs
 
 
-def makeSideGradients(splitPath, gradientLayers, glyphName):
+def makeSideGradients(splitPath, gradientLayers, glyphName, extrudeSlope):
     gradientGlyphs = [gl[glyphName] for gl in gradientLayers if glyphName in gl]
     gradientContours = [cont for g in gradientGlyphs for cont in g.contours]
     gradientBounds = [cont.getControlBounds() for cont in gradientContours]
-    # if gradientContours:
-    #     print(glyphName, gradientContours)
-    #     print(gradientBounds)
-    return [sideGradientFallback] * len(splitPath.contours)
+    gradients = []
+    for contour in splitPath.contours:
+        contourBox = contour.controlBounds
+        boxOverlaps = []
+        for index, gb in enumerate(gradientBounds):
+            doesOverlap, obox = sectRect(contourBox, gb)
+            area = rectArea(obox) if doesOverlap else 0
+            boxOverlaps.append((area, index))
+        boxOverlaps.sort(reverse=True)
+        if boxOverlaps and boxOverlaps[0][0] > 0:
+            gradient = makeSideGradient(
+                gradientContours[boxOverlaps[0][1]], extrudeSlope
+            )
+        else:
+            gradient = sideGradientFallback
+        gradients.append(gradient)
+
+    return gradients
+
+
+def makeSideGradient(gradientContour, extrudeSlope):
+    colorPoints = []
+    for point in gradientContour.points:
+        colorName = point.name
+        if not colorName:
+            continue
+        if colorName.endswith("Color"):
+            colorName = colorName[:-5]
+        if colorName not in colorIndices:
+            continue
+        x = point.x
+        y = point.y
+        y -= x * extrudeSlope
+        colorPoints.append((y, colorName))
+    colorPoints.sort()
+    y0 = colorPoints[0][0]
+    y1 = colorPoints[-1][0]
+    x2 = 100
+    y2 = y0 + x2 * extrudeSlope
+    extent = y1 - y0
+    colorStop = [
+        ((y - y0) / extent, colorIndices[colorName]) for y, colorName in colorPoints
+    ]
+
+    return {
+        "Format": ot.PaintFormat.PaintLinearGradient,
+        "ColorLine": {
+            "ColorStop": colorStop,
+            "Extend": "pad",  # pad, repeat, reflect
+        },
+        "x0": 0,
+        "y0": y0,
+        "x1": 0,
+        "y1": y1,
+        "x2": x2,
+        "y2": y2,
+    }
 
 
 class ContourSortHelper:
