@@ -295,6 +295,7 @@ def makeSideGradient(gradientContour, extrudeSlope):
         if colorName.endswith("Color"):
             colorName = colorName[:-5]
         if colorName not in colorIndices:
+            print(f"*** warning: color '{colorName}' is not defined")
             continue
         x = point.x
         y = point.y
