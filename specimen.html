@@ -98,9 +98,15 @@ function updateFontVariationSettings() {
   element.style.fontVariationSettings = settings.join(", ");
 }
 
+function onLoad() {
+  for (const element of document.querySelectorAll(".slider")) {
+    element.oninput(element.value);
+  }
+}
+
   </script>
 </head>
-<body>
+<body onload="onLoad()">
 
 <div class="page">
 
