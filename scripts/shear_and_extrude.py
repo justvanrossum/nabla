@@ -347,7 +347,11 @@ class ContourSortHelper:
         self.contour = contour
 
     def __lt__(self, other):
-        return self.contour.controlBounds[0] < other.contour.controlBounds[0]
+        return isContourOnLeftOfContour(self.contour, other.contour)
+
+
+def isContourOnLeftOfContour(contour1, contour2):
+    return contour1.controlBounds[0] < contour2.controlBounds[0]
 
 
 def makeHighlightGlyphs(font, glyphNames, extrudeAngle, highlightWidth):
