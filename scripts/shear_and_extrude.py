@@ -110,12 +110,12 @@ def transformGlyph(glyph, transformation):
     recPen.replay(glyph.getPen())
 
 
-def extrudeGlyph(glyph, angle, offset):
+def splitGlyphAtAngle(glyph, angle):
     pen = PathBuilderPen(None)
     glyph.draw(pen)
     left, _ = pen.path.splitAtAngle(angle)
     left = left.splitAtSharpCorners()
-    return extrudePath(left, angle, offset, reverse=True)
+    return left
 
 
 def buildFeatures(glyphNames, featureSpec):
@@ -177,7 +177,9 @@ def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
         sideGlyph.width = glyph.width
         sideGlyphPen = sideGlyph.getPen()
         sideLayers = []
-        extrudedPath = extrudeGlyph(glyph, extrudeAngle, -depth)
+        splitPath = splitGlyphAtAngle(glyph, extrudeAngle)
+        extrudedPath = extrudePath(splitPath, extrudeAngle, -depth, reverse=True)
+
         for contourIndex, contour in enumerate(extrudedPath.contours):
             sidePartGlyphName = sideLayerGlyphName + f".{contourIndex}"
             sideGlyphPen.addComponent(sidePartGlyphName, (1, 0, 0, 1, 0, 0))
