@@ -178,6 +178,12 @@ def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
         sideGlyphPen = sideGlyph.getPen()
         sideLayers = []
         splitPath = splitGlyphAtAngle(glyph, extrudeAngle)
+
+        def contourSortFunc(contour):
+            return -contour.transform(rotateT).controlBounds[0]
+
+        splitPath.contours.sort(key=contourSortFunc)
+
         extrudedPath = extrudePath(splitPath, extrudeAngle, -depth, reverse=True)
 
         for contourIndex, contour in enumerate(extrudedPath.contours):
@@ -188,12 +194,6 @@ def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
             contour.draw(sidePartGlyph.getPen())
             sideLayers.append(buildPaintGlyph(sidePartGlyphName, sideGradient))
 
-        def contourSortFunc(contourIndex):
-            contour = extrudedPath.contours[contourIndex]
-            return -contour.transform(rotateT).controlBounds[0]
-
-        sideIndices = sorted(range(len(sideLayers)), key=contourSortFunc)
-        sideLayers = [sideLayers[i] for i in sideIndices]
         colorGlyphs[sideLayerGlyphName] = buildPaintLayers(sideLayers)
 
         colorGlyphs[frontLayerGlyphName] = buildPaintGlyph(
