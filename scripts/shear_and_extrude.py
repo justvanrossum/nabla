@@ -1,3 +1,4 @@
+import argparse
 from copy import deepcopy
 import math
 import os
@@ -14,6 +15,9 @@ from pathops.operations import union
 from ufo2ft.constants import COLOR_LAYERS_KEY, COLOR_PALETTES_KEY
 import ufoLib2
 from path_tools import PathBuilderPen, Contour, extrudePath
+
+
+RANDOM_FALLBACK_GRADIENTS = False
 
 
 def colorFromHex(hexString):
@@ -112,6 +116,24 @@ sideGradientFallback = buildLinearGradient(
         (1.0, colorIndices["top"]),
     ],
 )
+
+
+def buildRandomSideGradientFallback():
+    from random import choice
+
+    colorNames = ["shadowBottom", "shadowMiddle", "shadow", "top"]
+
+    colorChoices = list(colorIndices.values())
+    return buildLinearGradient(
+        (0, 0),
+        (0, 700),
+        (87, -50),
+        [
+            (0.0, colorIndices[choice(colorNames)]),
+            (0.65, colorIndices[choice(colorNames)]),
+            (1.0, colorIndices[choice(colorNames)]),
+        ],
+    )
 
 
 class DecomposingRecordingPointPen(RecordingPointPen):
@@ -280,7 +302,11 @@ def makeSideGradients(splitPath, gradientLayers, glyphName, extrudeSlope):
                 gradientContours[boxOverlaps[0][1]], extrudeSlope
             )
         else:
-            gradient = sideGradientFallback
+            gradient = (
+                buildRandomSideGradientFallback()
+                if RANDOM_FALLBACK_GRADIENTS
+                else sideGradientFallback
+            )
         gradients.append(gradient)
 
     return gradients
@@ -438,4 +464,11 @@ def shearAndExtrude(path):
 
 
 if __name__ == "__main__":
-    shearAndExtrude(pathlib.Path(sys.argv[1]).resolve())
+    parser = argparse.ArgumentParser()
+    parser.add_argument("source_ufo")
+    parser.add_argument(
+        "--random-fallback-gradients", action="store_true", default=False
+    )
+    args = parser.parse_args()
+    RANDOM_FALLBACK_GRADIENTS = args.random_fallback_gradients
+    shearAndExtrude(pathlib.Path(args.source_ufo).resolve())
