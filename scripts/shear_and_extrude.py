@@ -180,9 +180,9 @@ def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
         splitPath = splitGlyphAtAngle(glyph, extrudeAngle)
 
         def contourSortFunc(contour):
-            return -contour.transform(rotateT).controlBounds[0]
+            return ContourSortHelper(contour.transform(rotateT))
 
-        splitPath.contours.sort(key=contourSortFunc)
+        splitPath.contours.sort(key=contourSortFunc, reverse=True)
 
         extrudedPath = extrudePath(splitPath, extrudeAngle, -depth, reverse=True)
 
@@ -217,6 +217,14 @@ def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
         pen.addComponent(sideLayerGlyphName, (1, 0, 0, 1, 0, 0))
 
     return colorGlyphs
+
+
+class ContourSortHelper:
+    def __init__(self, contour):
+        self.contour = contour
+
+    def __lt__(self, other):
+        return self.contour.controlBounds[0] < other.contour.controlBounds[0]
 
 
 def makeHighlightGlyphs(font, glyphNames, extrudeAngle, highlightWidth):
