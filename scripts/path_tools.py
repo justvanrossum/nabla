@@ -34,6 +34,17 @@ class Segment:
     def transform(self, t):
         return Segment(t.transformPoints(self.points))
 
+    def splitAtT(self, t):
+        if len(self.points) == 2:
+            (x1, y1), (x2, y2) = self.points
+            x = x1 + t * (x2 - x1)
+            y = y1 + t * (y2 - y1)
+            return Segment([(x1, y1), (x, y)]), Segment([(x, y), (x2, y2)])
+        else:
+            assert len(self.points) == 4
+            points1, points2 = splitCubicAtT(*self.points, t)
+            return Segment(points1), Segment(points2)
+
     @cached_property
     def controlBounds(self):
         return BoundingBox(*calcBounds(self.points))
