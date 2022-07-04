@@ -5,7 +5,6 @@ from functools import reduce
 import math
 import os
 import pathlib
-from random import seed, shuffle
 import sys
 from fontTools.designspaceLib import DesignSpaceDocument
 from fontTools.misc.arrayTools import rectArea, sectRect
@@ -123,6 +122,8 @@ sideGradientFallback = buildLinearGradient(
 
 
 def buildRandomSideGradientFallback():
+    from random import shuffle
+
     colorNames = ["shadowBottom", "shadowMiddle", "shadow", "top"]
     shuffle(colorNames)
 
