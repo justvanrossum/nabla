@@ -406,22 +406,22 @@ shapes = (
 closed = 0;
 nodes = (
 (630,700,l,{
-name = highlightColor;
+name = "";
 }),
-(200,700,ls,{
-name = highlightColor;
+(200,700,l,{
+name = "";
 }),
 (147,700,o,{
-name = highlightColor;
+name = "";
 }),
 (100,653,o,{
-name = highlightColor;
+name = "";
 }),
-(100,600,cs,{
-name = highlightColor;
+(100,600,c,{
+name = "";
 }),
 (100,200,l,{
-name = highlightColor;
+name = "";
 })
 );
 },
@@ -429,13 +429,13 @@ name = highlightColor;
 closed = 0;
 nodes = (
 (350,600,l,{
-name = highlightColor;
+name = "";
 }),
 (350,300,l,{
-name = highlightColor;
+name = "";
 }),
 (200,300,l,{
-name = highlightColor;
+name = "";
 })
 );
 },
@@ -443,13 +443,13 @@ name = highlightColor;
 closed = 0;
 nodes = (
 (630,400,l,{
-name = highlightColor;
+name = "";
 }),
-(530,400,l,{
-name = highlightColor;
+(540,400,l,{
+name = "";
 }),
 (450,400,l,{
-name = highlightColor;
+name = "";
 })
 );
 },
@@ -457,13 +457,13 @@ name = highlightColor;
 closed = 0;
 nodes = (
 (630,100,l,{
-name = highlightColor;
+name = "";
 }),
-(540,100,l,{
-name = highlightColor;
+(550,100,l,{
+name = "";
 }),
 (450,100,l,{
-name = highlightColor;
+name = "";
 })
 );
 }
@@ -8568,6 +8568,7 @@ nodes = (
 closed = 0;
 nodes = (
 (100,700,l),
+(100,650,l),
 (100,600,l)
 );
 },
