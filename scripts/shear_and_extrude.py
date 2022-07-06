@@ -101,12 +101,16 @@ colorIndices = {
 }
 
 
-frontGradient = buildLinearGradient(
-    (0, -100),
-    (0, 500),
-    (87, -50),
-    [(0.0, colorIndices["frontBottom"]), (1.0, colorIndices["frontTop"])],
-)
+def buildFrontGradient(alpha=1.0):
+    return buildLinearGradient(
+        (0, -100),
+        (0, 500),
+        (87, -50),
+        [
+            (0.0, colorIndices["frontBottom"], alpha),
+            (1.0, colorIndices["frontTop"], alpha),
+        ],
+    )
 
 
 sideGradientFallback = buildLinearGradient(
@@ -227,7 +231,7 @@ def shearGlyph(glyph, shearAngle):
     glyph.width = rsb - lsb
 
 
-def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
+def extrudeGlyphs(font, glyphNames, extrudeAngle, depth, frontGradient):
     rotateT = Transform().rotate(-extrudeAngle)
     extrudeSlope = math.tan(extrudeAngle)
     highlightLayer = font.layers["highlightColor"]
@@ -378,8 +382,8 @@ def topologicalSort(data):
         if not ordered:
             break
         yield sorted(ordered)
-        data = {item: (dep - ordered) for item,dep in data.items()
-                if item not in ordered}
+        data = {item: (dep - ordered) for item, dep in data.items()
+        if item not in ordered}
 
 
 def horizontalOrderContour(contour1, contour2):
@@ -500,6 +504,9 @@ def shearAndExtrude(path):
             if glyphName in layer:
                 shearGlyph(layer[glyphName], shearAngle)
 
+    frontGradient = buildFrontGradient(1.0)
+    frontGradientTransparent = buildFrontGradient(0.0)
+
     doc = DesignSpaceDocument()
     doc.addAxisDescriptor(
         name="Weight", tag="wght", minimum=100, default=400, maximum=700
@@ -507,21 +514,37 @@ def shearAndExtrude(path):
     doc.addAxisDescriptor(
         name="Highlight", tag="HLGT", minimum=0, default=5, maximum=10
     )
+    doc.addAxisDescriptor(
+        name="Front Transparency", tag="FRNT", minimum=0, default=100, maximum=100
+    )
 
-    depthAxisFields = [(100, 400, "Normal"), (200, 700, "Deep"), (0, 100, "Shallow")]
+    depthAxisFields = [
+        (100, 400, False, "Normal"),
+        (100, 400, True, "TransparentFront"),
+        (200, 700, False, "Deep"),
+        (0, 100, False, "Shallow"),
+    ]
     highlightAxisFields = [(0, 0, "NoHighlight"), (10, 10, "MaxHighlight")]
 
-    for depth, axisValue, depthName in depthAxisFields:
+    for depth, axisValue, transparentFront, depthName in depthAxisFields:
         extrudedFont = deepcopy(font)
         extrudedFont.info.styleName = depthName
-        colorGlyphs = extrudeGlyphs(extrudedFont, glyphNames, extrudeAngle, depth)
+        colorGlyphs = extrudeGlyphs(
+            extrudedFont,
+            glyphNames,
+            extrudeAngle,
+            depth,
+            frontGradientTransparent if transparentFront else frontGradient,
+        )
 
-        if depthName == "Normal":
+        if depthName in ("Normal", "TransparentFront"):
             colorGlyphs.update(
                 makeHighlightGlyphs(extrudedFont, glyphNames, extrudeAngle, 6)
             )
             extrudedFont.lib[COLOR_PALETTES_KEY] = palettes
             extrudedFont.lib[COLOR_LAYERS_KEY] = colorGlyphs
+
+        if depthName == "Normal":
             extrudedFont.features.text += buildFeatures(
                 sorted(extrudedFont.keys()),
                 [
@@ -533,8 +556,11 @@ def shearAndExtrude(path):
 
         extrudedPath = path.parent / (path.stem + "-" + depthName + path.suffix)
         extrudedFont.save(extrudedPath, overwrite=True)
+        location = {"Weight": axisValue}
+        if transparentFront:
+            location["Front Transparency"] = 0
         doc.addSourceDescriptor(
-            path=os.fspath(extrudedPath), location={"Weight": axisValue}
+            path=os.fspath(extrudedPath), location=location
         )
 
     for highlightWidth, axisValue, highlightName in highlightAxisFields:
