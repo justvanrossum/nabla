@@ -372,14 +372,15 @@ def sortContours(contours, transform):
 def topologicalSort(data):
     # Adapted from https://code.activestate.com/recipes/577413-topological-sort/
     extra_items_in_deps = reduce(set.union, data.values()) - set(data.keys())
-    data.update({item:set() for item in extra_items_in_deps})
+    data.update({item: set() for item in extra_items_in_deps})
     while True:
         ordered = set(item for item, dep in data.items() if not dep)
         if not ordered:
             break
         yield sorted(ordered)
-        data = {item: (dep - ordered) for item,dep in data.items()
-                if item not in ordered}
+        data = {
+            item: (dep - ordered) for item, dep in data.items() if item not in ordered
+        }
 
 
 def horizontalOrderContour(contour1, contour2):
