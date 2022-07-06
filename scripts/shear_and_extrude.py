@@ -383,7 +383,7 @@ def topologicalSort(data):
             break
         yield sorted(ordered)
         data = {item: (dep - ordered) for item, dep in data.items()
-        if item not in ordered}
+                if item not in ordered}
 
 
 def horizontalOrderContour(contour1, contour2):
