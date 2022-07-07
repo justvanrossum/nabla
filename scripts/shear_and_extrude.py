@@ -302,7 +302,9 @@ def makeSideGradients(splitPath, gradientLayers, glyphName, extrudeSlope):
         avgDistances.sort()
         gradientIndex = avgDistances[0][1] if avgDistances else None
         if gradientIndex is not None:
-            gradient = makeSideGradient(gradientContourPoints[gradientIndex], extrudeSlope)
+            gradient = makeSideGradient(
+                gradientContourPoints[gradientIndex], extrudeSlope
+            )
         else:
             gradient = (
                 buildRandomSideGradientFallback()
