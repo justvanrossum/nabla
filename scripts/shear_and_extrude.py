@@ -1,7 +1,5 @@
 import argparse
-from collections import defaultdict
 from copy import deepcopy
-from functools import reduce
 import math
 import os
 import pathlib
@@ -14,7 +12,7 @@ from fontTools.ttLib.tables import otTables as ot
 from pathops.operations import union
 from ufo2ft.constants import COLOR_LAYERS_KEY, COLOR_PALETTES_KEY
 import ufoLib2
-from path_tools import PathBuilderPen, Contour, extrudePath
+from path_tools import PathBuilderPen, Contour, extrudePath, sortContours
 
 
 RANDOM_FALLBACK_GRADIENTS = False
@@ -345,104 +343,6 @@ def makeSideGradient(gradientContour, extrudeSlope):
         ((y - y0) / extent, colorIndices[colorName]) for y, colorName in colorPoints
     ]
     return buildLinearGradient((0, y0), (0, y1), (x2, y2), colorLine)
-
-
-def sortContours(contours, transform):
-    if not contours:
-        return contours
-    contoursTransformed = [cont.transform(transform) for cont in contours]
-    indices = set(range(len(contours)))
-    comparisons = []
-    for i, cont1 in enumerate(contoursTransformed):
-        for j, cont2 in enumerate(contoursTransformed[i + 1 :], i + 1):
-            comparisons.append((i, j, horizontalOrderContour(cont1, cont2)))
-    comparisons = [(i, j) if ho == -1 else (j, i) for i, j, ho in comparisons if ho]
-
-    deps = defaultdict(set)
-    for i, j in comparisons:
-        deps[i].add(j)
-    for i in indices - set(deps):
-        deps[i] = set()
-    assert deps, indices
-
-    sortedIndices = sum(topologicalSort(deps), [])
-    assert len(sortedIndices) == len(contours), sorted(indices - set(sortedIndices))
-    return [contours[i] for i in (sortedIndices)]
-
-
-def topologicalSort(data):
-    # Adapted from https://code.activestate.com/recipes/577413-topological-sort/
-    extra_items_in_deps = reduce(set.union, data.values()) - set(data.keys())
-    data.update({item: set() for item in extra_items_in_deps})
-    while True:
-        ordered = set(item for item, dep in data.items() if not dep)
-        if not ordered:
-            break
-        yield sorted(ordered)
-        data = {
-            item: (dep - ordered) for item, dep in data.items() if item not in ordered
-        }
-
-
-def horizontalOrderContour(contour1, contour2):
-    bounds1 = contour1.controlBounds
-    bounds2 = contour2.controlBounds
-    if ho := horizontalOrderRect(bounds1, bounds2):
-        return ho
-
-    if rectsOverlap(bounds1, bounds2):
-        for segment1 in contour1.segments:
-            for segment2 in contour2.segments:
-                if ho := horizontalOrderSegment(segment1, segment2):
-                    return ho
-    return 0
-
-
-def horizontalOrderSegment(segment1, segment2, maxRecursionLevel=4):
-    if maxRecursionLevel < 0:
-        return 0
-    bounds1 = segment1.controlBounds
-    bounds2 = segment2.controlBounds
-    if ho := horizontalOrderRect(bounds1, bounds2):
-        return ho
-
-    if rectsOverlap(bounds1, bounds2):
-        overlaps = []
-        for seg1 in segment1.splitAtT(0.5):
-            for seg2 in segment2.splitAtT(0.5):
-                bounds1 = seg1.controlBounds
-                bounds2 = seg2.controlBounds
-                if ho := horizontalOrderRect(bounds1, bounds2):
-                    return ho
-                if rectsOverlap(bounds1, bounds2):
-                    overlaps.append((seg1, seg2))
-        for seg1, seg2 in overlaps:
-            if ho := horizontalOrderSegment(seg1, seg2, maxRecursionLevel - 1):
-                return ho
-    return 0
-
-
-def horizontalOrderRect(rect1, rect2):
-    if rectsOverlapVertically(rect1, rect2):
-        if rect1.xMax <= rect2.xMin:
-            return -1
-        elif rect1.xMin >= rect2.xMax:
-            return 1
-    return 0
-
-
-def rectsOverlap(rect1, rect2):
-    return rectsOverlapVertically(rect1, rect2) and rectsOverlapHorizontally(
-        rect1, rect2
-    )
-
-
-def rectsOverlapHorizontally(rect1, rect2):
-    return max(rect1.xMin, rect2.xMin) < min(rect1.xMax, rect2.xMax)
-
-
-def rectsOverlapVertically(rect1, rect2):
-    return max(rect1.yMin, rect2.yMin) < min(rect1.yMax, rect2.yMax)
 
 
 def makeHighlightGlyphs(font, glyphNames, extrudeAngle, highlightWidth):
