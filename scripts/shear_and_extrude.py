@@ -5,6 +5,7 @@ import os
 import pathlib
 from fontTools.designspaceLib import DesignSpaceDocument
 from fontTools.misc.transform import Transform
+from fontTools.misc.bezierTools import cubicPointAtT
 from fontTools.pens.recordingPen import RecordingPen, RecordingPointPen
 from fontTools.pens.transformPen import TransformPointPen
 from fontTools.ttLib.tables import otTables as ot
@@ -320,8 +321,14 @@ def distancePointToContour(pt, contour):
 
 
 def distancePointToSegment(pt, segment):
-    # TODO split cubic curve
-    return distancePointToLine(pt, segment.points[0], segment.points[-1])
+    if len(segment.points) == 4:
+        # Cubic curve, flatten into two line segments. Is good enough.
+        mid = cubicPointAtT(*segment.points, 0.5)
+        d1 = distancePointToLine(pt, segment.points[0], mid)
+        d2 = distancePointToLine(pt, mid, segment.points[-1])
+        return min(d1, d2)
+    else:
+        return distancePointToLine(pt, segment.points[0], segment.points[-1])
 
 
 def distancePointToLine(pt, pt1, pt2):
