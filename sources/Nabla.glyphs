@@ -1512,16 +1512,18 @@ shapes = (
 {
 closed = 0;
 nodes = (
-(200,700,l,{
+(550,700,l,{
 name = topColor;
 }),
-(100,600,l,{
+(200,700,ls,{
+name = topColor;
+}),
+(147,700,o),
+(100,653,o),
+(100,600,cs,{
 name = shadowColor;
 }),
 (100,60,l,{
-name = shadowBottomColor;
-}),
-(200,-40,l,{
 name = shadowBottomColor;
 })
 );
@@ -1537,21 +1539,10 @@ shapes = (
 {
 closed = 0;
 nodes = (
-(550,700,l,{
-name = topColor;
-}),
-(200,700,l,{
-name = shadowColor;
-})
-);
-},
-{
-closed = 0;
-nodes = (
 (450,380,l,{
 name = frontTopColor;
 }),
-(130,380,l,{
+(150,380,l,{
 name = shadowColor;
 })
 );
@@ -1562,7 +1553,7 @@ nodes = (
 (450,60,l,{
 name = frontTopColor;
 }),
-(130,60,l,{
+(150,60,l,{
 name = shadowColor;
 })
 );
@@ -9856,23 +9847,21 @@ shapes = (
 {
 closed = 0;
 nodes = (
-(400,500,ls,{
-name = topColor;
-}),
-(347,500,o),
-(300,453,o),
-(300,400,c,{
+(100,500,l,{
 name = shadowColor;
+}),
+(100,0,l,{
+name = shadowBottomColor;
 })
 );
 },
 {
 closed = 0;
 nodes = (
-(100,500,l,{
+(300,400,l,{
 name = shadowColor;
 }),
-(100,0,l,{
+(200,400,l,{
 name = shadowBottomColor;
 })
 );
@@ -9888,17 +9877,6 @@ shapes = (
 {
 closed = 0;
 nodes = (
-(500,500,l,{
-name = topColor;
-}),
-(400,500,ls,{
-name = topColor;
-})
-);
-},
-{
-closed = 0;
-nodes = (
 (200,500,l,{
 name = topColor;
 }),
@@ -9910,11 +9888,16 @@ name = topColor;
 {
 closed = 0;
 nodes = (
-(300,400,l,{
-name = shadowColor;
+(500,500,l,{
+name = topColor;
 }),
-(150,400,l,{
-name = shadowBottomColor;
+(400,500,ls,{
+name = topColor;
+}),
+(347,500,o),
+(300,453,o),
+(300,400,c,{
+name = shadowColor;
 })
 );
 }
@@ -10091,7 +10074,7 @@ name = frontTopColor;
 closed = 0;
 nodes = (
 (400,300,l,{
-name = shadowColor;
+name = shadowMiddleColor;
 }),
 (200,300,l,{
 name = shadowBottomColor;
@@ -10194,13 +10177,13 @@ pos = (100,400);
 ref = _part.square;
 },
 {
-pos = (400,400);
+pos = (420,380);
 ref = _part.corner;
 scale = (-1,1);
 },
 {
 angle = 180;
-pos = (400,300);
+pos = (420,320);
 ref = _part.corner;
 },
 {
@@ -10209,20 +10192,21 @@ ref = _part.corner;
 scale = (-1,1);
 },
 {
-pos = (400,100);
+pos = (450,100);
 ref = _part.corner;
 scale = (1,-1);
 },
 {
-pos = (400,100);
+pos = (450,100);
 ref = _part.square;
+scale = (1,1.2);
 },
 {
-pos = (400,200);
+pos = (450,220);
 ref = _part.corner;
 },
 {
-pos = (400,640);
+pos = (450,640);
 ref = _part.corner;
 },
 {
@@ -10235,40 +10219,48 @@ pos = (300,640);
 ref = _part.square;
 },
 {
-pos = (400,500);
+pos = (450,480);
 ref = _part.corner;
 scale = (1,-1);
 },
 {
-pos = (300,100);
+pos = (320,100);
 ref = _part.square;
-scale = (1,-1);
+scale = (1.3,-1);
+},
+{
+angle = 180;
+pos = (420,380);
+ref = _part.square;
+scale = (1,0.6);
 },
 {
 pos = (100,500);
 ref = _part.square;
+scale = (1,1.4);
 },
 {
-pos = (400,600);
+pos = (450,640);
 ref = _part.square;
-scale = (1,-1);
-},
-{
-angle = 180;
-pos = (400,400);
-ref = _part.square;
-},
-{
-pos = (100,540);
-ref = _part.square;
+scale = (1,-1.6);
 },
 {
 pos = (400,640);
 ref = _part.square;
-scale = (1,-1);
+scale = (0.5,1);
+},
+{
+pos = (420,380);
+ref = _part.square;
+scale = (0.3,1);
+},
+{
+pos = (420,220);
+ref = _part.square;
+scale = (0.3,1);
 }
 );
-width = 600;
+width = 650;
 }
 );
 metricLeft = H;
