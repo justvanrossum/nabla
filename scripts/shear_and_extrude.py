@@ -7,7 +7,7 @@ import os
 import pathlib
 import sys
 from fontTools.designspaceLib import DesignSpaceDocument
-from fontTools.misc.arrayTools import rectArea, sectRect
+from fontTools.misc.arrayTools import rectArea, insetRect, sectRect
 from fontTools.misc.transform import Transform
 from fontTools.pens.basePen import DecomposingPen
 from fontTools.pens.recordingPen import RecordingPen, RecordingPointPen
@@ -290,12 +290,16 @@ def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
 
 
 def makeSideGradients(splitPath, gradientLayers, glyphName, extrudeSlope):
+    rectInsetValue = -2
     gradientGlyphs = [gl[glyphName] for gl in gradientLayers if glyphName in gl]
     gradientContours = [cont for g in gradientGlyphs for cont in g.contours]
-    gradientBounds = [cont.getControlBounds() for cont in gradientContours]
+    gradientBounds = [
+        insetRect(cont.getControlBounds(), rectInsetValue, rectInsetValue)
+        for cont in gradientContours
+    ]
     gradients = []
     for contour in splitPath.contours:
-        contourBox = contour.controlBounds
+        contourBox = insetRect(contour.controlBounds, rectInsetValue, rectInsetValue)
         boxOverlaps = []
         for index, gb in enumerate(gradientBounds):
             doesOverlap, obox = sectRect(contourBox, gb)
