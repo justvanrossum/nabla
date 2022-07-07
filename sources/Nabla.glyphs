@@ -6609,7 +6609,7 @@ nodes = (
 name = frontTopColor;
 }),
 (400,400,l,{
-name = " shadowColor";
+name = shadowColor;
 }),
 (347,400,o),
 (300,353,o),
