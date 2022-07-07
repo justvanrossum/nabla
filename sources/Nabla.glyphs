@@ -3002,6 +3002,55 @@ width = 550;
 },
 {
 associatedMasterId = m01;
+layerId = "852E2F17-4E0B-4A54-8518-2FADA965201D";
+name = side;
+shapes = (
+{
+closed = 0;
+nodes = (
+(100,850,l,{
+name = shadowColor;
+}),
+(100,60,ls,{
+name = shadowBottomColor;
+})
+);
+}
+);
+width = 550;
+},
+{
+associatedMasterId = m01;
+layerId = "C5487AA0-F86A-48E8-A1FB-1432211887E5";
+name = top;
+shapes = (
+{
+closed = 0;
+nodes = (
+(450,60,l,{
+name = frontTopColor;
+}),
+(200,60,l,{
+name = shadowColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(200,850,l,{
+name = topColor;
+}),
+(100,850,l,{
+name = topColor;
+})
+);
+}
+);
+width = 550;
+},
+{
+associatedMasterId = m01;
 layerId = "6091D937-1047-40EF-A9D1-7698E053A8A9";
 name = highlightColor;
 shapes = (
