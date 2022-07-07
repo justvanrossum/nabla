@@ -342,7 +342,8 @@ if __name__ == "__main__":
     with savedState():
         strokeWidth(2)
 
-        extruded = path.extrude(angle, offset)
+        left, right = path.splitAtAngle(angle)
+        extruded = extrudePath(left, angle, offset)
 
         bez = BezierPath()
         extruded.draw(bez)
