@@ -288,7 +288,8 @@ def makeSideGradients(splitPath, gradientLayers, glyphName, extrudeSlope):
     gradientGlyphs = [gl[glyphName] for gl in gradientLayers if glyphName in gl]
     gradientContours = [cont for g in gradientGlyphs for cont in g.contours]
     gradientContourPoints = [
-        [(pt.x, pt.y) for pt in cont.points if pt.name] for cont in gradientContours
+        [((pt.x, pt.y), pt.name) for pt in cont.points if pt.name]
+        for cont in gradientContours
     ]
     gradients = []
     for contour in splitPath.contours:
@@ -296,12 +297,12 @@ def makeSideGradients(splitPath, gradientLayers, glyphName, extrudeSlope):
         for index, points in enumerate(gradientContourPoints):
             if not points:
                 continue
-            distances = [distancePointToContour(pt, contour) for pt in points]
+            distances = [distancePointToContour(pt, contour) for pt, name in points]
             avgDistances.append((sum(distances) / len(distances), index))
         avgDistances.sort()
         gradientIndex = avgDistances[0][1] if avgDistances else None
         if gradientIndex is not None:
-            gradient = makeSideGradient(gradientContours[gradientIndex], extrudeSlope)
+            gradient = makeSideGradient(gradientContourPoints[gradientIndex], extrudeSlope)
         else:
             gradient = (
                 buildRandomSideGradientFallback()
@@ -360,19 +361,14 @@ def distancePointToLine(pt, pt1, pt2):
     return abs(a * x + b * y + c) / math.sqrt(det)
 
 
-def makeSideGradient(gradientContour, extrudeSlope):
+def makeSideGradient(gradientPoints, extrudeSlope):
     colorPoints = []
-    for point in gradientContour.points:
-        colorName = point.name
-        if not colorName:
-            continue
+    for (x, y), colorName in gradientPoints:
         if colorName.endswith("Color"):
             colorName = colorName[:-5]
         if colorName not in colorIndices:
             print(f"*** warning: color '{colorName}' is not defined")
             continue
-        x = point.x
-        y = point.y
         y -= x * extrudeSlope
         colorPoints.append((y, colorName))
     colorPoints.sort()
