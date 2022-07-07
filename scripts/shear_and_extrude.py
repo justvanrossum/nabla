@@ -5,18 +5,16 @@ from functools import reduce
 import math
 import os
 import pathlib
-import sys
 from fontTools.designspaceLib import DesignSpaceDocument
 from fontTools.misc.arrayTools import rectArea, insetRect, sectRect
 from fontTools.misc.transform import Transform
-from fontTools.pens.basePen import DecomposingPen
 from fontTools.pens.recordingPen import RecordingPen, RecordingPointPen
 from fontTools.pens.transformPen import TransformPointPen
 from fontTools.ttLib.tables import otTables as ot
 from pathops.operations import union
 from ufo2ft.constants import COLOR_LAYERS_KEY, COLOR_PALETTES_KEY
 import ufoLib2
-from path_tools import PathBuilderPen, Contour, Segment, extrudePath
+from path_tools import PathBuilderPen, Contour, extrudePath
 
 
 RANDOM_FALLBACK_GRADIENTS = False
@@ -127,7 +125,6 @@ def buildRandomSideGradientFallback():
     colorNames = ["shadowBottom", "shadowMiddle", "shadow", "top"]
     shuffle(colorNames)
 
-    colorChoices = list(colorIndices.values())
     return buildLinearGradient(
         (0, 0),
         (0, 700),
@@ -470,7 +467,6 @@ def makeHighlightGlyphs(font, glyphNames, extrudeAngle, highlightWidth):
                     f"Skipping highlightColor contour {contourIndex} of {glyphName}: it only has a single segment"
                 )
                 continue
-            numSegments = len(contour.segments)
             firstPoint = contour.segments[0].points[0]
             lastPoint = contour.segments[-1].points[-1]
             leftSegments = contour.translate(dx, dy).segments
