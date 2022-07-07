@@ -4,7 +4,6 @@ import math
 import os
 import pathlib
 from fontTools.designspaceLib import DesignSpaceDocument
-from fontTools.misc.arrayTools import rectArea, insetRect, sectRect
 from fontTools.misc.transform import Transform
 from fontTools.pens.recordingPen import RecordingPen, RecordingPointPen
 from fontTools.pens.transformPen import TransformPointPen
@@ -285,26 +284,23 @@ def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
 
 
 def makeSideGradients(splitPath, gradientLayers, glyphName, extrudeSlope):
-    rectInsetValue = -2
     gradientGlyphs = [gl[glyphName] for gl in gradientLayers if glyphName in gl]
     gradientContours = [cont for g in gradientGlyphs for cont in g.contours]
-    gradientBounds = [
-        insetRect(cont.getControlBounds(), rectInsetValue, rectInsetValue)
-        for cont in gradientContours
+    gradientContourPoints = [
+        [(pt.x, pt.y) for pt in cont.points if pt.name] for cont in gradientContours
     ]
     gradients = []
     for contour in splitPath.contours:
-        contourBox = insetRect(contour.controlBounds, rectInsetValue, rectInsetValue)
-        boxOverlaps = []
-        for index, gb in enumerate(gradientBounds):
-            doesOverlap, obox = sectRect(contourBox, gb)
-            area = rectArea(obox) if doesOverlap else 0
-            boxOverlaps.append((area, index))
-        boxOverlaps.sort(reverse=True)
-        if boxOverlaps and boxOverlaps[0][0] > 0:
-            gradient = makeSideGradient(
-                gradientContours[boxOverlaps[0][1]], extrudeSlope
-            )
+        avgDistances = []
+        for index, points in enumerate(gradientContourPoints):
+            if not points:
+                continue
+            distances = [distancePointToContour(pt, contour) for pt in points]
+            avgDistances.append((sum(distances) / len(distances), index))
+        avgDistances.sort()
+        gradientIndex = avgDistances[0][1] if avgDistances else None
+        if gradientIndex is not None:
+            gradient = makeSideGradient(gradientContours[gradientIndex], extrudeSlope)
         else:
             gradient = (
                 buildRandomSideGradientFallback()
@@ -314,6 +310,47 @@ def makeSideGradients(splitPath, gradientLayers, glyphName, extrudeSlope):
         gradients.append(gradient)
 
     return gradients
+
+
+def distancePointToContour(pt, contour):
+    dist = math.inf
+    for segment in contour.segments:
+        dist = min(dist, distancePointToSegment(pt, segment))
+    return dist
+
+
+def distancePointToSegment(pt, segment):
+    # TODO split cubic curve
+    return distancePointToLine(pt, segment.points[0], segment.points[-1])
+
+
+def distancePointToLine(pt, pt1, pt2):
+    x, y = pt
+    x1, y1 = pt1
+    x2, y2 = pt2
+
+    # ax + by + c = 0 line equation
+    a = y1 - y2
+    b = x2 - x1
+    c = x1 * y2 - x2 * y1
+
+    det = a**2 + b**2
+
+    dx = x2 - x1
+    dy = y2 - y1
+    if abs(dx) > abs(dy):
+        xp = (b * (b * x - a * y) - a * c) / det
+        t = (xp - x1) / dx
+    else:
+        yp = (a * (-b * x + a * y) - b * c) / det
+        t = (yp - y1) / dy
+
+    if t < 0:
+        return math.hypot(x - x1, y - y1)
+    elif t > 1:
+        return math.hypot(x - x2, y - y2)
+
+    return abs(a * x + b * y + c) / math.sqrt(det)
 
 
 def makeSideGradient(gradientContour, extrudeSlope):
