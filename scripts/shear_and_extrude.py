@@ -418,21 +418,11 @@ def makeHighlightGlyphs(font, glyphNames, extrudeAngle, highlightWidth):
         highlightPath = pbp.path
         for contourIndex, contour in enumerate(highlightPath.contours):
             assert contour.segments
-            if len(contour.segments[0].points) == 2:
-                pt1, pt4 = contour.segments[0].points
-                if len(contour.segments) == 1:
-                    t2, t3 = 1 / 3, 2 / 3
-                else:
-                    t2, t3 = 0.5, 0.75
-                pt2 = interpolatePoints(t2, pt1, pt4)
-                pt3 = interpolatePoints(t3, pt1, pt4)
-                contour.segments[0].points = [pt1, pt2, pt3, pt4]
-            if len(contour.segments) > 1 and len(contour.segments[-1].points) == 2:
-                pt1, pt4 = contour.segments[-1].points
-                pt2 = interpolatePoints(0.25, pt1, pt4)
-                pt3 = interpolatePoints(0.5, pt1, pt4)
-                contour.segments[-1].points = [pt1, pt2, pt3, pt4]
-
+            if len(contour.segments) == 1:
+                # Split in two
+                contour.segments = list(contour.segments[0].splitAtT(0.5))
+            convertLineToCurve(contour, 0, 0.5, 0.75)
+            convertLineToCurve(contour, -1, 0.25, 0.5)
             firstPoint = contour.segments[0].points[0]
             lastPoint = contour.segments[-1].points[-1]
             leftSegments = contour.translate(dx, dy).segments
@@ -449,6 +439,15 @@ def makeHighlightGlyphs(font, glyphNames, extrudeAngle, highlightWidth):
         )
 
     return colorGlyphs
+
+
+def convertLineToCurve(contour, segmentIndex, t1, t2):
+    if len(contour.segments[segmentIndex].points) != 2:
+        return
+    pt1, pt4 = contour.segments[segmentIndex].points
+    pt2 = interpolatePoints(t1, pt1, pt4)
+    pt3 = interpolatePoints(t2, pt1, pt4)
+    contour.segments[segmentIndex].points = [pt1, pt2, pt3, pt4]
 
 
 def interpolatePoints(t, pt1, pt2):
