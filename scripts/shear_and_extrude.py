@@ -19,6 +19,22 @@ RANDOM_FALLBACK_GRADIENTS = False
 NO_FRONT = False
 
 
+def parseColorTable(colorTable):
+    colorNames = []
+    colors = []
+    for line in colorTable.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        colorName, *hexColors = line.split()
+        colorNames.append(colorName)
+        colors.append([colorFromHex(hexColor) for hexColor in hexColors])
+
+    palettes = [list(palette) for palette in zip(*colors)]
+    colorIndices = {colorName: i for i, colorName in enumerate(colorNames)}
+    return palettes, colorIndices
+
+
 def colorFromHex(hexString):
     assert len(hexString) in [6, 8]
     channels = []
@@ -80,21 +96,18 @@ sideSuffix = ".side"
 highlightSuffix = ".highlight"
 
 
-mainColors = {
-    "primer": colorFromHex("ffd214"),
-    "shadowBottom": colorFromHex("f5462d"),
-    "shadowMiddle": colorFromHex("fd943b"),
-    "shadow": colorFromHex("ff8723"),
-    "frontBottom": colorFromHex("ffd214"),
-    "frontTop": colorFromHex("ffeb6e"),
-    "top": colorFromHex("ffed9f"),
-    "highlight": colorFromHex("ffffff"),
-}
+colorTable = """
+    primer          ffd214  ff1471
+    shadowBottom    f5462d  780082
+    shadowMiddle    fd943b  be14b4
+    shadow          ff8723  9b1eaf
+    frontBottom     ffd214  ff1471
+    frontTop        ffeb6e  ff6b8b
+    top             ffed9f  ff9cc2
+    highlight       ffffff  ffffff
+"""
 
-
-colorIndices = {
-    colorName: colorIndex for colorIndex, colorName in enumerate(mainColors)
-}
+palettes, colorIndices = parseColorTable(colorTable)
 
 
 frontGradient = buildLinearGradient(
@@ -428,8 +441,6 @@ def makeHighlightGlyphs(font, glyphNames, extrudeAngle, highlightWidth):
 
 
 def shearAndExtrude(path):
-    palettes = [list(mainColors.values())]
-
     shearAngle = math.radians(30)
     extrudeAngle = math.radians(-30)
 
