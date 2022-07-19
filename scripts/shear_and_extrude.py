@@ -417,11 +417,22 @@ def makeHighlightGlyphs(font, glyphNames, extrudeAngle, highlightWidth):
         sourceGlyph.draw(pbp)
         highlightPath = pbp.path
         for contourIndex, contour in enumerate(highlightPath.contours):
-            if len(contour.segments) < 2:
-                print(
-                    f"Skipping highlightColor contour {contourIndex} of {glyphName}: it only has a single segment"
-                )
-                continue
+            assert contour.segments
+            if len(contour.segments[0].points) == 2:
+                pt1, pt4 = contour.segments[0].points
+                if len(contour.segments) == 1:
+                    t2, t3 = 1 / 3, 2 / 3
+                else:
+                    t2, t3 = 0.5, 0.75
+                pt2 = interpolatePoints(t2, pt1, pt4)
+                pt3 = interpolatePoints(t3, pt1, pt4)
+                contour.segments[0].points = [pt1, pt2, pt3, pt4]
+            if len(contour.segments) > 1 and len(contour.segments[-1].points) == 2:
+                pt1, pt4 = contour.segments[-1].points
+                pt2 = interpolatePoints(0.25, pt1, pt4)
+                pt3 = interpolatePoints(0.5, pt1, pt4)
+                contour.segments[-1].points = [pt1, pt2, pt3, pt4]
+
             firstPoint = contour.segments[0].points[0]
             lastPoint = contour.segments[-1].points[-1]
             leftSegments = contour.translate(dx, dy).segments
@@ -438,6 +449,14 @@ def makeHighlightGlyphs(font, glyphNames, extrudeAngle, highlightWidth):
         )
 
     return colorGlyphs
+
+
+def interpolatePoints(t, pt1, pt2):
+    x1, y1 = pt1
+    x2, y2 = pt2
+    dx = x2 - x1
+    dy = y2 - y1
+    return (x1 + t * dx, y1 + t * dy)
 
 
 def shearAndExtrude(path):
