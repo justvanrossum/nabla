@@ -214,7 +214,7 @@ shapes = (
 closed = 0;
 nodes = (
 (490,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,300,l,{
 name = shadowColor;
@@ -442,7 +442,7 @@ shapes = (
 closed = 0;
 nodes = (
 (490,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,300,l,{
 name = shadowColor;
@@ -714,7 +714,7 @@ shapes = (
 closed = 0;
 nodes = (
 (490,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,300,l,{
 name = shadowColor;
@@ -1014,7 +1014,7 @@ shapes = (
 closed = 0;
 nodes = (
 (490,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,300,l,{
 name = shadowColor;
@@ -1296,7 +1296,7 @@ shapes = (
 closed = 0;
 nodes = (
 (490,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,300,l,{
 name = shadowColor;
@@ -1579,7 +1579,7 @@ shapes = (
 closed = 0;
 nodes = (
 (490,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,300,l,{
 name = shadowColor;
@@ -1845,7 +1845,7 @@ shapes = (
 closed = 0;
 nodes = (
 (490,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,300,l,{
 name = shadowColor;
@@ -2100,7 +2100,7 @@ shapes = (
 closed = 0;
 nodes = (
 (490,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,300,l,{
 name = shadowColor;
@@ -2360,7 +2360,7 @@ shapes = (
 closed = 0;
 nodes = (
 (490,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,300,l,{
 name = shadowColor;
@@ -2371,7 +2371,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (600,-100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (450,-100,l,{
 name = shadowColor;
@@ -2669,7 +2669,7 @@ shapes = (
 closed = 0;
 nodes = (
 (490,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,300,l,{
 name = shadowColor;
@@ -2938,10 +2938,10 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (450,740,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,740,ls,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (147,740,o),
 (100,693,o),
@@ -3019,7 +3019,7 @@ shapes = (
 closed = 0;
 nodes = (
 (490,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,300,l,{
 name = shadowColor;
@@ -3041,7 +3041,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (465,950,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (375,950,l,{
 name = shadowColor;
@@ -3295,7 +3295,7 @@ shapes = (
 closed = 0;
 nodes = (
 (370,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,300,l,{
 name = shadowColor;
@@ -3306,7 +3306,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (630,400,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (450,400,l,{
 name = shadowColor;
@@ -3317,7 +3317,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (630,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (450,100,l,{
 name = shadowColor;
@@ -3596,7 +3596,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (460,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (150,100,l,{
 name = shadowColor;
@@ -3610,7 +3610,7 @@ nodes = (
 name = shadowMiddleColor;
 }),
 (460,400,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (150,400,l,{
 name = shadowColor;
@@ -3824,10 +3824,10 @@ shapes = (
 closed = 0;
 nodes = (
 (550,160,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (450,160,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -3835,7 +3835,7 @@ name = frontTopColor;
 closed = 0;
 nodes = (
 (490,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -4064,10 +4064,10 @@ shapes = (
 closed = 0;
 nodes = (
 (550,160,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (450,160,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -4075,7 +4075,7 @@ name = frontTopColor;
 closed = 0;
 nodes = (
 (490,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -4336,10 +4336,10 @@ shapes = (
 closed = 0;
 nodes = (
 (550,160,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (450,160,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -4347,7 +4347,7 @@ name = frontTopColor;
 closed = 0;
 nodes = (
 (490,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -4608,10 +4608,10 @@ shapes = (
 closed = 0;
 nodes = (
 (550,160,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (450,160,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -4619,7 +4619,7 @@ name = frontTopColor;
 closed = 0;
 nodes = (
 (490,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -4883,10 +4883,10 @@ shapes = (
 closed = 0;
 nodes = (
 (550,160,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (450,160,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -4894,7 +4894,7 @@ name = frontTopColor;
 closed = 0;
 nodes = (
 (490,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -5151,10 +5151,10 @@ shapes = (
 closed = 0;
 nodes = (
 (550,160,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (450,160,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -5162,7 +5162,7 @@ name = frontTopColor;
 closed = 0;
 nodes = (
 (490,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -5406,7 +5406,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (460,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,100,l,{
 name = shadowColor;
@@ -5652,7 +5652,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (510,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (250,100,l,{
 name = shadowColor;
@@ -5663,7 +5663,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (450,400,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (250,400,l,{
 name = shadowColor;
@@ -5677,7 +5677,7 @@ nodes = (
 name = shadowColor;
 }),
 (50,400,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -5936,7 +5936,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (460,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,100,l,{
 name = shadowColor;
@@ -6208,7 +6208,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (510,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (250,100,l,{
 name = shadowColor;
@@ -6219,7 +6219,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (450,400,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (250,400,l,{
 name = shadowColor;
@@ -6233,7 +6233,7 @@ nodes = (
 name = shadowColor;
 }),
 (50,400,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -6426,7 +6426,7 @@ shapes = (
 closed = 0;
 nodes = (
 (570,380,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (180,380,l,{
 name = shadowColor;
@@ -6437,7 +6437,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (570,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (180,60,l,{
 name = shadowColor;
@@ -6639,7 +6639,7 @@ shapes = (
 closed = 0;
 nodes = (
 (570,380,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (180,380,l,{
 name = shadowColor;
@@ -6650,7 +6650,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (570,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (180,60,l,{
 name = shadowColor;
@@ -6884,7 +6884,7 @@ shapes = (
 closed = 0;
 nodes = (
 (570,380,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (180,380,l,{
 name = shadowColor;
@@ -6895,7 +6895,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (570,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (180,60,l,{
 name = shadowColor;
@@ -7139,7 +7139,7 @@ shapes = (
 closed = 0;
 nodes = (
 (570,380,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (180,380,l,{
 name = shadowColor;
@@ -7150,7 +7150,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (570,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (180,60,l,{
 name = shadowColor;
@@ -7395,7 +7395,7 @@ shapes = (
 closed = 0;
 nodes = (
 (570,380,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (180,380,l,{
 name = shadowColor;
@@ -7406,7 +7406,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (570,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (180,60,l,{
 name = shadowColor;
@@ -7641,7 +7641,7 @@ shapes = (
 closed = 0;
 nodes = (
 (570,380,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (180,380,l,{
 name = shadowColor;
@@ -7652,7 +7652,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (570,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (180,60,l,{
 name = shadowColor;
@@ -7877,7 +7877,7 @@ shapes = (
 closed = 0;
 nodes = (
 (570,380,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (180,380,l,{
 name = shadowColor;
@@ -7888,7 +7888,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (570,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (180,60,l,{
 name = shadowColor;
@@ -8109,7 +8109,7 @@ shapes = (
 closed = 0;
 nodes = (
 (570,380,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (180,380,l,{
 name = shadowColor;
@@ -8120,7 +8120,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (570,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (180,60,l,{
 name = shadowColor;
@@ -8342,7 +8342,7 @@ shapes = (
 closed = 0;
 nodes = (
 (570,380,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (180,380,l,{
 name = shadowColor;
@@ -8353,7 +8353,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (570,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (180,60,l,{
 name = shadowColor;
@@ -8364,7 +8364,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (600,-140,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (450,-140,l,{
 name = shadowColor;
@@ -8657,7 +8657,7 @@ shapes = (
 closed = 0;
 nodes = (
 (570,380,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (180,380,l,{
 name = shadowColor;
@@ -8668,7 +8668,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (570,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (180,60,l,{
 name = shadowColor;
@@ -8690,7 +8690,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (475,950,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (385,950,l,{
 name = shadowColor;
@@ -8872,7 +8872,7 @@ name = shadowColor;
 (500,67,o),
 (453,20,o),
 (400,20,cs,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (300,20,ls,{
 name = shadowColor;
@@ -8912,7 +8912,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (400,380,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,380,ls,{
 name = shadowColor;
@@ -9086,7 +9086,7 @@ shapes = (
 closed = 0;
 nodes = (
 (550,350,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (300,350,ls,{
 name = shadowColor;
@@ -9326,7 +9326,7 @@ shapes = (
 closed = 0;
 nodes = (
 (550,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -9337,10 +9337,10 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (550,400,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (300,400,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -9612,7 +9612,7 @@ shapes = (
 closed = 0;
 nodes = (
 (550,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -9623,10 +9623,10 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (550,400,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (300,400,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -9634,7 +9634,7 @@ name = frontTopColor;
 closed = 0;
 nodes = (
 (490,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,300,l,{
 name = shadowColor;
@@ -9956,7 +9956,7 @@ shapes = (
 closed = 0;
 nodes = (
 (550,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -9967,10 +9967,10 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (550,400,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (300,400,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -10271,7 +10271,7 @@ shapes = (
 closed = 0;
 nodes = (
 (550,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -10282,10 +10282,10 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (550,400,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (300,400,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -10588,7 +10588,7 @@ shapes = (
 closed = 0;
 nodes = (
 (550,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -10599,10 +10599,10 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (550,400,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (300,400,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -10626,7 +10626,7 @@ nodes = (
 name = shadowColor;
 }),
 (250,-170,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -10888,7 +10888,7 @@ shapes = (
 closed = 0;
 nodes = (
 (550,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -10899,10 +10899,10 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (550,400,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (300,400,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -11176,7 +11176,7 @@ shapes = (
 closed = 0;
 nodes = (
 (550,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -11187,10 +11187,10 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (550,400,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (300,400,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -11415,7 +11415,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (550,400,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (140,400,l,{
 name = shadowColor;
@@ -11638,7 +11638,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (500,400,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,400,l,{
 name = shadowColor;
@@ -11927,7 +11927,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (550,400,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (140,400,l,{
 name = shadowColor;
@@ -12121,7 +12121,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -12140,7 +12140,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (560,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (380,100,l,{
 name = shadowColor;
@@ -12343,10 +12343,10 @@ shapes = (
 closed = 0;
 nodes = (
 (200,200,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (100,200,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -12376,7 +12376,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (550,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -12574,7 +12574,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -12593,7 +12593,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (560,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (380,100,l,{
 name = shadowColor;
@@ -12818,7 +12818,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -12837,7 +12837,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (560,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (380,100,l,{
 name = shadowColor;
@@ -13070,7 +13070,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -13089,7 +13089,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (560,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (380,100,l,{
 name = shadowColor;
@@ -13312,7 +13312,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -13331,7 +13331,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (560,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (380,100,l,{
 name = shadowColor;
@@ -13544,7 +13544,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -13563,7 +13563,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (560,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (380,100,l,{
 name = shadowColor;
@@ -13772,7 +13772,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -13791,7 +13791,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (560,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (380,100,l,{
 name = shadowColor;
@@ -14001,7 +14001,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -14020,7 +14020,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (560,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (380,100,l,{
 name = shadowColor;
@@ -14031,7 +14031,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (610,-100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (460,-100,l,{
 name = shadowColor;
@@ -14312,7 +14312,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -14331,7 +14331,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (560,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (380,100,l,{
 name = shadowColor;
@@ -14353,7 +14353,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (469,910,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (379,910,l,{
 name = shadowColor;
@@ -14567,10 +14567,10 @@ name = topColor;
 closed = 0;
 nodes = (
 (200,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (100,300,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -14578,7 +14578,7 @@ name = frontTopColor;
 closed = 0;
 nodes = (
 (550,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -14793,10 +14793,10 @@ name = topColor;
 closed = 0;
 nodes = (
 (200,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (100,300,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -14804,7 +14804,7 @@ name = frontTopColor;
 closed = 0;
 nodes = (
 (550,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -15052,10 +15052,10 @@ name = topColor;
 closed = 0;
 nodes = (
 (200,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (100,300,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -15063,7 +15063,7 @@ name = frontTopColor;
 closed = 0;
 nodes = (
 (550,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -15267,7 +15267,7 @@ name = shadowBottomColor;
 closed = 0;
 nodes = (
 (520,370,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (500,390,o),
 (480,400,o),
@@ -15310,7 +15310,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (460,400,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,400,l,{
 name = shadowColor;
@@ -15494,7 +15494,7 @@ name = shadowBottomColor;
 closed = 0;
 nodes = (
 (520,370,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (500,390,o),
 (480,400,o),
@@ -15548,7 +15548,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (460,400,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,400,l,{
 name = shadowColor;
@@ -15575,7 +15575,7 @@ nodes = (
 name = shadowColor;
 }),
 (250,-130,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -15713,7 +15713,7 @@ shapes = (
 closed = 0;
 nodes = (
 (450,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -15875,7 +15875,7 @@ shapes = (
 closed = 0;
 nodes = (
 (450,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -16064,7 +16064,7 @@ shapes = (
 closed = 0;
 nodes = (
 (450,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -16256,7 +16256,7 @@ shapes = (
 closed = 0;
 nodes = (
 (450,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -16294,7 +16294,7 @@ nodes = (
 name = shadowColor;
 }),
 (195,-170,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -16432,7 +16432,7 @@ shapes = (
 closed = 0;
 nodes = (
 (500,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (250,60,l,{
 name = shadowColor;
@@ -16454,7 +16454,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (350,440,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (220,440,l,{
 name = shadowColor;
@@ -16468,7 +16468,7 @@ nodes = (
 name = shadowColor;
 }),
 (50,340,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -16886,7 +16886,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (750,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (450,100,l,{
 name = shadowColor;
@@ -17125,7 +17125,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (750,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (450,100,l,{
 name = shadowColor;
@@ -17396,7 +17396,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (750,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (450,100,l,{
 name = shadowColor;
@@ -17672,7 +17672,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (750,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (450,100,l,{
 name = shadowColor;
@@ -17699,7 +17699,7 @@ nodes = (
 name = shadowColor;
 }),
 (320,-170,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -18004,7 +18004,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (750,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (450,100,l,{
 name = shadowColor;
@@ -18026,7 +18026,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (540,910,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (450,910,l,{
 name = shadowColor;
@@ -18299,7 +18299,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (750,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (450,100,l,{
 name = shadowColor;
@@ -18516,7 +18516,7 @@ shapes = (
 closed = 0;
 nodes = (
 (550,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -18736,7 +18736,7 @@ shapes = (
 closed = 0;
 nodes = (
 (550,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -18991,7 +18991,7 @@ shapes = (
 closed = 0;
 nodes = (
 (550,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -19254,7 +19254,7 @@ shapes = (
 closed = 0;
 nodes = (
 (550,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -19512,7 +19512,7 @@ shapes = (
 closed = 0;
 nodes = (
 (550,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -19783,7 +19783,7 @@ shapes = (
 closed = 0;
 nodes = (
 (550,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -20019,7 +20019,7 @@ shapes = (
 closed = 0;
 nodes = (
 (550,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -20260,10 +20260,10 @@ shapes = (
 closed = 0;
 nodes = (
 (380,400,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (270,400,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -20311,7 +20311,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (550,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (300,100,l,{
 name = shadowColor;
@@ -20611,7 +20611,7 @@ shapes = (
 closed = 0;
 nodes = (
 (550,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -20633,7 +20633,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (465,950,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (375,950,l,{
 name = shadowColor;
@@ -20883,7 +20883,7 @@ shapes = (
 closed = 0;
 nodes = (
 (630,400,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (450,400,l,{
 name = shadowColor;
@@ -20905,7 +20905,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (630,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (450,100,l,{
 name = shadowColor;
@@ -20916,7 +20916,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (440,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,100,l,{
 name = shadowColor;
@@ -21140,7 +21140,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (450,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,300,l,{
 name = shadowColor;
@@ -21322,7 +21322,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (500,200,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,200,l,{
 name = shadowColor;
@@ -21541,7 +21541,7 @@ shapes = (
 closed = 0;
 nodes = (
 (660,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (450,60,l,{
 name = shadowBottomColor;
@@ -21552,7 +21552,7 @@ name = shadowBottomColor;
 closed = 0;
 nodes = (
 (440,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -21757,7 +21757,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (470,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (150,300,l,{
 name = shadowColor;
@@ -21768,7 +21768,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (530,250,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (520,270,o),
 (500,290,o),
@@ -21993,7 +21993,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (470,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (150,300,l,{
 name = shadowColor;
@@ -22004,7 +22004,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (530,250,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (520,270,o),
 (500,290,o),
@@ -22261,7 +22261,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (470,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (150,300,l,{
 name = shadowColor;
@@ -22272,7 +22272,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (530,250,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (520,270,o),
 (500,290,o),
@@ -22534,7 +22534,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (470,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (150,300,l,{
 name = shadowColor;
@@ -22545,7 +22545,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (530,250,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (520,270,o),
 (500,290,o),
@@ -22574,7 +22574,7 @@ nodes = (
 name = shadowColor;
 }),
 (250,-130,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -22781,7 +22781,7 @@ shapes = (
 closed = 0;
 nodes = (
 (520,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (150,60,l,{
 name = shadowColor;
@@ -22792,7 +22792,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (450,400,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (150,400,l,{
 name = shadowColor;
@@ -22803,10 +22803,10 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (200,160,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (100,160,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -22963,7 +22963,7 @@ shapes = (
 closed = 0;
 nodes = (
 (520,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (150,60,l,{
 name = shadowColor;
@@ -22974,7 +22974,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (450,400,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (150,400,l,{
 name = shadowColor;
@@ -22985,10 +22985,10 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (200,160,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (100,160,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -23277,7 +23277,7 @@ shapes = (
 closed = 0;
 nodes = (
 (520,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (150,60,l,{
 name = shadowColor;
@@ -23288,7 +23288,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (450,400,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (150,400,l,{
 name = shadowColor;
@@ -23299,10 +23299,10 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (200,160,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (100,160,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -23491,7 +23491,7 @@ shapes = (
 closed = 0;
 nodes = (
 (520,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (150,60,l,{
 name = shadowColor;
@@ -23502,7 +23502,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (450,400,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (150,400,l,{
 name = shadowColor;
@@ -23513,10 +23513,10 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (200,160,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (100,160,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -23808,7 +23808,7 @@ shapes = (
 closed = 0;
 nodes = (
 (520,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (150,60,l,{
 name = shadowColor;
@@ -23819,7 +23819,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (450,400,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (150,400,l,{
 name = shadowColor;
@@ -23830,10 +23830,10 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (200,160,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (100,160,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -24034,7 +24034,7 @@ shapes = (
 closed = 0;
 nodes = (
 (520,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (150,60,l,{
 name = shadowColor;
@@ -24045,7 +24045,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (450,400,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (150,400,l,{
 name = shadowColor;
@@ -24056,10 +24056,10 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (200,160,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (100,160,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -24102,7 +24102,7 @@ nodes = (
 name = shadowColor;
 }),
 (250,-170,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -24365,7 +24365,7 @@ nodes = (
 name = shadowColor;
 }),
 (300,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -24373,10 +24373,10 @@ name = frontTopColor;
 closed = 0;
 nodes = (
 (450,480,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (410,480,ls,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (357,480,o),
 (310,433,o),
@@ -25070,7 +25070,7 @@ nodes = (
 name = shadowColor;
 }),
 (250,-220,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -25264,7 +25264,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (500,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -25474,7 +25474,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (500,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -25716,7 +25716,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (500,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -25989,7 +25989,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (500,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -26242,7 +26242,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (500,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -26494,7 +26494,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (500,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -26759,7 +26759,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (500,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -27005,7 +27005,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (500,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -27235,7 +27235,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (500,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -27246,7 +27246,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (600,-140,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (450,-140,l,{
 name = shadowColor;
@@ -27518,7 +27518,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (500,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -27842,7 +27842,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (500,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -27864,7 +27864,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (465,910,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (375,910,l,{
 name = shadowColor;
@@ -28067,7 +28067,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (450,20,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,20,l,{
 name = shadowColor;
@@ -28291,7 +28291,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (620,20,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (450,20,l,{
 name = shadowColor;
@@ -28313,7 +28313,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (370,20,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,20,l,{
 name = shadowColor;
@@ -28566,7 +28566,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (620,20,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (450,20,l,{
 name = shadowColor;
@@ -28588,7 +28588,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (370,20,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,20,l,{
 name = shadowColor;
@@ -28876,7 +28876,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (620,20,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (450,20,l,{
 name = shadowColor;
@@ -28898,7 +28898,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (370,20,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,20,l,{
 name = shadowColor;
@@ -29194,7 +29194,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (620,20,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (450,20,l,{
 name = shadowColor;
@@ -29216,7 +29216,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (370,20,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,20,l,{
 name = shadowColor;
@@ -29511,7 +29511,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (620,20,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (450,20,l,{
 name = shadowColor;
@@ -29533,7 +29533,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (370,20,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,20,l,{
 name = shadowColor;
@@ -29775,7 +29775,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (500,400,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,400,l,{
 name = shadowColor;
@@ -29975,7 +29975,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (520,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,300,l,{
 name = shadowColor;
@@ -30185,7 +30185,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (520,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,300,l,{
 name = shadowColor;
@@ -30430,7 +30430,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (520,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,300,l,{
 name = shadowColor;
@@ -30683,7 +30683,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (520,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,300,l,{
 name = shadowColor;
@@ -30935,7 +30935,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (520,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,300,l,{
 name = shadowColor;
@@ -31229,7 +31229,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (520,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,300,l,{
 name = shadowColor;
@@ -31251,7 +31251,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (470,910,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (380,910,l,{
 name = shadowColor;
@@ -31423,7 +31423,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (620,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,100,l,{
 name = shadowColor;
@@ -31464,7 +31464,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (510,400,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,400,ls,{
 name = shadowColor;
@@ -31645,7 +31645,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (620,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,100,l,{
 name = shadowColor;
@@ -31697,7 +31697,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (510,400,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,400,ls,{
 name = shadowColor;
@@ -31899,7 +31899,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (620,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,100,l,{
 name = shadowColor;
@@ -31962,7 +31962,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (510,400,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,400,ls,{
 name = shadowColor;
@@ -32164,7 +32164,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (620,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,100,l,{
 name = shadowColor;
@@ -32216,7 +32216,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (510,400,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,400,ls,{
 name = shadowColor;
@@ -32454,7 +32454,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (430,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,60,l,{
 name = shadowColor;
@@ -32465,7 +32465,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (400,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,300,ls,{
 name = shadowColor;
@@ -32708,7 +32708,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (430,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,60,l,{
 name = shadowColor;
@@ -32719,7 +32719,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (400,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,300,ls,{
 name = shadowColor;
@@ -32994,7 +32994,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (430,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,60,l,{
 name = shadowColor;
@@ -33005,7 +33005,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (400,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,300,ls,{
 name = shadowColor;
@@ -33312,7 +33312,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (430,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,60,l,{
 name = shadowColor;
@@ -33323,7 +33323,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (400,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,300,ls,{
 name = shadowColor;
@@ -33605,7 +33605,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (430,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,60,l,{
 name = shadowColor;
@@ -33616,7 +33616,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (400,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,300,ls,{
 name = shadowColor;
@@ -33905,7 +33905,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (430,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,60,l,{
 name = shadowColor;
@@ -33916,7 +33916,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (400,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,300,ls,{
 name = shadowColor;
@@ -34197,7 +34197,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (430,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,60,l,{
 name = shadowColor;
@@ -34208,7 +34208,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (400,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,300,ls,{
 name = shadowColor;
@@ -34466,7 +34466,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (430,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,60,l,{
 name = shadowColor;
@@ -34477,7 +34477,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (400,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,300,ls,{
 name = shadowColor;
@@ -34734,7 +34734,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (430,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,60,l,{
 name = shadowColor;
@@ -34745,7 +34745,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (400,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,300,ls,{
 name = shadowColor;
@@ -34768,7 +34768,7 @@ name = shadowBottomColor;
 closed = 0;
 nodes = (
 (550,-140,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (400,-140,l,{
 name = shadowColor;
@@ -35061,7 +35061,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (430,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,60,l,{
 name = shadowColor;
@@ -35072,7 +35072,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (400,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,300,ls,{
 name = shadowColor;
@@ -35429,7 +35429,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (430,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,60,l,{
 name = shadowColor;
@@ -35440,7 +35440,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (400,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,300,ls,{
 name = shadowColor;
@@ -35474,7 +35474,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (440,750,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (350,750,l,{
 name = shadowColor;
@@ -35746,7 +35746,7 @@ shapes = (
 closed = 0;
 nodes = (
 (400,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -35757,7 +35757,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (700,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (500,60,l,{
 name = shadowColor;
@@ -35768,7 +35768,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (600,290,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (400,290,l,{
 name = shadowColor;
@@ -36014,7 +36014,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (420,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,100,l,{
 name = shadowColor;
@@ -36222,7 +36222,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (400,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (160,60,l,{
 name = shadowColor;
@@ -36432,7 +36432,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (400,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (160,60,l,{
 name = shadowColor;
@@ -36674,7 +36674,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (400,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (160,60,l,{
 name = shadowColor;
@@ -36856,7 +36856,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (400,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (160,60,l,{
 name = shadowColor;
@@ -37098,7 +37098,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (400,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (160,60,l,{
 name = shadowColor;
@@ -37339,7 +37339,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (400,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (160,60,l,{
 name = shadowColor;
@@ -37570,7 +37570,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (400,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -37789,7 +37789,7 @@ shapes = (
 closed = 0;
 nodes = (
 (400,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -38062,7 +38062,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (400,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -38304,7 +38304,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (400,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -38315,7 +38315,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (600,500,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (480,500,l,{
 name = shadowColor;
@@ -38512,7 +38512,7 @@ shapes = (
 closed = 0;
 nodes = (
 (430,290,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,290,l,{
 name = shadowColor;
@@ -38523,7 +38523,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (500,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,60,l,{
 name = shadowColor;
@@ -38741,7 +38741,7 @@ shapes = (
 closed = 0;
 nodes = (
 (430,290,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,290,l,{
 name = shadowColor;
@@ -38752,7 +38752,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (500,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,60,l,{
 name = shadowColor;
@@ -39002,7 +39002,7 @@ shapes = (
 closed = 0;
 nodes = (
 (430,290,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,290,l,{
 name = shadowColor;
@@ -39013,7 +39013,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (500,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,60,l,{
 name = shadowColor;
@@ -39270,7 +39270,7 @@ shapes = (
 closed = 0;
 nodes = (
 (430,290,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,290,l,{
 name = shadowColor;
@@ -39281,7 +39281,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (500,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,60,l,{
 name = shadowColor;
@@ -39545,7 +39545,7 @@ shapes = (
 closed = 0;
 nodes = (
 (430,290,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,290,l,{
 name = shadowColor;
@@ -39556,7 +39556,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (500,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,60,l,{
 name = shadowColor;
@@ -39807,7 +39807,7 @@ shapes = (
 closed = 0;
 nodes = (
 (430,290,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,290,l,{
 name = shadowColor;
@@ -39818,7 +39818,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (500,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,60,l,{
 name = shadowColor;
@@ -40055,7 +40055,7 @@ shapes = (
 closed = 0;
 nodes = (
 (430,290,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,290,l,{
 name = shadowColor;
@@ -40066,7 +40066,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (500,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,60,l,{
 name = shadowColor;
@@ -40299,7 +40299,7 @@ shapes = (
 closed = 0;
 nodes = (
 (430,290,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,290,l,{
 name = shadowColor;
@@ -40310,7 +40310,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (500,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,60,l,{
 name = shadowColor;
@@ -40534,7 +40534,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (550,-140,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (400,-140,l,{
 name = shadowColor;
@@ -40571,7 +40571,7 @@ shapes = (
 closed = 0;
 nodes = (
 (430,290,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,290,l,{
 name = shadowColor;
@@ -40582,7 +40582,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (500,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,60,l,{
 name = shadowColor;
@@ -40873,7 +40873,7 @@ shapes = (
 closed = 0;
 nodes = (
 (430,290,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,290,l,{
 name = shadowColor;
@@ -40884,7 +40884,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (500,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190,60,l,{
 name = shadowColor;
@@ -40906,7 +40906,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (440,750,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (350,750,l,{
 name = shadowColor;
@@ -41071,7 +41071,7 @@ name = shadowColor;
 (438.6,26.5,o),
 (419.7,20,o),
 (400,20,cs,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (300,20,l,{
 name = shadowColor;
@@ -41122,7 +41122,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (400,320,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,320,ls,{
 name = shadowColor;
@@ -41288,7 +41288,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (500,400,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (400,400,l,{
 name = shadowColor;
@@ -41334,7 +41334,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,400,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -41551,7 +41551,7 @@ shapes = (
 closed = 0;
 nodes = (
 (450,270,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,270,l,{
 name = shadowColor;
@@ -41576,7 +41576,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -41826,7 +41826,7 @@ shapes = (
 closed = 0;
 nodes = (
 (450,270,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,270,l,{
 name = shadowColor;
@@ -41851,7 +41851,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -42152,7 +42152,7 @@ shapes = (
 closed = 0;
 nodes = (
 (450,270,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,270,l,{
 name = shadowColor;
@@ -42177,7 +42177,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -42453,7 +42453,7 @@ shapes = (
 closed = 0;
 nodes = (
 (450,270,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,270,l,{
 name = shadowColor;
@@ -42478,7 +42478,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -42762,7 +42762,7 @@ shapes = (
 closed = 0;
 nodes = (
 (450,270,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,270,l,{
 name = shadowColor;
@@ -42787,7 +42787,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -42811,7 +42811,7 @@ nodes = (
 name = shadowColor;
 }),
 (220,-130,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -43051,7 +43051,7 @@ shapes = (
 closed = 0;
 nodes = (
 (450,270,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,270,l,{
 name = shadowColor;
@@ -43076,7 +43076,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -43328,7 +43328,7 @@ shapes = (
 closed = 0;
 nodes = (
 (450,270,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,270,l,{
 name = shadowColor;
@@ -43353,7 +43353,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -43766,7 +43766,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (351,670,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (231,670,l,{
 name = shadowColor;
@@ -44214,7 +44214,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (500,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (340,100,l,{
 name = shadowColor;
@@ -44228,7 +44228,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -44402,7 +44402,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (500,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (340,100,l,{
 name = shadowColor;
@@ -44416,7 +44416,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -44610,7 +44610,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (500,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (340,100,l,{
 name = shadowColor;
@@ -44624,7 +44624,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -44850,7 +44850,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (500,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (340,100,l,{
 name = shadowColor;
@@ -44864,7 +44864,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -45104,7 +45104,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (500,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (340,100,l,{
 name = shadowColor;
@@ -45118,7 +45118,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -45345,7 +45345,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (500,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (340,100,l,{
 name = shadowColor;
@@ -45359,7 +45359,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -45571,7 +45571,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (500,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (340,100,l,{
 name = shadowColor;
@@ -45585,7 +45585,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -45799,7 +45799,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -45993,7 +45993,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (500,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (340,100,l,{
 name = shadowColor;
@@ -46007,7 +46007,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -46219,7 +46219,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (500,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (340,100,l,{
 name = shadowColor;
@@ -46233,7 +46233,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -46241,7 +46241,7 @@ name = frontTopColor;
 closed = 0;
 nodes = (
 (550,-100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (400,-100,l,{
 name = shadowColor;
@@ -46529,7 +46529,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (500,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (340,100,l,{
 name = shadowColor;
@@ -46543,7 +46543,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -46562,7 +46562,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (440,710,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (350,710,l,{
 name = shadowColor;
@@ -47474,7 +47474,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (400,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,300,l,{
 name = shadowColor;
@@ -47485,7 +47485,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (470,270,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (457,290,o),
 (433,300,o),
@@ -47701,7 +47701,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (400,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,300,l,{
 name = shadowColor;
@@ -47712,7 +47712,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (470,270,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (457,290,o),
 (433,300,o),
@@ -47741,7 +47741,7 @@ nodes = (
 name = shadowColor;
 }),
 (220,-130,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -47879,7 +47879,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (350,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (150,60,l,{
 name = shadowColor;
@@ -48030,7 +48030,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (350,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (150,60,l,{
 name = shadowColor;
@@ -48203,7 +48203,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (350,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (150,60,l,{
 name = shadowColor;
@@ -48384,7 +48384,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (350,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (150,60,l,{
 name = shadowColor;
@@ -48411,7 +48411,7 @@ nodes = (
 name = shadowColor;
 }),
 (145,-130,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -48558,7 +48558,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (400,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -48569,7 +48569,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (350,440,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (220,440,l,{
 name = shadowColor;
@@ -48583,7 +48583,7 @@ nodes = (
 name = shadowColor;
 }),
 (50,340,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -49641,7 +49641,7 @@ nodes = (
 name = shadowColor;
 }),
 (220,-130,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -49912,7 +49912,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (440,750,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (350,750,l,{
 name = shadowColor;
@@ -50258,7 +50258,7 @@ shapes = (
 closed = 0;
 nodes = (
 (400,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (170,60,l,{
 name = shadowColor;
@@ -50452,7 +50452,7 @@ shapes = (
 closed = 0;
 nodes = (
 (400,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (170,60,l,{
 name = shadowColor;
@@ -50678,7 +50678,7 @@ shapes = (
 closed = 0;
 nodes = (
 (400,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (170,60,l,{
 name = shadowColor;
@@ -50918,7 +50918,7 @@ shapes = (
 closed = 0;
 nodes = (
 (400,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (170,60,l,{
 name = shadowColor;
@@ -51150,7 +51150,7 @@ shapes = (
 closed = 0;
 nodes = (
 (400,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (170,60,l,{
 name = shadowColor;
@@ -51395,7 +51395,7 @@ shapes = (
 closed = 0;
 nodes = (
 (400,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (170,60,l,{
 name = shadowColor;
@@ -51625,7 +51625,7 @@ shapes = (
 closed = 0;
 nodes = (
 (400,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (170,60,l,{
 name = shadowColor;
@@ -51842,7 +51842,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (490,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (300,100,l,{
 name = shadowColor;
@@ -52116,7 +52116,7 @@ shapes = (
 closed = 0;
 nodes = (
 (400,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (170,60,l,{
 name = shadowColor;
@@ -52138,7 +52138,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (440,750,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (350,750,l,{
 name = shadowColor;
@@ -52374,7 +52374,7 @@ shapes = (
 closed = 0;
 nodes = (
 (760,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (400,60,l,{
 name = shadowColor;
@@ -52385,7 +52385,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (660,280,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (400,280,l,{
 name = shadowColor;
@@ -52412,7 +52412,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (350,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -52621,7 +52621,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (400,200,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (170,200,l,{
 name = shadowColor;
@@ -52815,7 +52815,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (440,200,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,200,l,{
 name = shadowColor;
@@ -52999,7 +52999,7 @@ shapes = (
 closed = 0;
 nodes = (
 (450,200,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,200,l,{
 name = shadowColor;
@@ -53737,7 +53737,7 @@ nodes = (
 name = shadowColor;
 }),
 (170,-130,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -53914,7 +53914,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -53922,7 +53922,7 @@ name = frontTopColor;
 closed = 0;
 nodes = (
 (530,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,300,l,{
 name = shadowBottomColor;
@@ -54125,7 +54125,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -54133,7 +54133,7 @@ name = frontTopColor;
 closed = 0;
 nodes = (
 (530,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,300,l,{
 name = shadowBottomColor;
@@ -54368,7 +54368,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -54376,7 +54376,7 @@ name = frontTopColor;
 closed = 0;
 nodes = (
 (530,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,300,l,{
 name = shadowBottomColor;
@@ -54566,7 +54566,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -54574,7 +54574,7 @@ name = frontTopColor;
 closed = 0;
 nodes = (
 (530,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,300,l,{
 name = shadowBottomColor;
@@ -54798,7 +54798,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -54806,7 +54806,7 @@ name = frontTopColor;
 closed = 0;
 nodes = (
 (530,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,300,l,{
 name = shadowBottomColor;
@@ -55056,7 +55056,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -55064,7 +55064,7 @@ name = frontTopColor;
 closed = 0;
 nodes = (
 (530,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,300,l,{
 name = shadowBottomColor;
@@ -55091,7 +55091,7 @@ nodes = (
 name = shadowColor;
 }),
 (220,-130,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -55331,10 +55331,10 @@ shapes = (
 closed = 0;
 nodes = (
 (450,480,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (420,480,ls,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (367,480,o),
 (320,433,o),
@@ -55364,7 +55364,7 @@ nodes = (
 name = shadowColor;
 }),
 (320,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -55521,7 +55521,7 @@ nodes = (
 name = topColor;
 }),
 (350,500,ls,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (297,500,o),
 (250,453,o),
@@ -55542,7 +55542,7 @@ shapes = (
 closed = 0;
 nodes = (
 (450,20,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (220,20,l,{
 name = shadowColor;
@@ -55738,7 +55738,7 @@ nodes = (
 name = topColor;
 }),
 (350,500,ls,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (297,500,o),
 (250,453,o),
@@ -55775,7 +55775,7 @@ shapes = (
 closed = 0;
 nodes = (
 (450,20,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (220,20,l,{
 name = shadowColor;
@@ -55937,7 +55937,7 @@ nodes = (
 name = topColor;
 }),
 (350,500,ls,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (297,500,o),
 (250,453,o),
@@ -55980,7 +55980,7 @@ shapes = (
 closed = 0;
 nodes = (
 (450,20,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (220,20,l,{
 name = shadowColor;
@@ -56206,7 +56206,7 @@ nodes = (
 name = topColor;
 }),
 (350,500,ls,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (297,500,o),
 (250,453,o),
@@ -56238,7 +56238,7 @@ shapes = (
 closed = 0;
 nodes = (
 (450,20,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (220,20,l,{
 name = shadowColor;
@@ -56287,7 +56287,7 @@ nodes = (
 name = shadowColor;
 }),
 (220,-210,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -56470,7 +56470,7 @@ shapes = (
 closed = 0;
 nodes = (
 (440,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (180,60,l,{
 name = shadowColor;
@@ -56672,7 +56672,7 @@ shapes = (
 closed = 0;
 nodes = (
 (440,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (180,60,l,{
 name = shadowColor;
@@ -56906,7 +56906,7 @@ shapes = (
 closed = 0;
 nodes = (
 (440,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (180,60,l,{
 name = shadowColor;
@@ -57172,7 +57172,7 @@ shapes = (
 closed = 0;
 nodes = (
 (440,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (180,60,l,{
 name = shadowColor;
@@ -57420,7 +57420,7 @@ shapes = (
 closed = 0;
 nodes = (
 (440,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (180,60,l,{
 name = shadowColor;
@@ -57660,7 +57660,7 @@ shapes = (
 closed = 0;
 nodes = (
 (440,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (180,60,l,{
 name = shadowColor;
@@ -57913,7 +57913,7 @@ shapes = (
 closed = 0;
 nodes = (
 (440,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (180,60,l,{
 name = shadowColor;
@@ -58151,7 +58151,7 @@ shapes = (
 closed = 0;
 nodes = (
 (440,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (180,60,l,{
 name = shadowColor;
@@ -58367,7 +58367,7 @@ shapes = (
 closed = 0;
 nodes = (
 (440,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (180,60,l,{
 name = shadowColor;
@@ -58400,7 +58400,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (550,-140,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (400,-140,l,{
 name = shadowColor;
@@ -58642,7 +58642,7 @@ shapes = (
 closed = 0;
 nodes = (
 (440,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (180,60,l,{
 name = shadowColor;
@@ -58958,7 +58958,7 @@ shapes = (
 closed = 0;
 nodes = (
 (440,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (180,60,l,{
 name = shadowColor;
@@ -59002,7 +59002,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (440,710,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (350,710,l,{
 name = shadowColor;
@@ -59416,7 +59416,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (380,10,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,10,l,{
 name = shadowColor;
@@ -59427,7 +59427,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (620,10,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (430,10,l,{
 name = shadowColor;
@@ -59669,7 +59669,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (380,10,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,10,l,{
 name = shadowColor;
@@ -59680,7 +59680,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (620,10,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (430,10,l,{
 name = shadowColor;
@@ -59954,7 +59954,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (380,10,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,10,l,{
 name = shadowColor;
@@ -59965,7 +59965,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (620,10,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (430,10,l,{
 name = shadowColor;
@@ -60253,7 +60253,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (380,10,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,10,l,{
 name = shadowColor;
@@ -60264,7 +60264,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (620,10,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (430,10,l,{
 name = shadowColor;
@@ -60544,7 +60544,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (380,10,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,10,l,{
 name = shadowColor;
@@ -60555,7 +60555,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (620,10,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (430,10,l,{
 name = shadowColor;
@@ -60777,7 +60777,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (450,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,300,l,{
 name = shadowColor;
@@ -60956,7 +60956,7 @@ shapes = (
 closed = 0;
 nodes = (
 (450,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,300,l,{
 name = shadowColor;
@@ -60992,7 +60992,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -61187,7 +61187,7 @@ shapes = (
 closed = 0;
 nodes = (
 (450,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,300,l,{
 name = shadowColor;
@@ -61223,7 +61223,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -61450,7 +61450,7 @@ shapes = (
 closed = 0;
 nodes = (
 (450,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,300,l,{
 name = shadowColor;
@@ -61486,7 +61486,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -61727,7 +61727,7 @@ shapes = (
 closed = 0;
 nodes = (
 (450,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,300,l,{
 name = shadowColor;
@@ -61763,7 +61763,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -61996,7 +61996,7 @@ shapes = (
 closed = 0;
 nodes = (
 (450,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,300,l,{
 name = shadowColor;
@@ -62032,7 +62032,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -62307,7 +62307,7 @@ shapes = (
 closed = 0;
 nodes = (
 (450,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,300,l,{
 name = shadowColor;
@@ -62343,7 +62343,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -62362,7 +62362,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (440,710,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (350,710,l,{
 name = shadowColor;
@@ -62511,7 +62511,7 @@ shapes = (
 closed = 0;
 nodes = (
 (500,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,300,ls,{
 name = shadowColor;
@@ -62571,7 +62571,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (560,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (270,100,l,{
 name = shadowColor;
@@ -62712,7 +62712,7 @@ shapes = (
 closed = 0;
 nodes = (
 (500,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,300,ls,{
 name = shadowColor;
@@ -62783,7 +62783,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (560,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (270,100,l,{
 name = shadowColor;
@@ -62945,7 +62945,7 @@ shapes = (
 closed = 0;
 nodes = (
 (500,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,300,ls,{
 name = shadowColor;
@@ -63027,7 +63027,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (560,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (270,100,l,{
 name = shadowColor;
@@ -63189,7 +63189,7 @@ shapes = (
 closed = 0;
 nodes = (
 (500,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,300,ls,{
 name = shadowColor;
@@ -63260,7 +63260,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (560,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (270,100,l,{
 name = shadowColor;
@@ -63462,7 +63462,7 @@ shapes = (
 closed = 0;
 nodes = (
 (450,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,100,l,{
 name = shadowColor;
@@ -63621,7 +63621,7 @@ shapes = (
 closed = 0;
 nodes = (
 (400,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (280,100,l,{
 name = shadowColor;
@@ -63657,7 +63657,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -63836,7 +63836,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (520,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,100,l,{
 name = shadowColor;
@@ -63847,7 +63847,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (450,330,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,330,ls,{
 name = shadowColor;
@@ -64057,7 +64057,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -64087,7 +64087,7 @@ nodes = (
 name = shadowColor;
 }),
 (200,330,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -64260,7 +64260,7 @@ shapes = (
 closed = 0;
 nodes = (
 (490,270,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,270,l,{
 name = shadowColor;
@@ -64452,7 +64452,7 @@ shapes = (
 closed = 0;
 nodes = (
 (400,330,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,330,l,{
 name = shadowColor;
@@ -64466,7 +64466,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -64659,7 +64659,7 @@ shapes = (
 closed = 0;
 nodes = (
 (400,400,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (300,400,ls,{
 name = shadowColor;
@@ -64675,7 +64675,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (400,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -64865,7 +64865,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (450,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (300,300,ls,{
 name = shadowColor;
@@ -65088,7 +65088,7 @@ shapes = (
 closed = 0;
 nodes = (
 (430,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -65118,7 +65118,7 @@ name = shadowBottomColor;
 closed = 0;
 nodes = (
 (400,350,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (230,350,l,{
 name = shadowColor;
@@ -65338,7 +65338,7 @@ shapes = (
 closed = 0;
 nodes = (
 (460,320,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,320,l,{
 name = shadowColor;
@@ -65352,7 +65352,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -65535,10 +65535,10 @@ shapes = (
 closed = 0;
 nodes = (
 (280,120,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (100,120,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -65834,10 +65834,10 @@ name = shadowBottomColor;
 closed = 0;
 nodes = (
 (280,120,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (100,120,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -66381,7 +66381,7 @@ shapes = (
 closed = 0;
 nodes = (
 (440,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,300,ls,{
 name = shadowColor;
@@ -66565,10 +66565,10 @@ name = topColor;
 closed = 0;
 nodes = (
 (500,200,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (400,200,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -66576,7 +66576,7 @@ name = frontTopColor;
 closed = 0;
 nodes = (
 (450,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,100,l,{
 name = shadowColor;
@@ -66587,7 +66587,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (400,400,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,400,ls,{
 name = shadowColor;
@@ -66908,7 +66908,7 @@ name = shadowBottomColor;
 closed = 0;
 nodes = (
 (310,590,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (293,672,o),
 (225,740,o),
@@ -67220,7 +67220,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (720,160,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (580,160,l,{
 name = shadowColor;
@@ -67231,7 +67231,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (720,440,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (580,440,l,{
 name = shadowColor;
@@ -67253,7 +67253,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (520,440,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (300,440,l,{
 name = shadowColor;
@@ -67264,7 +67264,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (520,160,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (300,160,l,{
 name = shadowColor;
@@ -67278,7 +67278,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,160,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -67289,7 +67289,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,440,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -67913,7 +67913,7 @@ shapes = (
 closed = 0;
 nodes = (
 (450,-140,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (300,-140,ls,{
 name = shadowColor;
@@ -68070,7 +68070,7 @@ name = shadowColor;
 name = shadowColor;
 }),
 (100,-40,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -68189,7 +68189,7 @@ name = shadowBottomColor;
 closed = 0;
 nodes = (
 (200,220,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (170,270,o),
 (110,300,o),
@@ -68232,7 +68232,7 @@ shapes = (
 closed = 0;
 nodes = (
 (410,-130,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (250,-130,l,{
 name = shadowColor;
@@ -68259,7 +68259,7 @@ name = shadowColor;
 (150,447,o),
 (103,400,o),
 (50,400,c,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -68436,7 +68436,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,-60,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -68619,7 +68619,7 @@ shapes = (
 closed = 0;
 nodes = (
 (430,-100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,-100,l,{
 name = shadowColor;
@@ -68799,7 +68799,7 @@ nodes = (
 name = shadowColor;
 }),
 (60,-40,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -68937,7 +68937,7 @@ name = shadowBottomColor;
 (200,-13,o),
 (153,-60,o),
 (100,-60,c,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -69082,7 +69082,7 @@ name = shadowBottomColor;
 (200,-13,o),
 (153,-60,o),
 (100,-60,c,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -69106,7 +69106,7 @@ name = shadowBottomColor;
 (540,-13,o),
 (493,-60,o),
 (440,-60,c,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -69231,7 +69231,7 @@ shapes = (
 closed = 0;
 nodes = (
 (640,460,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (540,460,l,{
 name = shadowColor;
@@ -69242,7 +69242,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (300,460,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,460,l,{
 name = shadowColor;
@@ -69400,7 +69400,7 @@ name = shadowBottomColor;
 (200,517,o),
 (153,470,o),
 (100,470,c,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -69424,7 +69424,7 @@ name = shadowBottomColor;
 (540,517,o),
 (493,470,o),
 (440,470,c,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -69518,7 +69518,7 @@ shapes = (
 closed = 0;
 nodes = (
 (300,460,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,460,l,{
 name = shadowColor;
@@ -69630,7 +69630,7 @@ name = shadowBottomColor;
 (200,517,o),
 (153,470,o),
 (100,470,c,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -69809,7 +69809,7 @@ name = shadowColor;
 (200,347,o),
 (153,300,o),
 (100,300,c,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -69825,7 +69825,7 @@ name = shadowColor;
 (470,347,o),
 (423,300,o),
 (370,300,c,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -70141,10 +70141,10 @@ name = topColor;
 closed = 0;
 nodes = (
 (300,200,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (300,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (247,300,o),
 (200,347,o),
@@ -70168,10 +70168,10 @@ name = topColor;
 closed = 0;
 nodes = (
 (570,200,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (570,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (517,300,o),
 (470,347,o),
@@ -70289,7 +70289,7 @@ name = shadowColor;
 (200,347,o),
 (153,300,o),
 (100,300,c,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -70923,7 +70923,7 @@ shapes = (
 closed = 0;
 nodes = (
 (320,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,100,l,{
 name = shadowColor;
@@ -70934,7 +70934,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (320,400,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,400,l,{
 name = shadowColor;
@@ -70945,7 +70945,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (520,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (400,100,l,{
 name = shadowColor;
@@ -70989,7 +70989,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (520,400,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (400,400,l,{
 name = shadowColor;
@@ -71249,10 +71249,10 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (460,380,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (420,380,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (367,380,o,{
 name = "";
@@ -71277,7 +71277,7 @@ shapes = (
 closed = 0;
 nodes = (
 (740,-40,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (350,-40,l,{
 name = shadowColor;
@@ -71288,7 +71288,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (710,180,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (520,180,l,{
 name = shadowColor;
@@ -71462,7 +71462,7 @@ shapes = (
 closed = 0;
 nodes = (
 (600,400,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (500,400,ls,{
 name = shadowColor;
@@ -71494,7 +71494,7 @@ name = shadowBottomColor;
 closed = 0;
 nodes = (
 (340,400,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (230,400,l,{
 name = shadowBottomColor;
@@ -71540,7 +71540,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (660,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (500,60,l,{
 name = shadowColor;
@@ -71551,7 +71551,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (460,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -71826,7 +71826,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (380,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,300,l,{
 name = shadowColor;
@@ -72023,7 +72023,7 @@ shapes = (
 closed = 0;
 nodes = (
 (480,500,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,500,l,{
 name = shadowColor;
@@ -72037,7 +72037,7 @@ nodes = (
 name = shadowColor;
 }),
 (120,50,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -72045,7 +72045,7 @@ name = frontTopColor;
 closed = 0;
 nodes = (
 (450,270,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,270,l,{
 name = shadowColor;
@@ -72256,12 +72256,12 @@ nodes = (
 name = shadowColor;
 }),
 (540,20,ls,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (563,20,o),
 (586,31,o),
 (600,50,cs,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (630,70,o),
 (640,90,o),
@@ -72312,10 +72312,10 @@ shapes = (
 closed = 0;
 nodes = (
 (520,360,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (420,360,ls,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (367,360,o),
 (320,313,o),
@@ -72333,7 +72333,7 @@ name = shadowBottomColor;
 closed = 0;
 nodes = (
 (500,220,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (480,250,o),
 (450,260,o),
@@ -72497,12 +72497,12 @@ nodes = (
 name = shadowColor;
 }),
 (540,20,ls,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (563,20,o),
 (586,31,o),
 (600,50,cs,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (630,70,o),
 (640,90,o),
@@ -72926,7 +72926,7 @@ shapes = (
 closed = 0;
 nodes = (
 (400,490,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,490,l,{
 name = shadowColor;
@@ -73112,10 +73112,10 @@ name = topColor;
 closed = 0;
 nodes = (
 (200,330,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (100,330,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -73434,7 +73434,7 @@ shapes = (
 closed = 0;
 nodes = (
 (400,540,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (260,540,l,{
 name = shadowColor;
@@ -73448,7 +73448,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,540,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -73704,10 +73704,10 @@ shapes = (
 closed = 0;
 nodes = (
 (650,170,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (550,170,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -73715,7 +73715,7 @@ name = frontTopColor;
 closed = 0;
 nodes = (
 (390,70,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,70,l,{
 name = shadowColor;
@@ -73748,7 +73748,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (590,70,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (430,70,l,{
 name = shadowColor;
@@ -73991,7 +73991,7 @@ shapes = (
 closed = 0;
 nodes = (
 (200,500,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,550,o),
 (150,600,o),
@@ -74004,7 +74004,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (550,200,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,200,l,{
 name = shadowBottomColor;
@@ -74018,7 +74018,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -74309,7 +74309,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (370,350,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,350,l,{
 name = shadowColor;
@@ -74320,7 +74320,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (590,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (430,100,l,{
 name = shadowColor;
@@ -74345,7 +74345,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -74353,7 +74353,7 @@ name = frontTopColor;
 closed = 0;
 nodes = (
 (560,350,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (430,350,l,{
 name = shadowColor;
@@ -74644,10 +74644,10 @@ shapes = (
 closed = 0;
 nodes = (
 (680,120,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (580,120,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -74666,7 +74666,7 @@ name = shadowBottomColor;
 closed = 0;
 nodes = (
 (500,380,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (250,380,l,{
 name = shadowColor;
@@ -74680,7 +74680,7 @@ nodes = (
 name = shadowColor;
 }),
 (50,380,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -74699,7 +74699,7 @@ name = shadowBottomColor;
 closed = 0;
 nodes = (
 (580,20,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (250,20,l,{
 name = shadowColor;
@@ -74932,10 +74932,10 @@ shapes = (
 closed = 0;
 nodes = (
 (660,140,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (560,140,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -74946,7 +74946,7 @@ nodes = (
 name = shadowBottomColor;
 }),
 (100,350,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -74973,7 +74973,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (610,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -75173,12 +75173,12 @@ name = shadowColor;
 (580,92,o),
 (566,65,o),
 (546,46,cs,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (528,30,o),
 (505,20,o),
 (480,20,cs,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (250,20,l,{
 name = shadowColor;
@@ -75197,10 +75197,10 @@ shapes = (
 closed = 0;
 nodes = (
 (680,180,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (580,180,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -75208,7 +75208,7 @@ name = frontTopColor;
 closed = 0;
 nodes = (
 (430,280,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (210,280,l,{
 name = shadowColor;
@@ -75219,7 +75219,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (430,490,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (210,490,l,{
 name = shadowColor;
@@ -75244,7 +75244,7 @@ nodes = (
 name = shadowColor;
 }),
 (50,280,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -75255,7 +75255,7 @@ nodes = (
 name = shadowColor;
 }),
 (50,490,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -75491,7 +75491,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (630,320,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (220,320,l,{
 name = shadowColor;
@@ -75505,7 +75505,7 @@ nodes = (
 name = shadowColor;
 }),
 (50,140,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -75513,7 +75513,7 @@ name = frontTopColor;
 closed = 0;
 nodes = (
 (600,140,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (220,140,l,{
 name = shadowColor;
@@ -75527,7 +75527,7 @@ nodes = (
 name = shadowColor;
 }),
 (50,320,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -75763,7 +75763,7 @@ shapes = (
 closed = 0;
 nodes = (
 (760,380,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (580,380,l,{
 name = shadowColor;
@@ -75777,7 +75777,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,160,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -75788,7 +75788,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,380,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -75812,7 +75812,7 @@ name = topColor;
 (652,600,o),
 (626,587,o),
 (607,567,cs,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (591,549,o),
 (580,525,o),
@@ -76083,7 +76083,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (620,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (420,100,l,{
 name = shadowColor;
@@ -76094,12 +76094,12 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (420,210,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (420,263,o),
 (373,310,o),
 (320,310,c,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -76583,7 +76583,7 @@ shapes = (
 closed = 0;
 nodes = (
 (560,100,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (430,100,l,{
 name = shadowColor;
@@ -76619,7 +76619,7 @@ nodes = (
 name = shadowColor;
 }),
 (200,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -76627,7 +76627,7 @@ name = frontTopColor;
 closed = 0;
 nodes = (
 (660,320,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,320,l,{
 name = shadowColor;
@@ -76774,7 +76774,7 @@ shapes = (
 closed = 0;
 nodes = (
 (500,300,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (350,300,l,{
 name = shadowColor;
@@ -76799,7 +76799,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,300,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -76892,7 +76892,7 @@ nodes = (
 name = topColor;
 }),
 (100,300,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -77386,7 +77386,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (500,180,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (320,180,l,{
 name = shadowColor;
@@ -77400,7 +77400,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,180,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -77588,7 +77588,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (496.4,107.7,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190.4,284.4,l,{
 name = shadowColor;
@@ -77814,7 +77814,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (496.4,227.7,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (190.4,404.4,l,{
 name = shadowColor;
@@ -78147,7 +78147,7 @@ name = frontBottomColor;
 closed = 0;
 nodes = (
 (500,400,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (350,400,l,{
 name = shadowColor;
@@ -78172,7 +78172,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,400,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -78414,7 +78414,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (440,370,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (350,370,l,{
 name = shadowColor;
@@ -78425,7 +78425,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (500,220,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (350,220,l,{
 name = shadowMiddleColor;
@@ -78436,7 +78436,7 @@ name = shadowMiddleColor;
 closed = 0;
 nodes = (
 (440,120,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (350,120,l,{
 name = shadowColor;
@@ -78616,7 +78616,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (440,250,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (350,250,l,{
 name = shadowColor;
@@ -78743,10 +78743,10 @@ name = shadowColor;
 (700,248,o),
 (652,200,o),
 (600,200,cs,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (500,200,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -78944,7 +78944,7 @@ shapes = (
 closed = 0;
 nodes = (
 (330,440,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,440,l,{
 name = shadowColor;
@@ -78966,7 +78966,7 @@ name = shadowBottomColor;
 closed = 0;
 nodes = (
 (730,40,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (600,40,l,{
 name = shadowColor;
@@ -79261,7 +79261,7 @@ shapes = (
 closed = 0;
 nodes = (
 (330,440,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,440,l,{
 name = shadowColor;
@@ -79283,7 +79283,7 @@ name = shadowBottomColor;
 closed = 0;
 nodes = (
 (730,40,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (600,40,l,{
 name = shadowColor;
@@ -79294,7 +79294,7 @@ name = shadowColor;
 closed = 0;
 nodes = (
 (1090,40,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (960,40,l,{
 name = shadowColor;
@@ -80661,7 +80661,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (440,750,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (350,750,l,{
 name = shadowColor;
@@ -80822,7 +80822,7 @@ shapes = (
 closed = 0;
 nodes = (
 (260,750,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (180,750,l,{
 name = shadowColor;
@@ -80989,7 +80989,7 @@ nodes = (
 name = shadowColor;
 }),
 (250,-170,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 }
@@ -81084,7 +81084,7 @@ shapes = (
 closed = 0;
 nodes = (
 (450,-140,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (300,-140,l,{
 name = shadowColor;
@@ -82195,7 +82195,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (440,750,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (350,750,l,{
 name = shadowColor;
@@ -82382,7 +82382,7 @@ shapes = (
 closed = 0;
 nodes = (
 (450,-140,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (300,-140,l,{
 name = shadowColor;
@@ -82609,10 +82609,10 @@ shapes = (
 closed = 0;
 nodes = (
 (200,200,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (100,200,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
@@ -82642,7 +82642,7 @@ name = topColor;
 closed = 0;
 nodes = (
 (550,60,l,{
-name = frontTopColor;
+name = midTopColor;
 }),
 (200,60,l,{
 name = shadowColor;
@@ -82882,7 +82882,7 @@ nodes = (
 name = shadowColor;
 }),
 (100,100,l,{
-name = frontTopColor;
+name = midTopColor;
 })
 );
 },
