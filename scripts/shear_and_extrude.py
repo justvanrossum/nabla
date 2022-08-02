@@ -101,6 +101,7 @@ colorTable = """
     shadowBottom    ff552d  780082  2200f5  00001e  555573
     shadowMiddle    ff9b00  be14b4  3c6eff  464664  8c8caa
     shadow          ff9123  9b1eaf  325aff  1e1e3c  7d7d9b
+    topBottom       ffd214  ff1471  00a0e1  5a5a78  c3c3e1
     midTop          ffeb6e  ff6b8b  1ee1ff  787896  d7d7f5
     frontBottom     ffd214  ff1471  00a0e1  5a5a78  c3c3e1
     frontTop        ffeb6e  ff6b8b  1ee1ff  787896  d7d7f5
