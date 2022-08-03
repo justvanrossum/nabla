@@ -105,7 +105,7 @@ colorTable = """
     midTop          ffeb6e  ff6b8b  1ee1ff  787896  d7d7f5
     frontBottom     ffd214  ff1471  00a0e1  5a5a78  c3c3e1
     frontTop        ffeb6e  ff6b8b  1ee1ff  787896  d7d7f5
-    top             ffed9f  ff9cc2  87ffff  9696b4  f5f5ff
+    top             fffabe  ff9cc2  87ffff  9696b4  f5f5ff
     highlight       ffffff  ffffff  ffffff  ffffff  ffffff
 """
 
