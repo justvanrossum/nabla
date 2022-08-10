@@ -27,9 +27,7 @@ value = (
 },
 {
 name = fsType;
-value = (
-0
-);
+value = ();
 },
 {
 name = vendorID;
