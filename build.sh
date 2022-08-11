@@ -15,3 +15,5 @@ output=fonts/Nabla.ttf
 fontmake -m build/Nabla-Regular.designspace -o variable --output-path $output --flatten-components
 
 gftools fix-nonhinting $output $output
+
+rm fonts/*backup-fonttools*.ttf
