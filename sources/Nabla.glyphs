@@ -74,7 +74,7 @@ id = m01;
 metricValues = (
 {
 over = 16;
-pos = 900;
+pos = 1263;
 },
 {
 over = 16;
@@ -89,7 +89,7 @@ over = -16;
 },
 {
 over = -16;
-pos = -300;
+pos = -380;
 },
 {
 pos = -40;
