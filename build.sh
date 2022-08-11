@@ -16,4 +16,5 @@ fontmake -m build/Nabla-Regular.designspace -o variable --output-path $output --
 
 gftools fix-nonhinting $output $output
 
+# Remove leftovers from gftools fix-nonhinting
 rm fonts/*backup-fonttools*.ttf
