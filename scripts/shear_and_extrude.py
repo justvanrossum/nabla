@@ -467,8 +467,11 @@ def shearAndExtrude(path):
     font = ufoLib2.Font.open(path)
     decomposeAndRemoveOverlaps(font)
 
-    glyphNames = [glyphName for glyphName in font.keys() if glyphName[0] not in "._"]
-    glyphNames.sort()
+    for glyphName in list(font.keys()):
+        if glyphName.startswith("_"):
+            del font[glyphName]
+
+    glyphNames = sorted(font.keys())
     for layer in font.layers:
         for glyphName in glyphNames:
             if glyphName in layer:
