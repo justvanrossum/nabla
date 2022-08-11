@@ -55,26 +55,26 @@ value = 0;
 },
 {
 name = typoAscender;
-value = 700;
+value = 900;
 },
 {
 name = typoDescender;
-value = -200;
+value = -300;
 },
 {
 name = hheaAscender;
-value = 700;
+value = 900;
 },
 {
 name = hheaDescender;
-value = -200;
+value = -300;
 }
 );
 id = m01;
 metricValues = (
 {
 over = 16;
-pos = 700;
+pos = 900;
 },
 {
 over = 16;
@@ -89,7 +89,7 @@ over = -16;
 },
 {
 over = -16;
-pos = -200;
+pos = -300;
 },
 {
 pos = -40;
@@ -55122,7 +55122,7 @@ pos = (0,-750);
 ref = quoteright;
 }
 );
-width = 400;
+width = 360;
 },
 {
 associatedMasterId = m01;
@@ -55132,16 +55132,23 @@ shapes = (
 {
 closed = 0;
 nodes = (
-(200,-80,l,{
-name = shadowBottomColor;
+(180,120,l,{
+name = topColor;
 }),
-(200,-180,l,{
+(133.6,120,o),
+(100,86.4,o),
+(100,40,cs,{
 name = shadowColor;
+}),
+(100,12.8,o),
+(111.5,-10,o),
+(130.4,-24.2,c,{
+name = shadowBottomColor;
 })
 );
 }
 );
-width = 400;
+width = 360;
 },
 {
 associatedMasterId = m01;
@@ -55151,28 +55158,16 @@ shapes = (
 {
 closed = 0;
 nodes = (
-(282.2,75.2,l,{
-name = midTopColor;
+(180,-20,l,{
+name = shadowBottomColor;
 }),
-(263.7,101.8,o),
-(233,120,o),
-(200,120,cs,{
-name = topColor;
-}),
-(147,120,o),
-(100,73,o),
-(100,20,cs,{
-name = shadowColor;
-}),
-(100,-10.8,o),
-(115.9,-39.6,o),
-(139.6,-58.3,c,{
+(180,-160,l,{
 name = shadowColor;
 })
 );
 }
 );
-width = 400;
+width = 360;
 },
 {
 associatedMasterId = m01;
@@ -55182,31 +55177,22 @@ shapes = (
 {
 closed = 0;
 nodes = (
-(282.2,75.2,l,{
+(180,120,l,{
 name = "";
 }),
-(263.7,101.8,o,{
+(133.6,120,o,{
 name = "";
 }),
-(233,120,o,{
+(100,86.4,o,{
 name = "";
 }),
-(200,120,cs,{
-name = "";
-}),
-(147,120,o,{
-name = "";
-}),
-(100,73,o,{
-name = "";
-}),
-(100,20,c,{
+(100,40,c,{
 name = "";
 })
 );
 }
 );
-width = 400;
+width = 360;
 }
 );
 metricLeft = period;
@@ -55222,7 +55208,7 @@ layers = (
 layerId = m01;
 shapes = (
 {
-pos = (340,-750);
+pos = (250,-750);
 ref = quoteright;
 },
 {
@@ -55230,7 +55216,7 @@ pos = (0,-750);
 ref = quoteright;
 }
 );
-width = 740;
+width = 610;
 },
 {
 associatedMasterId = m01;
@@ -55240,27 +55226,41 @@ shapes = (
 {
 closed = 0;
 nodes = (
-(200,-80,l,{
-name = shadowBottomColor;
+(180,120,l,{
+name = topColor;
 }),
-(200,-180,l,{
+(133.6,120,o),
+(100,86.4,o),
+(100,40,cs,{
 name = shadowColor;
+}),
+(100,12.8,o),
+(111.5,-10,o),
+(130.4,-24.2,c,{
+name = shadowBottomColor;
 })
 );
 },
 {
 closed = 0;
 nodes = (
-(540,-80,l,{
-name = shadowBottomColor;
+(430,120,l,{
+name = topColor;
 }),
-(540,-180,l,{
+(383.6,120,o),
+(350,86.4,o),
+(350,40,cs,{
 name = shadowColor;
+}),
+(350,12.8,o),
+(361.5,-10,o),
+(380.4,-24.2,c,{
+name = shadowBottomColor;
 })
 );
 }
 );
-width = 740;
+width = 610;
 },
 {
 associatedMasterId = m01;
@@ -55270,22 +55270,10 @@ shapes = (
 {
 closed = 0;
 nodes = (
-(282.2,75.2,l,{
-name = midTopColor;
+(180,-20,l,{
+name = shadowBottomColor;
 }),
-(263.7,101.8,o),
-(233,120,o),
-(200,120,cs,{
-name = topColor;
-}),
-(147,120,o),
-(100,73,o),
-(100,20,cs,{
-name = shadowColor;
-}),
-(100,-10.8,o),
-(115.9,-39.6,o),
-(139.6,-58.3,c,{
+(180,-160,l,{
 name = shadowColor;
 })
 );
@@ -55293,28 +55281,16 @@ name = shadowColor;
 {
 closed = 0;
 nodes = (
-(622.2,75.2,l,{
-name = midTopColor;
+(430,-20,l,{
+name = shadowBottomColor;
 }),
-(603.7,101.8,o),
-(573,120,o),
-(540,120,cs,{
-name = topColor;
-}),
-(487,120,o),
-(440,73,o),
-(440,20,cs,{
-name = shadowColor;
-}),
-(440,-10.8,o),
-(455.9,-39.6,o),
-(479.6,-58.3,c,{
+(430,-160,l,{
 name = shadowColor;
 })
 );
 }
 );
-width = 740;
+width = 610;
 },
 {
 associatedMasterId = m01;
@@ -55324,25 +55300,16 @@ shapes = (
 {
 closed = 0;
 nodes = (
-(282.2,75.2,l,{
+(180,120,l,{
 name = "";
 }),
-(263.7,101.8,o,{
+(133.6,120,o,{
 name = "";
 }),
-(233,120,o,{
+(100,86.4,o,{
 name = "";
 }),
-(200,120,cs,{
-name = "";
-}),
-(147,120,o,{
-name = "";
-}),
-(100,73,o,{
-name = "";
-}),
-(100,20,c,{
+(100,40,c,{
 name = "";
 })
 );
@@ -55350,31 +55317,22 @@ name = "";
 {
 closed = 0;
 nodes = (
-(622.2,75.2,l,{
+(430,120,l,{
 name = "";
 }),
-(603.7,101.8,o,{
+(383.6,120,o,{
 name = "";
 }),
-(573,120,o,{
+(350,86.4,o,{
 name = "";
 }),
-(540,120,cs,{
-name = "";
-}),
-(487,120,o,{
-name = "";
-}),
-(440,73,o,{
-name = "";
-}),
-(440,20,c,{
+(350,40,c,{
 name = "";
 })
 );
 }
 );
-width = 740;
+width = 610;
 }
 );
 metricLeft = period;
@@ -55388,15 +55346,15 @@ layers = (
 layerId = m01;
 shapes = (
 {
-pos = (0,-180);
+pos = (0,-130);
 ref = quoteleft;
 },
 {
-pos = (340,-180);
+pos = (250,-130);
 ref = quoteleft;
 }
 );
-width = 740;
+width = 610;
 },
 {
 associatedMasterId = m01;
@@ -55406,15 +55364,33 @@ shapes = (
 {
 closed = 0;
 nodes = (
-(540,700,l,{
+(430,750,l,{
 name = topColor;
 }),
-(487,700,o),
-(440,653,o),
-(440,600,cs,{
+(387.6,750,o),
+(350,712.4,o),
+(350,670,cs,{
 name = shadowColor;
 }),
-(440,500,l,{
+(350,550,ls,{
+name = shadowColor;
+}),
+(350,524.8,o),
+(359.9,503.3,o),
+(376.4,489,c,{
+name = shadowMiddleColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(491.9,602.5,l,{
+name = midTopColor;
+}),
+(477.6,619.6,o),
+(455.8,630,o),
+(430,630,c,{
 name = shadowColor;
 })
 );
@@ -55422,53 +55398,45 @@ name = shadowColor;
 {
 closed = 0;
 nodes = (
-(200,700,l,{
+(180,750,l,{
 name = topColor;
 }),
-(147,700,o),
-(100,653,o),
-(100,600,cs,{
+(137.6,750,o),
+(100,712.4,o),
+(100,670,cs,{
 name = shadowColor;
 }),
-(100,500,l,{
+(100,550,ls,{
 name = shadowColor;
+}),
+(100,524.8,o),
+(109.9,503.3,o),
+(126.4,489,c,{
+name = shadowMiddleColor;
 })
 );
 },
 {
 closed = 0;
 nodes = (
-(283.3,553.6,l,{
+(241.9,602.5,l,{
 name = midTopColor;
 }),
-(264.9,581,o),
-(233.7,600,o),
-(200,600,c,{
-name = shadowColor;
-})
-);
-},
-{
-closed = 0;
-nodes = (
-(623.3,553.6,l,{
-name = midTopColor;
-}),
-(604.9,581,o),
-(573.7,600,o),
-(540,600,c,{
+(227.6,619.6,o),
+(205.8,630,o),
+(180,630,c,{
 name = shadowColor;
 })
 );
 }
 );
-width = 740;
+width = 610;
 },
 {
 associatedMasterId = m01;
 layerId = "99E92D8F-4D41-425D-B910-8F8A646C1EC2";
 name = top;
-width = 740;
+width = 610;
 },
 {
 associatedMasterId = m01;
@@ -55478,19 +55446,19 @@ shapes = (
 {
 closed = 0;
 nodes = (
-(200,700,l,{
+(180,750,l,{
 name = "";
 }),
-(147,700,o,{
+(137.6,750,o,{
 name = "";
 }),
-(100,653,o,{
+(100,712.4,o,{
 name = "";
 }),
-(100,600,cs,{
+(100,670,cs,{
 name = "";
 }),
-(100,500,l,{
+(100,550,l,{
 name = "";
 })
 );
@@ -55498,25 +55466,25 @@ name = "";
 {
 closed = 0;
 nodes = (
-(540,700,l,{
+(430,750,l,{
 name = "";
 }),
-(487,700,o,{
+(387.6,750,o,{
 name = "";
 }),
-(440,653,o,{
+(350,712.4,o,{
 name = "";
 }),
-(440,600,cs,{
+(350,670,cs,{
 name = "";
 }),
-(440,500,l,{
+(350,550,l,{
 name = "";
 })
 );
 }
 );
-width = 740;
+width = 610;
 }
 );
 metricLeft = quotesingle;
@@ -55530,15 +55498,15 @@ layers = (
 layerId = m01;
 shapes = (
 {
-pos = (0,-190);
+pos = (0,-120);
 ref = quoteright;
 },
 {
-pos = (340,-190);
+pos = (250,-120);
 ref = quoteright;
 }
 );
-width = 740;
+width = 610;
 },
 {
 associatedMasterId = m01;
@@ -55548,10 +55516,17 @@ shapes = (
 {
 closed = 0;
 nodes = (
-(200,480,l,{
-name = shadowBottomColor;
+(180,750,l,{
+name = topColor;
 }),
-(200,380,l,{
+(133.6,750,o),
+(100,716.4,o),
+(100,670,cs,{
+name = shadowColor;
+}),
+(100,642.8,o),
+(111.5,620,o),
+(130.4,605.8,c,{
 name = shadowColor;
 })
 );
@@ -55559,16 +55534,23 @@ name = shadowColor;
 {
 closed = 0;
 nodes = (
-(540,480,l,{
-name = shadowBottomColor;
+(430,750,l,{
+name = topColor;
 }),
-(540,380,l,{
+(383.6,750,o),
+(350,716.4,o),
+(350,670,cs,{
+name = shadowColor;
+}),
+(350,642.8,o),
+(361.5,620,o),
+(380.4,605.8,c,{
 name = shadowColor;
 })
 );
 }
 );
-width = 740;
+width = 610;
 },
 {
 associatedMasterId = m01;
@@ -55578,22 +55560,10 @@ shapes = (
 {
 closed = 0;
 nodes = (
-(282.2,635.2,l,{
-name = midTopColor;
+(180,610,l,{
+name = shadowBottomColor;
 }),
-(263.7,661.8,o),
-(233,680,o),
-(200,680,cs,{
-name = topColor;
-}),
-(147,680,o),
-(100,633,o),
-(100,580,cs,{
-name = shadowColor;
-}),
-(100,549.2,o),
-(115.9,520.4,o),
-(139.6,501.7,c,{
+(180,470,l,{
 name = shadowColor;
 })
 );
@@ -55601,28 +55571,16 @@ name = shadowColor;
 {
 closed = 0;
 nodes = (
-(622.2,635.2,l,{
-name = midTopColor;
+(430,610,l,{
+name = shadowBottomColor;
 }),
-(603.7,661.8,o),
-(573,680,o),
-(540,680,cs,{
-name = topColor;
-}),
-(487,680,o),
-(440,633,o),
-(440,580,cs,{
-name = shadowColor;
-}),
-(440,549.2,o),
-(455.9,520.4,o),
-(479.6,501.7,c,{
+(430,470,l,{
 name = shadowColor;
 })
 );
 }
 );
-width = 740;
+width = 610;
 },
 {
 associatedMasterId = m01;
@@ -55632,25 +55590,16 @@ shapes = (
 {
 closed = 0;
 nodes = (
-(282.2,635.2,l,{
+(180,750,l,{
 name = "";
 }),
-(263.7,661.8,o,{
+(133.6,750,o,{
 name = "";
 }),
-(233,680,o,{
+(100,716.4,o,{
 name = "";
 }),
-(200,680,cs,{
-name = "";
-}),
-(147,680,o,{
-name = "";
-}),
-(100,633,o,{
-name = "";
-}),
-(100,580,c,{
+(100,670,c,{
 name = "";
 })
 );
@@ -55658,31 +55607,22 @@ name = "";
 {
 closed = 0;
 nodes = (
-(622.2,635.2,l,{
+(430,750,l,{
 name = "";
 }),
-(603.7,661.8,o,{
+(383.6,750,o,{
 name = "";
 }),
-(573,680,o,{
+(350,716.4,o,{
 name = "";
 }),
-(540,680,cs,{
-name = "";
-}),
-(487,680,o,{
-name = "";
-}),
-(440,633,o,{
-name = "";
-}),
-(440,580,c,{
+(350,670,c,{
 name = "";
 })
 );
 }
 );
-width = 740;
+width = 610;
 }
 );
 metricLeft = quotesingle;
@@ -55696,31 +55636,12 @@ layers = (
 layerId = m01;
 shapes = (
 {
-pos = (200,680);
-ref = _part.corner;
-},
-{
-pos = (200,780);
-ref = _part.corner;
-scale = (-1,1);
-},
-{
 angle = 180;
-pos = (200,780);
-ref = _part.square;
-},
-{
-pos = (200,680);
-ref = _part.corner;
-scale = (1,-1);
-},
-{
-angle = 180;
-pos = (200,680);
-ref = _part.corner;
+pos = (360,1470);
+ref = quoteright;
 }
 );
-width = 400;
+width = 360;
 },
 {
 associatedMasterId = m01;
@@ -55730,42 +55651,45 @@ shapes = (
 {
 closed = 0;
 nodes = (
-(200,880,l,{
+(180,880,l,{
 name = topColor;
 }),
-(147,880,o),
-(100,833,o),
-(100,780,cs,{
+(137.6,880,o),
+(100,842.4,o),
+(100,800,cs,{
 name = shadowColor;
 }),
-(100,680,l,{
+(100,680,ls,{
+name = shadowColor;
+}),
+(100,654.8,o),
+(109.9,633.3,o),
+(126.4,619,c,{
+name = shadowMiddleColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(241.9,732.5,l,{
+name = midTopColor;
+}),
+(227.6,749.6,o),
+(205.8,760,o),
+(180,760,c,{
 name = shadowColor;
 })
 );
 }
 );
-width = 400;
+width = 360;
 },
 {
 associatedMasterId = m01;
 layerId = "EB23064A-426A-418F-BB67-F1D5239D9089";
 name = top;
-shapes = (
-{
-closed = 0;
-nodes = (
-(283.3,733.6,l,{
-name = midTopColor;
-}),
-(264.9,761,o),
-(233.7,780,o),
-(200,780,c,{
-name = shadowColor;
-})
-);
-}
-);
-width = 400;
+width = 360;
 },
 {
 associatedMasterId = m01;
@@ -55775,16 +55699,16 @@ shapes = (
 {
 closed = 0;
 nodes = (
-(200,880,l,{
+(180,880,l,{
 name = "";
 }),
-(147,880,o,{
+(137.6,880,o,{
 name = "";
 }),
-(100,833,o,{
+(100,842.4,o,{
 name = "";
 }),
-(100,780,cs,{
+(100,800,cs,{
 name = "";
 }),
 (100,680,l,{
@@ -55793,7 +55717,7 @@ name = "";
 );
 }
 );
-width = 400;
+width = 360;
 }
 );
 metricLeft = quotesingle;
@@ -55807,30 +55731,26 @@ layers = (
 layerId = m01;
 shapes = (
 {
-angle = 180;
-pos = (200,770);
-ref = _part.corner;
-},
-{
-pos = (200,670);
-ref = _part.corner;
-scale = (1,-1);
-},
-{
-pos = (200,670);
-ref = _part.square;
-},
-{
-pos = (200,770);
-ref = _part.corner;
-scale = (-1,1);
-},
-{
-pos = (200,770);
-ref = _part.corner;
+closed = 1;
+nodes = (
+(180,590,l),
+(222.4,590,o),
+(260,627.6,o),
+(260,670,cs),
+(260,790,ls),
+(260,836.4,o),
+(226.4,870,o),
+(180,870,cs),
+(133.6,870,o),
+(100,836.4,o),
+(100,790,cs),
+(100,743.6,o),
+(133.6,710,o),
+(180,710,c)
+);
 }
 );
-width = 400;
+width = 360;
 },
 {
 associatedMasterId = m01;
@@ -55840,16 +55760,23 @@ shapes = (
 {
 closed = 0;
 nodes = (
-(200,670,l,{
-name = shadowBottomColor;
+(180,870,l,{
+name = topColor;
 }),
-(200,570,l,{
+(133.6,870,o),
+(100,836.4,o),
+(100,790,cs,{
+name = shadowColor;
+}),
+(100,762.8,o),
+(111.5,740,o),
+(130.4,725.8,c,{
 name = shadowColor;
 })
 );
 }
 );
-width = 400;
+width = 360;
 },
 {
 associatedMasterId = m01;
@@ -55859,28 +55786,16 @@ shapes = (
 {
 closed = 0;
 nodes = (
-(282.2,825.2,l,{
-name = midTopColor;
+(180,730,l,{
+name = shadowBottomColor;
 }),
-(263.7,851.8,o),
-(233,870,o),
-(200,870,cs,{
-name = topColor;
-}),
-(147,870,o),
-(100,823,o),
-(100,770,cs,{
-name = shadowColor;
-}),
-(100,739.2,o),
-(115.9,710.4,o),
-(139.6,691.7,c,{
+(180,590,l,{
 name = shadowColor;
 })
 );
 }
 );
-width = 400;
+width = 360;
 },
 {
 associatedMasterId = m01;
@@ -55890,19 +55805,22 @@ shapes = (
 {
 closed = 0;
 nodes = (
-(282.2,825.2,l),
-(263.7,851.8,o),
-(233,870,o),
-(200,870,cs),
-(147,870,o),
-(100,823,o),
-(100,770,c,{
-name = topColor;
+(180,870,l,{
+name = "";
+}),
+(133.6,870,o,{
+name = "";
+}),
+(100,836.4,o,{
+name = "";
+}),
+(100,790,c,{
+name = "";
 })
 );
 }
 );
-width = 400;
+width = 360;
 }
 );
 metricLeft = quotesingle;
