@@ -230,7 +230,7 @@ def shearGlyph(glyph, shearAngle):
     t = t.skew(0, shearAngle)
     t = t.scale(math.cos(shearAngle), 1)
     t = t.translate(-pivotX, 0)
-    transformGlyph(glyph, t)
+    transformGlyph(glyph, t.translate(50, -75))
     lsb, _ = t.transformPoint((0, 0))
     rsb, _ = t.transformPoint((glyph.width, 0))
     glyph.move((-lsb, 0))
