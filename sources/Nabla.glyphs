@@ -55,19 +55,19 @@ value = 0;
 },
 {
 name = typoAscender;
-value = 900;
+value = 1263;
 },
 {
 name = typoDescender;
-value = -300;
+value = -380;
 },
 {
 name = hheaAscender;
-value = 900;
+value = 1263;
 },
 {
 name = hheaDescender;
-value = -300;
+value = -380;
 }
 );
 id = m01;
