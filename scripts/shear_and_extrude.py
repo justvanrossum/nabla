@@ -509,6 +509,7 @@ def shearAndExtrude(path):
             )
             extrudedFont.lib[COLOR_PALETTES_KEY] = palettes
             extrudedFont.lib[COLOR_LAYERS_KEY] = colorGlyphs
+            extrudedFont.features.text += manualFeatures
             extrudedFont.features.text += buildFeatures(
                 sorted(extrudedFont.keys()),
                 [
@@ -517,7 +518,6 @@ def shearAndExtrude(path):
                     ("ss03", highlightSuffix, "Highlight"),
                 ],
             )
-            extrudedFont.features.text += manualFeatures
 
         extrudedPath = path.parent / (path.stem + "-" + depthName + path.suffix)
         extrudedFont.save(extrudedPath, overwrite=True)
