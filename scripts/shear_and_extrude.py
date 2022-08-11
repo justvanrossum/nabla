@@ -188,7 +188,7 @@ def splitGlyphAtAngle(glyph, angle):
     glyph.draw(pen)
     left, right = pen.path.splitAtAngle(angle)
     right.contours = [cont.reverse() for cont in right.contours]
-    left.appendPath(right)
+    # left.appendPath(right)  # Add "invisible" sides
     left = left.splitAtSharpCorners()
     return left
 
