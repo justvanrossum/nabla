@@ -460,6 +460,16 @@ def interpolatePoints(t, pt1, pt2):
     return (x1 + t * dx, y1 + t * dy)
 
 
+manualFeatures = """
+feature ccmp {
+  sub IJ acutecomb by IJacute;
+  sub ij acutecomb by ijacute;
+  sub J acutecomb by Jacute;
+  sub j acutecomb by jacute;
+} ccmp;
+"""
+
+
 def shearAndExtrude(path):
     shearAngle = math.radians(30)
     extrudeAngle = math.radians(-30)
@@ -507,6 +517,7 @@ def shearAndExtrude(path):
                     ("ss03", highlightSuffix, "Highlight"),
                 ],
             )
+            extrudedFont.features.text += manualFeatures
 
         extrudedPath = path.parent / (path.stem + "-" + depthName + path.suffix)
         extrudedFont.save(extrudedPath, overwrite=True)
