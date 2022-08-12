@@ -272,21 +272,13 @@ def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
             contour.draw(sidePartGlyph.getPen())
             sideLayers.append(buildPaintGlyph(sidePartGlyphName, sideGradient))
 
-        colorGlyphs[sideLayerGlyphName] = buildPaintLayers(sideLayers)
-
-        colorGlyphs[frontLayerGlyphName] = buildPaintGlyph(
-            frontLayerGlyphName, frontGradient
-        )
-
-        layerGlyphNames = [sideLayerGlyphName]
+        layers = [buildSolidGlyph(glyphName, colorIndices["primer"])] + sideLayers
         if not NO_FRONT:
-            layerGlyphNames.append(frontLayerGlyphName)
+            layers.append(buildPaintGlyph(frontLayerGlyphName, frontGradient))
         if glyphName in highlightLayer:
-            layerGlyphNames.append(highlightLayerGlyphName)
-        layers = [
-            buildSolidGlyph(glyphName, colorIndices["primer"]),
-            *(buildPaintColrGlyph(gn) for gn in layerGlyphNames),
-        ]
+            layers.append(
+                buildSolidGlyph(highlightLayerGlyphName, colorIndices["highlight"])
+            )
         colorGlyphs[glyphName] = buildPaintLayers(layers)
 
         font[frontLayerGlyphName] = glyph.copy()
@@ -406,7 +398,6 @@ def makeHighlightGlyphs(font, glyphNames, extrudeAngle, highlightWidth):
     dx = highlightWidth * math.cos(extrudeAngle)
     dy = highlightWidth * math.sin(extrudeAngle)
     highlightLayer = font.layers["highlightColor"]
-    colorGlyphs = {}
     for glyphName in glyphNames:
         if glyphName not in highlightLayer:
             continue
@@ -435,12 +426,6 @@ def makeHighlightGlyphs(font, glyphNames, extrudeAngle, highlightWidth):
             rightSegments[-1].points[-1] = firstPoint
             highlightPath = Contour(leftSegments + rightSegments, closed=True)
             highlightPath.draw(highlightGlyphPen)
-
-        colorGlyphs[highlightLayerGlyphName] = buildSolidGlyph(
-            highlightLayerGlyphName, colorIndices["highlight"]
-        )
-
-    return colorGlyphs
 
 
 def convertLineToCurve(contour, segmentIndex, t1, t2):
@@ -504,9 +489,7 @@ def shearAndExtrude(path):
         colorGlyphs = extrudeGlyphs(extrudedFont, glyphNames, extrudeAngle, depth)
 
         if depthName == "Normal":
-            colorGlyphs.update(
-                makeHighlightGlyphs(extrudedFont, glyphNames, extrudeAngle, 6)
-            )
+            makeHighlightGlyphs(extrudedFont, glyphNames, extrudeAngle, 6)
             extrudedFont.lib[COLOR_PALETTES_KEY] = palettes
             extrudedFont.lib[COLOR_LAYERS_KEY] = colorGlyphs
             extrudedFont.features.text += manualFeatures
