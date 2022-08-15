@@ -10,7 +10,7 @@ python scripts/shear_and_extrude.py build/Nabla-Regular.ufo $1 $2
 
 mkdir -p fonts
 
-output=fonts/Nabla.ttf
+output=fonts/Nabla[EDPT,EHLT].ttf
 
 fontmake -m build/Nabla-Regular.designspace -o variable --output-path $output --flatten-components
 
