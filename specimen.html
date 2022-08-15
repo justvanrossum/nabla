@@ -104,12 +104,12 @@ const fontVariationSettings = {
 }
 
 function depthAxisHandler(value) {
-  fontVariationSettings["wght"] = value;
+  fontVariationSettings["EDPT"] = value;
   updateFontVariationSettings();
 }
 
 function highlightAxisHandler(value) {
-  fontVariationSettings["HLGT"] = value;
+  fontVariationSettings["EHLT"] = value;
   updateFontVariationSettings();
 }
 
@@ -144,9 +144,9 @@ function onLoad() {
       class="slider"
       type="range"
       name="depth-slider"
-      min="100"
-      max="700"
-      value="400"
+      min="0"
+      max="200"
+      value="100"
       step="any"
       oninput="depthAxisHandler(value);"
     >
