@@ -3,7 +3,7 @@ from copy import deepcopy
 import math
 import os
 import pathlib
-from fontTools.designspaceLib import DesignSpaceDocument
+from fontTools.designspaceLib import AxisLabelDescriptor, DesignSpaceDocument
 from fontTools.misc.transform import Transform
 from fontTools.misc.bezierTools import cubicPointAtT
 from fontTools.pens.recordingPen import RecordingPen, RecordingPointPen
@@ -477,10 +477,32 @@ def shearAndExtrude(path):
 
     doc = DesignSpaceDocument()
     doc.addAxisDescriptor(
-        name=depthAxisName, tag="EDPT", minimum=0, default=100, maximum=200
+        name=depthAxisName,
+        tag="EDPT",
+        minimum=0,
+        default=100,
+        maximum=200,
+        axisLabels=[
+            AxisLabelDescriptor(name="Flat", userValue=0, elidable=False),
+            AxisLabelDescriptor(name="Shallow", userValue=50, elidable=False),
+            AxisLabelDescriptor(name="Normal", userValue=100, elidable=True),
+            AxisLabelDescriptor(name="Medium", userValue=150, elidable=False),
+            AxisLabelDescriptor(name="Deep", userValue=200, elidable=False),
+        ],
     )
     doc.addAxisDescriptor(
-        name=highlightAxisName, tag="EHLT", minimum=0, default=5, maximum=10
+        name=highlightAxisName,
+        tag="EHLT",
+        minimum=0,
+        default=5,
+        maximum=10,
+        axisLabels=[
+            AxisLabelDescriptor(name="None", userValue=0, elidable=False),
+            AxisLabelDescriptor(name="Some", userValue=2.5, elidable=False),
+            AxisLabelDescriptor(name="Normal", userValue=5, elidable=True),
+            AxisLabelDescriptor(name="More", userValue=7.5, elidable=False),
+            AxisLabelDescriptor(name="Most", userValue=10, elidable=False),
+        ],
     )
 
     depthAxisFields = [(100, 100, "Normal"), (200, 200, "Deep"), (0, 0, "Shallow")]
