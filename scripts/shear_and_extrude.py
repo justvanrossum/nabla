@@ -454,6 +454,9 @@ feature ccmp {
 } ccmp;
 """
 
+highlightAxisName = "Edge Highlight"
+depthAxisName = "Extrusion Depth"
+
 
 def shearAndExtrude(path):
     shearAngle = math.radians(30)
@@ -474,13 +477,13 @@ def shearAndExtrude(path):
 
     doc = DesignSpaceDocument()
     doc.addAxisDescriptor(
-        name="Weight", tag="wght", minimum=100, default=400, maximum=700
+        name=depthAxisName, tag="EDPT", minimum=0, default=100, maximum=200
     )
     doc.addAxisDescriptor(
-        name="Highlight", tag="HLGT", minimum=0, default=5, maximum=10
+        name=highlightAxisName, tag="EHLT", minimum=0, default=5, maximum=10
     )
 
-    depthAxisFields = [(100, 400, "Normal"), (200, 700, "Deep"), (0, 100, "Shallow")]
+    depthAxisFields = [(100, 100, "Normal"), (200, 200, "Deep"), (0, 0, "Shallow")]
     highlightAxisFields = [(0, 0, "NoHighlight"), (10, 10, "MaxHighlight")]
 
     for depth, axisValue, depthName in depthAxisFields:
@@ -505,7 +508,7 @@ def shearAndExtrude(path):
         extrudedPath = path.parent / (path.stem + "-" + depthName + path.suffix)
         extrudedFont.save(extrudedPath, overwrite=True)
         doc.addSourceDescriptor(
-            path=os.fspath(extrudedPath), location={"Weight": axisValue}
+            path=os.fspath(extrudedPath), location={depthAxisName: axisValue}
         )
 
     for highlightWidth, axisValue, highlightName in highlightAxisFields:
@@ -521,7 +524,7 @@ def shearAndExtrude(path):
         highlightPath = path.parent / (path.stem + "-" + highlightName + path.suffix)
         highlightFont.save(highlightPath, overwrite=True)
         doc.addSourceDescriptor(
-            path=os.fspath(highlightPath), location={"Highlight": axisValue}
+            path=os.fspath(highlightPath), location={highlightAxisName: axisValue}
         )
 
     dsPath = path.parent / (path.stem + ".designspace")
