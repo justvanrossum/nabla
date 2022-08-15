@@ -1,5 +1,6 @@
 import argparse
 from copy import deepcopy
+import itertools
 import math
 import os
 import pathlib
@@ -458,6 +459,49 @@ highlightAxisName = "Edge Highlight"
 depthAxisName = "Extrusion Depth"
 
 
+def setupDesignSpaceDocument():
+    doc = DesignSpaceDocument()
+    doc.addAxisDescriptor(
+        name=depthAxisName,
+        tag="EDPT",
+        minimum=0,
+        default=100,
+        maximum=200,
+        axisLabels=[
+            AxisLabelDescriptor(name="Flat", userValue=0, elidable=False),
+            AxisLabelDescriptor(name="Shallow", userValue=50, elidable=False),
+            AxisLabelDescriptor(name="Regular", userValue=100, elidable=False),
+            AxisLabelDescriptor(name="Medium", userValue=150, elidable=False),
+            AxisLabelDescriptor(name="Deep", userValue=200, elidable=False),
+        ],
+    )
+    doc.addAxisDescriptor(
+        name=highlightAxisName,
+        tag="EHLT",
+        minimum=0,
+        default=5,
+        maximum=10,
+        axisLabels=[
+            AxisLabelDescriptor(name="None", userValue=0, elidable=False),
+            AxisLabelDescriptor(name="Some", userValue=2.5, elidable=False),
+            AxisLabelDescriptor(name="Regular", userValue=5, elidable=True),
+            AxisLabelDescriptor(name="More", userValue=7.5, elidable=False),
+            AxisLabelDescriptor(name="Most", userValue=10, elidable=False),
+        ],
+    )
+
+    labels = [axis.axisLabels for axis in doc.axes]
+    for label1, label2 in itertools.product(*labels):
+        location = {
+            depthAxisName: label1.userValue,
+            highlightAxisName: label2.userValue,
+        }
+        doc.addInstanceDescriptor(
+            styleName=f"{label1.name} {label2.name}", location=location
+        )
+    return doc
+
+
 def shearAndExtrude(path):
     shearAngle = math.radians(30)
     extrudeAngle = math.radians(-30)
@@ -475,35 +519,7 @@ def shearAndExtrude(path):
             if glyphName in layer:
                 shearGlyph(layer[glyphName], shearAngle)
 
-    doc = DesignSpaceDocument()
-    doc.addAxisDescriptor(
-        name=depthAxisName,
-        tag="EDPT",
-        minimum=0,
-        default=100,
-        maximum=200,
-        axisLabels=[
-            AxisLabelDescriptor(name="Flat", userValue=0, elidable=False),
-            AxisLabelDescriptor(name="Shallow", userValue=50, elidable=False),
-            AxisLabelDescriptor(name="Normal", userValue=100, elidable=True),
-            AxisLabelDescriptor(name="Medium", userValue=150, elidable=False),
-            AxisLabelDescriptor(name="Deep", userValue=200, elidable=False),
-        ],
-    )
-    doc.addAxisDescriptor(
-        name=highlightAxisName,
-        tag="EHLT",
-        minimum=0,
-        default=5,
-        maximum=10,
-        axisLabels=[
-            AxisLabelDescriptor(name="None", userValue=0, elidable=False),
-            AxisLabelDescriptor(name="Some", userValue=2.5, elidable=False),
-            AxisLabelDescriptor(name="Normal", userValue=5, elidable=True),
-            AxisLabelDescriptor(name="More", userValue=7.5, elidable=False),
-            AxisLabelDescriptor(name="Most", userValue=10, elidable=False),
-        ],
-    )
+    doc = setupDesignSpaceDocument()
 
     depthAxisFields = [(100, 100, "Normal"), (200, 200, "Deep"), (0, 0, "Shallow")]
     highlightAxisFields = [(0, 0, "NoHighlight"), (10, 10, "MaxHighlight")]
@@ -530,7 +546,9 @@ def shearAndExtrude(path):
         extrudedPath = path.parent / (path.stem + "-" + depthName + path.suffix)
         extrudedFont.save(extrudedPath, overwrite=True)
         doc.addSourceDescriptor(
-            path=os.fspath(extrudedPath), location={depthAxisName: axisValue}
+            familyName="Nabla",
+            path=os.fspath(extrudedPath),
+            location={depthAxisName: axisValue},
         )
 
     for highlightWidth, axisValue, highlightName in highlightAxisFields:
