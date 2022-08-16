@@ -489,9 +489,7 @@ def setupDesignSpaceDocument():
     # Add "Regular" named instance at default position, so that
     # fontbakery can't say we don't have named instances.
     location = {depthAxisName: 100, highlightAxisName: 5}
-    doc.addInstanceDescriptor(
-        styleName=f"Regular", location=location
-    )
+    doc.addInstanceDescriptor(styleName=f"Regular", location=location)
     return doc
 
 
@@ -514,10 +512,10 @@ def shearAndExtrude(path):
 
     doc = setupDesignSpaceDocument()
 
-    depthAxisFields = [(0, 0, "Shallow"), (100, 100, "Regular"), (200, 200, "Deep")]
-    highlightAxisFields = [(0, 0, "NoHighlight"), (10, 10, "MaxHighlight")]
+    depthAxisFields = [(0, "Shallow"), (100, "Regular"), (200, "Deep")]
+    highlightAxisFields = [(0, "NoHighlight"), (10, "MaxHighlight")]
 
-    for depth, axisValue, depthName in depthAxisFields:
+    for depth, depthName in depthAxisFields:
         extrudedFont = deepcopy(font)
         extrudedFont.info.styleName = depthName
         colorGlyphs = extrudeGlyphs(extrudedFont, glyphNames, extrudeAngle, depth)
@@ -541,10 +539,10 @@ def shearAndExtrude(path):
         doc.addSourceDescriptor(
             familyName="Nabla",
             path=os.fspath(extrudedPath),
-            location={depthAxisName: axisValue},
+            location={depthAxisName: dept},
         )
 
-    for highlightWidth, axisValue, highlightName in highlightAxisFields:
+    for highlightWidth, highlightName in highlightAxisFields:
         highlightFont = deepcopy(font)
         highlightFont.info.styleName = highlightName
         makeHighlightGlyphs(highlightFont, glyphNames, extrudeAngle, highlightWidth)
@@ -557,7 +555,7 @@ def shearAndExtrude(path):
         highlightPath = path.parent / (path.stem + "-" + highlightName + path.suffix)
         highlightFont.save(highlightPath, overwrite=True)
         doc.addSourceDescriptor(
-            path=os.fspath(highlightPath), location={highlightAxisName: axisValue}
+            path=os.fspath(highlightPath), location={highlightAxisName: highlightWidth}
         )
 
     dsPath = path.parent / (path.stem + ".designspace")
