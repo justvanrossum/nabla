@@ -514,7 +514,7 @@ def shearAndExtrude(path):
 
     doc = setupDesignSpaceDocument()
 
-    depthAxisFields = [(100, 100, "Normal"), (200, 200, "Deep"), (0, 0, "Shallow")]
+    depthAxisFields = [(0, 0, "Shallow"), (100, 100, "Regular"), (200, 200, "Deep")]
     highlightAxisFields = [(0, 0, "NoHighlight"), (10, 10, "MaxHighlight")]
 
     for depth, axisValue, depthName in depthAxisFields:
@@ -522,8 +522,7 @@ def shearAndExtrude(path):
         extrudedFont.info.styleName = depthName
         colorGlyphs = extrudeGlyphs(extrudedFont, glyphNames, extrudeAngle, depth)
 
-        if depthName == "Normal":
-            extrudedFont.info.styleName = "Regular"
+        if depthName == "Regular":
             makeHighlightGlyphs(extrudedFont, glyphNames, extrudeAngle, 6)
             extrudedFont.lib[COLOR_PALETTES_KEY] = palettes
             extrudedFont.lib[COLOR_LAYERS_KEY] = colorGlyphs
