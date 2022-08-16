@@ -481,8 +481,8 @@ def setupDesignSpaceDocument():
         maximum=10,
         axisLabels=[
             AxisLabelDescriptor(name="No Highlight", userValue=0, elidable=False),
-            AxisLabelDescriptor(name="Highlight", userValue=5, elidable=True),
-            AxisLabelDescriptor(name="Max Highlight", userValue=10, elidable=False),
+            AxisLabelDescriptor(name="Highlight", userValue=6, elidable=True),
+            AxisLabelDescriptor(name="Max Highlight", userValue=12, elidable=False),
         ],
     )
 
@@ -535,6 +535,8 @@ def shearAndExtrude(path):
         )
 
     for highlightWidth, highlightName in highlightAxisFields:
+        if highlightName == "Highlight":
+            continue
         highlightFont = deepcopy(font)
         highlightFont.info.styleName = highlightName
         makeHighlightGlyphs(highlightFont, glyphNames, extrudeAngle, highlightWidth)
