@@ -477,8 +477,8 @@ def setupDesignSpaceDocument():
         name=highlightAxisName,
         tag="EHLT",
         minimum=0,
-        default=5,
-        maximum=10,
+        default=6,
+        maximum=12,
         axisLabels=[
             AxisLabelDescriptor(name="No Highlight", userValue=0, elidable=False),
             AxisLabelDescriptor(name="Highlight", userValue=6, elidable=True),
@@ -531,7 +531,7 @@ def shearAndExtrude(path):
         doc.addSourceDescriptor(
             familyName="Nabla",
             path=os.fspath(extrudedPath),
-            location={depthAxisName: dept},
+            location={depthAxisName: depth},
         )
 
     for highlightWidth, highlightName in highlightAxisFields:
