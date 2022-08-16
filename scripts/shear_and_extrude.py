@@ -513,7 +513,7 @@ def shearAndExtrude(path):
     doc = setupDesignSpaceDocument()
 
     depthAxisFields = [(0, "Shallow"), (100, "Regular"), (200, "Deep")]
-    highlightAxisFields = [(0, "NoHighlight"), (10, "MaxHighlight")]
+    highlightAxisFields = [(0, "NoHighlight"), (12, "MaxHighlight")]
 
     for depth, depthName in depthAxisFields:
         extrudedFont = deepcopy(font)
