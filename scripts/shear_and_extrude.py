@@ -489,8 +489,7 @@ def setupDesignSpaceDocument():
 
     # Add "Regular" named instance at the default location, so that
     # fontbakery can't say we don't have named instances.
-    location = {}
-    doc.addInstanceDescriptor(styleName=f"Regular", location=location)
+    doc.addInstanceDescriptor(styleName=f"Regular", location={})
     return doc
 
 
