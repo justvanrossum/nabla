@@ -468,11 +468,9 @@ def setupDesignSpaceDocument():
         default=100,
         maximum=200,
         axisLabels=[
-            AxisLabelDescriptor(name="Depth 0", userValue=0, elidable=False),
-            AxisLabelDescriptor(name="Depth 50", userValue=50, elidable=False),
+            AxisLabelDescriptor(name="Shallow", userValue=0, elidable=False),
             AxisLabelDescriptor(name="Regular", userValue=100, elidable=False),
-            AxisLabelDescriptor(name="Depth 150", userValue=150, elidable=False),
-            AxisLabelDescriptor(name="Depth 200", userValue=200, elidable=False),
+            AxisLabelDescriptor(name="Deep", userValue=200, elidable=False),
         ],
     )
     doc.addAxisDescriptor(
@@ -482,11 +480,9 @@ def setupDesignSpaceDocument():
         default=5,
         maximum=10,
         axisLabels=[
-            AxisLabelDescriptor(name="Highlight 0", userValue=0, elidable=False),
-            AxisLabelDescriptor(name="Highlight 2.5", userValue=2.5, elidable=False),
-            AxisLabelDescriptor(name="Highlight 5", userValue=5, elidable=True),
-            AxisLabelDescriptor(name="Highlight 7.5", userValue=7.5, elidable=False),
-            AxisLabelDescriptor(name="Highlight 10", userValue=10, elidable=False),
+            AxisLabelDescriptor(name="No Highlight", userValue=0, elidable=False),
+            AxisLabelDescriptor(name="Highlight", userValue=5, elidable=True),
+            AxisLabelDescriptor(name="Max Highlight", userValue=10, elidable=False),
         ],
     )
 
