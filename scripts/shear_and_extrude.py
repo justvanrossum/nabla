@@ -455,8 +455,9 @@ feature ccmp {
 } ccmp;
 """
 
-highlightAxisName = "Edge Highlight"
+
 depthAxisName = "Extrusion Depth"
+highlightAxisName = "Edge Highlight"
 
 
 def setupDesignSpaceDocument():
@@ -486,11 +487,15 @@ def setupDesignSpaceDocument():
         ],
     )
 
-    # Add "Regular" named instance at default position, so that
+    # Add "Regular" named instance at the default location, so that
     # fontbakery can't say we don't have named instances.
-    location = {depthAxisName: 100, highlightAxisName: 5}
+    location = {}
     doc.addInstanceDescriptor(styleName=f"Regular", location=location)
     return doc
+
+
+def getAxisFields(axis):
+    return [(label.userValue, "".join(label.name.split())) for label in axis.axisLabels]
 
 
 def shearAndExtrude(path):
@@ -511,9 +516,9 @@ def shearAndExtrude(path):
                 shearGlyph(layer[glyphName], shearAngle)
 
     doc = setupDesignSpaceDocument()
-
-    depthAxisFields = [(0, "Shallow"), (100, "Regular"), (200, "Deep")]
-    highlightAxisFields = [(0, "NoHighlight"), (12, "MaxHighlight")]
+    axesByTag = {axis.tag: axis for axis in doc.axes}
+    depthAxisFields = getAxisFields(axesByTag["EDPT"])
+    highlightAxisFields = getAxisFields(axesByTag["EHLT"])
 
     for depth, depthName in depthAxisFields:
         extrudedFont = deepcopy(font)
@@ -521,7 +526,9 @@ def shearAndExtrude(path):
         colorGlyphs = extrudeGlyphs(extrudedFont, glyphNames, extrudeAngle, depth)
 
         if depthName == "Regular":
-            makeHighlightGlyphs(extrudedFont, glyphNames, extrudeAngle, 6)
+            makeHighlightGlyphs(
+                extrudedFont, glyphNames, extrudeAngle, axesByTag["EHLT"].default
+            )
             extrudedFont.lib[COLOR_PALETTES_KEY] = palettes
             extrudedFont.lib[COLOR_LAYERS_KEY] = colorGlyphs
             extrudedFont.features.text += manualFeatures
