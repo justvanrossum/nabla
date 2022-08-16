@@ -396,8 +396,8 @@ def makeSideGradient(gradientPoints, extrudeSlope):
 
 
 def makeHighlightGlyphs(font, glyphNames, extrudeAngle, highlightWidth):
-    dx = highlightWidth * math.cos(extrudeAngle)
-    dy = highlightWidth * math.sin(extrudeAngle)
+    dx = highlightWidth * math.cos(extrudeAngle) / 2
+    dy = highlightWidth * math.sin(extrudeAngle) / 2
     highlightLayer = font.layers["highlightColor"]
     for glyphName in glyphNames:
         if glyphName not in highlightLayer:
@@ -478,12 +478,12 @@ def setupDesignSpaceDocument():
         name=highlightAxisName,
         tag="EHLT",
         minimum=0,
-        default=6,
-        maximum=12,
+        default=12,
+        maximum=24,
         axisLabels=[
             AxisLabelDescriptor(name="No Highlight", userValue=0, elidable=False),
-            AxisLabelDescriptor(name="Highlight", userValue=6, elidable=True),
-            AxisLabelDescriptor(name="Max Highlight", userValue=12, elidable=False),
+            AxisLabelDescriptor(name="Highlight", userValue=12, elidable=True),
+            AxisLabelDescriptor(name="Max Highlight", userValue=24, elidable=False),
         ],
     )
 
