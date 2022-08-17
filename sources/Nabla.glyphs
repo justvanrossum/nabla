@@ -111,6 +111,7 @@ visible = 1;
 glyphs = (
 {
 glyphname = A;
+kernLeft = O;
 layers = (
 {
 layerId = m01;
@@ -326,6 +327,7 @@ unicode = 65;
 },
 {
 glyphname = Aacute;
+kernLeft = O;
 layers = (
 {
 layerId = m01;
@@ -496,6 +498,7 @@ unicode = 193;
 },
 {
 glyphname = Abreve;
+kernLeft = O;
 layers = (
 {
 layerId = m01;
@@ -728,6 +731,7 @@ unicode = 258;
 },
 {
 glyphname = Acaron;
+kernLeft = O;
 layers = (
 {
 layerId = m01;
@@ -910,6 +914,7 @@ unicode = 461;
 },
 {
 glyphname = Acircumflex;
+kernLeft = O;
 layers = (
 {
 layerId = m01;
@@ -1089,6 +1094,7 @@ unicode = 194;
 },
 {
 glyphname = Adieresis;
+kernLeft = O;
 layers = (
 {
 layerId = m01;
@@ -1311,6 +1317,7 @@ unicode = 196;
 },
 {
 glyphname = Agrave;
+kernLeft = O;
 layers = (
 {
 layerId = m01;
@@ -1475,6 +1482,7 @@ unicode = 192;
 },
 {
 glyphname = Amacron;
+kernLeft = O;
 layers = (
 {
 layerId = m01;
@@ -1640,6 +1648,7 @@ unicode = 256;
 },
 {
 glyphname = Aogonek;
+kernLeft = O;
 layers = (
 {
 layerId = m01;
@@ -1840,6 +1849,7 @@ unicode = 260;
 },
 {
 glyphname = Aring;
+kernLeft = O;
 layers = (
 {
 layerId = m01;
@@ -2072,6 +2082,7 @@ unicode = 197;
 },
 {
 glyphname = Atilde;
+kernLeft = O;
 layers = (
 {
 layerId = m01;
@@ -2263,6 +2274,7 @@ unicode = 195;
 },
 {
 glyphname = AE;
+kernLeft = O;
 layers = (
 {
 layerId = m01;
@@ -4745,6 +4757,7 @@ unicode = 272;
 },
 {
 glyphname = E;
+kernLeft = O;
 layers = (
 {
 layerId = m01;
@@ -4929,12 +4942,13 @@ nodes = (
 width = 650;
 }
 );
-metricLeft = H;
+metricLeft = O;
 metricRight = H;
 unicode = 69;
 },
 {
 glyphname = Eacute;
+kernLeft = O;
 layers = (
 {
 layerId = m01;
@@ -5076,12 +5090,13 @@ name = "";
 width = 650;
 }
 );
-metricLeft = H;
+metricLeft = O;
 metricRight = H;
 unicode = 201;
 },
 {
 glyphname = Ecaron;
+kernLeft = O;
 layers = (
 {
 layerId = m01;
@@ -5235,12 +5250,13 @@ nodes = (
 width = 650;
 }
 );
-metricLeft = H;
+metricLeft = O;
 metricRight = H;
 unicode = 282;
 },
 {
 glyphname = Ecircumflex;
+kernLeft = O;
 layers = (
 {
 layerId = m01;
@@ -5391,12 +5407,13 @@ name = "";
 width = 650;
 }
 );
-metricLeft = H;
+metricLeft = O;
 metricRight = H;
 unicode = 202;
 },
 {
 glyphname = Edieresis;
+kernLeft = O;
 layers = (
 {
 layerId = m01;
@@ -5594,12 +5611,13 @@ name = "";
 width = 650;
 }
 );
-metricLeft = H;
+metricLeft = O;
 metricRight = H;
 unicode = 203;
 },
 {
 glyphname = Edotaccent;
+kernLeft = O;
 layers = (
 {
 layerId = m01;
@@ -5748,12 +5766,13 @@ name = "";
 width = 650;
 }
 );
-metricLeft = H;
+metricLeft = O;
 metricRight = H;
 unicode = 278;
 },
 {
 glyphname = Egrave;
+kernLeft = O;
 layers = (
 {
 layerId = m01;
@@ -5889,12 +5908,13 @@ nodes = (
 width = 650;
 }
 );
-metricLeft = H;
+metricLeft = O;
 metricRight = H;
 unicode = 200;
 },
 {
 glyphname = Emacron;
+kernLeft = O;
 layers = (
 {
 layerId = m01;
@@ -6031,12 +6051,13 @@ nodes = (
 width = 650;
 }
 );
-metricLeft = H;
+metricLeft = O;
 metricRight = H;
 unicode = 274;
 },
 {
 glyphname = Eogonek;
+kernLeft = O;
 layers = (
 {
 layerId = m01;
@@ -6194,12 +6215,13 @@ nodes = (
 width = 650;
 }
 );
-metricLeft = H;
+metricLeft = O;
 metricRight = H;
 unicode = 280;
 },
 {
 glyphname = Etilde;
+kernLeft = O;
 layers = (
 {
 layerId = m01;
@@ -6588,6 +6610,7 @@ unicode = 399;
 },
 {
 glyphname = F;
+kernLeft = O;
 layers = (
 {
 layerId = m01;
@@ -6741,6 +6764,7 @@ unicode = 70;
 },
 {
 glyphname = G;
+kernLeft = O;
 layers = (
 {
 layerId = m01;
@@ -6993,6 +7017,7 @@ unicode = 71;
 },
 {
 glyphname = Gbreve;
+kernLeft = O;
 layers = (
 {
 layerId = m01;
@@ -7248,6 +7273,7 @@ unicode = 286;
 },
 {
 glyphname = Gcaron;
+kernLeft = O;
 layers = (
 {
 layerId = m01;
@@ -7453,6 +7479,7 @@ unicode = 486;
 },
 {
 glyphname = Gcircumflex;
+kernLeft = O;
 layers = (
 {
 layerId = m01;
@@ -7655,6 +7682,7 @@ unicode = 284;
 },
 {
 glyphname = Gcommaaccent;
+kernLeft = O;
 layers = (
 {
 layerId = m01;
@@ -7858,6 +7886,7 @@ unicode = 290;
 },
 {
 glyphname = Gdotaccent;
+kernLeft = O;
 layers = (
 {
 layerId = m01;
@@ -8058,6 +8087,7 @@ unicode = 288;
 },
 {
 glyphname = Gmacron;
+kernLeft = O;
 layers = (
 {
 layerId = m01;
@@ -14822,6 +14852,7 @@ unicode = 332;
 },
 {
 glyphname = Oslash;
+kernLeft = O;
 layers = (
 {
 layerId = m01;
@@ -15924,6 +15955,7 @@ unicode = 222;
 },
 {
 glyphname = Q;
+kernLeft = O;
 layers = (
 {
 layerId = m01;
@@ -16866,6 +16898,7 @@ unicode = 342;
 },
 {
 glyphname = S;
+kernLeft = O;
 kernRight = O;
 layers = (
 {
@@ -17128,6 +17161,7 @@ unicode = 83;
 },
 {
 glyphname = Sacute;
+kernLeft = O;
 kernRight = O;
 layers = (
 {
@@ -17330,6 +17364,7 @@ unicode = 346;
 },
 {
 glyphname = Scaron;
+kernLeft = O;
 kernRight = O;
 layers = (
 {
@@ -17544,6 +17579,7 @@ unicode = 352;
 },
 {
 glyphname = Scedilla;
+kernLeft = O;
 kernRight = O;
 layers = (
 {
@@ -17751,6 +17787,7 @@ unicode = 350;
 },
 {
 glyphname = Scircumflex;
+kernLeft = O;
 kernRight = O;
 layers = (
 {
@@ -17962,6 +17999,7 @@ unicode = 348;
 },
 {
 glyphname = Scommaaccent;
+kernLeft = O;
 kernRight = O;
 layers = (
 {
@@ -69036,6 +69074,7 @@ m01 = {
 "@MMK_R_period" = -100;
 };
 "@MMK_L_T" = {
+"@MMK_R_O" = -50;
 "@MMK_R_hyphen" = -100;
 "@MMK_R_n" = -130;
 "@MMK_R_o" = -130;
