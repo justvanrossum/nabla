@@ -99,15 +99,15 @@ highlightSuffix = ".highlight"
 
 colorTable = """
     primer          ffd214  ff1471  00a0e1  5a5a78  c3c3e1
-    shadowBottom    ff552d  780082  2200f5  00001e  555573
+    shadowBottom    ff552d  780082  2200f5  141432  555573
     shadowMiddle    ff9b00  be14b4  3c6eff  464664  8c8caa
-    shadow          ff9123  9b1eaf  325aff  1e1e3c  7d7d9b
+    shadow          ff9123  9b1eaf  325aff  323250  8282a0
     topBottom       ffd214  ff1471  00a0e1  5a5a78  c3c3e1
     midTop          ffeb6e  ff6b8b  1ee1ff  787896  d7d7f5
     frontBottom     ffd214  ff1471  00a0e1  5a5a78  c3c3e1
     frontTop        ffeb6e  ff6b8b  1ee1ff  787896  d7d7f5
     top             fffabe  ff9cc2  87ffff  9696b4  f5f5ff
-    highlight       ffffff  ffffff  ffffff  ffffff  ffffff
+    highlight       ffffff  ffffff  ffffff  c8c8d2  ffffff
 """
 
 palettes, colorIndices = parseColorTable(colorTable)
