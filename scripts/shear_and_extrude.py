@@ -98,16 +98,16 @@ highlightSuffix = ".highlight"
 
 
 colorTable = """
-    primer          ffd214  ff1471  00a0e1  5a5a78  c3c3e1
-    shadowBottom    ff552d  780082  2200f5  141432  555573
-    shadowMiddle    ff9b00  be14b4  3c6eff  464664  8c8caa
-    shadow          ff9123  9b1eaf  325aff  323250  8282a0
-    topBottom       ffd214  ff1471  00a0e1  5a5a78  c3c3e1
-    midTop          ffeb6e  ff6b8b  1ee1ff  787896  d7d7f5
-    frontBottom     ffd214  ff1471  00a0e1  5a5a78  c3c3e1
-    frontTop        ffeb6e  ff6b8b  1ee1ff  787896  d7d7f5
-    top             fffabe  ff9cc2  87ffff  9696b4  f5f5ff
-    highlight       ffffff  ffffff  ffffff  c8c8d2  ffffff
+    primer          ffd214  ff1471  00a0e1  5a5a78  c3c3e1  ffd700  3c148c
+    shadowBottom    ff552d  780082  2200f5  141432  555573  00a050  d20050
+    shadowMiddle    ff9b00  be14b4  3c6eff  464664  8c8caa  00a050  d20050
+    shadow          ff9123  9b1eaf  325aff  323250  8282a0  00a050  d20050
+    topBottom       ffd214  ff1471  00a0e1  5a5a78  c3c3e1  02abd0  f52882
+    midTop          ffeb6e  ff6b8b  1ee1ff  787896  d7d7f5  02abd0  f52882
+    frontBottom     ffd214  ff1471  00a0e1  5a5a78  c3c3e1  ffd700  3c148c
+    frontTop        ffeb6e  ff6b8b  1ee1ff  787896  d7d7f5  ffd700  3c148c
+    top             fffabe  ff9cc2  87ffff  9696b4  f5f5ff  02abd0  f52882
+    highlight       ffffff  ffffff  ffffff  c8c8d2  ffffff  00dcdc  ff5ac8 
 """
 
 palettes, colorIndices = parseColorTable(colorTable)
