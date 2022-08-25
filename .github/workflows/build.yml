@@ -35,31 +35,30 @@ jobs:
           fonts
     outputs:
       zip_name: ${{ env.ZIP_NAME }}
-  # release:
-  #   # only run if the commit is tagged...
-  #   if: github.event_name == 'release'
-  #   # ... and it builds successfully
-  #   needs:
-  #     - build
-  #   runs-on: ubuntu-latest
-  #   env:
-  #     ZIP_NAME: ${{ needs.build.outputs.zip_name }}
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - name: Download artefact files
-  #       uses: actions/download-artifact@v2
-  #       with:
-  #         name: ${{ env.ZIP_NAME }}
-  #         path: ${{ env.ZIP_NAME }}
-  #     - name: Zip files
-  #       run: zip -r ${{ env.ZIP_NAME }}.zip ${{ env.ZIP_NAME }}
-  #     - name: Upload binaries to release
-  #       uses: svenstaro/upload-release-action@v2
-  #       with:
-  #         repo_token: ${{ secrets.GITHUB_TOKEN }}
-  #         file: ${{ env.ZIP_NAME }}.zip
-  #         asset_name: ${{ env.ZIP_NAME }}.zip
-  #         tag: ${{ github.ref }}
-  #         overwrite: true
-  #         body: "Production ready fonts"
-  
+  release:
+    # only run if the commit is tagged...
+    if: github.event_name == 'release'
+    # ... and it builds successfully
+    needs:
+      - build
+    runs-on: ubuntu-latest
+    env:
+      ZIP_NAME: ${{ needs.build.outputs.zip_name }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Download artefact files
+        uses: actions/download-artifact@v2
+        with:
+          name: ${{ env.ZIP_NAME }}
+          path: ${{ env.ZIP_NAME }}
+      - name: Zip files
+        run: zip -r ${{ env.ZIP_NAME }}.zip ${{ env.ZIP_NAME }}
+      - name: Upload binaries to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ${{ env.ZIP_NAME }}.zip
+          asset_name: ${{ env.ZIP_NAME }}.zip
+          tag: ${{ github.ref }}
+          overwrite: true
+          body: "Production ready fonts"
