@@ -26,9 +26,10 @@ jobs:
         pip install -r requirements.txt
     - name: Build font
       run: ./build.sh
-    # - name: Check with fontbakery
-    #   run: make test
-    #   continue-on-error: true
+    - name: Check with fontbakery
+      run: |
+        fontbakery check-googlefonts -x com.google.fonts/check/STAT fonts/*.ttf
+      continue-on-error: true
     # - name: proof
     #   run: make proof
     - name: Archive artifacts
