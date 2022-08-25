@@ -251,9 +251,6 @@ def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
         highlightLayerGlyphName = glyphName + highlightSuffix
 
         glyph = font[glyphName]
-        sideGlyph = font.newGlyph(sideLayerGlyphName)
-        sideGlyph.width = glyph.width
-        sideGlyphPen = sideGlyph.getPen()
         sideLayers = []
         splitPath = splitGlyphAtAngle(glyph, extrudeAngle)
 
@@ -263,11 +260,12 @@ def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
         )
         extrudedPath = extrudePath(splitPath, extrudeAngle, -depth, reverse=True)
 
+        sidePartGlyphNames = []
         for contourIndex, (contour, sideGradient) in enumerate(
             zip(extrudedPath.contours, sideGradients)
         ):
             sidePartGlyphName = sideLayerGlyphName + f".{contourIndex}"
-            sideGlyphPen.addComponent(sidePartGlyphName, (1, 0, 0, 1, 0, 0))
+            sidePartGlyphNames.append(sidePartGlyphName)
             sidePartGlyph = font.newGlyph(sidePartGlyphName)
             sidePartGlyph.width = glyph.width
             contour.draw(sidePartGlyph.getPen())
@@ -287,7 +285,8 @@ def extrudeGlyphs(font, glyphNames, extrudeAngle, depth):
         glyph.clear()
         pen = glyph.getPen()
         pen.addComponent(frontLayerGlyphName, (1, 0, 0, 1, 0, 0))
-        pen.addComponent(sideLayerGlyphName, (1, 0, 0, 1, 0, 0))
+        for sidePartGlyphName in sidePartGlyphNames:
+            pen.addComponent(sidePartGlyphName, (1, 0, 0, 1, 0, 0))
 
     return colorGlyphs
 
