@@ -1,6 +1,10 @@
 name: Build font
 
-on: [push, release]
+on:
+  push:
+  release:
+    types:
+      - created
 
 jobs:
   build:
