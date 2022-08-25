@@ -12,7 +12,7 @@ mkdir -p fonts
 
 output=fonts/Nabla[EDPT,EHLT].ttf
 
-fontmake -m build/Nabla-Regular.designspace -o variable --output-path $output --flatten-components
+fontmake -m build/Nabla-Regular.designspace -o variable --output-path $output --flatten-components --no-optimize-gvar
 
 gftools fix-nonhinting $output $output
 
