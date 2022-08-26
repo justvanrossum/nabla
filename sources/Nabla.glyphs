@@ -51832,21 +51832,527 @@ layers = (
 layerId = m01;
 shapes = (
 {
-closed = 1;
+angle = 180;
+pos = (200,100);
+ref = _part.square;
+},
+{
+angle = 180;
+pos = (400,100);
+ref = _part.square;
+},
+{
+angle = 180;
+pos = (600,100);
+ref = _part.square;
+},
+{
+angle = 180;
+pos = (600,300);
+ref = _part.square;
+},
+{
+angle = 180;
+pos = (600,500);
+ref = _part.square;
+},
+{
+angle = 180;
+pos = (600,700);
+ref = _part.square;
+},
+{
+angle = 180;
+pos = (400,700);
+ref = _part.square;
+},
+{
+angle = 180;
+pos = (200,700);
+ref = _part.square;
+},
+{
+angle = 180;
+pos = (200,500);
+ref = _part.square;
+},
+{
+angle = 180;
+pos = (200,300);
+ref = _part.square;
+},
+{
+angle = 180;
+pos = (300,200);
+ref = _part.square;
+},
+{
+angle = 180;
+pos = (500,200);
+ref = _part.square;
+},
+{
+angle = 180;
+pos = (500,400);
+ref = _part.square;
+},
+{
+angle = 180;
+pos = (300,400);
+ref = _part.square;
+},
+{
+angle = 180;
+pos = (300,600);
+ref = _part.square;
+},
+{
+angle = 180;
+pos = (500,600);
+ref = _part.square;
+},
+{
+angle = 180;
+pos = (400,500);
+ref = _part.square;
+},
+{
+angle = 180;
+pos = (400,300);
+ref = _part.square;
+}
+);
+width = 700;
+},
+{
+associatedMasterId = m01;
+layerId = "9265B3D2-35AF-416A-BDBF-1146E18081D4";
+name = side;
+shapes = (
+{
+closed = 0;
 nodes = (
-(100,0,l),
-(600,0,l),
-(600,700,l),
-(100,700,l)
+(100,700,l,{
+name = shadowColor;
+}),
+(100,600,l,{
+name = shadowColor;
+})
 );
 },
 {
-closed = 1;
+closed = 0;
 nodes = (
-(500,600,l),
-(500,100,l),
-(200,100,l),
-(200,600,l)
+(100,500,l,{
+name = shadowColor;
+}),
+(100,400,l,{
+name = shadowColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(100,300,l,{
+name = shadowColor;
+}),
+(100,200,l,{
+name = shadowColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(100,100,l,{
+name = shadowColor;
+}),
+(100,0,l,{
+name = shadowColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(300,700,l,{
+name = shadowColor;
+}),
+(300,600,l,{
+name = shadowBottomColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(300,500,l,{
+name = shadowBottomColor;
+}),
+(300,400,l,{
+name = shadowColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(300,300,l,{
+name = shadowBottomColor;
+}),
+(300,200,l,{
+name = shadowColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(300,100,l,{
+name = shadowBottomColor;
+}),
+(300,0,l,{
+name = shadowColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(500,700,l,{
+name = shadowColor;
+}),
+(500,600,l,{
+name = shadowBottomColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(500,500,l,{
+name = shadowBottomColor;
+}),
+(500,400,l,{
+name = shadowColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(500,300,l,{
+name = shadowBottomColor;
+}),
+(500,200,l,{
+name = shadowColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(500,100,l,{
+name = shadowBottomColor;
+}),
+(500,0,l,{
+name = shadowColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(400,600,l,{
+name = shadowBottomColor;
+}),
+(400,500,l,{
+name = shadowColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(400,400,l,{
+name = shadowBottomColor;
+}),
+(400,300,l,{
+name = shadowColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(400,200,l,{
+name = shadowBottomColor;
+}),
+(400,100,l,{
+name = shadowBottomColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(200,600,l,{
+name = shadowBottomColor;
+}),
+(200,500,l,{
+name = shadowColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(200,400,l,{
+name = shadowBottomColor;
+}),
+(200,300,l,{
+name = shadowColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(200,200,l,{
+name = shadowBottomColor;
+}),
+(200,100,l,{
+name = shadowBottomColor;
+})
+);
+}
+);
+width = 700;
+},
+{
+associatedMasterId = m01;
+layerId = "35F57C76-296D-4C81-83B3-3EC370DDBA1C";
+name = top;
+shapes = (
+{
+closed = 0;
+nodes = (
+(100,500,l,{
+name = midTopColor;
+}),
+(230,500,l,{
+name = shadowColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(100,300,l,{
+name = midTopColor;
+}),
+(230,300,l,{
+name = shadowColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(100,100,l,{
+name = midTopColor;
+}),
+(230,100,l,{
+name = shadowColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(300,500,l,{
+name = shadowColor;
+}),
+(420,500,l,{
+name = midTopColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(300,300,l,{
+name = shadowColor;
+}),
+(420,300,l,{
+name = midTopColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(300,100,l,{
+name = shadowColor;
+}),
+(420,100,l,{
+name = midTopColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(500,500,l,{
+name = shadowColor;
+}),
+(600,500,l,{
+name = midTopColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(500,300,l,{
+name = shadowColor;
+}),
+(600,300,l,{
+name = midTopColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(500,100,l,{
+name = shadowColor;
+}),
+(600,100,l,{
+name = midTopColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(200,400,l,{
+name = shadowColor;
+}),
+(330,400,l,{
+name = midTopColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(400,400,l,{
+name = shadowColor;
+}),
+(540,400,l,{
+name = midTopColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(200,200,l,{
+name = shadowColor;
+}),
+(330,200,l,{
+name = midTopColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(400,200,l,{
+name = shadowColor;
+}),
+(540,200,l,{
+name = midTopColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(200,600,l,{
+name = shadowColor;
+}),
+(320,600,l,{
+name = midTopColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(400,600,l,{
+name = shadowColor;
+}),
+(540,600,l,{
+name = midTopColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(100,700,l,{
+name = topColor;
+}),
+(200,700,l,{
+name = topColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(300,700,l,{
+name = topColor;
+}),
+(400,700,l,{
+name = topColor;
+})
+);
+},
+{
+closed = 0;
+nodes = (
+(500,700,l,{
+name = topColor;
+}),
+(600,700,l,{
+name = topColor;
+})
+);
+}
+);
+width = 700;
+},
+{
+associatedMasterId = m01;
+layerId = "A27AC58D-0C5A-4055-9D7B-E52733E4FB40";
+name = highlightColor;
+shapes = (
+{
+closed = 0;
+nodes = (
+(100,600,l,{
+name = "";
+}),
+(100,700,l,{
+name = "";
+}),
+(200,700,l,{
+name = "";
+})
 );
 }
 );
