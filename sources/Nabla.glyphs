@@ -51826,6 +51826,35 @@ subCategory = Nonspacing;
 unicode = 160;
 },
 {
+glyphname = .notdef;
+layers = (
+{
+layerId = m01;
+shapes = (
+{
+closed = 1;
+nodes = (
+(100,0,l),
+(600,0,l),
+(600,700,l),
+(100,700,l)
+);
+},
+{
+closed = 1;
+nodes = (
+(500,600,l),
+(500,100,l),
+(200,100,l),
+(200,600,l)
+);
+}
+);
+width = 700;
+}
+);
+},
+{
 glyphname = space;
 layers = (
 {
@@ -69234,6 +69263,19 @@ value = "https://scripts.sil.org/OFL";
 {
 key = vendorID;
 value = TYPT;
+},
+{
+key = manufacturers;
+values = (
+{
+language = ENG;
+value = Typearture;
+}
+);
+},
+{
+key = manufacturerURL;
+value = "http://www.typearture.com";
 }
 );
 settings = {
@@ -69242,5 +69284,5 @@ gridSubDivision = 10;
 };
 unitsPerEm = 1000;
 versionMajor = 1;
-versionMinor = 1;
+versionMinor = 2;
 }
