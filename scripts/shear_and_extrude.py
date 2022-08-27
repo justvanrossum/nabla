@@ -517,6 +517,7 @@ def shearAndExtrude(path):
     axesByTag = {axis.tag: axis for axis in doc.axes}
     depthAxisFields = getAxisFields(axesByTag["EDPT"])
     highlightAxisFields = getAxisFields(axesByTag["EHLT"])
+    defaultFont = None
 
     for depth, depthName in depthAxisFields:
         extrudedFont = deepcopy(font)
@@ -530,6 +531,7 @@ def shearAndExtrude(path):
             extrudedFont.lib[COLOR_PALETTES_KEY] = palettes
             extrudedFont.lib[COLOR_LAYERS_KEY] = colorGlyphs
             extrudedFont.features.text += manualFeatures
+            defaultFont = extrudedFont
 
         extrudedPath = path.parent / (path.stem + "-" + depthName + path.suffix)
         extrudedFont.save(extrudedPath, overwrite=True)
@@ -550,6 +552,10 @@ def shearAndExtrude(path):
                 for layer in highlightFont.layers:
                     if glyphName in layer:
                         del layer[glyphName]
+
+        for gn in defaultFont.keys():
+            if gn.startswith(".notdef"):
+                highlightFont[gn] = defaultFont[gn]
 
         highlightPath = path.parent / (path.stem + "-" + highlightName + path.suffix)
         highlightFont.save(highlightPath, overwrite=True)
