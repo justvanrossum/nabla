@@ -348,7 +348,7 @@ def horizontalOrderContour(contour1, contour2):
     if rectsOverlap(bounds1, bounds2):
         for segment1 in contour1.segments:
             for segment2 in contour2.segments:
-            	ho = horizontalOrderSegment(segment1, segment2)
+                ho = horizontalOrderSegment(segment1, segment2)
                 if ho:
                     return ho
     return 0
