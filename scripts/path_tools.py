@@ -341,13 +341,15 @@ def topologicalSort(data):
 def horizontalOrderContour(contour1, contour2):
     bounds1 = contour1.controlBounds
     bounds2 = contour2.controlBounds
-    if ho := horizontalOrderRect(bounds1, bounds2):
+    ho = horizontalOrderRect(bounds1, bounds2)
+    if ho:
         return ho
 
     if rectsOverlap(bounds1, bounds2):
         for segment1 in contour1.segments:
             for segment2 in contour2.segments:
-                if ho := horizontalOrderSegment(segment1, segment2):
+            	ho = horizontalOrderSegment(segment1, segment2)
+                if ho:
                     return ho
     return 0
 
@@ -357,7 +359,8 @@ def horizontalOrderSegment(segment1, segment2, maxRecursionLevel=4):
         return 0
     bounds1 = segment1.controlBounds
     bounds2 = segment2.controlBounds
-    if ho := horizontalOrderRect(bounds1, bounds2):
+    ho = horizontalOrderRect(bounds1, bounds2)
+    if ho:
         return ho
 
     if rectsOverlap(bounds1, bounds2):
@@ -366,12 +369,14 @@ def horizontalOrderSegment(segment1, segment2, maxRecursionLevel=4):
             for seg2 in segment2.splitAtT(0.5):
                 bounds1 = seg1.controlBounds
                 bounds2 = seg2.controlBounds
-                if ho := horizontalOrderRect(bounds1, bounds2):
+                ho = horizontalOrderRect(bounds1, bounds2)
+                if ho:
                     return ho
                 if rectsOverlap(bounds1, bounds2):
                     overlaps.append((seg1, seg2))
         for seg1, seg2 in overlaps:
-            if ho := horizontalOrderSegment(seg1, seg2, maxRecursionLevel - 1):
+        	ho = horizontalOrderSegment(seg1, seg2, maxRecursionLevel - 1)
+            if ho:
                 return ho
     return 0
 
