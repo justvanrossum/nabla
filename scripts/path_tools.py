@@ -375,7 +375,7 @@ def horizontalOrderSegment(segment1, segment2, maxRecursionLevel=4):
                 if rectsOverlap(bounds1, bounds2):
                     overlaps.append((seg1, seg2))
         for seg1, seg2 in overlaps:
-        	ho = horizontalOrderSegment(seg1, seg2, maxRecursionLevel - 1)
+            ho = horizontalOrderSegment(seg1, seg2, maxRecursionLevel - 1)
             if ho:
                 return ho
     return 0
