@@ -1,6 +1,6 @@
 from collections import defaultdict
 from dataclasses import dataclass, field
-from functools import cached_property, reduce
+from functools import reduce
 import math
 from typing import List, Tuple, NamedTuple
 from fontTools.misc.arrayTools import calcBounds
@@ -13,8 +13,8 @@ from fontTools.misc.bezierTools import (
 from fontTools.pens.basePen import BasePen
 
 try:
-    cached_property
-except NameError:
+    from functools import cached_property
+except ImportError:
 
     class cached_property(object):
 
