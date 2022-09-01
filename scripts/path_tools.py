@@ -12,6 +12,27 @@ from fontTools.misc.bezierTools import (
 )
 from fontTools.pens.basePen import BasePen
 
+try:
+    cached_property
+except NameError:
+
+    class cached_property(object):
+
+        # This exists in the stdlib in Python 3.8, but not earlier
+
+        """A property that is only computed once per instance and then replaces itself
+        with an ordinary attribute. Deleting the attribute resets the property."""
+
+        def __init__(self, func):
+            self.__doc__ = getattr(func, "__doc__")
+            self.func = func
+
+        def __get__(self, obj, cls):
+            if obj is None:
+                return self
+            value = obj.__dict__[self.func.__name__] = self.func(obj)
+            return value
+
 
 class BoundingBox(NamedTuple):
     """Represents a bounding box as a tuple of (xMin, yMin, xMax, yMax)."""
