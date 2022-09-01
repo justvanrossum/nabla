@@ -12,6 +12,27 @@ from fontTools.misc.bezierTools import (
 )
 from fontTools.pens.basePen import BasePen
 
+try:
+    cached_property
+except NameError:
+
+    class cached_property(object):
+
+        # This exists in the stdlib in Python 3.8, but not earlier
+
+        """A property that is only computed once per instance and then replaces itself
+        with an ordinary attribute. Deleting the attribute resets the property."""
+
+        def __init__(self, func):
+            self.__doc__ = getattr(func, "__doc__")
+            self.func = func
+
+        def __get__(self, obj, cls):
+            if obj is None:
+                return self
+            value = obj.__dict__[self.func.__name__] = self.func(obj)
+            return value
+
 
 class BoundingBox(NamedTuple):
     """Represents a bounding box as a tuple of (xMin, yMin, xMax, yMax)."""
@@ -341,13 +362,15 @@ def topologicalSort(data):
 def horizontalOrderContour(contour1, contour2):
     bounds1 = contour1.controlBounds
     bounds2 = contour2.controlBounds
-    if ho := horizontalOrderRect(bounds1, bounds2):
+    ho = horizontalOrderRect(bounds1, bounds2)
+    if ho:
         return ho
 
     if rectsOverlap(bounds1, bounds2):
         for segment1 in contour1.segments:
             for segment2 in contour2.segments:
-                if ho := horizontalOrderSegment(segment1, segment2):
+                ho = horizontalOrderSegment(segment1, segment2)
+                if ho:
                     return ho
     return 0
 
@@ -357,7 +380,8 @@ def horizontalOrderSegment(segment1, segment2, maxRecursionLevel=4):
         return 0
     bounds1 = segment1.controlBounds
     bounds2 = segment2.controlBounds
-    if ho := horizontalOrderRect(bounds1, bounds2):
+    ho = horizontalOrderRect(bounds1, bounds2)
+    if ho:
         return ho
 
     if rectsOverlap(bounds1, bounds2):
@@ -366,12 +390,14 @@ def horizontalOrderSegment(segment1, segment2, maxRecursionLevel=4):
             for seg2 in segment2.splitAtT(0.5):
                 bounds1 = seg1.controlBounds
                 bounds2 = seg2.controlBounds
-                if ho := horizontalOrderRect(bounds1, bounds2):
+                ho = horizontalOrderRect(bounds1, bounds2)
+                if ho:
                     return ho
                 if rectsOverlap(bounds1, bounds2):
                     overlaps.append((seg1, seg2))
         for seg1, seg2 in overlaps:
-            if ho := horizontalOrderSegment(seg1, seg2, maxRecursionLevel - 1):
+            ho = horizontalOrderSegment(seg1, seg2, maxRecursionLevel - 1)
+            if ho:
                 return ho
     return 0
 
