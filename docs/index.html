@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Typearture's Nabla</title>
+  <style type="text/css">
+
+@font-face {
+  font-family: "Nabla";
+  src: url("./fonts/Nabla[EDPT,EHLT].ttf") format("truetype");
+  font-display: block;  /* Prefer FOIT (Flash Of Invisible Text) over FOUT (Flash Of Unstyled Text) */
+}
+
+html{
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin:  0;
+}
+
+body {
+  background-color: #3a50ef;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.page-header {
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+  font-size: 1em;
+  text-align: center;
+  align-items: center;
+}
+
+.page-header>label {
+  margin-top: 1em;
+  margin-bottom: 0.25em;
+  color: #ff8723;
+  font-weight: bold;
+}
+
+.color-text {
+  padding-top: 25px;
+  font-family: Nabla;
+  font-size: 150px;
+  line-height: 1.4em;
+  text-align: center;
+  overflow: scroll;
+}
+
+.slider {
+  -webkit-appearance: none; 
+  appearance: none;
+  width: 55%;
+  height: 2px;
+  background: #ff8723;
+  outline: none;
+  margin-top: 10px;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #ff8723;
+}
+
+.colorpicker {
+  outline: none;
+  background-color: transparent;
+  border-color: #ff8723;
+  border-width: 3px;
+  box-shadow: none;
+  margin-top: 5px;
+  width: 6em;
+  height: 26px;
+  cursor: pointer;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+}
+
+</style>
+
+<script type="text/javascript">
+
+const fontVariationSettings = {
+  /* slider handlers store their axis values here */
+}
+
+function depthAxisHandler(value) {
+  fontVariationSettings["EDPT"] = value;
+  updateFontVariationSettings();
+}
+
+function highlightAxisHandler(value) {
+  fontVariationSettings["EHLT"] = value;
+  updateFontVariationSettings();
+}
+
+function fontSizeHandler(value) {
+  const element = document.querySelector(".color-text");
+  element.style.fontSize = `${value}px`;
+}
+
+function updateFontVariationSettings() {
+  const element = document.querySelector(".color-text");
+  const settings = Object.entries(fontVariationSettings).map(item => `'${item[0]}' ${item[1]}`)
+  element.style.fontVariationSettings = settings.join(", ");
+}
+
+function onLoad() {
+  for (const element of document.querySelectorAll(".slider")) {
+    element.oninput(element.value);
+  }
+  element = document.querySelector(".colorpicker");
+  document.body.style.backgroundColor = element.value;
+}
+
+  </script>
+</head>
+<body onload="onLoad()">
+
+<div class="page">
+
+  <div class="page-header">
+    <label for="depth-slider">Depth Axis</label>
+    <input
+      class="slider"
+      type="range"
+      name="depth-slider"
+      min="0"
+      max="200"
+      value="100"
+      step="any"
+      oninput="depthAxisHandler(value);"
+    >
+    <label for="highlight-axis">Highlight Axis</label>
+    <input
+      class="slider"
+      type="range"
+      name="highlight-axis"
+      min="0"
+      max="24"
+      value="12"
+      step="any"
+      oninput="highlightAxisHandler(value);"
+    >
+    <label for="size-slider">Size</label>
+    <input
+      class="slider"
+      type="range"
+      name="size-slider"
+      min="24"
+      max="600"
+      value="150"
+      step="any"
+      oninput="fontSizeHandler(value);"
+    >
+    <label for="colorpicker">Background color</label>
+    <input 
+      class="colorpicker"
+      type="color"
+      value="#3a50ef"
+      id="color"
+      oninput="document.body.style.backgroundColor = value"
+      >
+  </div>
+
+  <div class="color-text" contenteditable>
+    ISOMETRIC
+    <br>
+    CHROMATIC
+    <br>
+    "colourful!"
+    <br>
+    perspective
+    <br>
+    -
+<br>
+AÁĂǍÂÄÀĀĄÅÃÆ
+<br>
+BCĆČÇĈĊDÐĎĐ
+<br>
+EÉĚÊËĖÈĒĘẼƏF
+<br>
+GĞǦĜĢĠḠHĦĤIĲ
+<br>
+ÍÎÏİÌĪĮĨJĴKĶ
+<br>
+LĹĽĻŁMNŃŇŅÑŊ
+<br>
+OÓÔÖÒŐŌØÕŒPÞQ
+<br>
+RŔŘŖSŚŠŞŜȘẞTŤ
+<br>
+ŢȚUÚŬÛÜÙŰŪŲŮŨ
+<br>
+VWẂŴẄẀXYÝŶŸỲỸ
+<br>
+ZŹŽŻ &
+<br>
+aáăǎâäàāąåãæbc
+<br>
+ćčçĉċdðďđeéěêë
+<br>
+ėèēęẽəfgğǧĝģġḡ
+<br>
+hħĥiıíîïìĳīįĩj
+<br>
+ȷĵkķlĺľļłmnńňņñŋ
+<br>
+oóôöòőōøõœpþqr
+<br>
+ŕřŗsśšşŝșßtťţț
+<br>
+uúŭûüùűūųůũvw
+<br>
+ẃŵẅẁxyýŷÿỳỹ
+<br>
+(zźžż~∞%‰≈)
+<br>
+{[0123456789]}
+<br>
+/*#.,:;·∇…•!¡?¿\
+<br>
+«°†|@¶§©®¦‡™»
+<br>
+„“‘’‹-ª—º–›"'”‚
+<br>
+¢₿¤$£€₴₺₽₹₪
+<br>
++×=≠≤<£¥>≥÷±−
+  </div>
+</div>
+
+</body>
+</html>
