@@ -1,5 +1,5 @@
 {
-.appVersion = "3133";
+.appVersion = "3137";
 .formatVersion = 3;
 customParameters = (
 {
@@ -2691,7 +2691,9 @@ nodes = (
 (200,100,l,{
 name = shadowBottomColor;
 }),
-(300,0,l,{
+(200,73.9,o),
+(211.4,49.2,o),
+(229.3,30.9,c,{
 name = shadowColor;
 })
 );
