@@ -55181,9 +55181,9 @@ nodes = (
 (200,220,l,{
 name = midTopColor;
 }),
-(170,270,o),
-(110,300,o),
-(50,300,c,{
+(180.1,253.1,o),
+(147.2,277.4,o),
+(109.7,290.1,c,{
 name = shadowColor;
 })
 );
@@ -55194,7 +55194,7 @@ nodes = (
 (50,400,l,{
 name = shadowColor;
 }),
-(50,310,l,{
+(50,301,l,{
 name = shadowColor;
 })
 );
@@ -55202,7 +55202,7 @@ name = shadowColor;
 {
 closed = 0;
 nodes = (
-(50,290,l,{
+(50,298,l,{
 name = shadowColor;
 }),
 (50,210,l,{
