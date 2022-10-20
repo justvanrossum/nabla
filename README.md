@@ -2,4 +2,4 @@
 
 Typearture's Nabla: an Isometric COLRv1 font
 
-[Demo](https://nabla.typearture.com/)
+Minisite: https://nabla.typearture.com/
