@@ -3,12 +3,55 @@
 <head>
   <meta charset="utf-8">
   <title>Typearture's Nabla</title>
-  <style type="text/css">
+  <style>
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --base-color: #ff8723;
+}
 
 @font-face {
   font-family: "Nabla";
   src: url("./fonts/Nabla[EDPT,EHLT].ttf") format("truetype");
   font-display: block;  /* Prefer FOIT (Flash Of Invisible Text) over FOUT (Flash Of Unstyled Text) */
+}
+
+@font-palette-values --0 {
+  font-family: Nabla;
+  base-palette: 0;
+}
+
+@font-palette-values --1 {
+  font-family: Nabla;
+  base-palette: 1;
+}
+
+@font-palette-values --2 {
+  font-family: Nabla;
+  base-palette: 2;
+}
+
+@font-palette-values --3 {
+  font-family: Nabla;
+  base-palette: 3;
+}
+
+@font-palette-values --4 {
+  font-family: Nabla;
+  base-palette: 4;
+}
+
+@font-palette-values --5 {
+  font-family: Nabla;
+  base-palette: 5;
+}
+
+@font-palette-values --6 {
+  font-family: Nabla;
+  base-palette: 6;
 }
 
 html{
@@ -26,24 +69,46 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2em;
-  overflow: hidden;
-  width: 100vw;
-  height: 100vh;
+  background: inherit;
+  padding-bottom: 3em;
 }
 
 .page-header {
-  display: flex;
-  flex-direction: column;
   font-family: sans-serif;
   font-size: 1em;
   text-align: center;
+  background: inherit;
+  padding-bottom: 1em;
+  position: sticky;
+  top: 0;
+}
+
+.page-header .slider-cell {
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
-.page-header>label {
+.page-header .slider-row {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+}
+
+.slider-row select {
+  background: inherit;
+  border: 3px solid var(--base-color);
+  color: var(--base-color);
+  height: 26px;
+  padding: 0 1em;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.page-header label {
   margin-top: 1em;
   margin-bottom: 0.25em;
-  color: #ff8723;
+  color: var(--base-color);
   font-weight: bold;
 }
 
@@ -53,7 +118,7 @@ body {
   font-size: 150px;
   line-height: 1.4em;
   text-align: center;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .slider {
@@ -61,7 +126,7 @@ body {
   appearance: none;
   width: 55%;
   height: 2px;
-  background: #ff8723;
+  background: var(--base-color);
   outline: none;
   margin-top: 10px;
 }
@@ -72,13 +137,13 @@ body {
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background: #ff8723;
+  background: var(--base-color);
 }
 
 .colorpicker {
   outline: none;
   background-color: transparent;
-  border-color: #ff8723;
+  border-color: var(--base-color);
   border-width: 3px;
   box-shadow: none;
   margin-top: 5px;
@@ -97,8 +162,7 @@ input[type="color"]::-webkit-color-swatch {
 
 </style>
 
-<script type="text/javascript">
-
+<script>
 const fontVariationSettings = {
   /* slider handlers store their axis values here */
 }
@@ -116,6 +180,11 @@ function highlightAxisHandler(value) {
 function fontSizeHandler(value) {
   const element = document.querySelector(".color-text");
   element.style.fontSize = `${value}px`;
+}
+
+function fontPaletteHandler(value) {
+  const element = document.querySelector(".color-text");
+  element.style.fontPalette = value;
 }
 
 function updateFontVariationSettings() {
@@ -139,47 +208,70 @@ function onLoad() {
 <div class="page">
 
   <div class="page-header">
-    <label for="depth-slider">Depth Axis</label>
-    <input
-      class="slider"
-      type="range"
-      name="depth-slider"
-      min="0"
-      max="200"
-      value="100"
-      step="any"
-      oninput="depthAxisHandler(value);"
-    >
-    <label for="highlight-axis">Highlight Axis</label>
-    <input
-      class="slider"
-      type="range"
-      name="highlight-axis"
-      min="0"
-      max="24"
-      value="12"
-      step="any"
-      oninput="highlightAxisHandler(value);"
-    >
-    <label for="size-slider">Size</label>
-    <input
-      class="slider"
-      type="range"
-      name="size-slider"
-      min="24"
-      max="600"
-      value="150"
-      step="any"
-      oninput="fontSizeHandler(value);"
-    >
-    <label for="colorpicker">Background color</label>
-    <input 
-      class="colorpicker"
-      type="color"
-      value="#3a50ef"
-      id="color"
-      oninput="document.body.style.backgroundColor = value"
+    <div class="slider-cell">
+      <label for="depth-slider">Depth Axis</label>
+      <input
+        class="slider"
+        type="range"
+        name="depth-slider"
+        min="0"
+        max="200"
+        value="100"
+        step="any"
+        oninput="depthAxisHandler(value);"
       >
+    </div>
+    <div class="slider-cell">
+      <label for="highlight-axis">Highlight Axis</label>
+      <input
+        class="slider"
+        type="range"
+        name="highlight-axis"
+        min="0"
+        max="24"
+        value="12"
+        step="any"
+        oninput="highlightAxisHandler(value);"
+      >
+    </div>
+
+    <div class="slider-cell">
+      <label for="size-slider">Size</label>
+      <input
+        class="slider"
+        type="range"
+        name="size-slider"
+        min="24"
+        max="600"
+        value="150"
+        step="any"
+        oninput="fontSizeHandler(value);"
+      >
+    </div>
+    <div class="slider-row">
+      <div class="slider-cell">
+        <label for="colorpicker">Background color</label>
+        <input
+          class="colorpicker"
+          type="color"
+          value="#3a50ef"
+          id="color"
+          oninput="document.body.style.backgroundColor = value"
+          >
+      </div>
+      <div class="slider-cell">
+        <label for="font-palette">Font palette</label>
+        <select id="font-palette" onchange="fontPaletteHandler(value);">
+          <option value="--0">0</option>
+          <option value="--1">1</option>
+          <option value="--2">2</option>
+          <option value="--3">3</option>
+          <option value="--4">4</option>
+          <option value="--5">5</option>
+          <option value="--6">6</option>
+        </select>
+      </div>
+    </div>
   </div>
 
   <div class="color-text" contenteditable>
