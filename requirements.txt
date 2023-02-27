@@ -9,7 +9,7 @@ fontmake==3.4.0
 fontMath==0.9.2
 fonttools==4.37.2
 fs==2.4.16
-gftools==0.9.17
+gftools==0.9.24
 glyphsLib==6.0.7
 lxml==4.9.1
 openstep-plist==0.3.0
