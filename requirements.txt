@@ -18,5 +18,5 @@ pytz==2022.7.1
 six==1.16.0
 skia-pathops==0.7.2
 ufo2ft==2.33.4
-ufoLib2==0.13.1
+ufoLib2==0.16.0
 unicodedata2==15.1.0
